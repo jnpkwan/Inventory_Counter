@@ -839,11 +839,9 @@ let systemCountData = {};
 
 function init() {
   loadFromStorage();
-  loadSystemCountData();
+  loadSystemCountDataAndRender();
   updateDateTime();
   setInterval(updateDateTime, 30000);
-  renderInventory();
-  renderDamages();
   populateSettingsForm();
   document.getElementById('searchInput').addEventListener('input', onSearch);
   document.getElementById('searchInput').addEventListener('focus', onSearch);
@@ -868,10 +866,17 @@ function saveToStorage() { try { localStorage.setItem('sc_inventory', JSON.strin
 function loadFromStorage() { try { const inv = localStorage.getItem('sc_inventory'); const dmg = localStorage.getItem('sc_damages'); const set = localStorage.getItem('sc_settings'); if (inv) inventory = JSON.parse(inv); if (dmg) damages = JSON.parse(dmg); if (set) settings = { ...settings, ...JSON.parse(set) }; } catch(e) {} }
 
 function loadSystemCountData() {
-  fetch('system-count.json')
+  return fetch('system-count.json')
     .then(response => response.json())
     .then(data => { systemCountData = data; })
     .catch(error => { console.log('System count data not loaded'); systemCountData = {}; });
+}
+
+function loadSystemCountDataAndRender() {
+  loadSystemCountData().then(() => {
+    renderInventory();
+    renderDamages();
+  });
 }
 
 function showPage(page) {
@@ -976,7 +981,7 @@ function renderInventory() {
         if (productData) systemCount = productData.systemCount;
       }
       const systemCountDisplay = systemCount !== null ? `<div class="inv-item-system"><div style="font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">System</div><div style="font-size:16px;font-weight:700;color:var(--blue);font-family:'Nunito',sans-serif;">${systemCount}</div></div>` : '';
-      html += `<div class="inv-item"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:12px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${systemCountDisplay}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
+      html += `<div class="inv-item" style="border-left: 3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:12px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${systemCountDisplay}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
     });
   });
   list.innerHTML = html;
