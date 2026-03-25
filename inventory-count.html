@@ -798,9 +798,15 @@ function addItem() {
   const countVal = parseFloat(document.getElementById('countInput').value);
   if (isNaN(countVal) || countVal < 0) { showToast('Please enter a valid count', 'error'); return; }
   const p = PRODUCTS.find(x => x.id === selectedProductId);
-  inventory.push({ id: Date.now(), productId: selectedProductId, name: p.name, category: p.category, sku: p.sku, count: countVal, addedAt: new Date().toISOString() });
+  const existing = inventory.find(x => x.productId === selectedProductId);
+  if (existing) {
+    existing.count += countVal;
+    showToast(`${p.name} updated — total: ${existing.count}`, 'success');
+  } else {
+    inventory.push({ id: Date.now(), productId: selectedProductId, name: p.name, category: p.category, sku: p.sku, count: countVal, addedAt: new Date().toISOString() });
+    showToast(`${p.name} added ✓`, 'success');
+  }
   saveToStorage(); renderInventory(); clearSelection();
-  showToast(`${p.name} added ✓`, 'success');
   document.getElementById('countInput').value = 1;
 }
 
