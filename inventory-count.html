@@ -140,6 +140,7 @@
   .inv-item-info { flex: 1; min-width: 0; }
   .inv-item-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .inv-item-sku { font-size: 11px; color: var(--text3); margin-top: 2px; }
+  .inv-item-notes { font-size: 12px; color: var(--danger); margin-top: 4px; font-weight: 500; font-style: italic; }
   .inv-item-right { text-align: right; }
   .inv-item-count { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 800; color: var(--accent-dark); line-height: 1; }
   .inv-item-unit { font-size: 10px; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -456,7 +457,85 @@
   </div>
 </div>
 
-<!-- PAGE 3: REVIEW -->
+<!-- PAGE 3: DAMAGES -->
+<div class="page" id="pageDamages">
+  <div class="section">
+    <div class="session-banner">
+      <div>
+        <div class="sb-label">Merchandiser</div>
+        <div class="sb-value" id="dmName">— not set —</div>
+      </div>
+      <div>
+        <div class="sb-label">Count Period</div>
+        <div class="sb-value" id="dmPeriod">—</div>
+      </div>
+      <div>
+        <div class="sb-label">Location</div>
+        <div class="sb-value" id="dmLocation">—</div>
+      </div>
+      <div>
+        <div class="sb-label">Date & Time</div>
+        <div class="sb-value" id="dmDateTime">—</div>
+      </div>
+    </div>
+
+    <div class="add-panel">
+      <div class="add-panel-title">
+        <div class="add-icon">⚠️</div>
+        Record Damaged Item
+      </div>
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInputDamages" placeholder="Search products by name or SKU…" autocomplete="off" />
+      </div>
+      <div class="product-dropdown" id="productDropdownDamages"></div>
+      <div class="selected-product" id="selectedProductDamages">
+        <div>
+          <div class="name" id="selNameDamages"></div>
+          <div class="cat" id="selCatDamages"></div>
+        </div>
+        <button class="clear-btn" onclick="clearSelectionDamages()">✕</button>
+      </div>
+      <div class="count-row">
+        <div class="count-label">Qty Damaged</div>
+        <div class="stepper">
+          <button class="step-btn" onclick="adjustCountDamages(-1)">−</button>
+          <input type="number" class="count-input" id="countInputDamages" value="1" min="0" inputmode="numeric" />
+          <button class="step-btn" onclick="adjustCountDamages(1)">+</button>
+        </div>
+      </div>
+      <div class="field" style="margin-bottom: 13px;">
+        <label>Damage Description (optional)</label>
+        <input type="text" id="damageNotes" placeholder="e.g., Broken corner, Water damaged, Dented packaging" />
+      </div>
+      <button class="btn btn-primary" onclick="addDamageItem()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:17px;height:17px;stroke-width:2.5"><path d="M12 5v14M5 12h14"/></svg>
+        Record Damage
+      </button>
+    </div>
+
+    <div class="inv-section">
+      <div class="inv-header">
+        <div class="inv-title">Damaged Items</div>
+        <div class="inv-badge" id="damagesBadge">0</div>
+      </div>
+      <div id="damagesList">
+        <div class="empty-state">
+          <div class="empty-icon">✓</div>
+          <div class="empty-title">No damages recorded</div>
+          Search for a product and record any damage above.
+        </div>
+      </div>
+    </div>
+
+    <div style="height:10px;"></div>
+    <button class="btn btn-warn" onclick="saveProgress()" style="margin-bottom:9px;">✓ Auto-Saved</button>
+    <button class="btn btn-danger" onclick="openClearDamagesModal()">🗑 Clear All Data</button>
+    <div style="height:4px;"></div>
+  </div>
+</div>
+
+<!-- PAGE 4: REVIEW -->
 <div class="page" id="pageSummary">
   <div class="section">
     <div class="card">
@@ -471,6 +550,13 @@
       <div class="stat-row"><div class="stat-label">Total SKUs Counted</div><div class="stat-value green" id="sumUnits">0</div></div>
       <div class="stat-row"><div class="stat-label">Total Categories Counted</div><div class="stat-value green" id="sumCategories">0</div></div>
       <div id="sumCategoryList" style="padding-top:4px;display:flex;flex-wrap:wrap;gap:6px;"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Damage Summary</div>
+      <div class="stat-row"><div class="stat-label">Total SKUs with Damages</div><div class="stat-value" id="sumDamageSKUs" style="color:var(--danger);">0</div></div>
+      <div class="stat-row"><div class="stat-label">Total Units Damaged</div><div class="stat-value" id="sumDamageUnits" style="color:var(--danger);">0</div></div>
+      <div class="stat-row"><div class="stat-label">Damage Categories</div><div class="stat-value" id="sumDamageCategories">0</div></div>
+      <div id="sumDamageCategoryList" style="padding-top:4px;display:flex;flex-wrap:wrap;gap:6px;"></div>
     </div>
     <button class="btn btn-primary" onclick="openSubmitModal()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:17px;height:17px;stroke-width:2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
@@ -494,11 +580,17 @@
     </div>
     2 · Count
   </button>
+  <button class="nav-tab" id="tabDamages" onclick="showPage('damages')">
+    <div class="nav-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/><path d="M10 17l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+    </div>
+    3 · Damages
+  </button>
   <button class="nav-tab" id="tabSummary" onclick="showPage('summary')">
     <div class="nav-icon-wrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
     </div>
-    3 · Review
+    4 · Review
   </button>
 </div>
 
@@ -546,6 +638,19 @@
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="closeModal('clearModal')">Cancel</button>
       <button class="btn" onclick="clearAll()" style="background:var(--danger);color:#fff;flex:1;">Clear All</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="clearDamagesModal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div style="font-size:34px;text-align:center;margin-bottom:8px;">⚠️</div>
+    <div class="modal-title" style="text-align:center;">Clear All Damages?</div>
+    <div class="modal-body" style="text-align:center;">This will permanently delete all damage records and cannot be undone.</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="closeModal('clearDamagesModal')">Cancel</button>
+      <button class="btn" onclick="clearAllDamages()" style="background:var(--danger);color:#fff;flex:1;">Clear All</button>
     </div>
   </div>
 </div>
@@ -720,7 +825,9 @@ const PRODUCTS = [
 ];
 
 let inventory = [];
+let damages = [];
 let selectedProductId = null;
+let selectedProductIdDamages = null;
 let settings = { name: '', location: '', email: '', period: '' };
 let lastExportedFile = null;
 
@@ -729,10 +836,18 @@ function init() {
   updateDateTime();
   setInterval(updateDateTime, 30000);
   renderInventory();
+  renderDamages();
   populateSettingsForm();
   document.getElementById('searchInput').addEventListener('input', onSearch);
   document.getElementById('searchInput').addEventListener('focus', onSearch);
-  document.addEventListener('click', (e) => { if (!e.target.closest('.add-panel')) closeDropdown(); });
+  document.getElementById('searchInputDamages').addEventListener('input', onSearchDamages);
+  document.getElementById('searchInputDamages').addEventListener('focus', onSearchDamages);
+  document.addEventListener('click', (e) => { 
+    if (!e.target.closest('.add-panel')) { 
+      closeDropdown(); 
+      closeDropdownDamages();
+    }
+  });
 }
 
 function updateDateTime() {
@@ -742,14 +857,15 @@ function updateDateTime() {
   document.getElementById('setDateTime').value = str;
 }
 
-function saveToStorage() { try { localStorage.setItem('sc_inventory', JSON.stringify(inventory)); localStorage.setItem('sc_settings', JSON.stringify(settings)); } catch(e) {} }
-function loadFromStorage() { try { const inv = localStorage.getItem('sc_inventory'); const set = localStorage.getItem('sc_settings'); if (inv) inventory = JSON.parse(inv); if (set) settings = { ...settings, ...JSON.parse(set) }; } catch(e) {} }
+function saveToStorage() { try { localStorage.setItem('sc_inventory', JSON.stringify(inventory)); localStorage.setItem('sc_damages', JSON.stringify(damages)); localStorage.setItem('sc_settings', JSON.stringify(settings)); } catch(e) {} }
+function loadFromStorage() { try { const inv = localStorage.getItem('sc_inventory'); const dmg = localStorage.getItem('sc_damages'); const set = localStorage.getItem('sc_settings'); if (inv) inventory = JSON.parse(inv); if (dmg) damages = JSON.parse(dmg); if (set) settings = { ...settings, ...JSON.parse(set) }; } catch(e) {} }
 
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   if (page === 'settings') { document.getElementById('pageSettings').classList.add('active'); document.getElementById('tabSettings').classList.add('active'); }
   else if (page === 'count') { document.getElementById('pageCount').classList.add('active'); document.getElementById('tabCount').classList.add('active'); }
+  else if (page === 'damages') { document.getElementById('pageDamages').classList.add('active'); document.getElementById('tabDamages').classList.add('active'); updateDamagesBanner(); }
   else if (page === 'summary') { document.getElementById('pageSummary').classList.add('active'); document.getElementById('tabSummary').classList.add('active'); updateSummary(); }
 }
 
@@ -800,8 +916,8 @@ function addItem() {
   const p = PRODUCTS.find(x => x.id === selectedProductId);
   const existing = inventory.find(x => x.productId === selectedProductId);
   if (existing) {
-    existing.count += countVal;
-    showToast(`${p.name} updated — total: ${existing.count}`, 'success');
+    showToast(`${p.name} is already in your count. Delete it first to add it again.`, 'error');
+    return;
   } else {
     inventory.push({ id: Date.now(), productId: selectedProductId, name: p.name, category: p.category, sku: p.sku, count: countVal, addedAt: new Date().toISOString() });
     showToast(`${p.name} added ✓`, 'success');
@@ -828,6 +944,123 @@ function renderInventory() {
 }
 
 function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveToStorage(); renderInventory(); showToast('Item removed'); }
+
+// DAMAGES FUNCTIONS
+function onSearchDamages() {
+  const q = document.getElementById('searchInputDamages').value.toLowerCase().trim();
+  const dropdown = document.getElementById('productDropdownDamages');
+  const categories = {};
+  PRODUCTS.forEach(p => {
+    const match = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
+    if (match) { if (!categories[p.category]) categories[p.category] = []; categories[p.category].push(p); }
+  });
+  const keys = Object.keys(categories);
+  if (keys.length === 0) { dropdown.innerHTML = '<div style="padding:16px;text-align:center;color:var(--text3);font-size:14px;">No products found</div>'; dropdown.classList.add('open'); return; }
+  let html = '';
+  keys.forEach(cat => {
+    html += `<div class="cat-header">${cat}</div>`;
+    categories[cat].forEach(p => {
+      html += `<div class="product-option" onclick="selectProductDamages('${p.id}')"><div><div>${p.name}</div><div class="sku">${p.sku}</div></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:15px;height:15px;stroke-width:2;color:var(--text3)"><path d="M9 18l6-6-6-6"/></svg></div>`;
+    });
+  });
+  dropdown.innerHTML = html;
+  dropdown.classList.add('open');
+}
+
+function closeDropdownDamages() { document.getElementById('productDropdownDamages').classList.remove('open'); }
+
+function selectProductDamages(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  selectedProductIdDamages = id;
+  document.getElementById('selNameDamages').textContent = p.name;
+  document.getElementById('selCatDamages').textContent = `${p.category} · ${p.sku}`;
+  document.getElementById('selectedProductDamages').classList.add('show');
+  document.getElementById('searchInputDamages').value = '';
+  closeDropdownDamages();
+  document.getElementById('countInputDamages').focus();
+  document.getElementById('countInputDamages').select();
+}
+
+function clearSelectionDamages() { 
+  selectedProductIdDamages = null; 
+  document.getElementById('selectedProductDamages').classList.remove('show'); 
+  document.getElementById('searchInputDamages').value = ''; 
+  document.getElementById('countInputDamages').value = 1;
+  document.getElementById('damageNotes').value = '';
+}
+
+function adjustCountDamages(delta) { 
+  const input = document.getElementById('countInputDamages'); 
+  input.value = Math.max(0, (parseFloat(input.value) || 0) + delta); 
+}
+
+function addDamageItem() {
+  if (!selectedProductIdDamages) { showToast('Please select a product first', 'error'); return; }
+  const countVal = parseFloat(document.getElementById('countInputDamages').value);
+  if (isNaN(countVal) || countVal < 0) { showToast('Please enter a valid count', 'error'); return; }
+  const p = PRODUCTS.find(x => x.id === selectedProductIdDamages);
+  const notes = document.getElementById('damageNotes').value.trim();
+  
+  damages.push({ 
+    id: Date.now(), 
+    productId: selectedProductIdDamages, 
+    name: p.name, 
+    category: p.category, 
+    sku: p.sku, 
+    count: countVal, 
+    notes: notes,
+    addedAt: new Date().toISOString() 
+  });
+  
+  showToast(`${p.name} recorded as damaged ✓`, 'success');
+  saveToStorage(); 
+  renderDamages(); 
+  clearSelectionDamages();
+  document.getElementById('countInputDamages').value = 1;
+}
+
+function renderDamages() {
+  const list = document.getElementById('damagesList');
+  document.getElementById('damagesBadge').textContent = damages.length;
+
+  if (damages.length === 0) { 
+    list.innerHTML = `<div class="empty-state"><div class="empty-icon">✓</div><div class="empty-title">No damages recorded</div>Search for a product and record any damage above.</div>`; 
+    return; 
+  }
+  
+  const groups = {};
+  damages.forEach(item => { if (!groups[item.category]) groups[item.category] = []; groups[item.category].push(item); });
+  let html = '';
+  Object.keys(groups).sort().forEach(cat => {
+    html += `<div class="cat-group-label">${cat}</div>`;
+    groups[cat].forEach(item => {
+      const notesDisplay = item.notes ? `<div class="inv-item-notes">${item.notes}</div>` : '';
+      html += `<div class="inv-item" style="border-left: 3px solid var(--danger);"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div>${notesDisplay}</div><div class="inv-item-right"><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">damaged</div></div><button class="inv-del-btn" onclick="deleteDamageItem(${item.id})">✕</button></div>`;
+    });
+  });
+  list.innerHTML = html;
+}
+
+function deleteDamageItem(id) { damages = damages.filter(i => i.id !== id); saveToStorage(); renderDamages(); showToast('Damage record removed'); }
+
+function updateDamagesBanner() {
+  document.getElementById('dmName').textContent = settings.name || '— not set —';
+  document.getElementById('dmLocation').textContent = settings.location || '—';
+  document.getElementById('dmPeriod').textContent = settings.period || '—';
+  document.getElementById('dmDateTime').textContent = document.getElementById('siDateTime').textContent;
+}
+
+function openClearDamagesModal() { document.getElementById('clearDamagesModal').classList.add('open'); }
+
+function clearAllDamages() { 
+  closeModal('clearDamagesModal'); 
+  damages = []; 
+  saveToStorage(); 
+  renderDamages(); 
+  showToast('All damage data cleared'); 
+  showPage('damages'); 
+}
 
 function populateSettingsForm() {
   const period = getCurrentPeriod();
@@ -873,6 +1106,24 @@ function updateSummary() {
     ).join('');
   } else {
     pillContainer.innerHTML = '';
+  }
+  
+  // Damage Summary
+  const uniqueDamageSKUs = new Set(damages.map(d => d.sku)).size;
+  const totalDamageUnits = damages.reduce((sum, d) => sum + d.count, 0);
+  const damageCategories = [...new Set(damages.map(d => d.category))].sort();
+  document.getElementById('sumDamageSKUs').textContent = uniqueDamageSKUs;
+  document.getElementById('sumDamageUnits').textContent = totalDamageUnits;
+  document.getElementById('sumDamageCategories').textContent = damageCategories.length;
+  
+  // Render damage category pills
+  const damagePillContainer = document.getElementById('sumDamageCategoryList');
+  if (damageCategories.length > 0) {
+    damagePillContainer.innerHTML = damageCategories.map(cat =>
+      `<span style="background:#fef2f2;color:var(--danger);font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;font-family:'Nunito',sans-serif;">${cat}</span>`
+    ).join('');
+  } else {
+    damagePillContainer.innerHTML = '';
   }
 }
 
