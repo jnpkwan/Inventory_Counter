@@ -573,12 +573,17 @@ function loadLocations() {
     .then(response => response.json())
     .then(data => {
       const select = document.getElementById('setLocation');
+      const savedLocation = settings.location || '';
       data.locations.forEach(location => {
         const option = document.createElement('option');
         option.value = location;
         option.textContent = location;
         select.appendChild(option);
       });
+      // Restore the saved location after options are added
+      if (savedLocation) {
+        select.value = savedLocation;
+      }
     })
     .catch(error => console.error('Error loading locations:', error));
 }
