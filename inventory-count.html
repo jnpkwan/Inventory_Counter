@@ -144,6 +144,7 @@
   .inv-item-right { text-align: right; }
   .inv-item-count { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 800; color: var(--accent-dark); line-height: 1; }
   .inv-item-unit { font-size: 10px; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .inv-item-system { text-align: center; padding-left: 8px; border-left: 1px solid var(--border); }
   .inv-del-btn { background: var(--danger-light); border: none; color: var(--danger); cursor: pointer; padding: 7px; border-radius: 7px; font-size: 12px; font-weight: 700; line-height: 1; }
 
   /* EMPTY */
@@ -967,7 +968,15 @@ function renderInventory() {
   Object.keys(groups).sort().forEach(cat => {
     html += `<div class="cat-group-label">${cat}</div>`;
     groups[cat].forEach(item => {
-      html += `<div class="inv-item"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">units</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
+      // Get system count for this product
+      const storeData = systemCountData.stores && systemCountData.stores[settings.location];
+      let systemCount = null;
+      if (storeData) {
+        const productData = storeData.products.find(prod => prod.sku === item.sku);
+        if (productData) systemCount = productData.systemCount;
+      }
+      const systemCountDisplay = systemCount !== null ? `<div class="inv-item-system"><div style="font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">System</div><div style="font-size:16px;font-weight:700;color:var(--blue);font-family:'Nunito',sans-serif;">${systemCount}</div></div>` : '';
+      html += `<div class="inv-item"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:12px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${systemCountDisplay}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
     });
   });
   list.innerHTML = html;
