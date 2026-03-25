@@ -200,7 +200,8 @@
   .toast { position: fixed; bottom: calc(var(--nav-h) + 12px); left: 50%; transform: translateX(-50%) translateY(10px); background: var(--text); color: #fff; padding: 10px 20px; border-radius: 30px; font-size: 13px; font-weight: 600; font-family: 'Nunito', sans-serif; opacity: 0; transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1); pointer-events: none; z-index: 999; white-space: nowrap; box-shadow: var(--shadow); }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   .toast.success { background: var(--accent-dark); }
-  .toast.error { background: var(--danger); }
+  .toast.error { position: fixed; top: 50%; bottom: auto; transform: translateX(-50%) translateY(-50%) scale(0.9); background: var(--danger); padding: 16px 28px; font-size: 14px; border-radius: 12px; box-shadow: 0 20px 40px rgba(239,68,68,0.3); white-space: normal; max-width: 280px; text-align: center; }
+  .toast.error.show { opacity: 1; transform: translateX(-50%) translateY(-50%) scale(1); }
 
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
