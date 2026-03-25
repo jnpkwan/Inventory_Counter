@@ -510,7 +510,7 @@
         </div>
       </div>
       <div class="field" style="margin-bottom: 13px;">
-        <label>Damage Description (optional)</label>
+        <label>Damage Description</label>
         <input type="text" id="damageNotes" placeholder="e.g., Broken corner, Water damaged, Dented packaging" />
       </div>
       <button class="btn btn-primary" onclick="addDamageItem()">
@@ -1038,8 +1038,9 @@ function addDamageItem() {
   if (!selectedProductIdDamages) { showToast('Please select a product first', 'error'); return; }
   const countVal = parseFloat(document.getElementById('countInputDamages').value);
   if (isNaN(countVal) || countVal < 0) { showToast('Please enter a valid count', 'error'); return; }
-  const p = PRODUCTS.find(x => x.id === selectedProductIdDamages);
   const notes = document.getElementById('damageNotes').value.trim();
+  if (!notes) { showToast('Please describe the damage', 'error'); return; }
+  const p = PRODUCTS.find(x => x.id === selectedProductIdDamages);
   
   damages.push({ 
     id: Date.now(), 
