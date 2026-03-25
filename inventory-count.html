@@ -1133,6 +1133,7 @@ function openSubmitModal() {
   if (inventory.length === 0) { showToast('No items to submit', 'error'); return; }
   if (!settings.name || !settings.location) { showToast('Please complete Store Info first', 'error'); showPage('settings'); return; }
   const totalUnits = inventory.reduce((s,i) => s+i.count, 0);
+  const damagesMsg = damages.length > 0 ? `<div style="font-size:13px;color:var(--text3);margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">📊 You have <strong>${damages.length} damage record(s)</strong> — a separate damages file will also download.</div>` : '';
   document.getElementById('submitModalBody').innerHTML = `
     <div style="margin-bottom:12px;font-size:14px;color:var(--text2);">You're about to export <strong style="color:var(--text)">${inventory.length} line item(s)</strong> totalling <strong style="color:var(--text)">${totalUnits} units</strong>.</div>
     <div class="confirm-grid">
@@ -1141,7 +1142,7 @@ function openSubmitModal() {
       <div class="confirm-cell"><div class="lbl">Location</div><div class="val">${settings.location}</div></div>
       <div class="confirm-cell"><div class="lbl">Date & Time</div><div class="val" style="font-size:12px;">${document.getElementById('siDateTime').textContent}</div></div>
     </div>
-    <div style="font-size:13px;color:var(--text3);margin-bottom:4px;">⬇️ An Excel file will download to your device, then you can share it.</div>`;
+    <div style="font-size:13px;color:var(--text3);margin-bottom:4px;">⬇️ Excel file(s) will download to your device, then you can share them.</div>${damagesMsg}`;
   document.getElementById('submitModal').classList.add('open');
 }
 function openClearModal() { document.getElementById('clearModal').classList.add('open'); }
@@ -1151,6 +1152,8 @@ function submitCount() {
   closeModal('submitModal');
   if (!window.XLSX) { showToast('Excel library not loaded', 'error'); return; }
   const dateStr = document.getElementById('siDateTime').textContent;
+  
+  // INVENTORY COUNT SHEET
   const rows = [
     ['AcaciaHBC Inventory System'],
     ['Merchandiser:', settings.name || ''],
@@ -1158,15 +1161,19 @@ function submitCount() {
     ['Count Period:', settings.period || '—'],
     ['Date/Time:', dateStr],
     [],
-    ['#', 'Location', 'Category', 'Product Name', 'SKU', 'Count', 'Added At']
+    ['#', 'Location', 'Category', 'Barcode/SKU', 'Product Name', 'Qty/Count']
   ];
-  inventory.forEach((item, idx) => { rows.push([idx + 1, settings.location || '', item.category, item.name, item.sku, item.count, new Date(item.addedAt).toLocaleString('en-GB')]); });
-  rows.push([], ['Total Items:', inventory.length, '', 'Total Units:', inventory.reduce((s,i)=>s+i.count,0)]);
+  inventory.forEach((item, idx) => { 
+    rows.push([idx + 1, settings.location || '', item.category, item.sku, item.name, item.count]); 
+  });
+  rows.push([], ['Total Items:', inventory.length, '', '', 'Total Units:', inventory.reduce((s,i)=>s+i.count,0)]);
+  
   const wb = XLSX.utils.book_new();
   const ws = XLSX.utils.aoa_to_sheet(rows);
-  ws['!cols'] = [{ wch:4 }, { wch:22 }, { wch:18 }, { wch:28 }, { wch:14 }, { wch:8 }, { wch:20 }];
-  ws['!merges'] = [{ s:{r:0,c:0}, e:{r:0,c:6} }];
+  ws['!cols'] = [{ wch:6 }, { wch:25 }, { wch:20 }, { wch:18 }, { wch:35 }, { wch:12 }];
+  ws['!merges'] = [{ s:{r:0,c:0}, e:{r:0,c:5} }];
   XLSX.utils.book_append_sheet(wb, ws, 'Inventory Count');
+  
   const now = new Date();
   const safeLoc = (settings.location || 'inventory').replace(/[^a-z0-9 ]/gi, '').trim().replace(/\s+/g, ' ');
   const day = String(now.getDate()).padStart(2,'0');
@@ -1179,10 +1186,50 @@ function submitCount() {
   const a = document.createElement('a'); a.href = dlUrl; a.download = filename; a.style.display = 'none';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(dlUrl), 5000);
+  
+  // EXPORT DAMAGES FILE (if there are damages)
+  if (damages.length > 0) {
+    setTimeout(() => { exportDamagesFile(dateStr, day, mon); }, 800);
+  }
+  
   document.getElementById('doneFilename').textContent = filename;
   const shareBtn = document.getElementById('shareBtn');
   shareBtn.style.display = (navigator.share && navigator.canShare) ? 'flex' : 'none';
   setTimeout(() => { document.getElementById('doneModal').classList.add('open'); }, 600);
+}
+
+function exportDamagesFile(dateStr, day, mon) {
+  if (!window.XLSX || damages.length === 0) return;
+  
+  const damageRows = [
+    ['AcaciaHBC Inventory System - Damage Report'],
+    ['Merchandiser:', settings.name || ''],
+    ['Location:', settings.location || ''],
+    ['Count Period:', settings.period || '—'],
+    ['Date/Time:', dateStr],
+    [],
+    ['#', 'Location', 'Category', 'Barcode/SKU', 'Product Name', 'Qty Damaged', 'Damage Description']
+  ];
+  damages.forEach((item, idx) => { 
+    damageRows.push([idx + 1, settings.location || '', item.category, item.sku, item.name, item.count, item.notes || '']); 
+  });
+  damageRows.push([], ['Total Items:', damages.length, '', '', 'Total Units Damaged:', damages.reduce((s,d)=>s+d.count,0)]);
+  
+  const wbD = XLSX.utils.book_new();
+  const wsD = XLSX.utils.aoa_to_sheet(damageRows);
+  wsD['!cols'] = [{ wch:6 }, { wch:25 }, { wch:20 }, { wch:18 }, { wch:35 }, { wch:14 }, { wch:30 }];
+  wsD['!merges'] = [{ s:{r:0,c:0}, e:{r:0,c:6} }];
+  XLSX.utils.book_append_sheet(wbD, wsD, 'Damages Report');
+  
+  const now = new Date();
+  const safeLoc = (settings.location || 'inventory').replace(/[^a-z0-9 ]/gi, '').trim().replace(/\s+/g, ' ');
+  const damagesFilename = `DMG_${safeLoc}_${day}${mon}${now.getFullYear()}_${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}.xlsx`;
+  const wbout = XLSX.write(wbD, { bookType:'xlsx', type:'array' });
+  const blob = new Blob([wbout], { type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const dlUrl = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = dlUrl; a.download = damagesFilename; a.style.display = 'none';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(dlUrl), 5000);
 }
 
 async function shareFile() {
