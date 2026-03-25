@@ -1,0 +1,47 @@
+{
+  "inventoryReport": {
+    "ACMAC": {
+      "2080101018515": { "sku": "2080101018515", "name": "PADLOCK SOTER BC9020 20MM BRASS", "category": "Padlocks", "quantity": 45 },
+      "2080101018522": { "sku": "2080101018522", "name": "PADLOCK SOTER BC9025 25MM BRASS", "category": "Padlocks", "quantity": 32 },
+      "2080101018539": { "sku": "2080101018539", "name": "PADLOCK SOTER BC9030 30MM BRASS", "category": "Padlocks", "quantity": 28 },
+      "2080101018751": { "sku": "2080101018751", "name": "BOX CASH SOTER CB-15 80X150X120MM MATT BLACK", "category": "Safety Vault", "quantity": 8 },
+      "2080101019730": { "sku": "2080101019730", "name": "+SOTER CURTAIN TRACK ALUMINUM 90X35MM 3M/6M", "category": "Curtain Accessories", "quantity": 15 }
+    },
+    "ANTIQUE": {
+      "2080101018515": { "sku": "2080101018515", "name": "PADLOCK SOTER BC9020 20MM BRASS", "category": "Padlocks", "quantity": 52 },
+      "2080101018522": { "sku": "2080101018522", "name": "PADLOCK SOTER BC9025 25MM BRASS", "category": "Padlocks", "quantity": 38 },
+      "2080101018546": { "sku": "2080101018546", "name": "PADLOCK SOTER BC9040 40MM BRASS", "category": "Padlocks", "quantity": 25 },
+      "2080101018768": { "sku": "2080101018768", "name": "BOX CASH SOTER CB-25 90X250X180MM MATT BLACK", "category": "Safety Vault", "quantity": 12 },
+      "2080101019747": { "sku": "2080101019747", "name": "+SOTER CURTAIN TRACK ALUMINUM 90X45MM 3M/6M", "category": "Curtain Accessories", "quantity": 9 }
+    },
+    "APOPONG": {
+      "2080101018515": { "sku": "2080101018515", "name": "PADLOCK SOTER BC9020 20MM BRASS", "category": "Padlocks", "quantity": 35 },
+      "2080101018539": { "sku": "2080101018539", "name": "PADLOCK SOTER BC9030 30MM BRASS", "category": "Padlocks", "quantity": 22 },
+      "2080101018751": { "sku": "2080101018751", "name": "BOX CASH SOTER CB-15 80X150X120MM MATT BLACK", "category": "Safety Vault", "quantity": 6 }
+    },
+    "BAAN": {
+      "2080101018522": { "sku": "2080101018522", "name": "PADLOCK SOTER BC9025 25MM BRASS", "category": "Padlocks", "quantity": 41 },
+      "2080101018546": { "sku": "2080101018546", "name": "PADLOCK SOTER BC9040 40MM BRASS", "category": "Padlocks", "quantity": 18 },
+      "2080101018768": { "sku": "2080101018768", "name": "BOX CASH SOTER CB-25 90X250X180MM MATT BLACK", "category": "Safety Vault", "quantity": 14 },
+      "2080101019730": { "sku": "2080101019730", "name": "+SOTER CURTAIN TRACK ALUMINUM 90X35MM 3M/6M", "category": "Curtain Accessories", "quantity": 7 }
+    },
+    "BACNOTAN": {
+      "2080101018515": { "sku": "2080101018515", "name": "PADLOCK SOTER BC9020 20MM BRASS", "category": "Padlocks", "quantity": 29 },
+      "2080101018522": { "sku": "2080101018522", "name": "PADLOCK SOTER BC9025 25MM BRASS", "category": "Padlocks", "quantity": 19 },
+      "2080101018751": { "sku": "2080101018751", "name": "BOX CASH SOTER CB-15 80X150X120MM MATT BLACK", "category": "Safety Vault", "quantity": 5 }
+    },
+    "BAJADA": {
+      "2080101018539": { "sku": "2080101018539", "name": "PADLOCK SOTER BC9030 30MM BRASS", "category": "Padlocks", "quantity": 33 },
+      "2080101018546": { "sku": "2080101018546", "name": "PADLOCK SOTER BC9040 40MM BRASS", "category": "Padlocks", "quantity": 27 },
+      "2080101018768": { "sku": "2080101018768", "name": "BOX CASH SOTER CB-25 90X250X180MM MATT BLACK", "category": "Safety Vault", "quantity": 11 },
+      "2080101019747": { "sku": "2080101019747", "name": "+SOTER CURTAIN TRACK ALUMINUM 90X45MM 3M/6M", "category": "Curtain Accessories", "quantity": 13 }
+    },
+    "BALINGASAG": {
+      "2080101018515": { "sku": "2080101018515", "name": "PADLOCK SOTER BC9020 20MM BRASS", "category": "Padlocks", "quantity": 38 },
+      "2080101018522": { "sku": "2080101018522", "name": "PADLOCK SOTER BC9025 25MM BRASS", "category": "Padlocks", "quantity": 24 }
+    }
+  },
+  "lastUpdated": "2024-03-15T10:30:00Z",
+  "reportName": "AcaciaHBC System Inventory Count Reference",
+  "dataVersion": "1.0"
+}

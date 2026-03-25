@@ -144,6 +144,7 @@
   .inv-item-right { text-align: right; }
   .inv-item-count { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 800; color: var(--accent-dark); line-height: 1; }
   .inv-item-unit { font-size: 10px; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .inv-item-reference { font-size: 11px; color: var(--text3); margin-top: 3px; font-style: italic; }
   .inv-del-btn { background: var(--danger-light); border: none; color: var(--danger); cursor: pointer; padding: 7px; border-radius: 7px; font-size: 12px; font-weight: 700; line-height: 1; }
 
   /* EMPTY */
@@ -530,6 +531,7 @@
 
 <script>
 let PRODUCTS = [];
+let inventoryReference = {};
 
 function loadProducts() {
   fetch('products.json')
@@ -538,6 +540,15 @@ function loadProducts() {
       PRODUCTS = data.products;
     })
     .catch(error => console.error('Error loading products:', error));
+}
+
+function loadInventoryReference() {
+  fetch('system-count.json')
+    .then(response => response.json())
+    .then(data => {
+      inventoryReference = data.inventoryReport || {};
+    })
+    .catch(error => console.error('Error loading system count:', error));
 }
 
 let inventory = [];
@@ -551,6 +562,7 @@ function init() {
   loadFromStorage();
   loadLocations();
   loadProducts();
+  loadInventoryReference();
   updateDateTime();
   setInterval(updateDateTime, 30000);
   renderInventory();
@@ -664,6 +676,13 @@ function addItem() {
   document.getElementById('countInput').value = 1;
 }
 
+function getReferenceCount(sku, location) {
+  if (!location || !inventoryReference[location]) return null;
+  const locationData = inventoryReference[location];
+  const product = locationData[sku];
+  return product ? product.quantity : null;
+}
+
 function renderInventory() {
   const list = document.getElementById('inventoryList');
   document.getElementById('invBadge').textContent = inventory.length;
@@ -675,7 +694,9 @@ function renderInventory() {
   Object.keys(groups).sort().forEach(cat => {
     html += `<div class="cat-group-label">${cat}</div>`;
     groups[cat].forEach(item => {
-      html += `<div class="inv-item"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">units</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
+      const refCount = getReferenceCount(item.sku, settings.location);
+      const refDisplay = refCount !== null ? `<div class="inv-item-reference">📊 System: ${refCount} units</div>` : '';
+      html += `<div class="inv-item"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div>${refDisplay}</div><div class="inv-item-right"><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">units</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
     });
   });
   list.innerHTML = html;
