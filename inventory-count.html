@@ -140,7 +140,10 @@
   .inv-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 13px; margin-bottom: 7px; display: flex; align-items: center; gap: 11px; box-shadow: var(--shadow-sm); animation: slideIn 0.18s ease; }
   @keyframes slideIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
   .inv-item-info { flex: 1; min-width: 0; }
-  .inv-item-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .inv-item-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; position: relative; }
+  .inv-item-name.marquee { text-overflow: clip; }
+  .inv-item-name.marquee span { display: inline-block; animation: marqueeScroll 4s linear forwards; padding-right: 32px; }
+  @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
   .inv-item-sku { font-size: 11px; color: var(--text3); margin-top: 2px; }
   .inv-item-notes { font-size: 12px; color: var(--danger); margin-top: 4px; font-weight: 500; font-style: italic; }
   .inv-item-right { text-align: right; }
@@ -793,13 +796,25 @@ function renderInventory() {
       let systemCount = null;
       if (storeData) { const pd = storeData.products.find(prod => prod.sku === item.sku); if (pd) systemCount = pd.systemCount; }
       const scd = systemCount !== null ? `<div class="inv-item-system"><div style="font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">System</div><div style="font-size:16px;font-weight:700;color:var(--blue);font-family:'Nunito',sans-serif;">${systemCount}</div></div>` : '';
-      html += `<div class="inv-item" style="border-left:3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:12px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${scd}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
+      html += `<div class="inv-item" style="border-left:3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name" onclick="triggerMarquee(this)">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:10px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${scd}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
     });
   });
   list.innerHTML = html;
 }
 
 function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveToStorage(); renderInventory(); showToast('Item removed'); }
+
+function triggerMarquee(el) {
+  if (el.classList.contains('marquee')) return;
+  if (el.scrollWidth <= el.clientWidth) return;
+  const text = el.textContent;
+  el.classList.add('marquee');
+  el.innerHTML = `<span>${text}</span>`;
+  el.addEventListener('animationend', () => {
+    el.classList.remove('marquee');
+    el.innerHTML = text;
+  }, { once: true });
+}
 
 let activeCatFilter = 'All';
 
@@ -823,8 +838,6 @@ function setCatFilter(cat) {
   // Trigger search refresh so dropdown reflects the filter
   onSearch();
 }
-
-function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveToStorage(); renderInventory(); showToast('Item removed'); }
 
 // DAMAGES FUNCTIONS
 function onSearchDamages() {
