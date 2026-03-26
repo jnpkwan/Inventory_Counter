@@ -880,7 +880,37 @@ function loadSystemCountDataAndRender() {
   });
 }
 
+function hasUnsavedCountEntry() {
+  const countInput = document.getElementById('countInput');
+  const selectedProduct = document.getElementById('selectedProduct');
+  return selectedProduct && selectedProduct.classList.contains('show') && countInput.value !== '1';
+}
+
+function hasUnsavedDamageEntry() {
+  const countInput = document.getElementById('countInputDamages');
+  const damageNotes = document.getElementById('damageNotes');
+  const selectedProduct = document.getElementById('selectedProductDamages');
+  return selectedProduct && selectedProduct.classList.contains('show') && (countInput.value !== '1' || damageNotes.value.trim() !== '');
+}
+
 function showPage(page) {
+  // Check for unsaved entries before switching pages
+  const currentPage = document.querySelector('.page.active');
+  const isOnCountPage = currentPage && currentPage.id === 'pageCount';
+  const isOnDamagesPage = currentPage && currentPage.id === 'pageDamages';
+  
+  if (isOnCountPage && hasUnsavedCountEntry()) {
+    if (!confirm('You have an unsaved item in Count — continue?')) {
+      return;
+    }
+  }
+  
+  if (isOnDamagesPage && hasUnsavedDamageEntry()) {
+    if (!confirm('You have an unsaved damage record — continue?')) {
+      return;
+    }
+  }
+  
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   if (page === 'settings') { document.getElementById('pageSettings').classList.add('active'); document.getElementById('tabSettings').classList.add('active'); }
