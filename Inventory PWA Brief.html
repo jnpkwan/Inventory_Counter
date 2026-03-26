@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AcaciaHBC Inventory System — Stakeholder Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --blue: #1a4fa0;
+    --green: #2db84b;
+    --green-dark: #1e9e38;
+    --green-light: #e8f7ec;
+    --cream: #fafaf7;
+    --warm-white: #ffffff;
+    --border: #e8e8e2;
+    --text: #1a1a18;
+    --text2: #4a4a44;
+    --text3: #8a8a80;
+    --warn: #f59e0b;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(45,184,75,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(26,79,160,0.4) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative; z-index: 1;
+  }
+
+  .cover-logo {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 20px rgba(45,184,75,0.4);
+  }
+
+  .cover-brand {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .cover-center {
+    position: relative; z-index: 1;
+  }
+
+  .cover-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .cover-eyebrow::before {
+    content: '';
+    width: 32px; height: 1.5px;
+    background: var(--green);
+  }
+
+  .cover-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .cover-title em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .cover-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.5);
+    max-width: 520px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .cover-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; z-index: 1;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .cover-meta {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .cover-tags {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+
+  .cover-tag {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* MAIN CONTENT */
+  .doc {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  /* SECTION */
+  .section-block {
+    margin-bottom: 72px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--green-dark);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: 34px;
+    color: var(--navy);
+    margin-bottom: 24px;
+    letter-spacing: -0.3px;
+    line-height: 1.15;
+  }
+
+  .section-intro {
+    font-size: 16px;
+    color: var(--text2);
+    max-width: 640px;
+    line-height: 1.75;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  /* FEATURE GRID */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .feature-cell {
+    background: var(--warm-white);
+    padding: 28px 26px;
+    transition: background 0.15s;
+  }
+
+  .feature-cell:hover { background: #f7fdf8; }
+
+  .feature-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .fi-green { background: var(--green-light); }
+  .fi-blue { background: #e8eef8; }
+  .fi-warn { background: #fef3cd; }
+  .fi-navy { background: #eef0f5; }
+  .fi-red { background: #fef2f2; }
+  .fi-purple { background: #f3f0ff; }
+
+  .feature-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 7px;
+    line-height: 1.3;
+  }
+
+  .feature-desc {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* SECURITY TABLE */
+  .security-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    font-size: 14px;
+  }
+
+  .security-table thead th {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    text-align: left;
+  }
+
+  .security-table thead th:first-child { padding-left: 24px; }
+
+  .security-table tbody tr { border-bottom: 1px solid var(--border); }
+  .security-table tbody tr:last-child { border-bottom: none; }
+  .security-table tbody tr:hover td { background: #f5fdf6; }
+
+  .security-table tbody td {
+    padding: 16px 20px;
+    vertical-align: top;
+    background: var(--warm-white);
+  }
+
+  .security-table tbody td:first-child {
+    padding-left: 24px;
+    font-weight: 600;
+    color: var(--navy);
+    width: 200px;
+  }
+
+  .security-table tbody td:last-child {
+    color: var(--text2);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  .pill-green { background: var(--green-light); color: var(--green-dark); }
+  .pill-blue { background: #e8eef8; color: var(--blue); }
+  .pill-warn { background: #fef3cd; color: #92400e; }
+
+  /* CALLOUT BOXES */
+  .callout {
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .callout-green {
+    background: var(--green-light);
+    border: 1px solid rgba(45,184,75,0.2);
+  }
+
+  .callout-blue {
+    background: #e8eef8;
+    border: 1px solid rgba(26,79,160,0.15);
+  }
+
+  .callout-warn {
+    background: #fffbeb;
+    border: 1px solid rgba(245,158,11,0.2);
+  }
+
+  .callout-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .callout-content h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text);
+  }
+
+  .callout-content p {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* OUTPUT TIMELINE */
+  .output-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .output-step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .output-step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .output-num {
+    width: 40px; height: 40px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(15,31,61,0.2);
+  }
+
+  .output-line {
+    width: 1.5px;
+    background: var(--border);
+    flex: 1;
+    margin: 6px 0;
+  }
+
+  .output-step:last-child .output-line { display: none; }
+
+  .output-content {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 14px;
+  }
+
+  .output-content h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .output-content p {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .output-tag {
+    display: inline-block;
+    background: var(--navy);
+    color: rgba(255,255,255,0.75);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* OFFLINE GRID */
+  .offline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .offline-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offline-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .offline-card.green::before { background: linear-gradient(90deg, var(--green), var(--green-dark)); }
+  .offline-card.blue::before { background: linear-gradient(90deg, var(--blue), #0f1f3d); }
+  .offline-card.warn::before { background: linear-gradient(90deg, var(--warn), #d97706); }
+  .offline-card.purple::before { background: linear-gradient(90deg, #7c3aed, #5b21b6); }
+
+  .offline-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .offline-card p {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .offline-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+
+  .ob-green { background: var(--green-light); color: var(--green-dark); }
+  .ob-blue { background: #e8eef8; color: var(--blue); }
+  .ob-warn { background: #fef3cd; color: #92400e; }
+  .ob-purple { background: #f3f0ff; color: #5b21b6; }
+
+  /* SUMMARY STRIP */
+  .summary-strip {
+    background: var(--navy);
+    border-radius: 18px;
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .summary-strip::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(45,184,75,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .summary-stat {
+    position: relative; z-index: 1;
+  }
+
+  .summary-stat .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .summary-stat .num span { color: var(--green); }
+
+  .summary-stat .label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-brand {
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .footer-logo {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+
+  .footer-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text2);
+  }
+
+  .footer-meta {
+    font-size: 12px;
+    color: var(--text3);
+  }
+
+  @media (max-width: 680px) {
+    .cover { padding: 40px 28px; }
+    .doc { padding: 48px 24px; }
+    .offline-grid { grid-template-columns: 1fr; }
+    .summary-strip { grid-template-columns: 1fr 1fr; padding: 28px 24px; }
+    .cover-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .doc-footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+
+  @media print {
+    .cover { min-height: auto; page-break-after: always; }
+    .section-block { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-logo">🌿</div>
+    <div class="cover-brand">AcaciaHBC · Internal Document</div>
+  </div>
+
+  <div class="cover-center">
+    <div class="cover-eyebrow">Product Overview</div>
+    <h1 class="cover-title">Inventory System<br><em>PWA Brief</em></h1>
+    <p class="cover-sub">A full-featured Progressive Web App for field merchandisers to conduct inventory counts and damage reporting — fully capable without an internet connection.</p>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-meta">Prepared for Stakeholder Review &nbsp;·&nbsp; March 2026</div>
+    <div class="cover-tags">
+      <span class="cover-tag">PWA</span>
+      <span class="cover-tag">Offline-First</span>
+      <span class="cover-tag">Mobile</span>
+      <span class="cover-tag">XLSX Export</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN DOCUMENT -->
+<div class="doc">
+
+  <!-- AT-A-GLANCE STATS -->
+  <div class="summary-strip">
+    <div class="summary-stat">
+      <div class="num">4<span>+</span></div>
+      <div class="label">App Screens</div>
+    </div>
+    <div class="summary-stat">
+      <div class="num">2</div>
+      <div class="label">Report Sheets</div>
+    </div>
+    <div class="summary-stat">
+      <div class="num">20</div>
+      <div class="label">Day Auto-Clear Cycle</div>
+    </div>
+    <div class="summary-stat">
+      <div class="num">100<span>%</span></div>
+      <div class="label">Offline Capable</div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="section-block">
+    <div class="section-label">01 &nbsp; Feature Set</div>
+    <h2 class="section-heading">What the app does</h2>
+    <p class="section-intro">The AcaciaHBC Inventory System is a mobile-optimised PWA that guides merchandisers through a structured three-step count workflow — from session setup through to a formatted Excel export.</p>
+
+    <div class="feature-grid">
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-blue">👤</div>
+        <div class="feature-name">Guided Session Setup</div>
+        <div class="feature-desc">Merchandiser name, store location (from a managed list), and count period are captured before counting begins. Date & time auto-populate in real time.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-green">🔍</div>
+        <div class="feature-name">Live Product Search</div>
+        <div class="feature-desc">Products are searchable by name, SKU, or category across a loaded product catalogue. Results are grouped by category in a scrollable dropdown.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-green">🔢</div>
+        <div class="feature-name">Quantity Stepper</div>
+        <div class="feature-desc">Tap +/− buttons or type directly to set counts. Validates for whole numbers ≥ 1. Prevents duplicate SKU entries within a single session.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-blue">📊</div>
+        <div class="feature-name">System Count Comparison</div>
+        <div class="feature-desc">Where a system count JSON file is loaded, the ERP/system on-hand quantity is displayed alongside the physical count for instant discrepancy visibility.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-red">⚠️</div>
+        <div class="feature-name">Damage Reporting</div>
+        <div class="feature-desc">A dedicated Damages tab lets merchandisers log damaged SKUs with quantity and a required description note. Damage records are kept separate from regular inventory.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-navy">📋</div>
+        <div class="feature-name">Session Summary View</div>
+        <div class="feature-desc">Before exporting, merchandisers see a full summary: total SKUs counted, total units, merchandiser name, location, period, and damage totals.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-green">📁</div>
+        <div class="feature-name">Formatted Excel Export</div>
+        <div class="feature-desc">Generates a multi-sheet .xlsx file with an Inventory Count sheet and a Damages Report sheet — both with bold headers, totals rows, and column widths set automatically.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-blue">📤</div>
+        <div class="feature-name">Native File Sharing</div>
+        <div class="feature-desc">On supported devices, the Web Share API allows the exported XLSX to be sent directly via Messenger, email, or any installed share target — no cables or desktop required.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-purple">⏱️</div>
+        <div class="feature-name">Unsaved Change Guards</div>
+        <div class="feature-desc">When a product is selected but not yet added, navigating away triggers a confirmation prompt — preventing accidental loss of in-progress entries.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-warn">🔄</div>
+        <div class="feature-name">Auto-Clear on Cycle</div>
+        <div class="feature-desc">Inventory and damage data are automatically purged 20 days after the last successful export, keeping the device ready for the next count cycle with no manual cleanup required.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-navy">📍</div>
+        <div class="feature-name">Location-Aware Counts</div>
+        <div class="feature-desc">Store locations are loaded from a managed JSON file. Changing the store during a session refreshes system-count comparisons to reflect the correct store's data.</div>
+      </div>
+
+      <div class="feature-cell">
+        <div class="feature-icon fi-green">📱</div>
+        <div class="feature-name">PWA Installable</div>
+        <div class="feature-desc">Includes a web manifest and service worker registration, enabling Add to Home Screen on Android and iOS. Behaves like a native app once installed — full-screen, no browser chrome.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECURITY -->
+  <div class="section-block">
+    <div class="section-label">02 &nbsp; Security</div>
+    <h2 class="section-heading">Security measures</h2>
+    <p class="section-intro">As a client-side PWA, the application's security model is scoped to the device. The following measures are in place.</p>
+
+    <table class="security-table">
+      <thead>
+        <tr>
+          <th>Measure</th>
+          <th>Status</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data Storage</td>
+          <td><span class="pill pill-blue">localStorage</span></td>
+          <td>All session data (inventory, damages, settings) is stored exclusively in the device's localStorage. Nothing is transmitted to a server. Data stays on-device at all times.</td>
+        </tr>
+        <tr>
+          <td>No Authentication</td>
+          <td><span class="pill pill-warn">By Design</span></td>
+          <td>The app has no login. Access is controlled by who has the PWA installed. This is appropriate for single-user field devices. If multi-user access is required, authentication should be added.</td>
+        </tr>
+        <tr>
+          <td>Input Validation</td>
+          <td><span class="pill pill-green">✓ Active</span></td>
+          <td>All user inputs are validated client-side. Quantities must be positive whole integers. Damage notes are required fields. Empty or invalid inputs are rejected with toast notifications before any data is written.</td>
+        </tr>
+        <tr>
+          <td>XSS Surface</td>
+          <td><span class="pill pill-green">✓ Low Risk</span></td>
+          <td>Product and location data is loaded from controlled JSON files (not user-supplied URLs). Dynamic HTML uses textContent for user-supplied strings, limiting injection vectors. Search/display relies on template literals for catalogue data only.</td>
+        </tr>
+        <tr>
+          <td>External Dependencies</td>
+          <td><span class="pill pill-blue">2 Libraries</span></td>
+          <td>SheetJS (xlsx 0.18.5) and ExcelJS (4.3.0) are loaded from Cloudflare CDN via HTTPS. These are well-maintained, widely-used libraries. Pinning to specific versions reduces supply-chain risk.</td>
+        </tr>
+        <tr>
+          <td>Data Lifecycle</td>
+          <td><span class="pill pill-green">✓ Auto-Cleared</span></td>
+          <td>Count data is automatically deleted 20 days after the last export. The timer resets on each successful XLSX export. This limits the window of exposure for stale data persisting on a lost or shared device.</td>
+        </tr>
+        <tr>
+          <td>No Cloud Sync</td>
+          <td><span class="pill pill-blue">By Design</span></td>
+          <td>There is no cloud database, API endpoint, or analytics tracker in the current build. All data egress is user-initiated (manual file download or share). No telemetry is collected.</td>
+        </tr>
+        <tr>
+          <td>Service Worker Scope</td>
+          <td><span class="pill pill-warn">Registered</span></td>
+          <td>A service worker is registered for offline/PWA functionality (sw.js). The scope and caching strategy are defined in the separate sw.js file, not visible in the HTML alone. This should be audited separately.</td>
+        </tr>
+        <tr>
+          <td>File Export Safety</td>
+          <td><span class="pill pill-green">✓ Local Blob</span></td>
+          <td>XLSX files are generated in-memory as a Blob and downloaded via a temporary object URL, which is revoked after 5 seconds. No file is uploaded to any external server.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 20px;">
+      <div class="callout callout-warn">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-content">
+          <h4>Recommendation: HTTPS Deployment</h4>
+          <p>Service workers and the Web Share API require a secure HTTPS origin. The app must be served over HTTPS in production for PWA features and sharing to function. Running over HTTP will silently disable these capabilities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTPUT CAPABILITIES -->
+  <div class="section-block">
+    <div class="section-label">03 &nbsp; Output Capabilities</div>
+    <h2 class="section-heading">What gets produced</h2>
+    <p class="section-intro">The app produces a structured Excel workbook delivered directly to the device — no email, no server, no intermediary step required.</p>
+
+    <div class="output-flow">
+
+      <div class="output-step">
+        <div class="output-step-left">
+          <div class="output-num">1</div>
+          <div class="output-line"></div>
+        </div>
+        <div class="output-content">
+          <div class="output-tag">Sheet 1</div>
+          <h4>Inventory Count Report</h4>
+          <p>Lists every counted SKU with row number, location, category, barcode/SKU, product name, and quantity counted. Rows are sorted by category alphabetically. A bold totals row at the foot summarises total line items and total units counted. Report header rows include merchandiser name, store, count period, and export timestamp.</p>
+        </div>
+      </div>
+
+      <div class="output-step">
+        <div class="output-step-left">
+          <div class="output-num">2</div>
+          <div class="output-line"></div>
+        </div>
+        <div class="output-content">
+          <div class="output-tag">Sheet 2</div>
+          <h4>Damages Report</h4>
+          <p>A separate worksheet listing all damage entries: location, category, SKU, product name, quantity damaged, and the merchandiser's damage description. If no damages were recorded, the sheet notes this explicitly. Totals rows summarise the number of damage lines and total units damaged.</p>
+        </div>
+      </div>
+
+      <div class="output-step">
+        <div class="output-step-left">
+          <div class="output-num">3</div>
+          <div class="output-line"></div>
+        </div>
+        <div class="output-content">
+          <div class="output-tag">File Naming</div>
+          <h4>Auto-Generated Filename</h4>
+          <p>Each export is automatically named using the format <strong>IC_[Location]_[DD][Mon][YYYY]_[HHMM].xlsx</strong> — for example, <strong>IC_CapeTown_26Mar2026_1430.xlsx</strong>. Special characters in location names are stripped to ensure cross-platform file system compatibility.</p>
+        </div>
+      </div>
+
+      <div class="output-step">
+        <div class="output-step-left">
+          <div class="output-num">4</div>
+          <div class="output-line"></div>
+        </div>
+        <div class="output-content">
+          <div class="output-tag">Delivery</div>
+          <h4>Download + Native Share</h4>
+          <p>The file is downloaded directly to the device's default downloads folder. On mobile browsers that support the Web Share API (iOS Safari, Android Chrome), an additional Share button appears, allowing the file to be sent immediately via Messenger, email, Teams, or any installed share target.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OFFLINE CAPABILITIES -->
+  <div class="section-block">
+    <div class="section-label">04 &nbsp; Offline Capabilities</div>
+    <h2 class="section-heading">Works without connectivity</h2>
+    <p class="section-intro">The app is built offline-first. Merchandisers working in stores with poor or no signal can complete a full count session and export a report without any network access.</p>
+
+    <div class="offline-grid">
+
+      <div class="offline-card green">
+        <div class="offline-badge ob-green">✓ Offline</div>
+        <h4>Full Count & Damage Entry</h4>
+        <p>Adding products, logging quantities, recording damage notes — the entire data-entry workflow functions without a network connection. All data writes to localStorage instantly.</p>
+      </div>
+
+      <div class="offline-card blue">
+        <div class="offline-badge ob-blue">✓ Offline</div>
+        <h4>Persistent Data Between Sessions</h4>
+        <p>Closing the browser or losing power does not lose data. localStorage persists across sessions on the same device, so a count can be resumed the next day without losing earlier entries.</p>
+      </div>
+
+      <div class="offline-card green">
+        <div class="offline-badge ob-green">✓ Offline</div>
+        <h4>XLSX Export Generation</h4>
+        <p>The Excel file is built entirely in-browser using client-side libraries. No network call is made during export. The file can be generated and downloaded while fully offline.</p>
+      </div>
+
+      <div class="offline-card purple">
+        <div class="offline-badge ob-purple">PWA Feature</div>
+        <h4>Installable to Home Screen</h4>
+        <p>Once installed as a PWA, the app shell can be cached by the service worker, allowing it to launch without a network connection, even on first open after installation.</p>
+      </div>
+
+      <div class="offline-card warn">
+        <div class="offline-badge ob-warn">⚠ Requires Network</div>
+        <h4>Product & Location Data Load</h4>
+        <p>On first load, the app fetches products.json, locations.json, and system-count.json. If these are not cached by the service worker, an offline launch may result in an empty product list.</p>
+      </div>
+
+      <div class="offline-card warn">
+        <div class="offline-badge ob-warn">⚠ Requires Network</div>
+        <h4>Native Share to External Apps</h4>
+        <p>Sharing the exported file via Messenger or email requires the receiving app to have network access. The file itself is available offline; delivering it to a recipient requires connectivity at time of share.</p>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 20px;">
+      <div class="callout callout-green">
+        <div class="callout-icon">💡</div>
+        <div class="callout-content">
+          <h4>Best Practice for Field Use</h4>
+          <p>Instruct merchandisers to open the app once while connected to Wi-Fi before heading to a store. This ensures the service worker caches all JSON data and the app shell, making the session fully offline-capable.</p>
+        </div>
+      </div>
+      <div class="callout callout-blue">
+        <div class="callout-icon">📡</div>
+        <div class="callout-content">
+          <h4>Service Worker Note</h4>
+          <p>The PWA registers an external sw.js service worker. The caching strategy (Network-First, Cache-First, or Stale-While-Revalidate) is defined in that file and should be configured to pre-cache products.json, locations.json, and system-count.json for guaranteed offline access.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div class="footer-brand">
+    <div class="footer-logo">🌿</div>
+    <div class="footer-name">AcaciaHBC Inventory System</div>
+  </div>
+  <div class="footer-meta">Stakeholder Brief · March 2026 · Confidential</div>
+</div>
+
+</body>
+</html>
