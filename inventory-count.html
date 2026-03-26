@@ -1376,7 +1376,15 @@ function submitCount() {
   setTimeout(() => URL.revokeObjectURL(dlUrl), 5000);
   document.getElementById('doneFilename').textContent = filename;
   const shareBtn = document.getElementById('shareBtn');
-  shareBtn.style.display = (navigator.share && navigator.canShare) ? 'flex' : 'none';
+  
+  // Check if file sharing is supported with the actual file object
+  const file = new File([blob], filename, { type: blob.type });
+  if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+    shareBtn.style.display = 'flex';
+  } else {
+    shareBtn.style.display = 'none';
+  }
+  
   setTimeout(() => { document.getElementById('doneModal').classList.add('open'); }, 600);
 }
 
