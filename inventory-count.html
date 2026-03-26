@@ -1327,7 +1327,10 @@ function submitCount() {
     [],
     ['#', 'Location', 'Category', 'Barcode/SKU', 'Product Name', 'Qty/Count']
   ];
-  inventory.forEach((item, idx) => { 
+  
+  // Sort inventory by category name
+  const sortedInventory = [...inventory].sort((a, b) => a.category.localeCompare(b.category));
+  sortedInventory.forEach((item, idx) => { 
     rows.push([idx + 1, settings.location || '', item.category, item.sku, item.name, item.count]); 
   });
   rows.push([], ['Total Items:', inventory.length, '', '', 'Total Units:', inventory.reduce((s,i)=>s+i.count,0)]);
@@ -1349,7 +1352,9 @@ function submitCount() {
     ['#', 'Location', 'Category', 'Barcode/SKU', 'Product Name', 'Qty Damaged', 'Damage Description']
   ];
   if (damages.length > 0) {
-    damages.forEach((item, idx) => { 
+    // Sort damages by category name
+    const sortedDamages = [...damages].sort((a, b) => a.category.localeCompare(b.category));
+    sortedDamages.forEach((item, idx) => { 
       damageRows.push([idx + 1, settings.location || '', item.category, item.sku, item.name, item.count, item.notes || '']); 
     });
     damageRows.push([], ['Total Items:', damages.length, '', '', 'Total Units Damaged:', damages.reduce((s,d)=>s+d.count,0)]);
