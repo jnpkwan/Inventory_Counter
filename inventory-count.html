@@ -206,6 +206,14 @@
 
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+  /* CATEGORY FILTER CHIPS */
+  .cat-filter-wrap { display: flex; gap: 7px; overflow-x: auto; padding: 2px 0 8px; margin-bottom: 4px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .cat-filter-wrap::-webkit-scrollbar { display: none; }
+  .cat-chip { flex-shrink: 0; padding: 5px 12px; border-radius: 20px; font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 700; border: 1.5px solid var(--border2); background: var(--white); color: var(--text2); cursor: pointer; transition: all 0.15s; white-space: nowrap; letter-spacing: 0.1px; }
+  .cat-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(46,204,143,0.3); }
+  .cat-chip .chip-count { display: inline-block; background: rgba(0,0,0,0.1); border-radius: 10px; padding: 0 5px; margin-left: 4px; font-size: 10px; }
+  .cat-chip.active .chip-count { background: rgba(255,255,255,0.25); }
 </style>
 </head>
 <body>
@@ -284,6 +292,7 @@
         <div class="add-icon">+</div>
         Add Item
       </div>
+      <div class="cat-filter-wrap" id="catFilterBar"></div>
       <div class="search-wrap">
         <span class="search-icon">🔍</span>
         <input type="text" id="searchInput" placeholder="Search products by name or SKU…" autocomplete="off" />
@@ -588,6 +597,7 @@ function init() {
     loadFromStorage();
     checkAndClearOldData();
     loadSystemCountDataAndRender();
+    buildCatFilterBar();
     updateDateTime();
     setInterval(updateDateTime, 30000);
     populateSettingsForm();
@@ -698,8 +708,9 @@ function onSearch() {
   const dropdown = document.getElementById('productDropdown');
   const categories = {};
   PRODUCTS.forEach(p => {
-    const match = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
-    if (match) { if (!categories[p.category]) categories[p.category] = []; categories[p.category].push(p); }
+    const catMatch = activeCatFilter === 'All' || p.category === activeCatFilter;
+    const textMatch = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
+    if (catMatch && textMatch) { if (!categories[p.category]) categories[p.category] = []; categories[p.category].push(p); }
   });
   const keys = Object.keys(categories);
   if (keys.length === 0) { dropdown.innerHTML = '<div style="padding:16px;text-align:center;color:var(--text3);font-size:14px;">No products found</div>'; dropdown.classList.add('open'); return; }
@@ -771,7 +782,6 @@ function addItem() {
 function renderInventory() {
   const list = document.getElementById('inventoryList');
   document.getElementById('invBadge').textContent = inventory.length;
-
   if (inventory.length === 0) { list.innerHTML = `<div class="empty-state"><div class="empty-icon">📦</div><div class="empty-title">No items yet</div>Search for a product above and add it to your count.</div>`; return; }
   const groups = {};
   inventory.forEach(item => { if (!groups[item.category]) groups[item.category] = []; groups[item.category].push(item); });
@@ -779,18 +789,39 @@ function renderInventory() {
   Object.keys(groups).sort().forEach(cat => {
     html += `<div class="cat-group-label">${cat}</div>`;
     groups[cat].forEach(item => {
-      // Get system count for this product
       const storeData = systemCountData.stores && systemCountData.stores[settings.location];
       let systemCount = null;
-      if (storeData) {
-        const productData = storeData.products.find(prod => prod.sku === item.sku);
-        if (productData) systemCount = productData.systemCount;
-      }
-      const systemCountDisplay = systemCount !== null ? `<div class="inv-item-system"><div style="font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">System</div><div style="font-size:16px;font-weight:700;color:var(--blue);font-family:'Nunito',sans-serif;">${systemCount}</div></div>` : '';
-      html += `<div class="inv-item" style="border-left: 3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:12px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${systemCountDisplay}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
+      if (storeData) { const pd = storeData.products.find(prod => prod.sku === item.sku); if (pd) systemCount = pd.systemCount; }
+      const scd = systemCount !== null ? `<div class="inv-item-system"><div style="font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">System</div><div style="font-size:16px;font-weight:700;color:var(--blue);font-family:'Nunito',sans-serif;">${systemCount}</div></div>` : '';
+      html += `<div class="inv-item" style="border-left:3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:12px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${scd}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
     });
   });
   list.innerHTML = html;
+}
+
+function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveToStorage(); renderInventory(); showToast('Item removed'); }
+
+let activeCatFilter = 'All';
+
+function buildCatFilterBar() {
+  const bar = document.getElementById('catFilterBar');
+  const cats = [...new Set(PRODUCTS.map(p => p.category))].sort();
+  let html = `<div class="cat-chip active" id="chip-All" onclick="setCatFilter('All')">All</div>`;
+  cats.forEach(cat => {
+    const safe = cat.replace(/'/g, "\\'");
+    html += `<div class="cat-chip" id="chip-${cat}" onclick="setCatFilter('${safe}')">${cat}</div>`;
+  });
+  bar.innerHTML = html;
+}
+
+function setCatFilter(cat) {
+  activeCatFilter = cat;
+  // Update chip active states
+  document.querySelectorAll('#catFilterBar .cat-chip').forEach(el => el.classList.remove('active'));
+  const activeChip = document.getElementById('chip-' + cat);
+  if (activeChip) activeChip.classList.add('active');
+  // Trigger search refresh so dropdown reflects the filter
+  onSearch();
 }
 
 function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveToStorage(); renderInventory(); showToast('Item removed'); }
@@ -1244,7 +1275,7 @@ async function shareFile() {
   } else { showToast('Sharing not supported on this browser', 'error'); document.getElementById('shareBtn').style.display = 'none'; }
 }
 
-function clearAll() { closeModal('clearModal'); inventory = []; saveToStorage(); renderInventory(); showToast('All data cleared'); showPage('count'); }
+function clearAll() { closeModal('clearModal'); inventory = []; activeCatFilter = 'All'; saveToStorage(); renderInventory(); showToast('All data cleared'); showPage('count'); }
 
 let toastTimer;
 function showToast(msg, type = '') {
