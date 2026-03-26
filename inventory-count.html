@@ -137,17 +137,17 @@
   .inv-title { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; color: var(--text); }
   .inv-badge { background: var(--accent-light); color: var(--accent-dark); font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; font-family: 'Nunito', sans-serif; }
   .cat-group-label { font-size: 11px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.8px; padding: 10px 0 5px; font-family: 'Nunito', sans-serif; }
-  .inv-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 13px; margin-bottom: 7px; display: flex; align-items: center; gap: 11px; box-shadow: var(--shadow-sm); animation: slideIn 0.18s ease; }
+  .inv-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 13px; margin-bottom: 7px; display: flex; align-items: center; gap: 8px; box-shadow: var(--shadow-sm); animation: slideIn 0.18s ease; }
   @keyframes slideIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
-  .inv-item-info { flex: 1; min-width: 0; }
-  .inv-item-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .inv-item-info { flex: 1; min-width: 0; overflow: hidden; }
+  .inv-item-name { font-size: 13px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .inv-item-sku { font-size: 11px; color: var(--text3); margin-top: 2px; }
   .inv-item-notes { font-size: 12px; color: var(--danger); margin-top: 4px; font-weight: 500; font-style: italic; }
-  .inv-item-right { text-align: right; }
+  .inv-item-right { text-align: right; flex-shrink: 0; }
   .inv-item-count { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 800; color: var(--accent-dark); line-height: 1; }
   .inv-item-unit { font-size: 10px; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
   .inv-item-system { text-align: center; padding-left: 8px; border-left: 1px solid var(--border); }
-  .inv-del-btn { background: var(--danger-light); border: none; color: var(--danger); cursor: pointer; padding: 7px; border-radius: 7px; font-size: 12px; font-weight: 700; line-height: 1; }
+  .inv-del-btn { background: var(--danger-light); border: none; color: var(--danger); cursor: pointer; padding: 6px 7px; border-radius: 7px; font-size: 11px; font-weight: 700; line-height: 1; flex-shrink: 0; }
 
   /* EMPTY */
   .empty-state { background: var(--white); border: 2px dashed var(--border2); border-radius: var(--radius); padding: 34px 20px; text-align: center; color: var(--text3); font-size: 14px; line-height: 1.6; }
@@ -214,6 +214,17 @@
   .cat-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(46,204,143,0.3); }
   .cat-chip .chip-count { display: inline-block; background: rgba(0,0,0,0.1); border-radius: 10px; padding: 0 5px; margin-left: 4px; font-size: 10px; }
   .cat-chip.active .chip-count { background: rgba(255,255,255,0.25); }
+
+  /* INLINE ITEM STEPPER */
+  @keyframes nameScroll { 0%, 15% { transform: translateX(0); } 85%, 100% { transform: translateX(var(--scroll-dist, 0px)); } }
+  .inv-item-name { font-size: 13px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+  .inv-item-name.scrolling { text-overflow: clip; animation: nameScroll 3s ease-in-out forwards; }
+  .inv-inline-stepper { display: flex; align-items: stretch; border-radius: 7px; overflow: hidden; border: 1.5px solid var(--border2); }
+  .inv-step-btn { width: 22px; background: var(--bg); border: none; color: var(--text); font-size: 16px; font-weight: 400; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.1s; line-height: 1; }
+  .inv-step-btn:active { background: var(--accent-light); color: var(--accent-dark); }
+  .inv-count-input { width: 30px; border: none !important; border-left: 1.5px solid var(--border) !important; border-right: 1.5px solid var(--border) !important; border-radius: 0 !important; text-align: center; font-size: 14px; font-weight: 800; font-family: 'Nunito', sans-serif; color: var(--accent-dark); background: var(--white); padding: 5px 1px !important; box-shadow: none !important; outline: none; -moz-appearance: textfield; }
+  .inv-count-input::-webkit-inner-spin-button, .inv-count-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  .inv-count-input:focus { border-color: var(--border) !important; box-shadow: none !important; background: var(--white) !important; }
 </style>
 </head>
 <body>
@@ -601,6 +612,18 @@ function init() {
     updateDateTime();
     setInterval(updateDateTime, 30000);
     populateSettingsForm();
+    document.getElementById('inventoryList').addEventListener('click', (e) => {
+      const nameEl = e.target.closest('.inv-item-name');
+      if (!nameEl) return;
+      if (nameEl.classList.contains('scrolling')) return;
+      const containerWidth = nameEl.offsetWidth;
+      const textWidth = nameEl.scrollWidth;
+      if (textWidth <= containerWidth) return;
+      const dist = -(textWidth - containerWidth + 4);
+      nameEl.style.setProperty('--scroll-dist', dist + 'px');
+      nameEl.classList.add('scrolling');
+      nameEl.addEventListener('animationend', () => { nameEl.classList.remove('scrolling'); nameEl.style.removeProperty('--scroll-dist'); }, { once: true });
+    });
     document.getElementById('searchInput').addEventListener('input', onSearch);
     document.getElementById('searchInput').addEventListener('focus', onSearch);
     document.getElementById('searchInputDamages').addEventListener('input', onSearchDamages);
@@ -793,13 +816,28 @@ function renderInventory() {
       let systemCount = null;
       if (storeData) { const pd = storeData.products.find(prod => prod.sku === item.sku); if (pd) systemCount = pd.systemCount; }
       const scd = systemCount !== null ? `<div class="inv-item-system"><div style="font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">System</div><div style="font-size:16px;font-weight:700;color:var(--blue);font-family:'Nunito',sans-serif;">${systemCount}</div></div>` : '';
-      html += `<div class="inv-item" style="border-left:3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:12px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${scd}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
+      html += `<div class="inv-item" style="border-left:3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name" title="${item.name}">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">${scd}<div><div class="inv-inline-stepper"><button class="inv-step-btn" onclick="adjustItemCount(${item.id},-1)">−</button><input class="inv-count-input" type="number" value="${item.count}" min="0" onchange="setItemCount(${item.id},this.value)" oninput="setItemCount(${item.id},this.value)" /><button class="inv-step-btn" onclick="adjustItemCount(${item.id},1)">+</button></div><div class="inv-item-unit" style="text-align:center;margin-top:2px;">counted</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div></div>`;
     });
   });
   list.innerHTML = html;
 }
 
 function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveToStorage(); renderInventory(); showToast('Item removed'); }
+
+function adjustItemCount(id, delta) {
+  const item = inventory.find(i => i.id === id);
+  if (!item) return;
+  item.count = Math.max(0, item.count + delta);
+  saveToStorage();
+  renderInventory();
+}
+
+function setItemCount(id, value) {
+  const item = inventory.find(i => i.id === id);
+  if (!item) return;
+  const parsed = parseInt(value, 10);
+  if (!isNaN(parsed) && parsed >= 0) { item.count = parsed; saveToStorage(); }
+}
 
 let activeCatFilter = 'All';
 
@@ -823,8 +861,6 @@ function setCatFilter(cat) {
   // Trigger search refresh so dropdown reflects the filter
   onSearch();
 }
-
-function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveToStorage(); renderInventory(); showToast('Item removed'); }
 
 // DAMAGES FUNCTIONS
 function onSearchDamages() {
