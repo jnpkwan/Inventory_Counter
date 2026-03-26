@@ -559,9 +559,9 @@
     </div>
     <div class="card">
       <div class="card-title">Damage Summary</div>
-      <div class="stat-row"><div class="stat-label">Total SKUs with Damages</div><div class="stat-value" id="sumDamageSKUs" style="color:var(--danger);">0</div></div>
-      <div class="stat-row"><div class="stat-label">Total Units Damaged</div><div class="stat-value" id="sumDamageUnits" style="color:var(--danger);">0</div></div>
-      <div class="stat-row"><div class="stat-label">Damage Categories</div><div class="stat-value" id="sumDamageCategories">0</div></div>
+      <div class="stat-row"><div class="stat-label">Total SKUs with Damages</div><div class="stat-value green" id="sumDamageSKUs" style="color:var(--danger);">0</div></div>
+      <div class="stat-row"><div class="stat-label">Total Units Damaged</div><div class="stat-value green" id="sumDamageUnits" style="color:var(--danger);">0</div></div>
+      <div class="stat-row"><div class="stat-label">Damage Categories</div><div class="stat-value green" id="sumDamageCategories">0</div></div>
       <div id="sumDamageCategoryList" style="padding-top:4px;display:flex;flex-wrap:wrap;gap:6px;"></div>
     </div>
     <button class="btn btn-primary" onclick="openSubmitModal()">
@@ -949,7 +949,8 @@ function adjustCount(delta) { const input = document.getElementById('countInput'
 function addItem() {
   if (!selectedProductId) { showToast('Please select a product first', 'error'); return; }
   const countVal = parseFloat(document.getElementById('countInput').value);
-  if (isNaN(countVal) || countVal < 0) { showToast('Please enter a valid count', 'error'); return; }
+  if (isNaN(countVal) || countVal <= 0) { showToast('Quantity must be at least 1', 'error'); return; }
+  if (!Number.isInteger(countVal)) { showToast('Quantity must be a whole number', 'error'); return; }
   const p = PRODUCTS.find(x => x.id === selectedProductId);
   const existing = inventory.find(x => x.productId === selectedProductId);
   if (existing) {
@@ -1043,7 +1044,8 @@ function adjustCountDamages(delta) {
 function addDamageItem() {
   if (!selectedProductIdDamages) { showToast('Please select a product first', 'error'); return; }
   const countVal = parseFloat(document.getElementById('countInputDamages').value);
-  if (isNaN(countVal) || countVal < 0) { showToast('Please enter a valid count', 'error'); return; }
+  if (isNaN(countVal) || countVal <= 0) { showToast('Quantity damaged must be at least 1', 'error'); return; }
+  if (!Number.isInteger(countVal)) { showToast('Quantity damaged must be a whole number', 'error'); return; }
   const notes = document.getElementById('damageNotes').value.trim();
   if (!notes) { showToast('Please describe the damage', 'error'); return; }
   const p = PRODUCTS.find(x => x.id === selectedProductIdDamages);
