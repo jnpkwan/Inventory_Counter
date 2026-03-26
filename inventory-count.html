@@ -840,6 +840,7 @@ let systemCountData = {};
 
 function init() {
   loadFromStorage();
+  checkAndClearOldData();
   loadSystemCountDataAndRender();
   updateDateTime();
   setInterval(updateDateTime, 30000);
@@ -865,6 +866,32 @@ function updateDateTime() {
 
 function saveToStorage() { try { localStorage.setItem('sc_inventory', JSON.stringify(inventory)); localStorage.setItem('sc_damages', JSON.stringify(damages)); localStorage.setItem('sc_settings', JSON.stringify(settings)); } catch(e) {} }
 function loadFromStorage() { try { const inv = localStorage.getItem('sc_inventory'); const dmg = localStorage.getItem('sc_damages'); const set = localStorage.getItem('sc_settings'); if (inv) inventory = JSON.parse(inv); if (dmg) damages = JSON.parse(dmg); if (set) settings = { ...settings, ...JSON.parse(set) }; } catch(e) {} }
+
+function checkAndClearOldData() {
+  try {
+    const lastClearDate = localStorage.getItem('sc_lastClearDate');
+    const now = new Date();
+    
+    if (lastClearDate) {
+      const lastClear = new Date(lastClearDate);
+      const daysSinceLastClear = Math.floor((now - lastClear) / (1000 * 60 * 60 * 24));
+      
+      if (daysSinceLastClear >= 20) {
+        // Clear all inventory and damage data after 20 days
+        inventory = [];
+        damages = [];
+        saveToStorage();
+        localStorage.setItem('sc_lastClearDate', now.toISOString());
+        showToast('Data cleared — ready for new count cycle', 'success');
+      }
+    } else {
+      // First time - set the clear date
+      localStorage.setItem('sc_lastClearDate', now.toISOString());
+    }
+  } catch(e) {
+    console.log('Error checking clear date:', e);
+  }
+}
 
 function loadSystemCountData() {
   return fetch('system-count.json')
@@ -1387,6 +1414,10 @@ function submitCount() {
   const a = document.createElement('a'); a.href = dlUrl; a.download = filename; a.style.display = 'none';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(dlUrl), 5000);
+  
+  // Reset the 20-day auto-clear timer after successful export
+  localStorage.setItem('sc_lastClearDate', new Date().toISOString());
+  
   document.getElementById('doneFilename').textContent = filename;
   const shareBtn = document.getElementById('shareBtn');
   
