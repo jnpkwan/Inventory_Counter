@@ -1208,8 +1208,16 @@ function saveSettings() {
   const location = document.getElementById('setLocation').value;
   if (!name) { showToast('Please enter your name', 'error'); return; }
   if (!location) { showToast('Please select a store', 'error'); return; }
+  
+  const locationChanged = settings.location !== location;
   settings.name = name; settings.location = location; settings.period = getCurrentPeriod();
   saveToStorage(); populateSettingsForm();
+  
+  // Re-render inventory if location changed so system counts update
+  if (locationChanged && inventory.length > 0) {
+    renderInventory();
+  }
+  
   showToast('Details saved ✓', 'success'); showPage('count');
 }
 
