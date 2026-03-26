@@ -753,7 +753,7 @@ function adjustCount(delta) { const input = document.getElementById('countInput'
 function addItem() {
   if (!selectedProductId) { showToast('Please select a product first', 'error'); return; }
   const countVal = parseFloat(document.getElementById('countInput').value);
-  if (isNaN(countVal) || countVal <= 0) { showToast('Quantity must be at least 1', 'error'); return; }
+  if (isNaN(countVal) || countVal < 0) { showToast('Quantity must be 0 or more', 'error'); return; }
   if (!Number.isInteger(countVal)) { showToast('Quantity must be a whole number', 'error'); return; }
   const p = PRODUCTS.find(x => x.id === selectedProductId);
   const existing = inventory.find(x => x.productId === selectedProductId);
