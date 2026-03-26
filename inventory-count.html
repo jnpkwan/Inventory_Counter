@@ -131,6 +131,12 @@
   .step-btn:active { background: var(--border2); }
   .count-input { flex: 1; border: none !important; border-left: 1.5px solid var(--border) !important; border-right: 1.5px solid var(--border) !important; border-radius: 0 !important; text-align: center; font-size: 20px; font-weight: 800; font-family: 'Nunito', sans-serif; color: var(--text); background: var(--white); padding: 10px 4px !important; box-shadow: none !important; }
   .count-input:focus { border-color: var(--border) !important; box-shadow: none !important; background: var(--white) !important; }
+  .count-input { cursor: text; }
+  .tap-hint { font-size: 11px; color: var(--text3); text-align: center; margin: -6px 0 10px; letter-spacing: 0.2px; }
+  .btn-add-row { display: flex; gap: 8px; }
+  .btn-add-row .btn-primary { flex: 1; }
+  .btn-keep-open { background: var(--white); color: var(--text2); border: 1.5px solid var(--border2); border-radius: var(--radius-sm); padding: 14px 16px; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: transform 0.1s; }
+  .btn-keep-open:active { transform: scale(0.97); }
 
   /* INVENTORY */
   .inv-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
@@ -308,10 +314,14 @@
           <button class="step-btn" onclick="adjustCount(1)">+</button>
         </div>
       </div>
-      <button class="btn btn-primary" onclick="addItem()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:17px;height:17px;stroke-width:2.5"><path d="M12 5v14M5 12h14"/></svg>
-        Add to Count
-      </button>
+      <div class="tap-hint">Tap the number to type a value directly</div>
+      <div class="btn-add-row">
+        <button class="btn btn-primary" onclick="addItemKeepOpen()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:17px;height:17px;stroke-width:2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Add · keep open
+        </button>
+        <button class="btn-keep-open" onclick="addItem()">Done</button>
+      </div>
     </div>
 
     <div class="inv-section">
@@ -655,9 +665,8 @@ function loadSystemCountDataAndRender() {
 }
 
 function hasUnsavedCountEntry() {
-  const countInput = document.getElementById('countInput');
   const selectedProduct = document.getElementById('selectedProduct');
-  return selectedProduct && selectedProduct.classList.contains('show') && countInput.value !== '0';
+  return selectedProduct && selectedProduct.classList.contains('show');
 }
 
 function hasUnsavedDamageEntry() {
@@ -750,21 +759,34 @@ function clearSelection() { selectedProductId = null; document.getElementById('s
 
 function adjustCount(delta) { const input = document.getElementById('countInput'); input.value = Math.max(0, (parseFloat(input.value) || 0) + delta); }
 
-function addItem() {
-  if (!selectedProductId) { showToast('Please select a product first', 'error'); return; }
+function _doAddItem() {
+  if (!selectedProductId) { showToast('Please select a product first', 'error'); return false; }
   const countVal = parseFloat(document.getElementById('countInput').value);
-  if (isNaN(countVal) || countVal < 0) { showToast('Quantity must be 0 or more', 'error'); return; }
-  if (!Number.isInteger(countVal)) { showToast('Quantity must be a whole number', 'error'); return; }
+  if (isNaN(countVal) || countVal < 0) { showToast('Quantity must be 0 or more', 'error'); return false; }
+  if (!Number.isInteger(countVal)) { showToast('Quantity must be a whole number', 'error'); return false; }
   const p = PRODUCTS.find(x => x.id === selectedProductId);
   const existing = inventory.find(x => x.productId === selectedProductId);
-  if (existing) {
-    showToast(`${p.name} is already in your count. Delete it first to add it again.`, 'error');
-    return;
-  } else {
-    inventory.push({ id: Date.now(), productId: selectedProductId, name: p.name, category: p.category, sku: p.sku, count: countVal, addedAt: new Date().toISOString() });
-    showToast(`${p.name} added ✓`, 'success');
-  }
-  saveToStorage(); renderInventory(); clearSelection();
+  if (existing) { showToast(`${p.name} is already in your count. Delete it first to add it again.`, 'error'); return false; }
+  inventory.push({ id: Date.now(), productId: selectedProductId, name: p.name, category: p.category, sku: p.sku, count: countVal, addedAt: new Date().toISOString() });
+  showToast(`${p.name} added ✓`, 'success');
+  saveToStorage(); renderInventory();
+  return true;
+}
+
+function addItemKeepOpen() {
+  if (!_doAddItem()) return;
+  // Reset qty to 1 and refocus search — keep panel open for next item
+  selectedProductId = null;
+  document.getElementById('selectedProduct').classList.remove('show');
+  document.getElementById('systemCountDisplay').style.display = 'none';
+  document.getElementById('countInput').value = 1;
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchInput').focus();
+}
+
+function addItem() {
+  if (!_doAddItem()) return;
+  clearSelection();
   document.getElementById('countInput').value = 0;
 }
 
