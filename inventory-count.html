@@ -140,10 +140,9 @@
   .inv-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 13px; margin-bottom: 7px; display: flex; align-items: center; gap: 11px; box-shadow: var(--shadow-sm); animation: slideIn 0.18s ease; }
   @keyframes slideIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
   .inv-item-info { flex: 1; min-width: 0; }
-  .inv-item-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; position: relative; }
-  .inv-item-name.marquee { text-overflow: clip; }
-  .inv-item-name.marquee span { display: inline-block; animation: marqueeScroll 4s linear forwards; padding-right: 32px; font-size: 14px; font-weight: 700; line-height: 1.2; vertical-align: top; white-space: nowrap; }
-  @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+  .inv-item-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: grab; position: relative; user-select: none; -webkit-user-select: none; }
+  .inv-item-name.swiping { cursor: grabbing; }
+  .inv-item-name:has(.swipe-inner) { text-overflow: clip; }
   .inv-item-sku { font-size: 11px; color: var(--text3); margin-top: 2px; }
   .inv-item-notes { font-size: 12px; color: var(--danger); margin-top: 4px; font-weight: 500; font-style: italic; }
   .inv-item-right { text-align: right; }
@@ -601,6 +600,7 @@ function init() {
     checkAndClearOldData();
     loadSystemCountDataAndRender();
     buildCatFilterBar();
+    initSwipeNames();
     updateDateTime();
     setInterval(updateDateTime, 30000);
     populateSettingsForm();
@@ -796,7 +796,7 @@ function renderInventory() {
       let systemCount = null;
       if (storeData) { const pd = storeData.products.find(prod => prod.sku === item.sku); if (pd) systemCount = pd.systemCount; }
       const scd = systemCount !== null ? `<div class="inv-item-system"><div style="font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">System</div><div style="font-size:16px;font-weight:700;color:var(--blue);font-family:'Nunito',sans-serif;">${systemCount}</div></div>` : '';
-      html += `<div class="inv-item" style="border-left:3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name" onclick="triggerMarquee(this)">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:10px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${scd}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
+      html += `<div class="inv-item" style="border-left:3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name swipeable">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div style="display:flex;gap:10px;align-items:flex-end;"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div>${scd}</div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
     });
   });
   list.innerHTML = html;
@@ -804,16 +804,60 @@ function renderInventory() {
 
 function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveToStorage(); renderInventory(); showToast('Item removed'); }
 
-function triggerMarquee(el) {
-  if (el.classList.contains('marquee')) return;
-  if (el.scrollWidth <= el.clientWidth) return;
-  const text = el.textContent;
-  el.classList.add('marquee');
-  el.innerHTML = `<span>${text}</span>`;
-  el.addEventListener('animationend', () => {
-    el.classList.remove('marquee');
-    el.innerHTML = text;
-  }, { once: true });
+function initSwipeNames() {
+  // Event delegation on document for all .swipeable name elements
+  let active = null; // { span, startX, startScrollLeft }
+
+  function getOrWrapSpan(el) {
+    // Wrap raw text in a span for translation if not already done
+    if (!el.querySelector('span.swipe-inner')) {
+      const span = document.createElement('span');
+      span.className = 'swipe-inner';
+      span.style.cssText = 'display:inline-block;white-space:nowrap;will-change:transform;';
+      span.textContent = el.textContent;
+      el.textContent = '';
+      el.appendChild(span);
+    }
+    return el.querySelector('span.swipe-inner');
+  }
+
+  function onStart(e) {
+    const el = e.target.closest('.swipeable');
+    if (!el) return;
+    const span = getOrWrapSpan(el);
+    if (span.scrollWidth <= el.clientWidth) return;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    active = { el, span, startX: clientX, startOffset: el._swipeOffset || 0 };
+    el.classList.add('swiping');
+    e.preventDefault();
+  }
+
+  function onMove(e) {
+    if (!active) return;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const dx = active.startX - clientX;
+    const maxScroll = active.span.scrollWidth - active.el.clientWidth;
+    active.el._swipeOffset = Math.max(0, Math.min(maxScroll, active.startOffset + dx));
+    active.span.style.transform = `translateX(${-active.el._swipeOffset}px)`;
+    e.preventDefault();
+  }
+
+  function onEnd() {
+    if (!active) return;
+    active.el.classList.remove('swiping');
+    if ((active.el._swipeOffset || 0) < 4) {
+      active.el._swipeOffset = 0;
+      active.span.style.transform = '';
+    }
+    active = null;
+  }
+
+  document.addEventListener('touchstart', onStart, { passive: false });
+  document.addEventListener('touchmove', onMove, { passive: false });
+  document.addEventListener('touchend', onEnd);
+  document.addEventListener('mousedown', onStart);
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onEnd);
 }
 
 let activeCatFilter = 'All';
@@ -933,7 +977,7 @@ function renderDamages() {
     html += `<div class="cat-group-label">${cat}</div>`;
     groups[cat].forEach(item => {
       const notesHtml = item.notes ? `<div class="inv-item-notes">${item.notes}</div>` : '';
-      html += `<div class="inv-item" style="border-left:3px solid var(--danger);"><div class="inv-item-info"><div class="inv-item-name" onclick="triggerMarquee(this)">${item.name}</div><div class="inv-item-sku">${item.sku}</div>${notesHtml}</div><div class="inv-item-right"><div><div class="inv-item-count" style="color:var(--danger);">${item.count}</div><div class="inv-item-unit">damaged</div></div></div><button class="inv-del-btn" onclick="deleteDamageItem(${item.id})">✕</button></div>`;
+      html += `<div class="inv-item" style="border-left:3px solid var(--danger);"><div class="inv-item-info"><div class="inv-item-name swipeable">${item.name}</div><div class="inv-item-sku">${item.sku}</div>${notesHtml}</div><div class="inv-item-right"><div><div class="inv-item-count" style="color:var(--danger);">${item.count}</div><div class="inv-item-unit">damaged</div></div></div><button class="inv-del-btn" onclick="deleteDamageItem(${item.id})">✕</button></div>`;
     });
   });
   list.innerHTML = html;
