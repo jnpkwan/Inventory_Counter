@@ -657,7 +657,7 @@ function loadSystemCountDataAndRender() {
 function hasUnsavedCountEntry() {
   const countInput = document.getElementById('countInput');
   const selectedProduct = document.getElementById('selectedProduct');
-  return selectedProduct && selectedProduct.classList.contains('show') && countInput.value !== '1';
+  return selectedProduct && selectedProduct.classList.contains('show') && countInput.value !== '0';
 }
 
 function hasUnsavedDamageEntry() {
@@ -746,7 +746,7 @@ function selectProduct(id) {
   document.getElementById('countInput').select();
 }
 
-function clearSelection() { selectedProductId = null; document.getElementById('selectedProduct').classList.remove('show'); document.getElementById('systemCountDisplay').style.display = 'none'; document.getElementById('searchInput').value = ''; document.getElementById('countInput').value = 1; }
+function clearSelection() { selectedProductId = null; document.getElementById('selectedProduct').classList.remove('show'); document.getElementById('systemCountDisplay').style.display = 'none'; document.getElementById('searchInput').value = ''; document.getElementById('countInput').value = 0; }
 
 function adjustCount(delta) { const input = document.getElementById('countInput'); input.value = Math.max(0, (parseFloat(input.value) || 0) + delta); }
 
@@ -765,7 +765,7 @@ function addItem() {
     showToast(`${p.name} added ✓`, 'success');
   }
   saveToStorage(); renderInventory(); clearSelection();
-  document.getElementById('countInput').value = 1;
+  document.getElementById('countInput').value = 0;
 }
 
 function renderInventory() {
