@@ -1077,17 +1077,68 @@ function renderDamages() {
     return; 
   }
   
+  list.innerHTML = '';
+  
   const groups = {};
   damages.forEach(item => { if (!groups[item.category]) groups[item.category] = []; groups[item.category].push(item); });
-  let html = '';
+  
   Object.keys(groups).sort().forEach(cat => {
-    html += `<div class="cat-group-label">${cat}</div>`;
+    const catLabel = document.createElement('div');
+    catLabel.className = 'cat-group-label';
+    catLabel.textContent = cat;
+    list.appendChild(catLabel);
+    
     groups[cat].forEach(item => {
-      const notesDisplay = item.notes ? `<div class="inv-item-notes">${item.notes}</div>` : '';
-      html += `<div class="inv-item" style="border-left: 3px solid var(--danger);"><div class="inv-item-info"><div class="inv-item-name">${item.name}</div><div class="inv-item-sku">${item.sku}</div>${notesDisplay}</div><div class="inv-item-right"><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">damaged</div></div><button class="inv-del-btn" onclick="deleteDamageItem(${item.id})">✕</button></div>`;
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'inv-item';
+      itemDiv.style.borderLeft = '3px solid var(--danger)';
+      
+      const infoDiv = document.createElement('div');
+      infoDiv.className = 'inv-item-info';
+      
+      const nameDiv = document.createElement('div');
+      nameDiv.className = 'inv-item-name';
+      nameDiv.textContent = item.name;
+      infoDiv.appendChild(nameDiv);
+      
+      const skuDiv = document.createElement('div');
+      skuDiv.className = 'inv-item-sku';
+      skuDiv.textContent = item.sku;
+      infoDiv.appendChild(skuDiv);
+      
+      if (item.notes) {
+        const notesDiv = document.createElement('div');
+        notesDiv.className = 'inv-item-notes';
+        notesDiv.textContent = item.notes;
+        infoDiv.appendChild(notesDiv);
+      }
+      
+      itemDiv.appendChild(infoDiv);
+      
+      const rightDiv = document.createElement('div');
+      rightDiv.className = 'inv-item-right';
+      
+      const countDiv = document.createElement('div');
+      countDiv.className = 'inv-item-count';
+      countDiv.textContent = item.count;
+      rightDiv.appendChild(countDiv);
+      
+      const unitDiv = document.createElement('div');
+      unitDiv.className = 'inv-item-unit';
+      unitDiv.textContent = 'damaged';
+      rightDiv.appendChild(unitDiv);
+      
+      itemDiv.appendChild(rightDiv);
+      
+      const delBtn = document.createElement('button');
+      delBtn.className = 'inv-del-btn';
+      delBtn.textContent = '✕';
+      delBtn.onclick = () => deleteDamageItem(item.id);
+      itemDiv.appendChild(delBtn);
+      
+      list.appendChild(itemDiv);
     });
   });
-  list.innerHTML = html;
 }
 
 function deleteDamageItem(id) { damages = damages.filter(i => i.id !== id); saveToStorage(); renderDamages(); showToast('Damage record removed'); }
@@ -1181,15 +1232,51 @@ function openSubmitModal() {
   if (inventory.length === 0) { showToast('No items to submit', 'error'); return; }
   if (!settings.name || !settings.location) { showToast('Please complete Store Info first', 'error'); showPage('settings'); return; }
   const totalUnits = inventory.reduce((s,i) => s+i.count, 0);
-  document.getElementById('submitModalBody').innerHTML = `
-    <div style="margin-bottom:12px;font-size:14px;color:var(--text2);">You're about to export <strong style="color:var(--text)">${inventory.length} line item(s)</strong> totalling <strong style="color:var(--text)">${totalUnits} units</strong>.</div>
-    <div class="confirm-grid">
-      <div class="confirm-cell"><div class="lbl">Merchandiser</div><div class="val">${settings.name}</div></div>
-      <div class="confirm-cell"><div class="lbl">Count Period</div><div class="val">${settings.period}</div></div>
-      <div class="confirm-cell"><div class="lbl">Location</div><div class="val">${settings.location}</div></div>
-      <div class="confirm-cell"><div class="lbl">Date & Time</div><div class="val" style="font-size:12px;">${document.getElementById('siDateTime').textContent}</div></div>
-    </div>
-    <div style="font-size:13px;color:var(--text3);margin-bottom:4px;">⬇️ An Excel file with Inventory Count and Damages Report tabs will download to your device.</div>`;
+  
+  const modalBody = document.getElementById('submitModalBody');
+  modalBody.innerHTML = '';
+  
+  const div1 = document.createElement('div');
+  div1.style.marginBottom = '12px';
+  div1.style.fontSize = '14px';
+  div1.style.color = 'var(--text2)';
+  div1.textContent = `You're about to export ${inventory.length} line item(s) totalling ${totalUnits} units.`;
+  modalBody.appendChild(div1);
+  
+  const grid = document.createElement('div');
+  grid.className = 'confirm-grid';
+  
+  const cells = [
+    { label: 'Merchandiser', value: settings.name },
+    { label: 'Count Period', value: settings.period },
+    { label: 'Location', value: settings.location },
+    { label: 'Date & Time', value: document.getElementById('siDateTime').textContent }
+  ];
+  
+  cells.forEach(cell => {
+    const cellDiv = document.createElement('div');
+    cellDiv.className = 'confirm-cell';
+    const lbl = document.createElement('div');
+    lbl.className = 'lbl';
+    lbl.textContent = cell.label;
+    const val = document.createElement('div');
+    val.className = 'val';
+    if (cell.label === 'Date & Time') val.style.fontSize = '12px';
+    val.textContent = cell.value;
+    cellDiv.appendChild(lbl);
+    cellDiv.appendChild(val);
+    grid.appendChild(cellDiv);
+  });
+  
+  modalBody.appendChild(grid);
+  
+  const div2 = document.createElement('div');
+  div2.style.fontSize = '13px';
+  div2.style.color = 'var(--text3)';
+  div2.style.marginBottom = '4px';
+  div2.textContent = '⬇️ An Excel file with Inventory Count and Damages Report tabs will download to your device.';
+  modalBody.appendChild(div2);
+  
   document.getElementById('submitModal').classList.add('open');
 }
 function openClearModal() { document.getElementById('clearModal').classList.add('open'); }
