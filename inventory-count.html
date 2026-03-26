@@ -924,69 +924,19 @@ function renderDamages() {
     list.innerHTML = `<div class="empty-state"><div class="empty-icon">✓</div><div class="empty-title">No damages recorded</div>Search for a product and record any damage above.</div>`; 
     return; 
   }
-  
-  list.innerHTML = '';
-  
+
   const groups = {};
   damages.forEach(item => { if (!groups[item.category]) groups[item.category] = []; groups[item.category].push(item); });
-  
+
+  let html = '';
   Object.keys(groups).sort().forEach(cat => {
-    const catLabel = document.createElement('div');
-    catLabel.className = 'cat-group-label';
-    catLabel.textContent = cat;
-    list.appendChild(catLabel);
-    
+    html += `<div class="cat-group-label">${cat}</div>`;
     groups[cat].forEach(item => {
-      const itemDiv = document.createElement('div');
-      itemDiv.className = 'inv-item';
-      itemDiv.style.borderLeft = '3px solid var(--danger)';
-      
-      const infoDiv = document.createElement('div');
-      infoDiv.className = 'inv-item-info';
-      
-      const nameDiv = document.createElement('div');
-      nameDiv.className = 'inv-item-name';
-      nameDiv.textContent = item.name;
-      infoDiv.appendChild(nameDiv);
-      
-      const skuDiv = document.createElement('div');
-      skuDiv.className = 'inv-item-sku';
-      skuDiv.textContent = item.sku;
-      infoDiv.appendChild(skuDiv);
-      
-      if (item.notes) {
-        const notesDiv = document.createElement('div');
-        notesDiv.className = 'inv-item-notes';
-        notesDiv.textContent = item.notes;
-        infoDiv.appendChild(notesDiv);
-      }
-      
-      itemDiv.appendChild(infoDiv);
-      
-      const rightDiv = document.createElement('div');
-      rightDiv.className = 'inv-item-right';
-      
-      const countDiv = document.createElement('div');
-      countDiv.className = 'inv-item-count';
-      countDiv.textContent = item.count;
-      rightDiv.appendChild(countDiv);
-      
-      const unitDiv = document.createElement('div');
-      unitDiv.className = 'inv-item-unit';
-      unitDiv.textContent = 'damaged';
-      rightDiv.appendChild(unitDiv);
-      
-      itemDiv.appendChild(rightDiv);
-      
-      const delBtn = document.createElement('button');
-      delBtn.className = 'inv-del-btn';
-      delBtn.textContent = '✕';
-      delBtn.onclick = () => deleteDamageItem(item.id);
-      itemDiv.appendChild(delBtn);
-      
-      list.appendChild(itemDiv);
+      const notesHtml = item.notes ? `<div class="inv-item-notes">${item.notes}</div>` : '';
+      html += `<div class="inv-item" style="border-left:3px solid var(--danger);"><div class="inv-item-info"><div class="inv-item-name" onclick="triggerMarquee(this)">${item.name}</div><div class="inv-item-sku">${item.sku}</div>${notesHtml}</div><div class="inv-item-right"><div><div class="inv-item-count" style="color:var(--danger);">${item.count}</div><div class="inv-item-unit">damaged</div></div></div><button class="inv-del-btn" onclick="deleteDamageItem(${item.id})">✕</button></div>`;
     });
   });
+  list.innerHTML = html;
 }
 
 function deleteDamageItem(id) { damages = damages.filter(i => i.id !== id); saveToStorage(); renderDamages(); showToast('Damage record removed'); }
