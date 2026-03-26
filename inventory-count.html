@@ -1118,6 +1118,23 @@ function submitCount() {
   
   const wb = XLSX.utils.book_new();
   const ws = XLSX.utils.aoa_to_sheet(rows);
+  
+  // Apply bold formatting to headers and metadata
+  ws['B2'].s = { bold: true }; // Merchandiser:
+  ws['B3'].s = { bold: true }; // Location:
+  ws['B4'].s = { bold: true }; // Count Period:
+  ws['B5'].s = { bold: true }; // Date/Time:
+  ws['A7'].s = { bold: true }; // #
+  ws['B7'].s = { bold: true }; // Location
+  ws['C7'].s = { bold: true }; // Category
+  ws['D7'].s = { bold: true }; // Barcode/SKU
+  ws['E7'].s = { bold: true }; // Product Name
+  ws['F7'].s = { bold: true }; // Qty/Count
+  
+  const totalRowIdx = rows.length - 1;
+  ws['A' + (totalRowIdx + 1)].s = { bold: true }; // Total Items
+  ws['E' + (totalRowIdx + 1)].s = { bold: true }; // Total Units
+  
   ws['!cols'] = [{ wch:6 }, { wch:25 }, { wch:20 }, { wch:18 }, { wch:35 }, { wch:12 }];
   ws['!merges'] = [{ s:{r:0,c:0}, e:{r:0,c:5} }];
   XLSX.utils.book_append_sheet(wb, ws, 'Inventory Count');
@@ -1144,6 +1161,26 @@ function submitCount() {
   }
   
   const wsD = XLSX.utils.aoa_to_sheet(damageRows);
+  
+  // Apply bold formatting to damages sheet headers and metadata
+  wsD['B2'].s = { bold: true }; // Merchandiser:
+  wsD['B3'].s = { bold: true }; // Location:
+  wsD['B4'].s = { bold: true }; // Count Period:
+  wsD['B5'].s = { bold: true }; // Date/Time:
+  wsD['A7'].s = { bold: true }; // #
+  wsD['B7'].s = { bold: true }; // Location
+  wsD['C7'].s = { bold: true }; // Category
+  wsD['D7'].s = { bold: true }; // Barcode/SKU
+  wsD['E7'].s = { bold: true }; // Product Name
+  wsD['F7'].s = { bold: true }; // Qty Damaged
+  wsD['G7'].s = { bold: true }; // Damage Description
+  
+  if (damages.length > 0) {
+    const totalDamageRowIdx = damageRows.length - 1;
+    wsD['A' + (totalDamageRowIdx + 1)].s = { bold: true }; // Total Items
+    wsD['E' + (totalDamageRowIdx + 1)].s = { bold: true }; // Total Units Damaged
+  }
+  
   wsD['!cols'] = [{ wch:6 }, { wch:25 }, { wch:20 }, { wch:18 }, { wch:35 }, { wch:14 }, { wch:30 }];
   wsD['!merges'] = [{ s:{r:0,c:0}, e:{r:0,c:6} }];
   XLSX.utils.book_append_sheet(wb, wsD, 'Damages Report');
