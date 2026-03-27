@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AcaciaHBC Inventory App — Paano Gamitin</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;500;600&display=swap');
+
+  :root {
+    --blue: #1a4fa0;
+    --blue-dark: #0f1f3d;
+    --blue-light: #e8eef8;
+    --green: #2db84b;
+    --green-dark: #1e9e38;
+    --green-light: #e8f7ec;
+    --red: #ef4444;
+    --red-light: #fef2f2;
+    --yellow: #f59e0b;
+    --bg: #f4f6f9;
+    --white: #ffffff;
+    --text: #0f1f3d;
+    --text2: #4a5568;
+    --text3: #94a3b8;
+    --border: #e2e8f0;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0f1f3d 0%, #1a4fa0 100%);
+    padding: 48px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: rgba(45,184,75,0.08);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -30px;
+    width: 150px; height: 150px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(45,184,75,0.2);
+    color: #6ee7a0;
+    border: 1px solid rgba(45,184,75,0.3);
+    border-radius: 30px;
+    padding: 5px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero-icon {
+    width: 64px; height: 64px;
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 18px;
+    box-shadow: 0 8px 24px rgba(45,184,75,0.35);
+  }
+  .hero h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    font-weight: 500;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  /* TABLE OF CONTENTS */
+  .toc {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+  }
+  .toc-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+  }
+  .toc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+  }
+  .toc-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text2);
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.15s;
+  }
+  .toc-list a:hover { background: var(--blue-light); border-color: var(--blue); color: var(--blue); }
+
+  /* MAIN */
+  .container { max-width: 680px; margin: 0 auto; padding: 0 16px 60px; }
+
+  /* SECTION */
+  .guide-section { margin-top: 36px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(26,79,160,0.25);
+  }
+  .section-num.green { background: linear-gradient(135deg, var(--green), var(--green-dark)); box-shadow: 0 3px 10px rgba(45,184,75,0.25); }
+  .section-num.red { background: linear-gradient(135deg, var(--red), #dc2626); box-shadow: 0 3px 10px rgba(239,68,68,0.25); }
+  .section-num.yellow { background: linear-gradient(135deg, var(--yellow), #d97706); box-shadow: 0 3px 10px rgba(245,158,11,0.25); }
+  .section-num.plain { background: linear-gradient(135deg, #64748b, #475569); box-shadow: 0 3px 10px rgba(100,116,139,0.25); }
+
+  .section-title-wrap {}
+  .section-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .section-sub {
+    font-size: 12px;
+    color: var(--text3);
+    font-weight: 600;
+    margin-top: 1px;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  /* STEP ITEMS */
+  .step-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+  .step-item:last-child { margin-bottom: 0; }
+  .step-bubble {
+    width: 28px; height: 28px;
+    background: var(--green-light);
+    border: 2px solid rgba(45,184,75,0.3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--green-dark);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-body {}
+  .step-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .step-desc {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.65;
+  }
+
+  /* CALLOUT */
+  .callout {
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .callout-body { font-size: 13px; line-height: 1.6; }
+  .callout-title { font-family: 'Nunito', sans-serif; font-weight: 800; margin-bottom: 2px; font-size: 13px; }
+  .callout.tip { background: var(--green-light); border-left: 3px solid var(--green); }
+  .callout.tip .callout-title { color: var(--green-dark); }
+  .callout.warn { background: #fffbeb; border-left: 3px solid var(--yellow); }
+  .callout.warn .callout-title { color: #92400e; }
+  .callout.danger { background: var(--red-light); border-left: 3px solid var(--red); }
+  .callout.danger .callout-title { color: #991b1b; }
+  .callout.info { background: var(--blue-light); border-left: 3px solid var(--blue); }
+  .callout.info .callout-title { color: var(--blue); }
+
+  /* UI MOCK */
+  .ui-mock {
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    margin: 10px 0;
+    font-size: 12px;
+  }
+  .ui-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-family: 'Nunito', sans-serif;
+  }
+  .ui-field {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 8px;
+    width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .ui-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    border: none;
+    cursor: default;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(45,184,75,0.3);
+  }
+  .ui-btn.blue { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); box-shadow: 0 3px 10px rgba(26,79,160,0.3); }
+  .ui-btn.red { background: linear-gradient(135deg, #ef4444, #dc2626); box-shadow: 0 3px 10px rgba(239,68,68,0.3); }
+
+  /* NAV MOCK */
+  .nav-mock {
+    display: flex;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  .nav-mock-tab {
+    flex: 1;
+    padding: 10px 4px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text3);
+    border-right: 1px solid var(--border);
+  }
+  .nav-mock-tab:last-child { border-right: none; }
+  .nav-mock-tab.active { color: var(--green-dark); background: var(--green-light); }
+  .nav-mock-tab .ni { font-size: 16px; display: block; margin-bottom: 2px; }
+
+  /* DIVIDER */
+  .section-divider {
+    border: none;
+    border-top: 2px dashed var(--border);
+    margin: 32px 0 0;
+  }
+
+  /* HIGHLIGHT */
+  .hl { background: var(--green-light); color: var(--green-dark); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: 'Nunito', sans-serif; font-size: 0.92em; }
+  .hl-blue { background: var(--blue-light); color: var(--blue); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: 'Nunito', sans-serif; font-size: 0.92em; }
+  .hl-red { background: var(--red-light); color: var(--red); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: 'Nunito', sans-serif; font-size: 0.92em; }
+
+  /* SUMMARY STEPS */
+  .summary-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .flow-item {
+    display: flex;
+    gap: 14px;
+    align-items: stretch;
+  }
+  .flow-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .flow-dot {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .flow-connector {
+    width: 2px;
+    flex: 1;
+    background: var(--border);
+    margin: 4px auto;
+    min-height: 20px;
+  }
+  .flow-item:last-child .flow-connector { display: none; }
+  .flow-body { padding: 4px 0 20px; }
+  .flow-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; color: var(--text); margin-bottom: 3px; }
+  .flow-desc { font-size: 13px; color: var(--text2); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--blue-dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .footer strong { color: rgba(255,255,255,0.8); }
+
+
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+    .card, .callout, .ui-mock, .nav-mock, .summary-flow,
+    .step-item, .flow-item, .toc, .section-header {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .section-header { page-break-after: avoid; break-after: avoid; }
+    h1, h2, h3, .section-title, .card-title { page-break-after: avoid; break-after: avoid; }
+
+    .zero-warning { page-break-inside: avoid; break-inside: avoid; }
+
+    .guide-section { page-break-inside: auto; }
+
+    /* Collapse blank space after TOC on page 1 */
+    .toc { position: static !important; page-break-after: avoid; break-after: avoid; }
+    .hero { padding: 32px 24px 32px !important; }
+
+    /* Quick Reference: flow naturally, don't break inside, keep footer attached */
+    .quick-ref { page-break-inside: avoid; break-inside: avoid; }
+    .quick-ref .card { page-break-inside: avoid; break-inside: avoid; }
+    .footer { page-break-before: avoid; break-before: avoid; margin-top: 0; }
+
+    /* Hide the divider before Quick Reference so it flows into Tips naturally */
+    .section-divider.before-quick-ref { display: none; }
+
+    /* Tighten section spacing in print */
+    .guide-section { margin-top: 20px; }
+    .section-divider { margin: 16px 0 0; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📋 User Guide · Taglish Edition</div>
+  <div class="hero-icon">🌿</div>
+  <h1>AcaciaHBC<br>Inventory App</h1>
+  <p>Simple guide para malaman mo kung paano gamitin ang app na ito — mula simula hanggang tapos!</p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-title">📑 Nilalaman</div>
+  <ul class="toc-list">
+    <li><a href="#overview">🗺 Overview</a></li>
+    <li><a href="#step1">1 · Store Info</a></li>
+    <li><a href="#step2">2 · Count</a></li>
+    <li><a href="#step3">3 · Damages</a></li>
+    <li><a href="#step4">4 · Review & Export</a></li>
+    <li><a href="#tips">💡 Tips</a></li>
+  </ul>
+</div>
+
+<div class="container">
+
+  <!-- OVERVIEW -->
+  <div class="guide-section" id="overview">
+    <div class="section-header">
+      <div class="section-num plain">🗺</div>
+      <div class="section-title-wrap">
+        <div class="section-title">Ano ang app na ito?</div>
+        <div class="section-sub">Overview — basahin mo muna ito!</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p style="font-size:14px;color:var(--text2);margin-bottom:14px;">Ang <strong>AcaciaHBC Inventory App</strong> ay ginagamit para <strong>mag-count ng mga produkto sa isang tindahan</strong>. Bilhin mo lang ang bilang ng bawat SKU, i-record ang may sira, tapos i-export bilang Excel file — tapos na! 🎉</p>
+
+      <div class="summary-flow">
+        <div class="flow-item">
+          <div class="flow-line">
+            <div class="flow-dot" style="background:var(--blue);">1</div>
+            <div class="flow-connector"></div>
+          </div>
+          <div class="flow-body">
+            <div class="flow-title">🏠 Punan ang iyong impormasyon</div>
+            <div class="flow-desc">Pangalan mo at kung saang tindahan ka.</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-line">
+            <div class="flow-dot" style="background:var(--green);">2</div>
+            <div class="flow-connector"></div>
+          </div>
+          <div class="flow-body">
+            <div class="flow-title">📦 I-count ang mga produkto</div>
+            <div class="flow-desc">Hanapin ang bawat SKU, ilagay ang bilang.</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-line">
+            <div class="flow-dot" style="background:var(--red);">3</div>
+            <div class="flow-connector"></div>
+          </div>
+          <div class="flow-body">
+            <div class="flow-title">⚠️ I-record ang mga sira</div>
+            <div class="flow-desc">Kung may damaged na produkto, ilagay ito.</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-line">
+            <div class="flow-dot" style="background:var(--yellow);">4</div>
+            <div class="flow-connector"></div>
+          </div>
+          <div class="flow-body">
+            <div class="flow-title">📊 I-review at i-export</div>
+            <div class="flow-desc">Tingnan ang summary, tapos i-download ang Excel file.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">📱</div>
+      <div class="callout-body">
+        <div class="callout-title">Gumagana ito sa phone!</div>
+        Ang app na ito ay ginawa para sa mobile. Gamitin mo ito sa iyong smartphone para mas madali mag-count sa loob ng tindahan.
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-icon">📶</div>
+      <div class="callout-body">
+        <div class="callout-title">Internet — kailangan sa simula at sa pagpapadala lang!</div>
+        <strong>Sa simula:</strong> Kailangan ng internet nang buksan mo ang app para ma-download ang listahan ng mga produkto, stores, at system count data. Kapag na-load na ito, <strong>pwede ka nang mag-count kahit walang signal</strong> — offline na ang lahat ng counting at encoding.<br><br>
+        <strong>Sa pagpapadala:</strong> Kailangan ulit ng internet kapag ise-share mo ang file via Messenger o ibang app.
+      </div>
+    </div>
+
+    <!-- NAV EXPLANATION -->
+    <div class="card">
+      <div class="ui-label">Ang 4 na Tab sa Ibaba ng Screen</div>
+      <div class="nav-mock">
+        <div class="nav-mock-tab active"><span class="ni">🏠</span>1 · Store Info</div>
+        <div class="nav-mock-tab"><span class="ni">📦</span>2 · Count</div>
+        <div class="nav-mock-tab"><span class="ni">⚠️</span>3 · Damages</div>
+        <div class="nav-mock-tab"><span class="ni">✅</span>4 · Review</div>
+      </div>
+      <p style="font-size:13px;color:var(--text2);margin-top:8px;">I-tap ang bawat tab para lumipat sa ibang parte ng app. Sundan mo ang order — 1, 2, 3, 4!</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- STEP 1: STORE INFO -->
+  <div class="guide-section" id="step1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title-wrap">
+        <div class="section-title">Store Info — Punan ang Iyong Detalye</div>
+        <div class="section-sub">Tab 1 · Gawin ito MUNA bago mag-count</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-icon">👋</div>
+      <div class="callout-body">
+        <div class="callout-title">Ito ang unang gagawin mo!</div>
+        Kapag binuksan mo ang app, dito ka darating. Kailangan mong punan ito bago ka makapag-start ng counting.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="step-item">
+        <div class="step-bubble">1</div>
+        <div class="step-body">
+          <div class="step-label">Ilagay ang iyong pangalan</div>
+          <div class="step-desc">Sa field na <span class="hl-blue">Merchandiser Name</span>, i-type ang iyong buong pangalan. Halimbawa: <em>"Juan dela Cruz"</em></div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">2</div>
+        <div class="step-body">
+          <div class="step-label">Piliin ang tindahan</div>
+          <div class="step-desc">Sa field na <span class="hl-blue">Location</span>, i-tap ang dropdown menu at piliin ang pangalan ng tindahan kung saan ka nag-icount ngayon.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">3</div>
+        <div class="step-body">
+          <div class="step-label">Count Period at Date/Time — automatic na!</div>
+          <div class="step-desc">Hindi mo na kailangang baguhin ito. Awtomatiko itong naka-fill ng app. ✅</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">4</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang "Save & Start Counting →"</div>
+          <div class="step-desc">Kapag puno na ang lahat, i-tap ang <span class="hl">Save & Start Counting →</span> na berdeng button. Lilipat ka na sa Count tab!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-mock">
+      <div class="ui-label">Ganito ang hitsura ng form</div>
+      <div class="ui-field">Juan dela Cruz</div>
+      <div class="ui-field">SM Mall of Asia ▾</div>
+      <div class="ui-field" style="color:var(--text3);">March 2026 (auto-filled)</div>
+      <div class="ui-field" style="color:var(--text3);">28 Mar 2026, 10:45 (auto-filled)</div>
+      <div class="ui-btn">Save & Start Counting →</div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-icon">⚠️</div>
+      <div class="callout-body">
+        <div class="callout-title">Huwag kalimutan ang pangalan at store!</div>
+        Kung wala kang name at location, hindi ka makakapagsave. Makikita mo ang error. I-ulit lang — simple lang!
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- STEP 2: COUNT -->
+  <div class="guide-section" id="step2">
+    <div class="section-header">
+      <div class="section-num green">2</div>
+      <div class="section-title-wrap">
+        <div class="section-title">Count — Bilang ang mga Produkto</div>
+        <div class="section-sub">Tab 2 · Dito mo ida-dagdag ang bawat SKU</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">📦</div>
+      <div class="callout-body">
+        <div class="callout-title">Ano ang mangyayari dito?</div>
+        Sa tab na ito, hahanapin mo ang bawat produkto, ilalagay ang bilang ng units na nakita mo sa tindahan, tapos ida-dagdag sa iyong listahan.
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🔍 Paano mag-search ng produkto</div>
+      <div class="step-item">
+        <div class="step-bubble">1</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang search box</div>
+          <div class="step-desc">Makikita mo ang box na nagsasabing <em>"Search products by name or SKU…"</em>. I-tap ito para mag-type.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">2</div>
+        <div class="step-body">
+          <div class="step-label">I-type ang pangalan o SKU</div>
+          <div class="step-desc">Halimbawa, i-type mo ang <em>"shampoo"</em> o ang SKU code ng produkto. Makikita mo ang listahan ng mga produkto na lumalabas habang nagta-type ka.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">3</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang produkto</div>
+          <div class="step-desc">Makikita mo ang mga resulta na may pangalan ng produkto at SKU code nito. I-tap ang tamang produkto para mapili ito. Lalabas ang berdeng bar na nagpapakita ng napiling produkto.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🔢 Paano ilagay ang bilang (Qty)</div>
+      <div class="step-item">
+        <div class="step-bubble">1</div>
+        <div class="step-body">
+          <div class="step-label">Gamitin ang + at − na buttons</div>
+          <div class="step-desc">May malaking <span class="hl">−</span> at <span class="hl">+</span> na button sa magkabilang side. I-tap ang <strong>+</strong> para dagdagan ang bilang, at <strong>−</strong> para bawasan.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">2</div>
+        <div class="step-body">
+          <div class="step-label">O i-type mismo ang bilang</div>
+          <div class="step-desc">I-tap ang numero sa gitna at direktang i-type ang bilang. Halimbawa, kung <em>24 units</em>, i-type mo ang <em>24</em>.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">3</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang "Add to Count"</div>
+          <div class="step-desc">Kapag tama na ang bilang, i-tap ang berdeng <span class="hl">Add to Count</span> button. Makikita mo ang produkto sa listahan sa ibaba! 🎉</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-icon">💡</div>
+      <div class="callout-body">
+        <div class="callout-title">May "System Count" na lalabas!</div>
+        Kapag pinili mo ang isang produkto, makikita mo ang bilang mula sa sistema (System Count). Ito ang reference mo — kung malayo ang iyong count doon, baka may mali. Double-check lang!
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📋 Ang iyong listahan ng Counted Items</div>
+      <div class="step-item">
+        <div class="step-bubble">👀</div>
+        <div class="step-body">
+          <div class="step-label">Makikita mo ang lahat ng na-count mo</div>
+          <div class="step-desc">Sa ibaba ng Add Item section, may listahan ng lahat ng produkto na naidagdag mo na. May pangalan, SKU, at bilang (units). Ang malaking berdeng numero sa kanan = ang count mo.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">✏️</div>
+        <div class="step-body">
+          <div class="step-label">Nagkamali sa count? I-delete muna, tapos idagdag ulit</div>
+          <div class="step-desc">Hindi pwedeng direktang baguhin ang count ng isang item na naidagdag na. Kung may mali ka, i-tap ang <span class="hl-red">✕</span> button para i-delete ang item, tapos hanapin ulit at idagdag ng tamang bilang.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">🗑</div>
+        <div class="step-body">
+          <div class="step-label">Paano mag-delete ng item</div>
+          <div class="step-desc">May maliit na <span class="hl-red">✕</span> na button sa tabi ng bawat item. I-tap ito para ma-remove ang item sa listahan. Magtanong muna bago i-tap — walang undo!</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,#7f1d1d,#991b1b);border-radius:var(--radius);padding:20px;margin-bottom:12px;border:2px solid #dc2626;box-shadow:0 4px 18px rgba(239,68,68,0.25);page-break-inside:avoid;break-inside:avoid;">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:28px;flex-shrink:0;margin-top:2px;">🚨</div>
+        <div>
+          <div style="font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:0.2px;">MAHALAGA: Lagyan ng ZERO ang walang stock!</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.88);line-height:1.7;">
+            Kung ang isang SKU ay <strong style="color:#fca5a5;">nasa tindahan</strong> pero <strong style="color:#fca5a5;">wala kang makitang stock</strong> — huwag itong laktawan! Kailangan mo pa rin itong hanapin at idagdag na may bilang na <strong style="color:#fff;font-size:15px;">0</strong>.<br><br>
+            Bakit? Para malaman ng sistema na <strong style="color:#fca5a5;">tiningnan mo ito</strong> — hindi lang nakalimutan o nalaktawan. Ang produktong wala sa iyong listahan ay mukhang hindi na-count, kahit wala talagang stock.
+          </div>
+          <div style="margin-top:12px;background:rgba(0,0,0,0.25);border-radius:8px;padding:12px 14px;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;">
+            <strong style="color:#fca5a5;">Halimbawa:</strong> May shampoo na dapat nasa shelf, pero empty ang shelf ngayon. Hanapin ang SKU → ilagay ang qty na <strong style="color:#fff;">0</strong> → i-tap ang <strong style="color:#fff;">Add to Count</strong>. ✅
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-icon">💾</div>
+      <div class="callout-body">
+        <div class="callout-title">Auto-saved ang lahat!</div>
+        Kahit isara mo ang app, nandoon pa rin ang iyong data kapag bumalik ka. Automatic itong nase-save sa iyong phone. Hindi ka dapat matakot na mawala ang iyong trabaho. Napakaliit din ng data na nase-save — hindi ito kukuha ng malaking space sa iyong phone.
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-icon">🔴</div>
+      <div class="callout-body">
+        <div class="callout-title">Mag-ingat sa "Clear All Data"!</div>
+        May pulang button sa ibaba na <span class="hl-red">🗑 Clear All Data</span>. Huwag itong i-tap maliban kung <strong>talagang</strong> gusto mong burahin ang lahat ng nai-count mo. Hindi ito marecover!
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- STEP 3: DAMAGES -->
+  <div class="guide-section" id="step3">
+    <div class="section-header">
+      <div class="section-num red">3</div>
+      <div class="section-title-wrap">
+        <div class="section-title">Damages — I-record ang mga Sira</div>
+        <div class="section-sub">Tab 3 · Para sa mga damaged na produkto</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">ℹ️</div>
+      <div class="callout-body">
+        <div class="callout-title">Kailan gagamitin ang tab na ito?</div>
+        Kapag nakakita ka ng produkto na <strong>sira, nabasa, nabali, o may depekto</strong> ang packaging — ilagay ito dito. Hiwalay ito sa regular na count.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="step-item">
+        <div class="step-bubble">1</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang "3 · Damages" tab</div>
+          <div class="step-desc">Pumunta sa Damages tab sa ibaba ng screen.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">2</div>
+        <div class="step-body">
+          <div class="step-label">Hanapin ang produkto</div>
+          <div class="step-desc">Gamitin ang search box — i-type ang pangalan o SKU ng siraing produkto. I-tap ang tamang produkto mula sa listahan.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">3</div>
+        <div class="step-body">
+          <div class="step-label">Ilagay ang bilang ng damaged units</div>
+          <div class="step-desc">Gamitin ang <span class="hl">+</span> at <span class="hl">−</span> para ilagay kung ilang piraso ang sira. Default ay 1 — baguhin kung kailangan.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">4</div>
+        <div class="step-body">
+          <div class="step-label">I-type ang deskripsyon ng sira</div>
+          <div class="step-desc">Sa <span class="hl-red">Damage Description</span> box, ilagay kung bakit sira. Halimbawa: <em>"Broken corner"</em>, <em>"Nabasa"</em>, <em>"Dented packaging"</em>, <em>"Natanggal ang label"</em>.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">5</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang "Record Damage"</div>
+          <div class="step-desc">I-tap ang berdeng <span class="hl">Record Damage</span> button. Lalabas ang damaged item sa listahan sa ibaba. ✅</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-icon">📝</div>
+      <div class="callout-body">
+        <div class="callout-title">Maging detalyado sa description!</div>
+        Mas maganda kung detalyado ang isinulat mo — para alam ng manager kung ano talaga ang nangyari sa produkto. Halimbawa: <em>"Sira ang takip, tumagas ang laman"</em> ay mas maganda kaysa sa <em>"sira"</em> lang.
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- STEP 4: REVIEW & EXPORT -->
+  <div class="guide-section" id="step4">
+    <div class="section-header">
+      <div class="section-num yellow">4</div>
+      <div class="section-title-wrap">
+        <div class="section-title">Review & Export — Tapusin na!</div>
+        <div class="section-sub">Tab 4 · I-check ang lahat bago mag-submit</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">✅</div>
+      <div class="callout-body">
+        <div class="callout-title">Ito ang huling hakbang!</div>
+        Dito mo makikita ang buong summary ng lahat ng na-count mo at mga damages. Kapag tama na lahat, mag-e-export ka ng Excel file.
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📋 Paano mag-review</div>
+      <div class="step-item">
+        <div class="step-bubble">1</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang "4 · Review" tab</div>
+          <div class="step-desc">Pumunta sa Review tab sa ibaba ng screen. Makikita mo ang lahat ng impormasyon.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">2</div>
+        <div class="step-body">
+          <div class="step-label">Tingnan ang Store Info</div>
+          <div class="step-desc">I-check kung tama ang iyong pangalan, store, at count period. Kung may mali — bumalik sa Tab 1 at baguhin.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">3</div>
+        <div class="step-body">
+          <div class="step-label">Tingnan ang Count Summary</div>
+          <div class="step-desc">Makikita mo ang <strong>Total SKUs Counted</strong> at <strong>Total Categories</strong>. Tama ba ang bilang? Kumpleto ba ang lahat ng produkto na dapat mong bilangin?</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">4</div>
+        <div class="step-body">
+          <div class="step-label">Tingnan ang Damage Summary</div>
+          <div class="step-desc">Makikita mo rin ang buong listahan ng mga damaged items na na-record mo.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📊 Paano mag-export ng Excel</div>
+      <div class="step-item">
+        <div class="step-bubble">1</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang "Export & Save Excel" button</div>
+          <div class="step-desc">Makikita mo ang malaking berdeng button na <span class="hl">↑ Export & Save Excel</span>. I-tap ito.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">2</div>
+        <div class="step-body">
+          <div class="step-label">Lalabas ang confirmation window</div>
+          <div class="step-desc">May lilitaw na preview ng iyong data. I-tap ang <span class="hl">Let's Go →</span> para ituloy ang export.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">3</div>
+        <div class="step-body">
+          <div class="step-label">Na-download na ang file! ✅</div>
+          <div class="step-desc">Awtomatikong dina-download ang Excel file sa iyong phone. Ang pangalan nito ay katulad nito: <em>IC_SM Mall of Asia_28Mar2026_1045.xlsx</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📤 Paano i-send ang file</div>
+      <div class="step-item">
+        <div class="step-bubble">A</div>
+        <div class="step-body">
+          <div class="step-label">Gamit ang Share button (mas madali!)</div>
+          <div class="step-desc">Kapag na-download na, lalabas ang <span class="hl-blue">📤 Share via Messenger</span> button. I-tap ito at piliin kung saan mo gustong i-send — Messenger, Viber, Email, etc.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">B</div>
+        <div class="step-body">
+          <div class="step-label">O manual na i-attach</div>
+          <div class="step-desc">Buksan ang iyong email o messaging app → I-tap ang 📎 Attach → Hanapin ang file sa <strong>Downloads</strong> folder → I-send. Ganun lang!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-icon">📱</div>
+      <div class="callout-body">
+        <div class="callout-title">Hanapin ang file sa Downloads</div>
+        Ang Excel file ay nandoon sa <strong>Downloads</strong> folder ng iyong phone. Buksan ang Files app (o My Files) → Downloads → hanapin ang file na nagsisimula sa <em>"IC_"</em>.
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- TIPS -->
+  <div class="guide-section" id="tips">
+    <div class="section-header">
+      <div class="section-num plain">💡</div>
+      <div class="section-title-wrap">
+        <div class="section-title">Mga Importanteng Tips</div>
+        <div class="section-sub">Basahin mo rin ito — helpful ito!</div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-icon">📶</div>
+      <div class="callout-body">
+        <div class="callout-title">I-connect sa internet MUNA bago pumasok sa tindahan!</div>
+        Bago ka pumunta sa store, buksan ang app habang may internet ka pa. Kailangan nito ng koneksyon sa simula para ma-download ang mga produkto, listahan ng stores, at system count. Kapag na-load na — offline ka na pwedeng mag-count nang walang signal. Huwag kalimutang mag-connect ulit kapag magse-share na ng file.
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-icon">🔋</div>
+      <div class="callout-body">
+        <div class="callout-title">I-charge ang phone bago mag-count!</div>
+        Matagal ang inventory counting. Siguraduhing may sapat na baterya ang iyong phone bago ka magsimula.
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-icon">🔄</div>
+      <div class="callout-body">
+        <div class="callout-title">Pwede kang bumalik sa app anytime!</div>
+        Kahit isara mo ang app at bumalik mamaya, nandoon pa rin ang lahat ng na-count mo. Auto-saved ang lahat sa iyong phone.
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-icon">📅</div>
+      <div class="callout-body">
+        <div class="callout-title">20 araw lang ang buhay ng data!</div>
+        Awtomatikong nababura ang data pagkalipas ng <strong>20 araw</strong> mula noong huli kang nag-export. Kaya siguraduhing nai-export mo na ang file bago lumipas ang 20 araw!
+      </div>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-icon">🚫</div>
+      <div class="callout-body">
+        <div class="callout-title">Huwag i-tap ang "Clear All Data" nang walang dahilan!</div>
+        Ang pula na <strong>🗑 Clear All Data</strong> button ay permanenteng nagbubura ng lahat ng iyong nai-count. Walang undo. I-tap lang ito kung talaga kang nagsisimula ng bagong count at sigurado kang tapos na ang dati.
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-icon">🔍</div>
+      <div class="callout-body">
+        <div class="callout-title">May Category Filter!</div>
+        Sa Count page, makikita mo ang mga colored chips sa itaas ng search bar (halimbawa: "All", "Shampoo", "Conditioner"). I-tap ang isang category para ma-filter ang listahan at mas madaling mahanap ang produkto.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- QUICK REFERENCE -->
+  <hr class="section-divider before-quick-ref">
+  <div class="guide-section quick-ref">
+    <div class="section-header">
+      <div class="section-num plain">📌</div>
+      <div class="section-title-wrap">
+        <div class="section-title">Quick Reference</div>
+        <div class="section-sub">I-screenshot ito para sa mabilis na reference!</div>
+      </div>
+    </div>
+    <div class="card">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:var(--bg);">
+            <th style="padding:10px 12px;text-align:left;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid var(--border);">Gagawin</th>
+            <th style="padding:10px 12px;text-align:left;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid var(--border);">Paano</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--text);">Simulan ang counting</td>
+            <td style="padding:10px 12px;color:var(--text2);">Tab 1 → Punan → Save & Start Counting</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--text);">Magdagdag ng SKU count</td>
+            <td style="padding:10px 12px;color:var(--text2);">Tab 2 → Search → Piliin → Qty → Add to Count</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--text);">Mag-record ng sira</td>
+            <td style="padding:10px 12px;color:var(--text2);">Tab 3 → Search → Qty → Description → Record Damage</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--text);">I-export ang report</td>
+            <td style="padding:10px 12px;color:var(--text2);">Tab 4 → Export & Save Excel → Let's Go</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--text);">I-send ang file</td>
+            <td style="padding:10px 12px;color:var(--text2);">Share button → piliin ang app → Send</td>
+          </tr>
+          <tr style="background:var(--bg);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--red);">Clear all (mag-ingat!)</td>
+            <td style="padding:10px 12px;color:var(--text2);">🗑 Clear All Data → Confirm → Permanente!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer" style="page-break-before:avoid;break-before:avoid;">
+  <strong>AcaciaHBC Inventory System</strong><br>
+  User Guide · Taglish Edition<br><br>
+  May tanong ka? Makipag-ugnayan sa iyong supervisor o IT support.
+</div>
+
+</body>
+</html>
