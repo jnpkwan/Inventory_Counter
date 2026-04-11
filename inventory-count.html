@@ -1147,28 +1147,59 @@ function submitCount() {
   ws.getCell('A4').font = boldFont;
   ws.getCell('A5').font = boldFont;
   
-  // Add inventory data sorted by category
-  const sortedInventory = [...inventory].sort((a, b) => a.category.localeCompare(b.category));
+  // Build a lookup map from SKU -> counted item for quick access
+  const countedMap = {};
+  inventory.forEach(item => { countedMap[item.sku] = item; });
+
   const storeData = systemCountData.stores && systemCountData.stores[settings.location];
-  sortedInventory.forEach((item, idx) => {
+
+  // Loop over ALL products in products.json order, grouped by category with sub-headers
+  let rowNum = 0;
+  let currentCat = null;
+  let totalCounted = 0;
+  let totalUnits = 0;
+
+  PRODUCTS.forEach(product => {
+    // Insert category sub-header row when category changes
+    if (product.category !== currentCat) {
+      currentCat = product.category;
+      const catRow = ws.addRow(['', '', currentCat]);
+      catRow.eachCell(cell => {
+        cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+        cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1a4fa0' } };
+      });
+    }
+
+    rowNum++;
+    const counted = countedMap[product.sku];
+    const hasCount = counted !== undefined; // true even if count === 0
+    const qtyCount = hasCount ? counted.count : ''; // blank if not counted at all
+
     let sysCount = null;
     if (storeData) {
-      const pd = storeData.products.find(prod => prod.sku === item.sku);
+      const pd = storeData.products.find(prod => prod.sku === product.sku);
       if (pd) sysCount = pd.systemCount;
     }
-    const variance = sysCount !== null ? (item.count - sysCount) : '';
-    const row = ws.addRow([idx + 1, settings.location || '', item.category, item.sku, item.name, item.count, sysCount !== null ? sysCount : 'N/A', variance]);
-    // Colour the variance cell: red if negative, orange if positive, green if zero
-    if (sysCount !== null) {
+    const variance = (hasCount && sysCount !== null) ? (counted.count - sysCount) : '';
+
+    const row = ws.addRow([rowNum, settings.location || '', product.category, product.sku, product.name, qtyCount, sysCount !== null ? sysCount : 'N/A', variance]);
+
+    // Colour the variance cell if applicable
+    if (hasCount && sysCount !== null) {
       const varCell = row.getCell(8);
       if (variance < 0) { varCell.font = { bold: true, color: { argb: 'FFEF4444' } }; }
       else if (variance > 0) { varCell.font = { bold: true, color: { argb: 'FFF59E0B' } }; }
       else { varCell.font = { bold: true, color: { argb: 'FF1E9E38' } }; }
     }
+
+    if (hasCount) {
+      totalCounted++;
+      totalUnits += counted.count;
+    }
   });
-  
+
   // Total row - make bold
-  const totalRow = ws.addRow(['Total Items:', inventory.length, '', '', 'Total Units:', inventory.reduce((s,i)=>s+i.count,0)]);
+  const totalRow = ws.addRow(['Total Items Counted:', totalCounted, '', '', 'Total Units:', totalUnits]);
   totalRow.getCell(1).font = boldFont;
   totalRow.getCell(5).font = boldFont;
   
