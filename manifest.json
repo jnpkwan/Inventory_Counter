@@ -1,6 +1,6 @@
 {
   "name": "AcaciaHBC Inventory System",
-  "short_name": "AHBC Inventory",
+  "short_name": "ACACIA",
   "description": "AcaciaHBC Inventory Counter",
   "start_url": "./inventory-count.html",
   "display": "standalone",
