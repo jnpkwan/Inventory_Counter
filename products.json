@@ -2,981 +2,1005 @@
   "products": [
     {
       "id": "P001",
-      "name": "PADLOCK SOTER BC9020 20MM BRASS",
-      "category": "Padlocks",
-      "sku": "2080101018515"
+      "name": "BATTERY KIT EINHELL 18V 2.0AH PXC2",
+      "category": "Batteries and Chargers",
+      "sku": "2080100909371"
     },
     {
       "id": "P002",
-      "name": "PADLOCK SOTER BC9025 25MM BRASS",
-      "category": "Padlocks",
-      "sku": "2080101018522"
+      "name": "BATTERY EINHELL 18V 4.0AH PXC2",
+      "category": "Batteries and Chargers",
+      "sku": "2080100909395"
     },
     {
       "id": "P003",
-      "name": "PADLOCK SOTER BC9030 30MM BRASS",
-      "category": "Padlocks",
-      "sku": "2080101018539"
+      "name": "CHARGER EINHELL 18V 4.0AH FAST PXC",
+      "category": "Batteries and Chargers",
+      "sku": "2080100909906"
     },
     {
       "id": "P004",
-      "name": "PADLOCK SOTER BC9040 40MM BRASS",
-      "category": "Padlocks",
-      "sku": "2080101018546"
+      "name": "STARTER KIT EINHELL 4.0AH",
+      "category": "Batteries and Chargers",
+      "sku": "2080100909456"
     },
     {
       "id": "P005",
-      "name": "PADLOCK SOTER BC9050 50MM BRASS",
-      "category": "Padlocks",
-      "sku": "2080101018553"
+      "name": "STARTER KIT EINHELL 18V 2.5AH PXC",
+      "category": "Batteries and Chargers",
+      "sku": "2080100909463"
     },
     {
       "id": "P006",
-      "name": "PADLOCK SOTER BC9060 60MM BRASS",
-      "category": "Padlocks",
-      "sku": "2080101018560"
+      "name": "CORDLESS DRILL EINHELL TC-CD 18/35 LI (1X1.5 AH)",
+      "category": "Cordless",
+      "sku": "2080100909685"
     },
     {
       "id": "P007",
-      "name": "NFS PADLOCK SOTER PSB1119 BC9020*2 20MM BRASS 2PCS",
-      "category": "Padlocks",
-      "sku": "2080101018577"
+      "name": "CORDLESS DRILL EINHELL TC-CD 18/35 LI (1X1.5 AH) + HSS BUNDLE",
+      "category": "Cordless",
+      "sku": "2080100980318"
     },
     {
       "id": "P008",
-      "name": "NFS PADLOCK SOTER PSB1119 BC9025*2 25MM BRASS 2PCS",
-      "category": "Padlocks",
-      "sku": "2080101018584"
+      "name": "CORDLESS IMPACT DRILL EINHELL TE-CD 18/48 LI-I (2X2,0Ah)",
+      "category": "Cordless",
+      "sku": "2080100909135"
     },
     {
       "id": "P009",
-      "name": "NFS PADLOCK SOTER PSB1119 BC9030*2 30MM BRASS 2PCS",
-      "category": "Padlocks",
-      "sku": "2080101018591"
+      "name": "CORDLESS IMPACT DRILL EINHELL TE-CD 18/48 LI-I (2X2.0Ah) + MASONRY BUNDLE",
+      "category": "Cordless",
+      "sku": "2080100980332"
     },
     {
       "id": "P010",
-      "name": "NFS PADLOCK SOTER PSB1119 BC9040*2 40MM BRASS 2PCS",
-      "category": "Padlocks",
-      "sku": "2080101018607"
+      "name": "CORDLESS IMPACT DRILL EINHELL TE-CD 18 LI-I BRUSHLESS-SOLO",
+      "category": "Cordless",
+      "sku": "2080100908961"
     },
     {
       "id": "P011",
-      "name": "NFS PADLOCK SOTER PSB1119 BC9020*4 20MM BRASS 4PCS",
-      "category": "Padlocks",
-      "sku": "2080101018614"
+      "name": "CORDLESS IMPACT DRILL EINHELL TE-CD 18 LI-I BRUSHLESS-SOLO + MASONRY BUNDLE",
+      "category": "Cordless",
+      "sku": "2080100980349"
     },
     {
       "id": "P012",
-      "name": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
-      "category": "Padlocks",
-      "sku": "2080101018621"
+      "name": "CORDLESS CIRCULAR SAW EINHELL TE-CS 18/165-1 LI-SOLO",
+      "category": "Cordless",
+      "sku": "2080100909586"
     },
     {
       "id": "P013",
-      "name": "PADLOCK SOTER PSB1119 BC9030L 30MM BRASS LONG SHACKLE",
-      "category": "Padlocks",
-      "sku": "2080101018638"
+      "name": "CORDLESS ALL PURPOSE SAW EINHELL TE-AP 18 LI-SOLO",
+      "category": "Cordless",
+      "sku": "2080100909524"
     },
     {
       "id": "P014",
-      "name": "PADLOCK SOTER PSB1119 BC9040L 40MM BRASS LONG SHACKLE",
-      "category": "Padlocks",
-      "sku": "2080101018645"
+      "name": "CORDLESS JIG SAW EINHELL TC-JS 18 LI-SOLO",
+      "category": "Cordless",
+      "sku": "2080100909425"
     },
     {
       "id": "P015",
-      "name": "PADLOCK SOTER PSB1119 BC9050L 50MM BRASS LONG SHACKLE",
-      "category": "Padlocks",
-      "sku": "2080101018652"
+      "name": "CORDLESS BLOWER EINHELL TE-CB 18/180 LI-SOLO",
+      "category": "Cordless",
+      "sku": "2080100909630"
     },
     {
       "id": "P016",
-      "name": "PADLOCK SOTER QC0230 LAMINATED 30MM",
-      "category": "Padlocks",
-      "sku": "2080101018669"
+      "name": "CORDLESS STAPLER AND NAILER EINHELL TE-CN 18 LI SOLO",
+      "category": "Cordless",
+      "sku": "2080100909470"
     },
     {
       "id": "P017",
-      "name": "PADLOCK SOTER QC0240 LAMINATED 40MM",
-      "category": "Padlocks",
-      "sku": "2080101018676"
+      "name": "IMPACT DRILL EINHELL TH-ID 550/1",
+      "category": "Corded",
+      "sku": "2080100909623"
     },
     {
       "id": "P018",
-      "name": "PADLOCK SOTER QC0250 LAMINATED 50MM",
-      "category": "Padlocks",
-      "sku": "2080101018683"
+      "name": "IMPACT DRILL EINHELL TH-ID 550/1 + MASONRY BUNDLE",
+      "category": "Corded",
+      "sku": "2080100980363"
     },
     {
       "id": "P019",
-      "name": "PADLOCK SOTER LS3240 DISC MECHANISM IRON 40MM",
-      "category": "Padlocks",
-      "sku": "2080101018690"
+      "name": "IMPACT DRILL EINHELL TE-ID 500 E",
+      "category": "Corded",
+      "sku": "2080101031231"
     },
     {
       "id": "P020",
-      "name": "PADLOCK SOTER LS3250 DISC MECHANISM IRON 50MM",
-      "category": "Padlocks",
-      "sku": "2080101018706"
+      "name": "IMPACT DRILL EINHELL TE-ID 500 E + MASONRY BUNDLE",
+      "category": "Corded",
+      "sku": "2080101056265"
     },
     {
       "id": "P021",
-      "name": "PADLOCK SOTER LS3260 DISC MECHANISM IRON 60MM",
-      "category": "Padlocks",
-      "sku": "2080101018713"
+      "name": "IMPACT DRILL EINHELL TC-ID 710 E",
+      "category": "Corded",
+      "sku": "2080100909531"
     },
     {
       "id": "P022",
-      "name": "PADLOCK SOTER LS3240L LONG SHACKLE DISC MECHANISM IRON 40MM",
-      "category": "Padlocks",
-      "sku": "2080101018720"
+      "name": "IMPACT DRILL EINHELL TC-ID 710 E + MASONRY BUNDLE",
+      "category": "Corded",
+      "sku": "2080100980370"
     },
     {
       "id": "P023",
-      "name": "PADLOCK SOTER LS3250L LONG SHACKLE DISC MECHANISM IRON 50MM",
-      "category": "Padlocks",
-      "sku": "2080101018737"
+      "name": "ANGLE GRINDER EINHELL TC-AG 100",
+      "category": "Corded",
+      "sku": "2080100908985"
     },
     {
       "id": "P024",
-      "name": "PADLOCK SOTER LS3260L LONG SHACKLE DISC MECHANISM IRON 60MM",
-      "category": "Padlocks",
-      "sku": "2080101018744"
+      "name": "ANGLE GRINDER EINHELL TC-AG 100 + 5PCS CUTTING DISC KWB BUNDLE",
+      "category": "Corded",
+      "sku": "2080100980462"
     },
     {
       "id": "P025",
-      "name": "BOX CASH SOTER CB-15 80X150X120MM MATT BLACK",
-      "category": "Safety Vault",
-      "sku": "2080101018751"
+      "name": "ANGLE GRINDER EINHELL TE-AG 100",
+      "category": "Corded",
+      "sku": "2080100909494"
     },
     {
       "id": "P026",
-      "name": "BOX CASH SOTER CB-25 90X250X180MM MATT BLACK",
-      "category": "Safety Vault",
-      "sku": "2080101018768"
+      "name": "ANGLE GRINDER EINHELL TE-AG 100 + 5PCS CUTTING DISC KWB BUNDLE",
+      "category": "Corded",
+      "sku": "2080100980479"
     },
     {
       "id": "P027",
-      "name": "NFS-STORAGE KEY SOTER STEEL BLACK WALL MOUNTABLE",
-      "category": "Safety Vault",
-      "sku": "2080101018775"
+      "name": "ANGLE GRINDER EINHELL TC-AG 100/750",
+      "category": "Corded",
+      "sku": "2080100909487"
     },
     {
       "id": "P028",
-      "name": "VAULT ELECTRONIC SOTER VSS1019 E4501E 200X310X200",
-      "category": "Safety Vault",
-      "sku": "2080101018782"
+      "name": "ANGLE GRINDER EINHELL TC-AG 100/750 + 5PCS CUTTING DISC KWB BUNDLE",
+      "category": "Corded",
+      "sku": "2080100980486"
     },
     {
       "id": "P029",
-      "name": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-      "category": "Safety Vault",
-      "sku": "2080101018799"
+      "name": "DEMOLITION HAMMER EINHELL TE-DH 12",
+      "category": "Corded",
+      "sku": "2080100909500"
     },
     {
       "id": "P030",
-      "name": "VAULT ELECTRONIC SOTER VSS1019 195-RE 195X437X380 HOTEL",
-      "category": "Safety Vault",
-      "sku": "2080101018805"
+      "name": "DEMOLITION HAMMER EINHEL TC-DH 1600/1",
+      "category": "Corded",
+      "sku": "2080101031255"
     },
     {
       "id": "P031",
-      "name": "VAULT ELECTRONIC SOTER VS0120 E4502E 250X350X250",
-      "category": "Safety Vault",
-      "sku": "2080101018812"
+      "name": "ROTARY HAMMER EINHELL 4257995 TC-RH 620 4F",
+      "category": "Corded",
+      "sku": "2080101031262"
     },
     {
       "id": "P032",
-      "name": "VAULT ELECTRONIC SOTER VS0120 E4506E 270X430X350",
-      "category": "Safety Vault",
-      "sku": "2080101018829"
+      "name": "PLANER EINHELL TC-PL 750",
+      "category": "Corded",
+      "sku": "2080100909692"
     },
     {
       "id": "P033",
-      "name": "VAULT FIRE SOTER RATED VSS0820 FP1801E 354X496X390MM",
-      "category": "Safety Vault",
-      "sku": "2080101018836"
+      "name": "JIG SAW EINHELL TC-JS 60 E",
+      "category": "Corded",
+      "sku": "2080100909579"
     },
     {
       "id": "P034",
-      "name": "VAULT FIRE RATED SOTER VSS0820 FP1802E 530X460X470MM",
-      "category": "Safety Vault",
-      "sku": "2080101018843"
+      "name": "ALL PURPOSE SAW EINHELL TE-AP 750 E",
+      "category": "Corded",
+      "sku": "2080100909647"
     },
     {
       "id": "P035",
-      "name": "VAULT FIRE RATED SOTER VSS0820 FP1803E 600X480X470MM",
-      "category": "Safety Vault",
-      "sku": "2080101018850"
+      "name": "CIRCULAR SAW EINHELL TE-CS 190/1",
+      "category": "Corded",
+      "sku": "2080101031248"
     },
     {
       "id": "P036",
-      "name": "+SAFETY VAULT HAUSMANN 250X350X250MM 25BM MECHANICAL",
-      "category": "Safety Vault",
-      "sku": "2080101018959"
+      "name": "HOT AIR GUN EINHELL TH-HA 2000/1",
+      "category": "Corded",
+      "sku": "2080100909739"
     },
     {
       "id": "P037",
-      "name": "+SAFETY VAULT HAUSMANN 600X460X470MM YB-530A FIRE RATED",
-      "category": "Safety Vault",
-      "sku": "2080101018973"
+      "name": "MULTI-SANDER EINHELL TE-OS 1320",
+      "category": "Corded",
+      "sku": "2080100909609"
     },
     {
       "id": "P038",
-      "name": "+SAFETY VAULT HAUSMANN 770X500X490MM YB-700A FIRE RATED",
-      "category": "Safety Vault",
-      "sku": "2080101018980"
+      "name": "PAINT SPRAY GUN EINHELL TC-SY 500",
+      "category": "Corded",
+      "sku": "2080100909548"
     },
     {
       "id": "P039",
-      "name": "+SAFETY VAULT FIRST ALERT 2096F-BD 2.10CU.FT. FIRERATED AND WATERPROOF 500X342X352MM",
-      "category": "Safety Vault",
-      "sku": "2080101018911"
+      "name": "ROUTER KIT EINHELL E TC-RO 1155",
+      "category": "Corded",
+      "sku": "2080100909661"
     },
     {
       "id": "P040",
-      "name": "+SAFETY VAULT FIRST ALERT 2087F-BD 0.94CU.FT. FIRERATED AND WATERPROOF 327X263X311MM",
-      "category": "Safety Vault",
-      "sku": "2080101018928"
+      "name": "GLUE GUN EINHELL TC-GG 30",
+      "category": "Corded",
+      "sku": "2080100941401"
     },
     {
       "id": "P041",
-      "name": "+SAFETY VAULT FIRST ALERT 2092F-BD 1.31CU.FT. FIRERATED AND WATERPROOF 346X336X317MM",
-      "category": "Safety Vault",
-      "sku": "2080101018935"
+      "name": "CIRCULAR SAW BLADE KWB 160x20MM 20T 65MN",
+      "category": "Accessories",
+      "sku": "2080100908503"
     },
     {
       "id": "P042",
-      "name": "+NFS-VAULT ELECTRONIC SOTER 25-EZ 250X350X250MM MATT BLACK",
-      "category": "Safety Vault",
-      "sku": "2080101018867"
+      "name": "CIRCULAR SAW BLADE KWB 160x20MM 20T MED",
+      "category": "Accessories",
+      "sku": "2080100908510"
     },
     {
       "id": "P043",
-      "name": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080101066172"
+      "name": "CIRCULAR SAW BLADE KWB 210x30MM 30T TCT MID",
+      "category": "Accessories",
+      "sku": "2080100908480"
     },
     {
       "id": "P044",
-      "name": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM GOLD",
-      "category": "Curtain Accessories",
-      "sku": "2080101066189"
+      "name": "CIRCULAR SAW BLADE KWB 210x30MM 30T",
+      "category": "Accessories",
+      "sku": "2080100908497"
     },
     {
       "id": "P045",
-      "name": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080101066196"
+      "name": "CIRCULAR SAW BLADE KWB 250X30MM 42T",
+      "category": "Accessories",
+      "sku": "2080100908589"
     },
     {
       "id": "P046",
-      "name": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-      "category": "Curtain Accessories",
-      "sku": "2080101066219"
+      "name": "SABER SAW BLADE KWB POWERBOX 3 PCS",
+      "category": "Accessories",
+      "sku": "2080100908541"
     },
     {
       "id": "P047",
-      "name": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-      "category": "Curtain Accessories",
-      "sku": "2080101066226"
+      "name": "MULTITOOL KWB 3PCS SET",
+      "category": "Accessories",
+      "sku": "2080100908848"
     },
     {
       "id": "P048",
-      "name": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
-      "category": "Curtain Accessories",
-      "sku": "2080101066233"
+      "name": "MULTITOOL FLOOR INSTALLATION SET KWB SET 4PCS",
+      "category": "Accessories",
+      "sku": "2080100908558"
     },
     {
       "id": "P049",
-      "name": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
-      "category": "Curtain Accessories",
-      "sku": "2080101066240"
+      "name": "MULTITOOL KWB 17PCS SET",
+      "category": "Accessories",
+      "sku": "2080100908886"
     },
     {
       "id": "P050",
-      "name": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
-      "category": "Curtain Accessories",
-      "sku": "2080101066257"
+      "name": "ACCESSORIES NAILER EINHELL NAILS 32MM 3000's",
+      "category": "Accessories",
+      "sku": "2080100909296"
     },
     {
       "id": "P051",
-      "name": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
-      "category": "Curtain Accessories",
-      "sku": "2080101066264"
+      "name": "ACCESSORIES NAILER EINHELL STAPLE CLIP 19MM 3000's",
+      "category": "Accessories",
+      "sku": "2080100909340"
     },
     {
       "id": "P052",
-      "name": "TUBE STAINLESS SLICK GG 12.7X0.5X3100M",
-      "category": "Curtain Accessories",
-      "sku": "2080101078793"
+      "name": "ACCESSORIES SANDER EINHELL 150X100MM 15PCS TRIANGLE",
+      "category": "Accessories",
+      "sku": "2080100909777"
     },
     {
       "id": "P053",
-      "name": "TUBE STAINLESS SLICK SQ 15X30X.5X3000MM OVAL CHROME ANTIQUE",
-      "category": "Curtain Accessories",
-      "sku": "2080101087702"
+      "name": "ROUTER EINHELL 15 PCS ACCESSORIES",
+      "category": "Accessories",
+      "sku": "2080100909401"
     },
     {
       "id": "P054",
-      "name": "TUBE STAINLESS SLICK SQ 25X.5X3000MM RND.CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080101087689"
+      "name": "CUTTING DISC KWB 105X1.0X16MM THIN",
+      "category": "Accessories",
+      "sku": "2080100941326"
     },
     {
       "id": "P055",
-      "name": "TUBE STAINLESS SLICK SQ 19X0.5X3000MM RND.CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080101087672"
+      "name": "DIAMOND DISC KWB 105MM TURBO",
+      "category": "Accessories",
+      "sku": "2080100941333"
     },
     {
       "id": "P056",
-      "name": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080101066202"
+      "name": "DIAMOND DISC KWB 105MM SEGMENTED",
+      "category": "Accessories",
+      "sku": "2080100941340"
     },
     {
       "id": "P057",
-      "name": "NFS-TUBE STAINLESS SLICK GS1119 GS 12.7X0.5X3100M SS201 ROUND",
-      "category": "Curtain Accessories",
-      "sku": "2080100989465"
+      "name": "DIAMOND DISC KWB 105MM CONTINUOUS",
+      "category": "Accessories",
+      "sku": "2080100941357"
     },
     {
       "id": "P058",
-      "name": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-      "category": "Curtain Accessories",
-      "sku": "2080100989489"
+      "name": "PLANER BLADES EINHELL 82MM REVERSIBLE",
+      "category": "Accessories",
+      "sku": "2080100941364"
     },
     {
       "id": "P059",
-      "name": "NFS-TUBE STAINLESS SLICK GS1119 GS 25.4X0.5X3100M SS201 ROUND",
-      "category": "Curtain Accessories",
-      "sku": "2080100989472"
+      "name": "DRILL BIT KWB HSS METAL 5 PCS",
+      "category": "Accessories",
+      "sku": "2080100941371"
     },
     {
       "id": "P060",
-      "name": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-      "category": "Curtain Accessories",
-      "sku": "2080101066028"
+      "name": "DRILL BIT KWB MASONRY 5 PCS",
+      "category": "Accessories",
+      "sku": "2080100941388"
     },
     {
       "id": "P061",
-      "name": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-      "category": "Curtain Accessories",
-      "sku": "2080101066158"
+      "name": "CUTTING DISC KWB 105X1.0X16MM 5PCS.",
+      "category": "Accessories",
+      "sku": "2080100963793"
     },
     {
       "id": "P062",
-      "name": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-      "category": "Curtain Accessories",
-      "sku": "2080101115061"
+      "name": "MITRE SAW EINHELL TC-MS 2112",
+      "category": "Stationary Tools",
+      "sku": "2080100909593"
     },
     {
       "id": "P063",
-      "name": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-      "category": "Curtain Accessories",
-      "sku": "2080101115092"
+      "name": "SLIDING MITRE SAW EINHELL TC-SM 2534 DUAL",
+      "category": "Stationary Tools",
+      "sku": "2080100909814"
     },
     {
       "id": "P064",
-      "name": "BRACKET SLICK WBD008-25 25MM SATIN NICKEL",
-      "category": "Curtain Accessories",
-      "sku": "2080101115115"
+      "name": "TABLE SAW EINHELL TC-TS 2025/2 U",
+      "category": "Stationary Tools",
+      "sku": "2080100909838"
     },
     {
       "id": "P065",
-      "name": "BRACKET SLICK WBD008-25 25MM ANTIQUE BRASS",
-      "category": "Curtain Accessories",
-      "sku": "2080101115139"
+      "name": "METAL CUTTING EINHELL TC-MC 355",
+      "category": "Stationary Tools",
+      "sku": "2080100909760"
     },
     {
       "id": "P066",
-      "name": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
-      "category": "Curtain Accessories",
-      "sku": "2080101066165"
+      "name": "BENCH DRILL EINHELL TC-BD 630 PH",
+      "category": "Stationary Tools",
+      "sku": "2080100909234"
     },
     {
       "id": "P067",
-      "name": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114361"
+      "name": "BENCH GRINDER EINHELL TC-BG 150 BIVOLT",
+      "category": "Stationary Tools",
+      "sku": "2080100909364"
     },
     {
       "id": "P068",
-      "name": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114736"
+      "name": "PRESSURE WASHER EINHELL TC-HP 90",
+      "category": "Cleaning",
+      "sku": "2080100941418"
     },
     {
       "id": "P069",
-      "name": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114859"
+      "name": "PRESSURE WASHER EINHELL TC-HP 130",
+      "category": "Cleaning",
+      "sku": "2080101031279"
     },
     {
       "id": "P070",
-      "name": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114880"
+      "name": "VACUUM CLEANER EINHELL TE-VC 2230 SACL",
+      "category": "Cleaning",
+      "sku": "2080101031286"
     },
     {
       "id": "P071",
-      "name": "FLANGE SLICK HFR19 19MM OPEN STAINLESS STEEL 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114897"
+      "name": "VACUUM CLEANER EINHELL TC-VC 1820 S 20L",
+      "category": "Cleaning",
+      "sku": "2080100909616"
     },
     {
       "id": "P072",
-      "name": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114903"
+      "name": "VACUUM CLEANER EINHELL TC-VC 1930 S 30L",
+      "category": "Cleaning",
+      "sku": "2080100909746"
     },
     {
       "id": "P073",
-      "name": "FLANGE SLICK HFO OVAL ALUMINUM 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114910"
+      "name": "VACUUM CLEANER EINHELL TC-VC 1812 S 12L",
+      "category": "Cleaning",
+      "sku": "2080100909449"
     },
     {
       "id": "P074",
-      "name": "ACORN ENDS SLICK AE12 12MM SILVER 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114934"
+      "name": "VACUUM CLEANER EINHELL TE-VC 18 LI-SOLO CORDLESS",
+      "category": "Cleaning",
+      "sku": "2080100909678"
     },
     {
       "id": "P075",
-      "name": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114965"
+      "name": "ACCESSORIES VACUUM CLEANER EINHELL PLEATER FILTER WITH LID",
+      "category": "Cleaning",
+      "sku": "2080100909128"
     },
     {
       "id": "P076",
-      "name": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101114996"
+      "name": "ACCESSORIES VACUUM CLEANER EINHELL DIRT BAG FILTER 20L",
+      "category": "Cleaning",
+      "sku": "2080100909418"
     },
     {
       "id": "P077",
-      "name": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101115016"
+      "name": "ACCESSORIES VACUUM CLEANER EINHELL DUST BAG 12I (5 PCS.)",
+      "category": "Cleaning",
+      "sku": "2080100908923"
     },
     {
       "id": "P078",
-      "name": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101115047"
+      "name": "ACCESSORIES VACUUM CLEANER EINHELL DIRT BAG FILTER 30I (5 PCS.)",
+      "category": "Cleaning",
+      "sku": "2080100908930"
     },
     {
       "id": "P079",
-      "name": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-      "category": "Curtain Accessories",
-      "sku": "2080101115054"
+      "name": "ACCESSORIES VACUUM CLEANER EINHELL NOZZLES SET 3PCS",
+      "category": "Cleaning",
+      "sku": "2080100909753"
     },
     {
       "id": "P080",
-      "name": "CURTAIN ACCS SLICK GS TM-C 19MM CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080101078779"
+      "name": "ACCESSORIES VACUUM CLEANER EINHELL SUCTION HOSE",
+      "category": "Cleaning",
+      "sku": "2080100909722"
     },
     {
       "id": "P081",
-      "name": "CURTAIN ACCS SLICK GS TM-C 19MM GOLD",
-      "category": "Curtain Accessories",
-      "sku": "2080101078755"
+      "name": "BATTERY EINHELL 18V 2.0AH PXC",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100908947"
     },
     {
       "id": "P082",
-      "name": "+NFS-RAIL MODULAR SLICK TR16180PH 16X1800MM CHROME TUBE (WITH 2 STICKER)",
-      "category": "Curtain Accessories",
-      "sku": "2080100989625"
+      "name": "BATTERY KIT EINHELL 18V 4.0AH PXC",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909388"
     },
     {
       "id": "P083",
-      "name": "+NFS-RAIL MODULAR SLICK TR16360PH 16X3600MM CHROME TUBE (WITH 2 STICKER)",
-      "category": "Curtain Accessories",
-      "sku": "2080100989632"
+      "name": "CHARGER EINHELL 18V BIVOLT",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909654"
     },
     {
       "id": "P084",
-      "name": "+NFS-RAIL MODULAR SLICK TR19180PH 19X1800MM CHROME TUBE (WITH 2 STICKER)",
-      "category": "Curtain Accessories",
-      "sku": "2080100989649"
+      "name": "CORDLESS DRILL EINHELL TE-CD 18/2 LI KIT (2X1.5 AH)",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909708"
     },
     {
       "id": "P085",
-      "name": "+NFS-RAIL MODULAR SLICK TR25180PH 25X1800MM CHROME TUBE (WITH 2 STICKER)",
-      "category": "Curtain Accessories",
-      "sku": "2080100989656"
+      "name": "CORDLESS DRILL EINHELL TE-CD 18/2 LI KIT (2X1.5 AH) + HSS BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980325"
     },
     {
       "id": "P086",
-      "name": "+NFS-RAIL MODULAR SLICK WR16180PH 16X1800MM WHITE TUBE (WITH 2 STICKER)",
-      "category": "Curtain Accessories",
-      "sku": "2080100989663"
+      "name": "CORDLESS ANGLE GRINDER EINHELL TE-AG 18/100 LI-SOLO",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909432"
     },
     {
       "id": "P087",
-      "name": "+NFS-RAIL MODULAR SLICK WR16360PH 16X3600MM WHITE TUBE (WITH 2 STICKER)",
-      "category": "Curtain Accessories",
-      "sku": "2080100989687"
+      "name": "CORDLESS ANGLE GRINDER EINHELL TE-AG 18/100 LI-SOLO + 5PCS CUTTING DISC KWB BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980394"
     },
     {
       "id": "P088",
-      "name": "+NFS-POWDER COATED ROD SLICK WR19180PH 19MMX1800MM WHITE (WITH 2 STICKER)",
-      "category": "Curtain Accessories",
-      "sku": "2080100989564"
+      "name": "CORDLESS ANGLE GRINDER EINHELL LI KIT TE-AG 18/100",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909067"
     },
     {
       "id": "P089",
-      "name": "+NFS-POWDER COATED ROD SLICK WR19360PH 19MMX3600MM WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100989571"
+      "name": "CORDLESS ANGLE GRINDER EINHELL LI KIT TE-AG 18/100 + 5PCS CUTTING DISC KWB BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980400"
     },
     {
       "id": "P090",
-      "name": "+NFS-POWDER COATED ROD SLICK WR25180PH 25MMX1800MM WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100989588"
+      "name": "CORDLESS ROTARY HAMMER EINHELL  TE-HD 18 LI-SOLO",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909562"
     },
     {
       "id": "P091",
-      "name": "+NFS-POWDER COATED ROD SLICK WR25360PH 25MMX3600MM WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100989601"
+      "name": "CORDLESS ANGLE GRINDER EINHELL TE-AG 18/115 LI-SOLO",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100908992"
     },
     {
       "id": "P092",
-      "name": "+NFS-RAIL MODULAR SLICK BR16180PH 16X1800MM BLACK TUBE (WITH 2 STICKER)",
-      "category": "Curtain Accessories",
-      "sku": "2080100989618"
+      "name": "CORDLESS ANGLE GRINDER EINHELL TE-AG 18/115 LI-SOLO + 5 PCS CUTTING DISC KWB BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980448"
     },
     {
       "id": "P093",
-      "name": "+NFS-RAIL MODULAR TUBE SLICK BR19180PH 19MMX1800MM BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100989694"
+      "name": "CORDLESS ANGLE GRINDER EINHELL TE-AG 18/115 LI-KIT (1X3.0 AH)",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909074"
     },
     {
       "id": "P094",
-      "name": "+NFS-RAIL MODULAR TUBE SLICK BR19360PH 19MMX3600MM BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100989700"
+      "name": "CORDLESS ANGLE GRINDER EINHELL TE-AG 18/115 LI-KIT (1X3.0 AH) + 5PCS CUTTING DISC KWB BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980455"
     },
     {
       "id": "P095",
-      "name": "+NFS-RAIL MODULAR TUBE SLICK BR25180PH 25MMX1800MM BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100989717"
+      "name": "CORDLESS IMPACT DRILL EINHELLTE-CD 18/48 LI-I (1X2.0 AH)",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909098"
     },
     {
       "id": "P096",
-      "name": "+NFS-RAIL MODULAR TUBE SLICK BR25360PH 25MMX3600MM BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100989724"
+      "name": "CORDLESS IMPACT DRILL EINHELL TE-CD 18/48 LI-I (1X2.0 AH) + MASONRY BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980356"
     },
     {
       "id": "P097",
-      "name": "+NFS-ROD MODULAR SLICK CFF16PH 16MM CHROME FITTINGS ROUND FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990539"
+      "name": "CORDLESS MULTIFUNCTION TOOL EINHELL VARRITO",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909555"
     },
     {
       "id": "P098",
-      "name": "+NFS-ROD MODULAR SLICK CFF19PH 19MM CHROME FITTINGS ROUND FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990546"
+      "name": "CORDLESS SCREWDRIVER EINHELL TC-SD 3.6",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100941395"
     },
     {
       "id": "P099",
-      "name": "+NFS-ROD MODULAR SLICK CFF25PH 25MM CHROME FITTINGS ROUND FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990553"
+      "name": "CORDLESS LEAF BLOWER EINHELL GE-CL 18 18V LI E-SOLO",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909791"
     },
     {
       "id": "P100",
-      "name": "+NFS-ROD MODULAR SLICK WFF16PH 16MM WHITE FITTINGS ROUND FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990614"
+      "name": "CORDLESS SHEARS EINHELL GE-CG 18/100 18V LI-SOLO",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909517"
     },
     {
       "id": "P101",
-      "name": "+NFS-ROD MODULAR SLICK WFF19PH 19MM WHITE FITTINGS ROUND FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990621"
+      "name": "IMPACT DRILL EINHELL TE-ID 750/1 E",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909715"
     },
     {
       "id": "P102",
-      "name": "+NFS-ROD MODULAR SLICK WFF25PH 25MM WHITE FITTINGS ROUND FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990638"
+      "name": "IMPACT DRILL EINHELL TE-ID 750/1 E + MASONRY BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980387"
     },
     {
       "id": "P103",
-      "name": "+NFS-ROD MODULAR SLICK BFF16PH 16MM BLACK FITTINGS ROUND FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990430"
+      "name": "ANGLE GRINDER EINHELL TC-AG 115",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100908954"
     },
     {
       "id": "P104",
-      "name": "+NFS-ROD MODULAR FITTINGS SLICK BFF19PH 19MM ROUND FLANGES BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100990362"
+      "name": "ANGLE GRINDER EINHELL TC-AG 115/750 + 5PCS CUTTING DISC KWB BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980431"
     },
     {
       "id": "P105",
-      "name": "+NFS-ROD MODULAR FITTINGS SLICK BFF25PH 25MM ROUND FLANGES BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100990379"
+      "name": "ANGLE GRINDER EINHELL TE-AG 115",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909050"
     },
     {
       "id": "P106",
-      "name": "+POWDER COATED FITTINGS SLICK WFF19 19MM ROUND FLANGES WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990669"
+      "name": "ANGLE GRINDER EINHELL TE-AG 115 + 5PCS CUTTING DISC KWB BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980424"
     },
     {
       "id": "P107",
-      "name": "+POWDER COATED FITTINGS SLICK WFF25PH 25MM ROUND FLANGES WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990676"
+      "name": "ANGLE GRINDER EINHELL TC-AG 115/750",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909043"
     },
     {
       "id": "P108",
-      "name": "+NFS-ROD MODULAR SLICK CFF016PH 16MM CHROME FITTINGS OVAL FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990508"
+      "name": "ANGLE GRINDER EINHELL TC-AG 115/750 + 5PCS CUTTING DISC KWB BUNDLE",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100980417"
     },
     {
       "id": "P109",
-      "name": "+NFS-ROD MODULAR SLICK CFF019PH 19MM CHROME FITTINGS OVAL FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990515"
+      "name": "CIRCULAR SAW EINHELL TC-CS 1400/1",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909784"
     },
     {
       "id": "P110",
-      "name": "+NFS-ROD MODULAR SLICK CFF025PH 25MM CHROME FITTINGS OVAL FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990522"
+      "name": "BENCH DRILL EINHELL TC-BD 630",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909197"
     },
     {
       "id": "P111",
-      "name": "+NFS-ROD MODULAR SLICK WFF016PH 16MM WHITE FITTINGS OVAL FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990607"
+      "name": "MULTIFUNCTION TOOL EINHELL TC-MG 220/1 E; EX; BR; 220; 60",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909012"
     },
     {
       "id": "P112",
-      "name": "+NFS-POWDER COATED FITTINGS SLICK WFFO19PH 19MM OVAL FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100989540"
+      "name": "OTP-CUTTING STAND EINHELL TS 125/115",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100908879"
     },
     {
       "id": "P113",
-      "name": "+NFS-POWDER COATED FITTINGS SLICK WFFO25PH 25MM OVAL FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100989557"
+      "name": "TABLE SAW EINHELL TC-TS 2025/1 U",
+      "category": "Cleaning (Phased Out)",
+      "sku": "2080100909807"
     },
     {
       "id": "P114",
-      "name": "+NFS-ROD MODULAR SLICK BFF016PH 16MM BLACK FITTINGS OVAL FLANGES PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990423"
+      "name": "SPRAY GUN HAUSMANN ESGS032021 Q1P-CX31-380",
+      "category": "Powertools",
+      "sku": "2080101021232"
     },
     {
       "id": "P115",
-      "name": "+NFS-ROD MODULAR FITTINGS SLICK BFFO19PH 19MM OVAL FLANGES BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100990386"
+      "name": "ROTARY HAMMER HAUSMANN SK RH1806 18MM 650W",
+      "category": "Powertools",
+      "sku": "2080101019697"
     },
     {
       "id": "P116",
-      "name": "+NFS-ROD MODULAR FITTINGS SLICK BFFO25PH 25MM OVAL FLANGES BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100990393"
+      "name": "ELECTRIC DRILL HAUSMANN DZ131/HED13 710W",
+      "category": "Powertools",
+      "sku": "2080101019628"
     },
     {
       "id": "P117",
-      "name": "+NFS-ROD MODULAR SLICK CFE16PH 16MM CHROME FITTINGS PILLAR ENDS PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990478"
+      "name": "ELECTRIC DRILL HAUSMANN DZ131/HED13 710W BUNDLE",
+      "category": "Powertools",
+      "sku": "2080101090153"
     },
     {
       "id": "P118",
-      "name": "+NFS-ROD MODULAR SLICK CFE19PH 19MM CHROME FITTINGS PILLAR ENDS PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990485"
+      "name": "HEAT GUN HAUSMANN HGHS032021 RF20001",
+      "category": "Powertools",
+      "sku": "2080101019635"
     },
     {
       "id": "P119",
-      "name": "+NFS-ROD MODULAR SLICK CFE25PH 25MM CHROME FITTINGS PILLAR ENDS PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990492"
+      "name": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W",
+      "category": "Powertools",
+      "sku": "2080101019642"
     },
     {
       "id": "P120",
-      "name": "+NFS-ROD MODULAR SLICK WFE16PH 16MM WHITE FITTINGS PILLAR ENDS PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990591"
+      "name": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
+      "category": "Powertools",
+      "sku": "2080101090160"
     },
     {
       "id": "P121",
-      "name": "+NFS-POWDER COATED FITTINGS SLICK WFE19PH 19MM PILLAR ENDS PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100989526"
+      "name": "CHOP SAW HAUSMANN HCOS355 PROF.355MM 2300W",
+      "category": "Powertools",
+      "sku": "2080101019482"
     },
     {
       "id": "P122",
-      "name": "+NFS-POWDER COATED FITTINGS SLICK WFE25PH 25MM PILLAR ENDS PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100989533"
+      "name": "CIRCULAR SAW HAUSMANN HCS190 PROF. 190MM 1300W",
+      "category": "Powertools",
+      "sku": "2080101019529"
     },
     {
       "id": "P123",
-      "name": "+NFS-ROD MODULAR SLICK BFE16PH 16MM BLACK FITTINGS PILLAR ENDS PK2",
-      "category": "Curtain Accessories",
-      "sku": "2080100990416"
+      "name": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W",
+      "category": "Powertools",
+      "sku": "2080101019420"
     },
     {
       "id": "P124",
-      "name": "+NFS-ROD MODULAR FITTINGS SLICK BFE19PH 19MM PILLAR ENDS BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100990348"
+      "name": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
+      "category": "Powertools",
+      "sku": "2080101090146"
     },
     {
       "id": "P125",
-      "name": "+NFS-ROD MODULAR FITTINGS SLICK BFE25PH 25MM PILLAR ENDS BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100990355"
+      "name": "BLOWER HAUSMANN EBHS032021 CF302E",
+      "category": "Powertools",
+      "sku": "2080101019437"
     },
     {
       "id": "P126",
-      "name": "+NFS-ROD MODULAR SLICK CFC16PH 16MM CHROME FITTINGS CENTRE PILLAR PK1",
-      "category": "Curtain Accessories",
-      "sku": "2080100990447"
+      "name": "ELECTRIC SPRAY GUN HAUSMANN HSG-HVLP400/JS-HH15A 800ML",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101021300"
     },
     {
       "id": "P127",
-      "name": "+NFS-ROD MODULAR SLICK CFC19PH 19MM CHROME FITTINGS CENTRE PILLAR PK1",
-      "category": "Curtain Accessories",
-      "sku": "2080100990454"
+      "name": "HEAT GUN HAUSMANN JS-HG12C 2000W WITH LED LIGHT",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101021317"
     },
     {
       "id": "P128",
-      "name": "+NFS-ROD MODULAR SLICK CFC25PH 25MM CHROME FITTINGS CENTRE PILLAR PK1",
-      "category": "Curtain Accessories",
-      "sku": "2080100990461"
+      "name": "ELECTRIC BLOWER HAUSMANN JS-EB15B 600W",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101021263"
     },
     {
       "id": "P129",
-      "name": "+NFS-ROD MODULAR SLICK WFC16PH 16MM WHITE FITTINGS CENTRE PILLAR PK1",
-      "category": "Curtain Accessories",
-      "sku": "2080100990560"
+      "name": "CIRCULAR SAW HAUSMANN SK M1Y-HW01-190 190MM 1300W",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101020884"
     },
     {
       "id": "P130",
-      "name": "+NFS-ROD MODULAR SLICK WFC19PH 19MM WHITE FITTINGS CENTRE PILLAR PK1",
-      "category": "Curtain Accessories",
-      "sku": "2080100990577"
+      "name": "CORDLESS DRILL HAUSMANN SK HCD108A 10.8V",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101020891"
     },
     {
       "id": "P131",
-      "name": "+NFS-ROD MODULAR SLICK WFC25PH 25MM WHITE FITTINGS CENTRE PILLAR PK1",
-      "category": "Curtain Accessories",
-      "sku": "2080100990584"
+      "name": "CUT-OFF SAW HAUSMANN GC3559 2000W",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101020907"
     },
     {
       "id": "P132",
-      "name": "+NFS-ROD MODULAR SLICK BFC16PH 16MM BLACK FITTINGS CENTRE PILLAR PK1",
-      "category": "Curtain Accessories",
-      "sku": "2080100990409"
+      "name": "CUT-OFF SAW HAUSMANN SK J1G-HW03-355 355MM 2300W",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101020914"
     },
     {
       "id": "P133",
-      "name": "+NFS-ROD MODULAR FITTINGS SLICK BFC19PH 19MM CENTRE PILLAR BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100989731"
+      "name": "DRILL HAUSMANN SK 1201/C2-1201SRECN-420/35 420W CROSS ROTARY HAMMER",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101020921"
     },
     {
       "id": "P134",
-      "name": "+NFS-ROD MODULAR FITTINGS SLICK BFC25PH 25MM CENTRE PILLAR BLACK",
-      "category": "Curtain Accessories",
-      "sku": "2080100989748"
+      "name": "IMPACT DRILL HAUSMANN SK CZ131 13MM 600W",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101020938"
     },
     {
       "id": "P135",
-      "name": "+POWDER COATED FITTINGS SLICK WCF19PH 19MM CENTRE PILLAR WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990645"
+      "name": "PLANER HAUSMANN SK YH10-82 900W",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101020945"
     },
     {
       "id": "P136",
-      "name": "+POWDER COATED FITTINGS SLICK WCF25PH 25MM CENTRE PILLAR WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990652"
+      "name": "ROTARY HAMMER HAUSMANN SK RH1807 18MM 750W",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101020952"
     },
     {
       "id": "P137",
-      "name": "+CURTAIN ACCS SLICK JD-D01 1/2FT. CENTER POST DOUBLE CHROME 2s",
-      "category": "Curtain Accessories",
-      "sku": "2080100989236"
+      "name": "NUT SETTER MAGNETIC HAUSMANN CT-NS6P8 8MM/45MM CR-V 6PT",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101019321"
     },
     {
       "id": "P138",
-      "name": "+CURTAIN ACCS SLICK JD-D02 1/2FT. END POST DOUBLE CHROME 2s",
-      "category": "Curtain Accessories",
-      "sku": "2080100989243"
+      "name": "SCREWDRIVER HAUSMANN CT-PSS6 PRECISION SET CARBON STEEL 6PCS",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101019338"
     },
     {
       "id": "P139",
-      "name": "+CURTAIN ACCS SLICK JD-D03 3/4FT. CENTER POST DOUBLE CHROME 2s",
-      "category": "Curtain Accessories",
-      "sku": "2080100989212"
+      "name": "SCREWDRIVER BIT SET HAUSMANN CT-10BS25 25MM PHILIPS DOUBLE END S2 10PCS",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101019345"
     },
     {
       "id": "P140",
-      "name": "+CURTAIN ACCS SLICK JD-D04 3/4FT. END POST DOUBLE CHROME 2s",
-      "category": "Curtain Accessories",
-      "sku": "2080100989366"
+      "name": "SCREWDRIVER BIT SET HAUSMANN CT-10DEPBS 45MM PHILIPS DOUBLE END S2 10PCS",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101019352"
     },
     {
       "id": "P141",
-      "name": "+CURTAIN ACCS SLICK JD-D05 1FT. CENTER POST DOUBLE CHROME 2s",
-      "category": "Curtain Accessories",
-      "sku": "2080100989229"
+      "name": "SCREWDRIVER BIT SET HAUSMANN CT-2DEPBS 65MM PHILIPS DOUBLE END S2 2PCS",
+      "category": "Powertools (Phased Out)",
+      "sku": "2080101019369"
     },
     {
       "id": "P142",
-      "name": "+CURTAIN ACCS SLICK JD-D06 1FT. END POST DOUBLE CHROME 2s",
-      "category": "Curtain Accessories",
-      "sku": "2080100989380"
+      "name": "BLADE GOLD ELEPHANT BW1102020-30 110X20 ALLOY FOR WOOD",
+      "category": "Powertool Accessories",
+      "sku": "2080100938289"
     },
     {
       "id": "P143",
-      "name": "+CURTAIN ACCS SLICK JD-B001 13X53MM (1/2IN.) 22G CENTER POST CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080100989199"
+      "name": "BLADE GOLD ELEPHANT BW1802425-40 180X25 ALLOY FOR WOOD",
+      "category": "Powertool Accessories",
+      "sku": "2080100938296"
     },
     {
       "id": "P144",
-      "name": "+CURTAIN ACCS SLICK JD-B01 13X53MM (1/2IN.) 30G END POST CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080100989182"
+      "name": "BLADE GOLD ELEPHANT BW3053230-100 305X30 ALLOY FOR WOOD",
+      "category": "Powertool Accessories",
+      "sku": "2080100938302"
     },
     {
       "id": "P145",
-      "name": "+CURTAIN ACCS SLICK JD-B04 19X70MM (3/4IN.) 41G CENTER POST CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080100989403"
+      "name": "BLADE GOLD ELEPHANT BW3553230-60 355X30 ALLOY FOR WOOD",
+      "category": "Powertool Accessories",
+      "sku": "2080100938319"
     },
     {
       "id": "P146",
-      "name": "+CURTAIN ACCS SLICK JD-B05 19X70MM (3/4IN.) 44G END POST CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080100989458"
+      "name": "BRUSHES GOLD ELEPHANT BS75M1015 3IN.XM10X1.5 CUP CRIMPED WIRE",
+      "category": "Powertool Accessories",
+      "sku": "2080100938326"
     },
     {
       "id": "P147",
-      "name": "+CURTAIN ACCS SLICK JD-B08 25X86MM (1IN.) 71G CENTER POST CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080100989434"
+      "name": "BRUSHES GOLD ELEPHANT S75M101550 3IN.X25XM10X1.5 BOWL CUP TWISTED KNOT",
+      "category": "Powertool Accessories",
+      "sku": "2080100938333"
     },
     {
       "id": "P148",
-      "name": "+CURTAIN ACCS SLICK JD-B09 25X86MM (1IN.) 77G END POST CHROME",
-      "category": "Curtain Accessories",
-      "sku": "2080100989205"
+      "name": "DISC CUTTING GOLD ELEPHANT 41A1002516EA 100X2.5X16MM FOR METAL",
+      "category": "Powertool Accessories",
+      "sku": "2080100938340"
     },
     {
       "id": "P149",
-      "name": "+NFS- ROUND TUBE ACCS. WFC19 19MM CENTRE PILLAR POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990683"
+      "name": "DISC CUTTING GOLD ELEPHANT 41A1051216 105X1.2X16MM FOR STEEL AND S/S",
+      "category": "Powertool Accessories",
+      "sku": "2080100938357"
     },
     {
       "id": "P150",
-      "name": "+NFS- ROUND TUBE ACCS. WFC25 25MM CENTRE PILLAR POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990690"
+      "name": "DISC CUTTING GOLD ELEPHANT 41A1251022 125X1.0X22MM FOR STEEL AND S/S",
+      "category": "Powertool Accessories",
+      "sku": "2080100938364"
     },
     {
       "id": "P151",
-      "name": "+NFS- ROUND TUBE ACCS. WFE19 19MM PILLAR ENDS POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990706"
+      "name": "DISC CUTTING GOLD ELEPHANT 41A1803022EA 180X3.0X22MM FOR METAL",
+      "category": "Powertool Accessories",
+      "sku": "2080100938371"
     },
     {
       "id": "P152",
-      "name": "+NFS- ROUND TUBE ACCS. WFE25 25MM PILLAR ENDS POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990713"
+      "name": "DISC CUTTING GOLD ELEPHANT 41A3503025EA 350X3.0X25MM FOR METAL",
+      "category": "Powertool Accessories",
+      "sku": "2080100938388"
     },
     {
       "id": "P153",
-      "name": "+NFS- ROUND TUBE ACCS. WFF019 19MM OVAL FLANGES POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990720"
+      "name": "DISC CUTTING GOLD ELEPHANT 41AA1002016EA 100X2.0X16MM FOR STEEL AND S/S",
+      "category": "Powertool Accessories",
+      "sku": "2080100938395"
     },
     {
       "id": "P154",
-      "name": "+NFS- ROUND TUBE ACCS. WFF025 25MM OVAL FLANGES POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990737"
+      "name": "DISC CUTTING GOLD ELEPHANT 41AA1051016 105X1.0X16MM FOR S/S AND METAL",
+      "category": "Powertool Accessories",
+      "sku": "2080100938401"
     },
     {
       "id": "P155",
-      "name": "+NFS- ROUND TUBE ACCS. WFF19 19MM ROUND FLANGES POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990744"
+      "name": "DISC FLAP GOLD ELEPHANT 27A10016Y #120D 100X16MM",
+      "category": "Powertool Accessories",
+      "sku": "2080100938418"
     },
     {
       "id": "P156",
-      "name": "+NFS- ROUND TUBE ACCS. WFF25 25MM ROUND FLANGES POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990751"
+      "name": "DISC FLAP GOLD ELEPHANT 27A10016Y #40D 100X16MM",
+      "category": "Powertool Accessories",
+      "sku": "2080100938425"
     },
     {
       "id": "P157",
-      "name": "+NFS- ROUND TUBE WR19180 19MMX1800MM POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990768"
+      "name": "DISC FLAP GOLD ELEPHANT 27A10016Y #60D 100X16MM",
+      "category": "Powertool Accessories",
+      "sku": "2080100938432"
     },
     {
       "id": "P158",
-      "name": "+NFS- ROUND TUBE WR19360 19MMX3600MM POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990775"
+      "name": "DISC FLAP GOLD ELEPHANT 27A10016Y #80D 100X16MM",
+      "category": "Powertool Accessories",
+      "sku": "2080100938449"
     },
     {
       "id": "P159",
-      "name": "+NFS- ROUND TUBE WR25180 25MMX1800MM POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990782"
+      "name": "DISC FLAP GOLD ELEPHANT 27A12522Y #120D 125X22.2MM",
+      "category": "Powertool Accessories",
+      "sku": "2080100938456"
     },
     {
       "id": "P160",
-      "name": "+NFS- ROUND TUBE WR25360 25MMX3600MM POWDER COATED WHITE",
-      "category": "Curtain Accessories",
-      "sku": "2080100990799"
+      "name": "DISC FLAP GOLD ELEPHANT 27A12522Y #40D 125X22.2MM",
+      "category": "Powertool Accessories",
+      "sku": "2080100938463"
     },
     {
       "id": "P161",
-      "name": "+NFS-TUBE STAINLESS SLICK SSG720 12.7X0.5X3100M SS201 SQUARE",
-      "category": "Curtain Accessories",
-      "sku": "2080100989502"
+      "name": "DISC FLAP GOLD ELEPHANT 27A12522Y #60D 125X22.2MM",
+      "category": "Powertool Accessories",
+      "sku": "2080100938470"
     },
     {
       "id": "P162",
-      "name": "+NFS-TUBE STAINLESS SLICK SSG720 19X0.5X3100M SS201 SQUARE",
-      "category": "Curtain Accessories",
-      "sku": "2080100989496"
+      "name": "DISC FLAP GOLD ELEPHANT 27A12522Y #80D 125X22.2MM",
+      "category": "Powertool Accessories",
+      "sku": "2080100938487"
     },
     {
       "id": "P163",
-      "name": "+NFS-TUBE STAINLESS SLICK SSG720 25X0.5X3100M SS201 SQUARE",
-      "category": "Curtain Accessories",
-      "sku": "2080100989519"
+      "name": "DISC GRINDING  GOLD ELEPHANT 27A1006016 100X6.0X16MM FOR METAL",
+      "category": "Powertool Accessories",
+      "sku": "2080100938494"
+    },
+    {
+      "id": "P164",
+      "name": "DISC GRINDING GOLD ELEPHANT 27A1006016R 100X6.0X16MM FOR METAL",
+      "category": "Powertool Accessories",
+      "sku": "2080100938500"
+    },
+    {
+      "id": "P165",
+      "name": "DISC GRINDING GOLD ELEPHANT 27AA1004016EA 100X4.0X16MM FOR S/S",
+      "category": "Powertool Accessories",
+      "sku": "2080100938517"
+    },
+    {
+      "id": "P166",
+      "name": "DISC GRINDING GOLD ELEPHANT 27GC1023016W 4X1/8X5/8 FOR STONE AND GLASS",
+      "category": "Powertool Accessories",
+      "sku": "2080100938524"
+    },
+    {
+      "id": "P167",
+      "name": "DISC GRINDING GOLD ELEPHANT 27WA1023016W 102X3X16MM FOR S/S",
+      "category": "Powertool Accessories",
+      "sku": "2080100938531"
     }
   ]
 }
