@@ -799,14 +799,23 @@ function showPage(page) {
 function onSearch() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
   const dropdown = document.getElementById('productDropdown');
+  const countedIds = new Set(inventory.map(i => i.productId));
   const categories = {};
   PRODUCTS.forEach(p => {
+    if (countedIds.has(p.id)) return; // already counted — hide from dropdown
     const catMatch = activeCatFilter === 'All' || p.category === activeCatFilter;
     const textMatch = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
     if (catMatch && textMatch) { if (!categories[p.category]) categories[p.category] = []; categories[p.category].push(p); }
   });
   const keys = Object.keys(categories);
-  if (keys.length === 0) { dropdown.innerHTML = '<div style="padding:16px;text-align:center;color:var(--text3);font-size:14px;">No products found</div>'; dropdown.classList.add('open'); return; }
+  if (keys.length === 0) {
+    const msg = countedIds.size === PRODUCTS.length
+      ? 'All products have been counted ✓'
+      : 'No products found';
+    dropdown.innerHTML = `<div style="padding:16px;text-align:center;color:var(--text3);font-size:14px;">${msg}</div>`;
+    dropdown.classList.add('open');
+    return;
+  }
   let html = '';
   keys.forEach(cat => {
     html += `<div class="cat-header">${cat}</div>`;
@@ -858,21 +867,68 @@ function addItem() {
 
 function renderInventory() {
   const list = document.getElementById('inventoryList');
-  document.getElementById('invBadge').textContent = inventory.length;
-  if (inventory.length === 0) { list.innerHTML = `<div class="empty-state"><div class="empty-icon">📦</div><div class="empty-title">No items yet</div>Search for a product above and add it to your count.</div>`; return; }
+  const countedCount = inventory.length;
+  const totalCount = PRODUCTS.length;
+  document.getElementById('invBadge').textContent = `${countedCount} / ${totalCount}`;
+
+  // Build a map of productId -> inventory entry for quick lookup
+  const countedMap = {};
+  inventory.forEach(item => { countedMap[item.productId] = item; });
+
+  // Group ALL products by category
   const groups = {};
-  inventory.forEach(item => { if (!groups[item.category]) groups[item.category] = []; groups[item.category].push(item); });
+  PRODUCTS.forEach(p => {
+    if (!groups[p.category]) groups[p.category] = [];
+    groups[p.category].push(p);
+  });
+
   let html = '';
   Object.keys(groups).sort().forEach(cat => {
     html += `<div class="cat-group-label">${cat}</div>`;
-    groups[cat].forEach(item => {
-      html += `<div class="inv-item" style="border-left:3px solid var(--accent);"><div class="inv-item-info"><div class="inv-item-name swipeable">${item.name}</div><div class="inv-item-sku">${item.sku}</div></div><div class="inv-item-right"><div><div class="inv-item-count">${item.count}</div><div class="inv-item-unit">counted</div></div></div><button class="inv-del-btn" onclick="deleteItem(${item.id})">✕</button></div>`;
+    groups[cat].forEach(p => {
+      const counted = countedMap[p.id];
+      if (counted) {
+        // Counted — green border, show count
+        html += `<div class="inv-item" style="border-left:3px solid var(--accent);">
+          <div class="inv-item-info">
+            <div class="inv-item-name swipeable">${counted.name}</div>
+            <div class="inv-item-sku">${counted.sku}</div>
+          </div>
+          <div class="inv-item-right">
+            <div class="inv-item-count">${counted.count}</div>
+            <div class="inv-item-unit">counted</div>
+          </div>
+          <button class="inv-del-btn" onclick="deleteItem(${counted.id})">✕</button>
+        </div>`;
+      } else {
+        // Not yet counted — muted style with "tap to count" affordance
+        html += `<div class="inv-item inv-item-pending" onclick="prefillProduct('${p.id}')" style="border-left:3px solid var(--border2);cursor:pointer;opacity:0.72;">
+          <div class="inv-item-info">
+            <div class="inv-item-name swipeable">${p.name}</div>
+            <div class="inv-item-sku">${p.sku}</div>
+          </div>
+          <div class="inv-item-right">
+            <div class="inv-item-count" style="color:var(--text3);font-size:16px;">—</div>
+            <div class="inv-item-unit" style="color:var(--text3);">pending</div>
+          </div>
+          <div style="width:32px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:18px;">›</div>
+        </div>`;
+      }
     });
   });
+
   list.innerHTML = html;
 }
 
 function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveToStorage(); renderInventory(); showToast('Item removed'); }
+
+// Tapping a pending row pre-selects the product and scrolls to the add panel
+function prefillProduct(productId) {
+  selectProduct(productId);
+  document.getElementById('countInput').value = 0;
+  const panel = document.querySelector('#pageCount .add-panel');
+  if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 function initSwipeNames() {
   // Event delegation on document for all .swipeable name elements
@@ -1149,8 +1205,18 @@ function updateSummary() {
 function saveProgress() { saveToStorage(); showToast('All data auto-saved ✓', 'success'); }
 
 function openSubmitModal() {
-  if (inventory.length === 0) { showToast('No items to submit', 'error'); return; }
   if (!settings.name || !settings.location) { showToast('Please complete Store Info first', 'error'); showPage('settings'); return; }
+
+  // Block if any products haven't been counted yet
+  const countedIds = new Set(inventory.map(i => i.productId));
+  const missing = PRODUCTS.filter(p => !countedIds.has(p.id));
+  if (missing.length > 0) {
+    showToast(`${missing.length} product${missing.length > 1 ? 's' : ''} still pending — count everything first`, 'error');
+    showPage('count');
+    return;
+  }
+
+  if (inventory.length === 0) { showToast('No items to submit', 'error'); return; }
   const totalUnits = inventory.reduce((s,i) => s+i.count, 0);
   
   const modalBody = document.getElementById('submitModalBody');
