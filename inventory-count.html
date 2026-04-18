@@ -211,14 +211,6 @@
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
 
-  /* CATEGORY FILTER CHIPS */
-  .cat-filter-wrap { display: flex; gap: 7px; overflow-x: auto; padding: 2px 0 8px; margin-bottom: 4px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-  .cat-filter-wrap::-webkit-scrollbar { display: none; }
-  .cat-chip { flex-shrink: 0; padding: 5px 12px; border-radius: 20px; font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 700; border: 1.5px solid var(--border2); background: var(--white); color: var(--text2); cursor: pointer; transition: all 0.15s; white-space: nowrap; letter-spacing: 0.1px; }
-  .cat-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(46,204,143,0.3); }
-  .cat-chip .chip-count { display: inline-block; background: rgba(0,0,0,0.1); border-radius: 10px; padding: 0 5px; margin-left: 4px; font-size: 10px; }
-  .cat-chip.active .chip-count { background: rgba(255,255,255,0.25); }
-
   /* SCANNER BUTTON */
   .scan-btn { display: flex; align-items: center; justify-content: center; gap: 7px; width: 100%; padding: 11px 16px; border-radius: var(--radius-sm); font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; border: 1.5px solid var(--blue); background: var(--blue-light); color: var(--blue); cursor: pointer; transition: all 0.15s; margin-bottom: 9px; letter-spacing: 0.1px; }
   .scan-btn:active { transform: scale(0.97); background: var(--blue); color: #fff; }
@@ -253,6 +245,15 @@
   .scanner-result { font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; margin-top: 5px; min-height: 18px; }
   .scanner-result.found { color: var(--accent); }
   .scanner-result.not-found { color: #f87171; }
+
+  /* NOT-FOUND BANNER — prominent centre overlay */
+  .scanner-notfound { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.85); background: rgba(20,10,10,0.93); border: 2px solid #ef4444; border-radius: 18px; padding: 24px 28px; text-align: center; min-width: 240px; max-width: 80vw; display: none; flex-direction: column; align-items: center; gap: 6px; backdrop-filter: blur(4px); z-index: 10; }
+  .scanner-notfound.show { display: flex; animation: nfPop 0.2s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+  @keyframes nfPop { from { transform: translate(-50%,-50%) scale(0.8); opacity:0; } to { transform: translate(-50%,-50%) scale(1); opacity:1; } }
+  .scanner-notfound-icon { width: 48px; height: 48px; border-radius: 50%; background: #ef4444; color: #fff; font-size: 22px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
+  .scanner-notfound-title { font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800; color: #fff; }
+  .scanner-notfound-code { font-family: monospace; font-size: 13px; color: #f87171; background: rgba(239,68,68,0.15); padding: 4px 10px; border-radius: 6px; letter-spacing: 1px; }
+  .scanner-notfound-sub { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
 </style>
 </head>
 <body>
@@ -342,7 +343,6 @@
         <div class="add-icon">+</div>
         Add Item
       </div>
-      <div class="cat-filter-wrap" id="catFilterBar"></div>
       <button class="scan-btn" onclick="openScanner('count')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:18px;height:18px;stroke-width:2.2"><path d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12" stroke-width="2.5"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="15" x2="17" y2="15"/></svg>
         Scan Barcode
@@ -618,9 +618,15 @@
         <div class="scanner-line"></div>
       </div>
     </div>
+    <!-- Not-found banner: shown in centre of screen on bad scan -->
+    <div class="scanner-notfound" id="scannerNotFound">
+      <div class="scanner-notfound-icon">✕</div>
+      <div class="scanner-notfound-title">SKU Not Found</div>
+      <div class="scanner-notfound-code" id="scannerNotFoundCode"></div>
+      <div class="scanner-notfound-sub">This barcode is not in the product list</div>
+    </div>
     <div class="scanner-hint">
       <div class="scanner-hint-text">Point camera at the barcode on the shelf label</div>
-      <div class="scanner-result" id="scannerResult"></div>
     </div>
   </div>
 </div>
@@ -689,7 +695,6 @@ function init() {
     loadFromStorage();
     checkAndClearOldData();
     loadSystemCountDataAndRender();
-    buildCatFilterBar();
     initSwipeNames();
     updateDateTime();
     setInterval(updateDateTime, 30000);
@@ -803,9 +808,8 @@ function onSearch() {
   const categories = {};
   PRODUCTS.forEach(p => {
     if (countedIds.has(p.id)) return; // already counted — hide from dropdown
-    const catMatch = activeCatFilter === 'All' || p.category === activeCatFilter;
     const textMatch = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
-    if (catMatch && textMatch) { if (!categories[p.category]) categories[p.category] = []; categories[p.category].push(p); }
+    if (textMatch) { if (!categories[p.category]) categories[p.category] = []; categories[p.category].push(p); }
   });
   const keys = Object.keys(categories);
   if (keys.length === 0) {
@@ -984,29 +988,6 @@ function initSwipeNames() {
   document.addEventListener('mousedown', onStart);
   document.addEventListener('mousemove', onMove);
   document.addEventListener('mouseup', onEnd);
-}
-
-let activeCatFilter = 'All';
-
-function buildCatFilterBar() {
-  const bar = document.getElementById('catFilterBar');
-  const cats = [...new Set(PRODUCTS.map(p => p.category))].sort();
-  let html = `<div class="cat-chip active" id="chip-All" onclick="setCatFilter('All')">All</div>`;
-  cats.forEach(cat => {
-    const safe = cat.replace(/'/g, "\\'");
-    html += `<div class="cat-chip" id="chip-${cat}" onclick="setCatFilter('${safe}')">${cat}</div>`;
-  });
-  bar.innerHTML = html;
-}
-
-function setCatFilter(cat) {
-  activeCatFilter = cat;
-  // Update chip active states
-  document.querySelectorAll('#catFilterBar .cat-chip').forEach(el => el.classList.remove('active'));
-  const activeChip = document.getElementById('chip-' + cat);
-  if (activeChip) activeChip.classList.add('active');
-  // Trigger search refresh so dropdown reflects the filter
-  onSearch();
 }
 
 // DAMAGES FUNCTIONS
@@ -1581,7 +1562,7 @@ async function shareFile() {
   } else { showToast('Sharing not supported on this browser', 'error'); document.getElementById('shareBtn').style.display = 'none'; }
 }
 
-function clearAll() { closeModal('clearModal'); inventory = []; activeCatFilter = 'All'; saveToStorage(); renderInventory(); showToast('All data cleared'); showPage('count'); }
+function clearAll() { closeModal('clearModal'); inventory = []; saveToStorage(); renderInventory(); showToast('All data cleared'); showPage('count'); }
 
 let toastTimer;
 function showToast(msg, type = '') {
@@ -1616,8 +1597,7 @@ function openScanner(context) {
   }
   scannerContext = context;
   lastScannedCode = null;
-  document.getElementById('scannerResult').textContent = '';
-  document.getElementById('scannerResult').className = 'scanner-result';
+  document.getElementById('scannerNotFound').classList.remove('show');
   document.getElementById('scannerOverlay').classList.add('open');
   startScanner();
 }
@@ -1669,11 +1649,7 @@ function startScanner() {
     }
   ).catch(err => {
     console.warn('Scanner error:', err);
-    const resultEl = document.getElementById('scannerResult');
-    if (resultEl) {
-      resultEl.textContent = 'Camera access denied — check permissions';
-      resultEl.className = 'scanner-result not-found';
-    }
+    showToast('Camera access denied — check permissions', 'error');
   });
 }
 
@@ -1693,7 +1669,6 @@ function stopScanner() {
 
 function handleScanResult(code) {
   scanCooldown = true;
-  const resultEl = document.getElementById('scannerResult');
 
   // Match against SKU field (strip leading zeros for safety, try both)
   const product = PRODUCTS.find(p =>
@@ -1703,13 +1678,8 @@ function handleScanResult(code) {
   );
 
   if (product) {
-    resultEl.textContent = '✓ ' + product.name;
-    resultEl.className = 'scanner-result found';
-
-    // Short vibration feedback if supported
     if (navigator.vibrate) navigator.vibrate(80);
 
-    // Close scanner after brief success display, then select product
     setTimeout(() => {
       closeScanner();
       if (scannerContext === 'count') {
@@ -1723,17 +1693,18 @@ function handleScanResult(code) {
     }, 700);
 
   } else {
-    resultEl.textContent = `✗ SKU not found: ${code}`;
-    resultEl.className = 'scanner-result not-found';
+    // Show prominent centre banner
+    const banner = document.getElementById('scannerNotFound');
+    document.getElementById('scannerNotFoundCode').textContent = code;
+    banner.classList.add('show');
     if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
 
-    // Allow retry after 2.5s
+    // Dismiss after 2.5s and allow retry
     setTimeout(() => {
       if (scannerActive) {
+        banner.classList.remove('show');
         lastScannedCode = null;
         scanCooldown = false;
-        resultEl.textContent = '';
-        resultEl.className = 'scanner-result';
       }
     }, 2500);
   }
