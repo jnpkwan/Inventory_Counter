@@ -260,6 +260,10 @@
         <label>Date & Time</label>
         <input type="text" id="setDateTime" readonly />
       </div>
+      <div class="field">
+        <label>Total Unique SKUs Loaded</label>
+        <input type="text" id="setSkuCount" readonly style="color:var(--accent-dark);font-weight:700;font-family:'Nunito',sans-serif;" />
+      </div>
     </div>
     <button class="btn btn-primary" onclick="saveSettings()">
       Save & Start Counting →
@@ -561,8 +565,17 @@ let LOCATIONS = [];
 function loadProducts() {
   return fetch('products.json')
     .then(response => response.json())
-    .then(data => { PRODUCTS = data.products || []; })
-    .catch(error => { console.log('Products data not loaded'); PRODUCTS = []; });
+    .then(data => {
+      PRODUCTS = data.products || [];
+      const uniqueSkus = new Set(PRODUCTS.map(p => p.sku)).size;
+      const el = document.getElementById('setSkuCount');
+      if (el) el.value = uniqueSkus + ' SKUs';
+    })
+    .catch(error => {
+      console.log('Products data not loaded'); PRODUCTS = [];
+      const el = document.getElementById('setSkuCount');
+      if (el) el.value = '— unavailable —';
+    });
 }
 
 // Load locations from JSON
