@@ -254,6 +254,7 @@
   .scanner-notfound-title { font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800; color: #fff; }
   .scanner-notfound-code { font-family: monospace; font-size: 13px; color: #f87171; background: rgba(239,68,68,0.15); padding: 4px 10px; border-radius: 6px; letter-spacing: 1px; }
   .scanner-notfound-sub { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+
 </style>
 </head>
 <body>
@@ -638,7 +639,6 @@
 // Data loaded from JSON files
 let PRODUCTS = [];
 let LOCATIONS = [];
-
 // Load products from JSON
 function loadProducts() {
   return fetch('products.json')
@@ -690,7 +690,6 @@ function populateLocationDropdown() {
 }
 
 function init() {
-  // Load JSON data first
   Promise.all([loadProducts(), loadLocations()]).then(() => {
     loadFromStorage();
     checkAndClearOldData();
@@ -703,9 +702,10 @@ function init() {
     document.getElementById('searchInput').addEventListener('focus', onSearch);
     document.getElementById('searchInputDamages').addEventListener('input', onSearchDamages);
     document.getElementById('searchInputDamages').addEventListener('focus', onSearchDamages);
-    document.addEventListener('click', (e) => { 
-      if (!e.target.closest('.add-panel')) { 
-        closeDropdown(); 
+    document.addEventListener('click', (e) => {
+      if (window._scannerJustClosed) return;
+      if (!e.target.closest('.add-panel')) {
+        closeDropdown();
         closeDropdownDamages();
       }
     });
@@ -841,9 +841,13 @@ function selectProduct(id) {
   document.getElementById('selCat').textContent = `${p.category} · ${p.sku}`;
   document.getElementById('selectedProduct').classList.add('show');
   document.getElementById('searchInput').value = '';
+  document.getElementById('countInput').value = 0;
   closeDropdown();
-  document.getElementById('countInput').focus();
-  document.getElementById('countInput').select();
+  requestAnimationFrame(() => {
+    const input = document.getElementById('countInput');
+    input.focus();
+    input.select();
+  });
 }
 
 function clearSelection() { selectedProductId = null; document.getElementById('selectedProduct').classList.remove('show'); document.getElementById('searchInput').value = ''; document.getElementById('countInput').value = 0; }
@@ -1127,16 +1131,16 @@ function saveSettings() {
   const location = document.getElementById('setLocation').value;
   if (!name) { showToast('Please enter your name', 'error'); return; }
   if (!location) { showToast('Please select a store', 'error'); return; }
-  
+
   const locationChanged = settings.location !== location;
   settings.name = name; settings.location = location; settings.period = getCurrentPeriod();
   saveToStorage(); populateSettingsForm();
-  
+
   // Re-render inventory if location changed so system counts update
   if (locationChanged && inventory.length > 0) {
     renderInventory();
   }
-  
+
   showToast('Details saved ✓', 'success'); showPage('count');
 }
 
@@ -1604,6 +1608,7 @@ function openScanner(context) {
 
 function closeScanner() {
   document.getElementById('scannerOverlay').classList.remove('open');
+  document.getElementById('scannerNotFound').classList.remove('show');
   stopScanner();
   scannerContext = null;
   lastScannedCode = null;
@@ -1668,29 +1673,45 @@ function stopScanner() {
 }
 
 function handleScanResult(code) {
+  // Only process codes starting with '2' (store SKU format)
+  // Reject manufacturer EANs (e.g. starting with '4') and keep scanning
+  if (!code.startsWith('2')) {
+    console.log('IGNORED (wrong prefix):', code);
+    scanCooldown = false;
+    lastScannedCode = null;
+    return;
+  }
+
   scanCooldown = true;
 
-  // Match against SKU field (strip leading zeros for safety, try both)
-  const product = PRODUCTS.find(p =>
-    p.sku === code ||
-    p.sku === code.replace(/^0+/, '') ||
-    code === p.sku.replace(/^0+/, '')
-  );
+  // DEBUG — log raw scanned code vs first 3 SKUs so we can compare formats
+  console.log('SCANNED RAW:', JSON.stringify(code), '| length:', code.length);
+  console.log('SAMPLE SKUs:', PRODUCTS.slice(0,3).map(p => JSON.stringify(p.sku) + ' len:' + p.sku.length));
+
+  const product = PRODUCTS.find(p => p.sku === code);
 
   if (product) {
     if (navigator.vibrate) navigator.vibrate(80);
 
-    setTimeout(() => {
-      closeScanner();
-      if (scannerContext === 'count') {
-        selectProduct(product.id);
-        showToast(`${product.name} scanned ✓`, 'success');
-      } else if (scannerContext === 'damages') {
-        selectProductDamages(product.id);
-        showToast(`${product.name} scanned ✓`, 'success');
-      }
-      scanCooldown = false;
-    }, 700);
+    window._scannerJustClosed = true;
+    closeScanner();
+
+    if (scannerContext === 'count') {
+      showPage('count');
+      selectProduct(product.id);
+      showToast(`${product.name} scanned ✓`, 'success');
+      const panel = document.querySelector('#pageCount .add-panel');
+      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (scannerContext === 'damages') {
+      showPage('damages');
+      selectProductDamages(product.id);
+      showToast(`${product.name} scanned ✓`, 'success');
+      const panel = document.querySelector('#pageDamages .add-panel');
+      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    setTimeout(() => { window._scannerJustClosed = false; }, 300);
+    scanCooldown = false;
 
   } else {
     // Show prominent centre banner
