@@ -1693,16 +1693,18 @@ function handleScanResult(code) {
   if (product) {
     if (navigator.vibrate) navigator.vibrate(80);
 
+    // Capture context BEFORE closeScanner() nulls it
+    const context = scannerContext;
     window._scannerJustClosed = true;
     closeScanner();
 
-    if (scannerContext === 'count') {
+    if (context === 'count') {
       showPage('count');
       selectProduct(product.id);
       showToast(`${product.name} scanned ✓`, 'success');
       const panel = document.querySelector('#pageCount .add-panel');
       if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (scannerContext === 'damages') {
+    } else if (context === 'damages') {
       showPage('damages');
       selectProductDamages(product.id);
       showToast(`${product.name} scanned ✓`, 'success');
