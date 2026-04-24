@@ -246,14 +246,6 @@
   .scanner-result.found { color: var(--accent); }
   .scanner-result.not-found { color: #f87171; }
 
-  /* NOT-FOUND BANNER — sits over the full scanner overlay, outside viewport */
-  .scanner-notfound { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.85); background: rgba(20,10,10,0.93); border: 2px solid #ef4444; border-radius: 18px; padding: 24px 28px; text-align: center; min-width: 240px; max-width: 80vw; display: flex; flex-direction: column; align-items: center; gap: 6px; backdrop-filter: blur(4px); z-index: 600; opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1); }
-  .scanner-notfound.show { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
-  .scanner-notfound-icon { width: 48px; height: 48px; border-radius: 50%; background: #ef4444; color: #fff; font-size: 22px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
-  .scanner-notfound-title { font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800; color: #fff; }
-  .scanner-notfound-code { font-family: monospace; font-size: 13px; color: #f87171; background: rgba(239,68,68,0.15); padding: 4px 10px; border-radius: 6px; letter-spacing: 1px; }
-  .scanner-notfound-sub { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
-
 </style>
 </head>
 <body>
@@ -600,17 +592,15 @@
 <!-- BARCODE SCANNER MODAL -->
 <div class="scanner-overlay" id="scannerOverlay">
   <div class="scanner-header">
-    <div class="scanner-title">📷 Scan EAN-13 Barcode</div>
+    <div class="scanner-title">📷 Scan Barcode</div>
     <button class="scanner-close" onclick="closeScanner()">✕</button>
   </div>
   <div class="scanner-viewport">
     <video id="scannerVideo" playsinline muted></video>
-    <!-- Dimming overlays -->
     <div class="scanner-dim scanner-dim-top"></div>
     <div class="scanner-dim scanner-dim-bottom"></div>
     <div class="scanner-dim scanner-dim-left"></div>
     <div class="scanner-dim scanner-dim-right"></div>
-    <!-- Targeting frame -->
     <div class="scanner-frame">
       <div class="scanner-box">
         <div class="scanner-corner-bl"></div>
@@ -619,17 +609,10 @@
       </div>
     </div>
     <div class="scanner-hint">
-      <div class="scanner-hint-text">Point camera at the barcode on the shelf label</div>
+      <div class="scanner-hint-text">Point at the barcode on the shelf label</div>
     </div>
   </div>
-</div>
-
-<!-- Not-found banner: body-level so no parent can hide or clip it -->
-<div class="scanner-notfound" id="scannerNotFound">
-  <div class="scanner-notfound-icon">✕</div>
-  <div class="scanner-notfound-title">SKU Not Found</div>
-  <div class="scanner-notfound-code" id="scannerNotFoundCode"></div>
-  <div class="scanner-notfound-sub">This barcode is not in the product list</div>
+  <div id="scannerErrorMsg" style="display:none; background:#dc2626; color:#fff; font-family:'Nunito',sans-serif; font-size:16px; font-weight:700; text-align:center; padding:18px 24px; flex-shrink:0; letter-spacing:0.2px;"></div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -703,7 +686,6 @@ function init() {
     document.getElementById('searchInputDamages').addEventListener('input', onSearchDamages);
     document.getElementById('searchInputDamages').addEventListener('focus', onSearchDamages);
     document.addEventListener('click', (e) => {
-      if (window._scannerJustClosed) return;
       if (!e.target.closest('.add-panel')) {
         closeDropdown();
         closeDropdownDamages();
@@ -1585,142 +1567,115 @@ if ('serviceWorker' in navigator) {
 }
 
 // =============================================
-// BARCODE SCANNER
+// BARCODE SCANNER — clean rewrite
 // =============================================
-let scannerActive = false;
-let scannerContext = null; // 'count' or 'damages'
-let codeReader = null;
-let scannerStream = null;
-let lastScannedCode = null;
-let scanCooldown = false;
+let _scanCtx    = null;   // 'count' | 'damages'
+let _scanReader = null;
+let _scanLock   = false;  // single gate: true while processing a result
 
-function openScanner(context) {
+function openScanner(ctx) {
   if (typeof ZXing === 'undefined') {
-    showToast('Scanner library not loaded — check connection', 'error');
+    alert('Scanner library not loaded. Please check your internet connection and reload.');
     return;
   }
-  scannerContext = context;
-  lastScannedCode = null;
-  document.getElementById('scannerNotFound').classList.remove('show');
+  _scanCtx  = ctx;
+  _scanLock = false;
+  _hideScannerError();
   document.getElementById('scannerOverlay').classList.add('open');
-  startScanner();
+  _startCamera();
 }
 
 function closeScanner() {
   document.getElementById('scannerOverlay').classList.remove('open');
-  document.getElementById('scannerNotFound').classList.remove('show');
-  stopScanner();
-  scannerContext = null;
-  lastScannedCode = null;
+  _hideScannerError();
+  _stopCamera();
+  _scanCtx  = null;
+  _scanLock = false;
 }
 
-function startScanner() {
-  stopScanner(); // ensure clean state
-  scannerActive = true;
-  scanCooldown = false;
-
+function _startCamera() {
+  _stopCamera();
   try {
     const hints = new Map();
-    const formats = [ZXing.BarcodeFormat.EAN_13, ZXing.BarcodeFormat.EAN_8, ZXing.BarcodeFormat.UPC_A, ZXing.BarcodeFormat.CODE_128];
-    hints.set(ZXing.DecodeHintType.POSSIBLE_FORMATS, formats);
+    hints.set(ZXing.DecodeHintType.POSSIBLE_FORMATS, [
+      ZXing.BarcodeFormat.EAN_13,
+      ZXing.BarcodeFormat.EAN_8,
+      ZXing.BarcodeFormat.UPC_A,
+      ZXing.BarcodeFormat.CODE_128
+    ]);
     hints.set(ZXing.DecodeHintType.TRY_HARDER, true);
-    codeReader = new ZXing.BrowserMultiFormatReader(hints, 400);
+    _scanReader = new ZXing.BrowserMultiFormatReader(hints, 300);
   } catch(e) {
-    showToast('Scanner init failed', 'error');
+    alert('Scanner failed to initialise: ' + e.message);
     closeScanner();
     return;
   }
 
-  const video = document.getElementById('scannerVideo');
-
-  codeReader.decodeFromConstraints(
-    {
-      video: {
-        facingMode: 'environment',
-        width: { ideal: 1280 },
-        height: { ideal: 720 },
-        focusMode: 'continuous'
-      }
-    },
-    video,
+  _scanReader.decodeFromConstraints(
+    { video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } } },
+    document.getElementById('scannerVideo'),
     (result, err) => {
-      if (!scannerActive) return;
-      if (result && !scanCooldown) {
-        const code = result.getText().replace(/\s/g, '');
-        if (code === lastScannedCode) return;
-        lastScannedCode = code;
-        handleScanResult(code);
-      }
+      if (!result || _scanLock) return;
+      _scanLock = true;
+      const code = result.getText().replace(/\s+/g, '');
+      console.log('[SCANNER] read:', code);
+      _onCode(code);
     }
-  ).catch(err => {
-    console.warn('Scanner error:', err);
-    showToast('Camera access denied — check permissions', 'error');
+  ).catch(e => {
+    alert('Camera error: ' + e.message + '\nPlease allow camera access and try again.');
   });
 }
 
-function stopScanner() {
-  scannerActive = false;
-  if (codeReader) {
-    try { codeReader.reset(); } catch(e) {}
-    codeReader = null;
+function _stopCamera() {
+  if (_scanReader) {
+    try { _scanReader.reset(); } catch(e) {}
+    _scanReader = null;
   }
-  // Also stop any active media tracks
-  const video = document.getElementById('scannerVideo');
-  if (video && video.srcObject) {
-    video.srcObject.getTracks().forEach(t => t.stop());
-    video.srcObject = null;
+  const v = document.getElementById('scannerVideo');
+  if (v && v.srcObject) {
+    v.srcObject.getTracks().forEach(t => t.stop());
+    v.srcObject = null;
   }
 }
 
-function handleScanResult(code) {
-  scanCooldown = true;
+function _showScannerError(msg) {
+  const el = document.getElementById('scannerErrorMsg');
+  if (el) { el.textContent = msg; el.style.display = 'block'; }
+}
 
-  console.log('SCANNED:', code, '| length:', code.length);
+function _hideScannerError() {
+  const el = document.getElementById('scannerErrorMsg');
+  if (el) { el.style.display = 'none'; el.textContent = ''; }
+}
 
-  // Silently ignore non-2 prefix codes (manufacturer EANs picked up by accident)
-  if (!code.startsWith('2')) {
-    setTimeout(() => { lastScannedCode = null; scanCooldown = false; }, 1500);
-    return;
-  }
-
+function _onCode(code) {
   const product = PRODUCTS.find(p => p.sku === code);
 
   if (product) {
     if (navigator.vibrate) navigator.vibrate(80);
-    const context = scannerContext; // capture BEFORE closeScanner nulls it
-    window._scannerJustClosed = true;
+    const ctx = _scanCtx;   // save before closeScanner nulls it
     closeScanner();
-
-    if (context === 'count') {
+    if (ctx === 'count') {
       showPage('count');
       selectProduct(product.id);
-      showToast(`${product.name} scanned ✓`, 'success');
+      showToast(product.name + ' scanned ✓', 'success');
       const panel = document.querySelector('#pageCount .add-panel');
       if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (context === 'damages') {
+    } else if (ctx === 'damages') {
       showPage('damages');
       selectProductDamages(product.id);
-      showToast(`${product.name} scanned ✓`, 'success');
+      showToast(product.name + ' scanned ✓', 'success');
       const panel = document.querySelector('#pageDamages .add-panel');
       if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    setTimeout(() => { window._scannerJustClosed = false; }, 300);
-    scanCooldown = false;
-
   } else {
-    // Not in product list — show banner AND toast as fallback
-    if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
-
-    const banner = document.getElementById('scannerNotFound');
-    document.getElementById('scannerNotFoundCode').textContent = code;
-    banner.classList.add('show');
-    showToast('SKU not found: ' + code, 'error');
-
+    // Not found — show error inside the scanner overlay
+    if (navigator.vibrate) navigator.vibrate([80, 60, 80]);
+    _showScannerError('❌  SKU not found: ' + code);
     setTimeout(() => {
-      banner.classList.remove('show');
-      lastScannedCode = null;
-      scanCooldown = false;
+      _hideScannerError();
+      _scanLock = false;
     }, 3000);
   }
 }
