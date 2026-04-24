@@ -622,13 +622,14 @@
       <div class="scanner-hint-text">Point camera at the barcode on the shelf label</div>
     </div>
   </div>
-  <!-- Not-found banner: outside viewport so overflow:hidden doesn't clip it -->
-  <div class="scanner-notfound" id="scannerNotFound">
-    <div class="scanner-notfound-icon">✕</div>
-    <div class="scanner-notfound-title">SKU Not Found</div>
-    <div class="scanner-notfound-code" id="scannerNotFoundCode"></div>
-    <div class="scanner-notfound-sub">This barcode is not in the product list</div>
-  </div>
+</div>
+
+<!-- Not-found banner: body-level so no parent can hide or clip it -->
+<div class="scanner-notfound" id="scannerNotFound">
+  <div class="scanner-notfound-icon">✕</div>
+  <div class="scanner-notfound-title">SKU Not Found</div>
+  <div class="scanner-notfound-code" id="scannerNotFoundCode"></div>
+  <div class="scanner-notfound-sub">This barcode is not in the product list</div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -1674,19 +1675,11 @@ function stopScanner() {
 function handleScanResult(code) {
   scanCooldown = true;
 
-  // DEBUG — log raw scanned code
-  console.log('SCANNED RAW:', JSON.stringify(code), '| length:', code.length);
+  console.log('SCANNED:', code, '| length:', code.length);
 
-  // Only process codes starting with '2' (store SKU format)
-  // Anything else is a manufacturer EAN — show not-found and reset
+  // Silently ignore non-2 prefix codes (manufacturer EANs picked up by accident)
   if (!code.startsWith('2')) {
-    console.log('IGNORED (wrong prefix):', code);
-    setTimeout(() => {
-      if (scannerActive) {
-        lastScannedCode = null;
-        scanCooldown = false;
-      }
-    }, 1500);
+    setTimeout(() => { lastScannedCode = null; scanCooldown = false; }, 1500);
     return;
   }
 
@@ -1694,9 +1687,7 @@ function handleScanResult(code) {
 
   if (product) {
     if (navigator.vibrate) navigator.vibrate(80);
-
-    // Capture context BEFORE closeScanner() nulls it
-    const context = scannerContext;
+    const context = scannerContext; // capture BEFORE closeScanner nulls it
     window._scannerJustClosed = true;
     closeScanner();
 
@@ -1718,20 +1709,19 @@ function handleScanResult(code) {
     scanCooldown = false;
 
   } else {
-    // SKU starts with 2 but not in the product list — show banner
+    // Not in product list — show banner AND toast as fallback
+    if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
+
     const banner = document.getElementById('scannerNotFound');
     document.getElementById('scannerNotFoundCode').textContent = code;
     banner.classList.add('show');
-    if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
+    showToast('SKU not found: ' + code, 'error');
 
-    // Dismiss after 2.5s and allow retry
     setTimeout(() => {
-      if (scannerActive) {
-        banner.classList.remove('show');
-        lastScannedCode = null;
-        scanCooldown = false;
-      }
-    }, 2500);
+      banner.classList.remove('show');
+      lastScannedCode = null;
+      scanCooldown = false;
+    }, 3000);
   }
 }
 </script>
