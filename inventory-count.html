@@ -246,10 +246,9 @@
   .scanner-result.found { color: var(--accent); }
   .scanner-result.not-found { color: #f87171; }
 
-  /* NOT-FOUND BANNER — prominent centre overlay */
-  .scanner-notfound { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.85); background: rgba(20,10,10,0.93); border: 2px solid #ef4444; border-radius: 18px; padding: 24px 28px; text-align: center; min-width: 240px; max-width: 80vw; display: none; flex-direction: column; align-items: center; gap: 6px; backdrop-filter: blur(4px); z-index: 20; }
-  .scanner-notfound.show { display: flex; animation: nfPop 0.2s cubic-bezier(0.34,1.56,0.64,1) forwards; }
-  @keyframes nfPop { from { transform: translate(-50%,-50%) scale(0.8); opacity:0; } to { transform: translate(-50%,-50%) scale(1); opacity:1; } }
+  /* NOT-FOUND BANNER — sits over the full scanner overlay, outside viewport */
+  .scanner-notfound { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.85); background: rgba(20,10,10,0.93); border: 2px solid #ef4444; border-radius: 18px; padding: 24px 28px; text-align: center; min-width: 240px; max-width: 80vw; display: flex; flex-direction: column; align-items: center; gap: 6px; backdrop-filter: blur(4px); z-index: 600; opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1); }
+  .scanner-notfound.show { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
   .scanner-notfound-icon { width: 48px; height: 48px; border-radius: 50%; background: #ef4444; color: #fff; font-size: 22px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
   .scanner-notfound-title { font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800; color: #fff; }
   .scanner-notfound-code { font-family: monospace; font-size: 13px; color: #f87171; background: rgba(239,68,68,0.15); padding: 4px 10px; border-radius: 6px; letter-spacing: 1px; }
@@ -619,16 +618,16 @@
         <div class="scanner-line"></div>
       </div>
     </div>
-    <!-- Not-found banner: shown in centre of screen on bad scan -->
-    <div class="scanner-notfound" id="scannerNotFound">
-      <div class="scanner-notfound-icon">✕</div>
-      <div class="scanner-notfound-title">SKU Not Found</div>
-      <div class="scanner-notfound-code" id="scannerNotFoundCode"></div>
-      <div class="scanner-notfound-sub">This barcode is not in the product list</div>
-    </div>
     <div class="scanner-hint">
       <div class="scanner-hint-text">Point camera at the barcode on the shelf label</div>
     </div>
+  </div>
+  <!-- Not-found banner: outside viewport so overflow:hidden doesn't clip it -->
+  <div class="scanner-notfound" id="scannerNotFound">
+    <div class="scanner-notfound-icon">✕</div>
+    <div class="scanner-notfound-title">SKU Not Found</div>
+    <div class="scanner-notfound-code" id="scannerNotFoundCode"></div>
+    <div class="scanner-notfound-sub">This barcode is not in the product list</div>
   </div>
 </div>
 
