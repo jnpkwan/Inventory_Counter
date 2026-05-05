@@ -378,6 +378,26 @@
   .footer strong { color: rgba(255,255,255,0.8); }
 
 
+  /* INSTALL BUTTON */
+  .install-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 15px 20px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    color: #fff; border: none; border-radius: var(--radius-sm);
+    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(26,79,160,0.35);
+    transition: transform 0.1s, box-shadow 0.15s; margin-bottom: 10px;
+  }
+  .install-btn:active { transform: scale(0.97); }
+  .install-btn.hidden { display: none; }
+  .ios-guide { display: none; }
+  .ios-guide.show { display: block; }
+  .ios-step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+  .ios-step:last-child { margin-bottom: 0; }
+  .ios-icon { font-size: 22px; flex-shrink: 0; width: 32px; text-align: center; }
+  .ios-text { font-size: 13px; color: var(--text2); line-height: 1.6; }
+  .ios-text strong { color: var(--text); font-family: 'Nunito', sans-serif; }
+
   @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 
@@ -442,6 +462,7 @@
   <div class="toc-title">📑 Nilalaman</div>
   <ul class="toc-list">
     <li><a href="#overview">🗺 Overview</a></li>
+    <li><a href="#install">📲 I-install ang App</a></li>
     <li><a href="#step1">1 · Store Info</a></li>
     <li><a href="#step2">2 · Count</a></li>
     <li><a href="#step3">3 · Damages</a></li>
@@ -541,7 +562,96 @@
 
   <hr class="section-divider">
 
-  <!-- STEP 1: STORE INFO -->
+  <!-- INSTALL APP -->
+  <div class="guide-section" id="install">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#7c3aed,#5b21b6);box-shadow:0 3px 10px rgba(124,58,237,0.25);">📲</div>
+      <div class="section-title-wrap">
+        <div class="section-title">I-install ang App sa Home Screen</div>
+        <div class="section-sub">Para mas madaling buksan — tulad ng regular na app!</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">💡</div>
+      <div class="callout-body">
+        <div class="callout-title">Bakit i-install sa home screen?</div>
+        Kapag na-install mo na ang app sa iyong home screen, pwede mo itong buksan nang direkta — tulad ng Instagram o Messenger. Hindi ka na kailangang buksan ang browser at mag-type ng URL. Mas mabilis at mas madali!
+      </div>
+    </div>
+
+    <!-- ANDROID -->
+    <div class="card">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🤖 Para sa Android (Google Chrome)</div>
+
+      <button class="install-btn" id="androidInstallBtn" onclick="triggerInstall()">
+        <span style="font-size:20px;">📲</span>
+        I-install ang App sa Home Screen
+      </button>
+
+      <div id="androidInstallDone" class="callout tip" style="display:none;">
+        <div class="callout-icon">✅</div>
+        <div class="callout-body">
+          <div class="callout-title">Na-install na!</div>
+          Hanapin ang AcaciaHBC Inventory app sa iyong home screen. I-tap na para buksan!
+        </div>
+      </div>
+
+      <div id="androidInstallUnavail" class="callout warn" style="display:none;">
+        <div class="callout-icon">ℹ️</div>
+        <div class="callout-body">
+          <div class="callout-title">Hindi available ang install button ngayon</div>
+          Baka naka-install na ang app, o hindi Chrome ang browser mo. Subukan mo ang manual na paraan: i-tap ang ⋮ menu sa Chrome → <strong>Add to Home Screen</strong>.
+        </div>
+      </div>
+
+      <p style="font-size:12px;color:var(--text3);text-align:center;margin-top:8px;">I-tap ang button para lumabas ang install prompt ng Chrome.</p>
+    </div>
+
+    <!-- iOS -->
+    <div class="card">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🍎 Para sa iPhone / iPad (Safari)</div>
+
+      <div class="callout warn">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <div class="callout-title">Gamitin ang Safari — hindi Chrome!</div>
+          Sa iPhone, kailangan mong gamitin ang <strong>Safari browser</strong> para ma-install ang app sa home screen. Hindi gagana sa Chrome para sa iOS.
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-bubble">1</div>
+        <div class="step-body">
+          <div class="step-label">Buksan ang app sa Safari</div>
+          <div class="step-desc">I-open ang Safari at pumunta sa link ng app.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">2</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang Share button</div>
+          <div class="step-desc">I-tap ang <strong style="font-size:16px;">⎙</strong> Share button sa ibaba ng screen (yung may arrow pataas). Nasa gitna ito ng toolbar ng Safari.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">3</div>
+        <div class="step-body">
+          <div class="step-label">Piliin ang "Add to Home Screen"</div>
+          <div class="step-desc">Mag-scroll pababa sa share menu at hanapin ang <strong>"Add to Home Screen"</strong>. I-tap ito.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">4</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang "Add"</div>
+          <div class="step-desc">Lalabas ang confirmation. I-tap ang <strong>"Add"</strong> sa kanang sulok sa itaas. Tapos na! 🎉 Hanapin ang app icon sa iyong home screen.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
   <div class="guide-section" id="step1">
     <div class="section-header">
       <div class="section-num">1</div>
@@ -577,8 +687,8 @@
       <div class="step-item">
         <div class="step-bubble">3</div>
         <div class="step-body">
-          <div class="step-label">Count Period at Date/Time — automatic na!</div>
-          <div class="step-desc">Hindi mo na kailangang baguhin ito. Awtomatiko itong naka-fill ng app. ✅</div>
+          <div class="step-label">Count Period, Date/Time, at Total Unique SKUs — automatic na!</div>
+          <div class="step-desc">Hindi mo na kailangang baguhin ito. Awtomatiko itong naka-fill ng app. Ang <span class="hl-blue">Total Unique SKUs</span> ay nagpapakita kung ilang produkto ang naka-load — gamitin ito para ma-verify na kumpleto ang listahan. ✅</div>
         </div>
       </div>
       <div class="step-item">
@@ -596,6 +706,7 @@
       <div class="ui-field">GENSAN ▾</div>
       <div class="ui-field" style="color:var(--text3);">March 2026 (auto-filled)</div>
       <div class="ui-field" style="color:var(--text3);">28 Mar 2026, 10:45 (auto-filled)</div>
+      <div class="ui-field" style="color:var(--green-dark);font-weight:700;">142 SKUs</div>
       <div class="ui-btn">Save & Start Counting →</div>
     </div>
 
@@ -629,7 +740,39 @@
     </div>
 
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🔍 Paano mag-search ng produkto</div>
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📷 Paraan 1: Gamitin ang Barcode Scanner (pinakamabilis!)</div>
+      <div class="step-item">
+        <div class="step-bubble">1</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang "Scan Barcode" button</div>
+          <div class="step-desc">Makikita mo ang asul na <span class="hl-blue">Scan Barcode</span> button sa itaas ng search box. I-tap ito para buksan ang camera.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">2</div>
+        <div class="step-body">
+          <div class="step-label">I-point ang camera sa barcode ng shelf label</div>
+          <div class="step-desc">Itutok ang camera sa barcode na nasa <strong>ibaba ng shelf label</strong> — yung maliit na itim at puting stripes. May green na targeting frame para maguide ka. I-align ang barcode sa loob ng frame.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">3</div>
+        <div class="step-body">
+          <div class="step-label">Awtomatiko itong maghahanap!</div>
+          <div class="step-desc">Kapag na-scan, awtomatikong magsasara ang camera at lalabas ang produkto sa <span class="hl">Add Item</span> panel — handa na para ilagay ang qty. Walang extra na tapping!</div>
+        </div>
+      </div>
+      <div class="callout warn">
+        <div class="callout-icon">❌</div>
+        <div class="callout-body">
+          <div class="callout-title">Kung lalabas ang "SKU Not Found"</div>
+          Ibig sabihin, ang na-scan na barcode ay hindi nasa listahan ng produkto. Subukang i-scan ulit, o gamitin ang manual na search. Kung lagi itong hindi mahanap, i-report sa iyong supervisor.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🔍 Paraan 2: Manual Search</div>
       <div class="step-item">
         <div class="step-bubble">1</div>
         <div class="step-body">
@@ -648,7 +791,7 @@
         <div class="step-bubble">3</div>
         <div class="step-body">
           <div class="step-label">I-tap ang produkto</div>
-          <div class="step-desc">Makikita mo ang mga resulta na may pangalan ng produkto at SKU code nito. I-tap ang tamang produkto para mapili ito. Lalabas ang berdeng bar na nagpapakita ng napiling produkto.</div>
+          <div class="step-desc">I-tap ang tamang produkto mula sa listahan. Lalabas agad ito sa sticky panel sa itaas — handa na para ilagay ang qty. Hindi kailangang mag-scroll pataas!</div>
         </div>
       </div>
     </div>
@@ -678,21 +821,27 @@
       </div>
     </div>
 
-    <div class="callout tip">
-      <div class="callout-icon">💡</div>
-      <div class="callout-body">
-        <div class="callout-title">May "System Count" na lalabas!</div>
-        Kapag pinili mo ang isang produkto, makikita mo ang bilang mula sa sistema (System Count). Ito ang reference mo — kung malayo ang iyong count doon, baka may mali. Double-check lang!
-      </div>
-    </div>
-
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📋 Ang iyong listahan ng Counted Items</div>
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📋 Ang iyong listahan ng Lahat ng SKUs</div>
       <div class="step-item">
         <div class="step-bubble">👀</div>
         <div class="step-body">
-          <div class="step-label">Makikita mo ang lahat ng na-count mo</div>
-          <div class="step-desc">Sa ibaba ng Add Item section, may listahan ng lahat ng produkto na naidagdag mo na. May pangalan, SKU, at bilang (units). Ang malaking berdeng numero sa kanan = ang count mo.</div>
+          <div class="step-label">Lahat ng SKU ay makikita sa listahan</div>
+          <div class="step-desc">Ang buong listahan ng mga produkto ay naka-display sa ibaba — hindi lang ang na-count mo. Ang may <strong style="color:var(--green-dark);">berdeng border</strong> = counted na. Ang may <strong style="color:var(--text3);">grey na "pending"</strong> = hindi pa na-count.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">👆</div>
+        <div class="step-body">
+          <div class="step-label">I-tap ang pending item para mag-count</div>
+          <div class="step-desc">I-tap ang kahit anong <em>"pending"</em> na item sa listahan — awtomatiko itong mapupunta sa sticky panel sa itaas para ilagay mo ang qty. Hindi mo na kailangang mag-scroll pataas!</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-bubble">📊</div>
+        <div class="step-body">
+          <div class="step-label">I-check ang progress badge</div>
+          <div class="step-desc">Sa taas ng listahan, makikita mo ang badge na nagpapakita ng iyong progress — halimbawa <span class="hl">47 / 142</span> ibig sabihin 47 na ang na-count mo sa 142 na SKUs.</div>
         </div>
       </div>
       <div class="step-item">
@@ -700,13 +849,6 @@
         <div class="step-body">
           <div class="step-label">Nagkamali sa count? I-delete muna, tapos idagdag ulit</div>
           <div class="step-desc">Hindi pwedeng direktang baguhin ang count ng isang item na naidagdag na. Kung may mali ka, i-tap ang <span class="hl-red">✕</span> button para i-delete ang item, tapos hanapin ulit at idagdag ng tamang bilang.</div>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-bubble">🗑</div>
-        <div class="step-body">
-          <div class="step-label">Paano mag-delete ng item</div>
-          <div class="step-desc">May maliit na <span class="hl-red">✕</span> na button sa tabi ng bawat item. I-tap ito para ma-remove ang item sa listahan. Magtanong muna bago i-tap — walang undo!</div>
         </div>
       </div>
     </div>
@@ -776,7 +918,7 @@
         <div class="step-bubble">2</div>
         <div class="step-body">
           <div class="step-label">Hanapin ang produkto</div>
-          <div class="step-desc">Gamitin ang search box — i-type ang pangalan o SKU ng siraing produkto. I-tap ang tamang produkto mula sa listahan.</div>
+          <div class="step-desc">Gamitin ang <span class="hl-blue">Scan Barcode</span> button para i-scan ang barcode ng siraing produkto, o gamitin ang search box — i-type ang pangalan o SKU. I-tap ang tamang produkto mula sa listahan.</div>
         </div>
       </div>
       <div class="step-item">
@@ -968,10 +1110,10 @@
     </div>
 
     <div class="callout tip">
-      <div class="callout-icon">🔍</div>
+      <div class="callout-icon">📷</div>
       <div class="callout-body">
-        <div class="callout-title">May Category Filter!</div>
-        Sa Count page, makikita mo ang mga colored chips sa itaas ng search bar (halimbawa: "All", "Padlocks", "Curtain Accessories"). I-tap ang isang category para ma-filter ang listahan at mas madaling mahanap ang produkto.
+        <div class="callout-title">Gamitin ang scanner para mas mabilis!</div>
+        Ang barcode scanner ay ang pinakamabilis na paraan ng pag-count. Scan → ilagay ang qty → Add to Count. Wala nang hinahanap pa na pangalan ng produkto. Subukan mo!
       </div>
     </div>
 
@@ -997,16 +1139,24 @@
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--text);">I-install ang app</td>
+            <td style="padding:10px 12px;color:var(--text2);">How to Use → I-install → Sundan ang steps</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);background:var(--bg);">
             <td style="padding:10px 12px;font-weight:600;color:var(--text);">Simulan ang counting</td>
             <td style="padding:10px 12px;color:var(--text2);">Tab 1 → Punan → Save & Start Counting</td>
           </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-weight:600;color:var(--text);">Mag-scan ng barcode</td>
+            <td style="padding:10px 12px;color:var(--text2);">Tab 2 → Scan Barcode → I-point sa shelf label</td>
+          </tr>
           <tr style="border-bottom:1px solid var(--border);background:var(--bg);">
             <td style="padding:10px 12px;font-weight:600;color:var(--text);">Magdagdag ng SKU count</td>
-            <td style="padding:10px 12px;color:var(--text2);">Tab 2 → Search → Piliin → Qty → Add to Count</td>
+            <td style="padding:10px 12px;color:var(--text2);">Tab 2 → Search o Scan → Qty → Add to Count</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border);">
             <td style="padding:10px 12px;font-weight:600;color:var(--text);">Mag-record ng sira</td>
-            <td style="padding:10px 12px;color:var(--text2);">Tab 3 → Search → Qty → Description → Record Damage</td>
+            <td style="padding:10px 12px;color:var(--text2);">Tab 3 → Scan o Search → Qty → Description → Record Damage</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border);background:var(--bg);">
             <td style="padding:10px 12px;font-weight:600;color:var(--text);">I-export ang report</td>
@@ -1034,5 +1184,47 @@
   May tanong ka? Makipag-ugnayan sa iyong supervisor o IT support.
 </div>
 
+<!-- ANDROID INSTALL PROMPT -->
+<script>
+  let _deferredPrompt = null;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    _deferredPrompt = e;
+    // Show the install button
+    const btn = document.getElementById('androidInstallBtn');
+    if (btn) btn.style.display = 'flex';
+    // Hide the unavailable notice if it was shown
+    const unavail = document.getElementById('androidInstallUnavail');
+    if (unavail) unavail.style.display = 'none';
+  });
+
+  function triggerInstall() {
+    if (_deferredPrompt) {
+      _deferredPrompt.prompt();
+      _deferredPrompt.userChoice.then((result) => {
+        _deferredPrompt = null;
+        const btn = document.getElementById('androidInstallBtn');
+        const done = document.getElementById('androidInstallDone');
+        if (result.outcome === 'accepted') {
+          if (btn) btn.style.display = 'none';
+          if (done) done.style.display = 'flex';
+        }
+      });
+    } else {
+      // No deferred prompt — already installed or not Chrome
+      document.getElementById('androidInstallUnavail').style.display = 'flex';
+      document.getElementById('androidInstallBtn').style.display = 'none';
+    }
+  }
+
+  window.addEventListener('appinstalled', () => {
+    const btn = document.getElementById('androidInstallBtn');
+    const done = document.getElementById('androidInstallDone');
+    if (btn) btn.style.display = 'none';
+    if (done) done.style.display = 'flex';
+    _deferredPrompt = null;
+  });
+</script>
 </body>
 </html>
