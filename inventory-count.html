@@ -153,8 +153,20 @@
   .inv-item-system { text-align: center; padding-left: 8px; border-left: 1px solid var(--border); }
   .inv-del-btn { background: var(--danger-light); border: none; color: var(--danger); cursor: pointer; padding: 7px; border-radius: 7px; font-size: 12px; font-weight: 700; line-height: 1; }
 
-  /* EMPTY */
-  .empty-state { background: var(--white); border: 2px dashed var(--border2); border-radius: var(--radius); padding: 34px 20px; text-align: center; color: var(--text3); font-size: 14px; line-height: 1.6; }
+  /* STICKY ADD PANEL — count page only */
+  #pageCount .add-panel {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    margin-left: -16px;
+    margin-right: -16px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  } background: var(--white); border: 2px dashed var(--border2); border-radius: var(--radius); padding: 34px 20px; text-align: center; color: var(--text3); font-size: 14px; line-height: 1.6; }
   .empty-icon { font-size: 34px; margin-bottom: 8px; }
   .empty-title { font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--text2); font-size: 15px; margin-bottom: 4px; }
 
@@ -633,9 +645,31 @@ function loadProducts() {
       if (el) el.value = uniqueSkus + ' SKUs';
     })
     .catch(error => {
-      console.log('Products data not loaded'); PRODUCTS = [];
+      console.log('Products data not loaded — loading demo data');
+      PRODUCTS = [
+        { id: 'P001', name: 'VANILLA CLASSIC SCOOP 1.5L', category: 'Classic Flavors', sku: '2080100000001' },
+        { id: 'P002', name: 'CHOCOLATE FUDGE SCOOP 1.5L', category: 'Classic Flavors', sku: '2080100000002' },
+        { id: 'P003', name: 'STRAWBERRY FRESH SCOOP 1.5L', category: 'Classic Flavors', sku: '2080100000003' },
+        { id: 'P004', name: 'COOKIES AND CREAM SCOOP 1.5L', category: 'Classic Flavors', sku: '2080100000004' },
+        { id: 'P005', name: 'BUTTER PECAN SCOOP 1.5L', category: 'Classic Flavors', sku: '2080100000005' },
+        { id: 'P006', name: 'MANGO SORBET 1.0L', category: 'Sorbet', sku: '2080100000006' },
+        { id: 'P007', name: 'LEMON SORBET 1.0L', category: 'Sorbet', sku: '2080100000007' },
+        { id: 'P008', name: 'RASPBERRY SORBET 1.0L', category: 'Sorbet', sku: '2080100000008' },
+        { id: 'P009', name: 'MATCHA GREEN TEA 1.5L', category: 'Premium Flavors', sku: '2080100000009' },
+        { id: 'P010', name: 'SALTED CARAMEL SWIRL 1.5L', category: 'Premium Flavors', sku: '2080100000010' },
+        { id: 'P011', name: 'DARK CHOCOLATE TRUFFLE 1.5L', category: 'Premium Flavors', sku: '2080100000011' },
+        { id: 'P012', name: 'UBE HALAYA 1.5L', category: 'Premium Flavors', sku: '2080100000012' },
+        { id: 'P013', name: 'ROCKY ROAD 1.5L', category: 'Premium Flavors', sku: '2080100000013' },
+        { id: 'P014', name: 'MINT CHOCOLATE CHIP 1.5L', category: 'Premium Flavors', sku: '2080100000014' },
+        { id: 'P015', name: 'NEAPOLITAN 1.5L', category: 'Classic Flavors', sku: '2080100000015' },
+        { id: 'P016', name: 'SINGLE CONE VANILLA', category: 'Cones and Bars', sku: '2080100000016' },
+        { id: 'P017', name: 'SINGLE CONE CHOCOLATE', category: 'Cones and Bars', sku: '2080100000017' },
+        { id: 'P018', name: 'CHOCO BAR DARK 90ML', category: 'Cones and Bars', sku: '2080100000018' },
+        { id: 'P019', name: 'CHOCO BAR MILK 90ML', category: 'Cones and Bars', sku: '2080100000019' },
+        { id: 'P020', name: 'STRAWBERRY SUNDAE CUP 120ML', category: 'Cones and Bars', sku: '2080100000020' },
+      ];
       const el = document.getElementById('setSkuCount');
-      if (el) el.value = '— unavailable —';
+      if (el) el.value = PRODUCTS.length + ' SKUs (demo)';
     });
 }
 
@@ -644,7 +678,11 @@ function loadLocations() {
   return fetch('locations.json')
     .then(response => response.json())
     .then(data => { LOCATIONS = data.locations || []; populateLocationDropdown(); })
-    .catch(error => { console.log('Locations data not loaded'); LOCATIONS = []; });
+    .catch(error => {
+      console.log('Locations data not loaded — loading demo data');
+      LOCATIONS = ['Santan', 'Calachuchi', 'Rose', 'Gumamela', 'Sampaguita'];
+      populateLocationDropdown();
+    });
 }
 
 let inventory = [];
@@ -845,14 +883,19 @@ function addItem() {
   const p = PRODUCTS.find(x => x.id === selectedProductId);
   const existing = inventory.find(x => x.productId === selectedProductId);
   if (existing) {
-    showToast(`${p.name} is already in your count. Delete it first to add it again.`, 'error');
+    showToast(`${p.name} is already counted. Delete it first to re-count.`, 'error');
     return;
-  } else {
-    inventory.push({ id: Date.now(), productId: selectedProductId, name: p.name, category: p.category, sku: p.sku, count: countVal, addedAt: new Date().toISOString() });
-    showToast(`${p.name} added ✓`, 'success');
   }
-  saveToStorage(); renderInventory(); clearSelection();
+  // Save scroll position before re-render
+  const scrollY = window.scrollY;
+  inventory.push({ id: Date.now(), productId: selectedProductId, name: p.name, category: p.category, sku: p.sku, count: countVal, addedAt: new Date().toISOString() });
+  showToast(`${p.name} added ✓`, 'success');
+  saveToStorage();
+  renderInventory();
+  clearSelection();
   document.getElementById('countInput').value = 0;
+  // Restore scroll so user stays in the same spot in the list
+  requestAnimationFrame(() => { window.scrollTo({ top: scrollY, behavior: 'instant' }); });
 }
 
 function renderInventory() {
@@ -916,8 +959,6 @@ function deleteItem(id) { inventory = inventory.filter(i => i.id !== id); saveTo
 function prefillProduct(productId) {
   selectProduct(productId);
   document.getElementById('countInput').value = 0;
-  const panel = document.querySelector('#pageCount .add-panel');
-  if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function initSwipeNames() {
@@ -1256,7 +1297,7 @@ function submitCount() {
   ws.addRow([]); // Blank row
   
   // Column headers - make bold
-  const headerRow = ws.addRow(['#', 'Location', 'Category', 'Barcode/SKU', 'Product Name', 'Qty/Count', 'System Count', 'Variance']);
+  const headerRow = ws.addRow(['#', 'Location', 'Category', 'Barcode/SKU', 'Product Name', 'Qty/Count']);
   headerRow.eachCell(cell => { cell.font = boldFont; });
   
   // Make metadata bold
@@ -1268,8 +1309,6 @@ function submitCount() {
   // Build a lookup map from SKU -> counted item for quick access
   const countedMap = {};
   inventory.forEach(item => { countedMap[item.sku] = item; });
-
-  const storeData = systemCountData.stores && systemCountData.stores[settings.location];
 
   // Loop over ALL products in products.json order, grouped by category with sub-headers
   let rowNum = 0;
@@ -1290,25 +1329,10 @@ function submitCount() {
 
     rowNum++;
     const counted = countedMap[product.sku];
-    const hasCount = counted !== undefined; // true even if count === 0
-    const qtyCount = hasCount ? counted.count : ''; // blank if not counted at all
+    const hasCount = counted !== undefined;
+    const qtyCount = hasCount ? counted.count : '';
 
-    let sysCount = null;
-    if (storeData) {
-      const pd = storeData.products.find(prod => prod.sku === product.sku);
-      if (pd) sysCount = pd.systemCount;
-    }
-    const variance = (hasCount && sysCount !== null) ? (counted.count - sysCount) : '';
-
-    const row = ws.addRow([rowNum, settings.location || '', product.category, product.sku, product.name, qtyCount, sysCount !== null ? sysCount : 'N/A', variance]);
-
-    // Colour the variance cell if applicable
-    if (hasCount && sysCount !== null) {
-      const varCell = row.getCell(8);
-      if (variance < 0) { varCell.font = { bold: true, color: { argb: 'FFEF4444' } }; }
-      else if (variance > 0) { varCell.font = { bold: true, color: { argb: 'FFF59E0B' } }; }
-      else { varCell.font = { bold: true, color: { argb: 'FF1E9E38' } }; }
-    }
+    ws.addRow([rowNum, settings.location || '', product.category, product.sku, product.name, qtyCount]);
 
     if (hasCount) {
       totalCounted++;
@@ -1316,7 +1340,7 @@ function submitCount() {
     }
   });
 
-  // Total row - make bold
+  // Total row
   const totalRow = ws.addRow(['Total Items Counted:', totalCounted, '', '', 'Total Units:', totalUnits]);
   totalRow.getCell(1).font = boldFont;
   totalRow.getCell(5).font = boldFont;
@@ -1328,8 +1352,6 @@ function submitCount() {
     { width: 20 },
     { width: 18 },
     { width: 35 },
-    { width: 12 },
-    { width: 14 },
     { width: 12 }
   ];
   
@@ -1378,122 +1400,6 @@ function submitCount() {
     { width: 30 }
   ];
   
-  // ===== SYSTEM vs ACTUAL RECONCILIATION SHEET (backend only) =====
-  const wsR = wb.addWorksheet('System vs Actual');
-  
-  // Header styling helpers
-  const headerFill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1a4fa0' } };
-  const headerFont = { bold: true, color: { argb: 'FFFFFFFF' }, size: 11 };
-  const sectionTitleFont = { bold: true, size: 12, color: { argb: 'FF0f1f3d' } };
-  const redFont = { bold: true, color: { argb: 'FFEF4444' } };
-  const orangeFont = { bold: true, color: { argb: 'FFF59E0B' } };
-  const greenFont = { bold: true, color: { argb: 'FF1E9E38' } };
-  
-  wsR.addRow(['AcaciaHBC Inventory System — System vs Actual Reconciliation']);
-  wsR.getCell('A1').font = sectionTitleFont;
-  wsR.addRow(['Merchandiser:', settings.name || '']);
-  wsR.addRow(['Location:', settings.location || '']);
-  wsR.addRow(['Count Period:', settings.period || '—']);
-  wsR.addRow(['Date/Time:', dateStr]);
-  wsR.addRow(['⚠ INTERNAL USE ONLY — Not shared with merchandiser']);
-  wsR.getCell('A6').font = { bold: true, italic: true, color: { argb: 'FFF59E0B' } };
-  wsR.addRow([]);
-  
-  wsR.getCell('A2').font = boldFont;
-  wsR.getCell('A3').font = boldFont;
-  wsR.getCell('A4').font = boldFont;
-  wsR.getCell('A5').font = boldFont;
-  
-  // Table headers
-  const recHeaderRow = wsR.addRow(['#', 'Category', 'Barcode/SKU', 'Product Name', 'Physical Count', 'System Count', 'Variance', 'Variance %', 'Status', 'Specialist Notes']);
-  recHeaderRow.eachCell(cell => {
-    cell.font = headerFont;
-    cell.fill = headerFill;
-    cell.alignment = { horizontal: 'center', vertical: 'middle' };
-  });
-  
-  // Build reconciliation rows
-  let totalPhysical = 0, totalSystem = 0, discrepancyCount = 0;
-  const recSorted = [...inventory].sort((a, b) => a.category.localeCompare(b.category));
-  recSorted.forEach((item, idx) => {
-    let sysCount = null;
-    if (storeData) {
-      const pd = storeData.products.find(prod => prod.sku === item.sku);
-      if (pd) sysCount = pd.systemCount;
-    }
-    const variance = sysCount !== null ? (item.count - sysCount) : null;
-    const variancePct = (sysCount !== null && sysCount !== 0) ? ((variance / sysCount) * 100).toFixed(1) + '%' : (sysCount === 0 && variance !== null ? '—' : 'N/A');
-    let status = 'No System Data';
-    if (sysCount !== null) {
-      if (variance === 0) status = 'MATCH';
-      else if (variance < 0) { status = 'SHORT'; discrepancyCount++; }
-      else { status = 'OVER'; discrepancyCount++; }
-    }
-    totalPhysical += item.count;
-    if (sysCount !== null) totalSystem += sysCount;
-    
-    const row = wsR.addRow([
-      idx + 1,
-      item.category,
-      item.sku,
-      item.name,
-      item.count,
-      sysCount !== null ? sysCount : 'N/A',
-      variance !== null ? variance : 'N/A',
-      variancePct,
-      status,
-      '' // Specialist notes - left blank for backend team to fill in
-    ]);
-    
-    // Colour-code variance and status cells
-    if (variance !== null) {
-      const varCell = row.getCell(7);
-      const statusCell = row.getCell(9);
-      if (variance < 0) { varCell.font = redFont; statusCell.font = redFont; }
-      else if (variance > 0) { varCell.font = orangeFont; statusCell.font = orangeFont; }
-      else { varCell.font = greenFont; statusCell.font = greenFont; }
-    }
-    // Stripe alternate rows lightly
-    if (idx % 2 === 1) {
-      row.eachCell({ includeEmpty: true }, cell => {
-        cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF8FAFC' } };
-      });
-    }
-  });
-  
-  // Summary totals row
-  wsR.addRow([]);
-  const recTotalRow = wsR.addRow(['TOTALS', '', '', `${inventory.length} SKUs`, totalPhysical, totalSystem, totalPhysical - totalSystem, '', `${discrepancyCount} discrepancies`, '']);
-  recTotalRow.eachCell({ includeEmpty: true }, cell => { cell.font = boldFont; });
-  
-  // Legend
-  wsR.addRow([]);
-  wsR.addRow(['LEGEND']);
-  wsR.getCell(`A${wsR.rowCount}`).font = boldFont;
-  const legendRows = [
-    ['MATCH', '— Physical count matches system count'],
-    ['SHORT (red)', '— Physical count is BELOW system count'],
-    ['OVER (orange)', '— Physical count is ABOVE system count'],
-    ['No System Data', '— SKU not found in system-count.json for this location']
-  ];
-  legendRows.forEach(lr => {
-    wsR.addRow(lr);
-  });
-  
-  // Column widths
-  wsR.columns = [
-    { width: 6 },
-    { width: 22 },
-    { width: 18 },
-    { width: 35 },
-    { width: 16 },
-    { width: 14 },
-    { width: 12 },
-    { width: 13 },
-    { width: 14 },
-    { width: 35 }
-  ];
-
   // ===== GENERATE FILE =====
   const now = new Date();
   const safeLoc = (settings.location || 'inventory').replace(/[^a-z0-9 ]/gi, '').trim().replace(/\s+/g, ' ');
@@ -1659,8 +1565,6 @@ function _onCode(code) {
       showPage('count');
       selectProduct(product.id);
       showToast(product.name + ' scanned ✓', 'success');
-      const panel = document.querySelector('#pageCount .add-panel');
-      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else if (ctx === 'damages') {
       showPage('damages');
       selectProductDamages(product.id);
