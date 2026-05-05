@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="AHBC Inventory">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#1a4fa0">
+<meta name="application-name" content="AHBC Inventory">
 <meta name="description" content="AcaciaHBC Inventory Counter">
 <title>AcaciaHBC Inventory System</title>
 <link rel="manifest" href="manifest.json">
@@ -41,7 +42,7 @@
     --nav-h: 72px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; -webkit-overflow-scrolling: touch; }
 
   /* HEADER */
   .header { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 16px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); }
@@ -368,7 +369,7 @@
         <div class="count-label">Qty</div>
         <div class="stepper">
           <button class="step-btn" onclick="adjustCount(-1)">−</button>
-          <input type="number" class="count-input" id="countInput" value="0" min="0" inputmode="numeric" />
+          <input type="text" inputmode="numeric" pattern="[0-9]*" class="count-input" id="countInput" value="" placeholder="0" autocomplete="off" />
           <button class="step-btn" onclick="adjustCount(1)">+</button>
         </div>
       </div>
@@ -861,24 +862,32 @@ function selectProduct(id) {
   document.getElementById('selCat').textContent = `${p.category} · ${p.sku}`;
   document.getElementById('selectedProduct').classList.add('show');
   document.getElementById('searchInput').value = '';
-  document.getElementById('countInput').value = 0;
+  document.getElementById('countInput').value = '';
   closeDropdown();
-  requestAnimationFrame(() => {
+  // iOS requires a real setTimeout (not rAF) to focus after a touch event
+  // and after a display:none -> flex transition settles.
+  // 120ms is the minimum reliable delay on older iOS Safari.
+  setTimeout(() => {
     const input = document.getElementById('countInput');
     input.focus();
     input.select();
-  });
+  }, 120);
 }
 
-function clearSelection() { selectedProductId = null; document.getElementById('selectedProduct').classList.remove('show'); document.getElementById('searchInput').value = ''; document.getElementById('countInput').value = 0; }
+function clearSelection() { selectedProductId = null; document.getElementById('selectedProduct').classList.remove('show'); document.getElementById('searchInput').value = ''; document.getElementById('countInput').value = ''; }
 
 
-function adjustCount(delta) { const input = document.getElementById('countInput'); input.value = Math.max(0, (parseFloat(input.value) || 0) + delta); }
+function adjustCount(delta) {
+  const input = document.getElementById('countInput');
+  const current = parseInt(input.value, 10) || 0;
+  input.value = Math.max(0, current + delta);
+}
 
 function addItem() {
   if (!selectedProductId) { showToast('Please select a product first', 'error'); return; }
-  const countVal = parseFloat(document.getElementById('countInput').value);
-  if (isNaN(countVal) || countVal < 0) { showToast('Quantity must be 0 or more', 'error'); return; }
+  const raw = document.getElementById('countInput').value.trim();
+  const countVal = parseInt(raw, 10);
+  if (raw === '' || isNaN(countVal) || countVal < 0) { showToast('Please enter a valid quantity (0 or more)', 'error'); return; }
   if (!Number.isInteger(countVal)) { showToast('Quantity must be a whole number', 'error'); return; }
   const p = PRODUCTS.find(x => x.id === selectedProductId);
   const existing = inventory.find(x => x.productId === selectedProductId);
@@ -893,9 +902,8 @@ function addItem() {
   saveToStorage();
   renderInventory();
   clearSelection();
-  document.getElementById('countInput').value = 0;
-  // Restore scroll so user stays in the same spot in the list
-  requestAnimationFrame(() => { window.scrollTo({ top: scrollY, behavior: 'instant' }); });
+  document.getElementById('countInput').value = '';
+  requestAnimationFrame(() => { try { window.scrollTo({ top: scrollY, behavior: 'instant' }); } catch(e) { window.scrollTo(0, scrollY); } });
 }
 
 function renderInventory() {
@@ -1518,7 +1526,7 @@ function _startCamera() {
   }
 
   _scanReader.decodeFromConstraints(
-    { video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } } },
+    { video: { facingMode: { ideal: 'environment' }, width: { min: 640, ideal: 1280 }, height: { min: 480, ideal: 720 } } },
     document.getElementById('scannerVideo'),
     (result, err) => {
       if (!result || _scanLock) return;
