@@ -825,19 +825,16 @@ function showPage(page) {
 function onSearch() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
   const dropdown = document.getElementById('productDropdown');
-  const countedIds = new Set(inventory.map(i => i.productId));
+  const countedMap = {};
+  inventory.forEach(i => { countedMap[i.productId] = i; });
   const categories = {};
   PRODUCTS.forEach(p => {
-    if (countedIds.has(p.id)) return; // already counted — hide from dropdown
     const textMatch = !q || p.name.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
     if (textMatch) { if (!categories[p.category]) categories[p.category] = []; categories[p.category].push(p); }
   });
   const keys = Object.keys(categories);
   if (keys.length === 0) {
-    const msg = countedIds.size === PRODUCTS.length
-      ? 'All products have been counted ✓'
-      : 'No products found';
-    dropdown.innerHTML = `<div style="padding:16px;text-align:center;color:var(--text3);font-size:14px;">${msg}</div>`;
+    dropdown.innerHTML = `<div style="padding:16px;text-align:center;color:var(--text3);font-size:14px;">No products found</div>`;
     dropdown.classList.add('open');
     return;
   }
@@ -845,7 +842,18 @@ function onSearch() {
   keys.forEach(cat => {
     html += `<div class="cat-header">${cat}</div>`;
     categories[cat].forEach(p => {
-      html += `<div class="product-option" onclick="selectProduct('${p.id}')"><div><div>${p.name}</div><div class="sku">${p.sku}</div></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:15px;height:15px;stroke-width:2;color:var(--text3)"><path d="M9 18l6-6-6-6"/></svg></div>`;
+      const counted = countedMap[p.id];
+      if (counted) {
+        html += `<div class="product-option" onclick="selectProduct('${p.id}')">
+          <div>
+            <div style="display:flex;align-items:center;gap:6px;">${p.name}<span style="font-size:11px;font-weight:700;color:var(--accent-dark);background:var(--accent-light);border-radius:4px;padding:1px 6px;">✓ ${counted.count} — tap to edit</span></div>
+            <div class="sku">${p.sku}</div>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:15px;height:15px;stroke-width:2;color:var(--text3)"><path d="M9 18l6-6-6-6"/></svg>
+        </div>`;
+      } else {
+        html += `<div class="product-option" onclick="selectProduct('${p.id}')"><div><div>${p.name}</div><div class="sku">${p.sku}</div></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:15px;height:15px;stroke-width:2;color:var(--text3)"><path d="M9 18l6-6-6-6"/></svg></div>`;
+      }
     });
   });
   dropdown.innerHTML = html;
@@ -858,15 +866,17 @@ function selectProduct(id) {
   const p = PRODUCTS.find(x => x.id === id);
   if (!p) return;
   selectedProductId = id;
+  const existing = inventory.find(x => x.productId === id);
   document.getElementById('selName').textContent = p.name;
   document.getElementById('selCat').textContent = `${p.category} · ${p.sku}`;
   document.getElementById('selectedProduct').classList.add('show');
   document.getElementById('searchInput').value = '';
-  document.getElementById('countInput').value = '';
+  // Pre-fill existing count if editing, otherwise blank
+  document.getElementById('countInput').value = existing ? existing.count : '';
+  // Update Add button label to reflect edit mode
+  const addBtn = document.querySelector('#pageCount .add-panel button[onclick="addItem()"]');
+  if (addBtn) addBtn.textContent = existing ? '✏️ Update Count' : '＋ Add to Count';
   closeDropdown();
-  // iOS requires a real setTimeout (not rAF) to focus after a touch event
-  // and after a display:none -> flex transition settles.
-  // 120ms is the minimum reliable delay on older iOS Safari.
   setTimeout(() => {
     const input = document.getElementById('countInput');
     input.focus();
@@ -874,7 +884,14 @@ function selectProduct(id) {
   }, 120);
 }
 
-function clearSelection() { selectedProductId = null; document.getElementById('selectedProduct').classList.remove('show'); document.getElementById('searchInput').value = ''; document.getElementById('countInput').value = ''; }
+function clearSelection() {
+  selectedProductId = null;
+  document.getElementById('selectedProduct').classList.remove('show');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('countInput').value = '';
+  const addBtn = document.querySelector('#pageCount .add-panel button[onclick="addItem()"]');
+  if (addBtn) addBtn.textContent = '＋ Add to Count';
+}
 
 
 function adjustCount(delta) {
@@ -890,19 +907,23 @@ function addItem() {
   if (raw === '' || isNaN(countVal) || countVal < 0) { showToast('Please enter a valid quantity (0 or more)', 'error'); return; }
   if (!Number.isInteger(countVal)) { showToast('Quantity must be a whole number', 'error'); return; }
   const p = PRODUCTS.find(x => x.id === selectedProductId);
-  const existing = inventory.find(x => x.productId === selectedProductId);
-  if (existing) {
-    showToast(`${p.name} is already counted. Delete it first to re-count.`, 'error');
-    return;
-  }
-  // Save scroll position before re-render
+  const existingIdx = inventory.findIndex(x => x.productId === selectedProductId);
   const scrollY = window.scrollY;
-  inventory.push({ id: Date.now(), productId: selectedProductId, name: p.name, category: p.category, sku: p.sku, count: countVal, addedAt: new Date().toISOString() });
-  showToast(`${p.name} added ✓`, 'success');
+  if (existingIdx !== -1) {
+    // Update existing entry in place
+    inventory[existingIdx].count = countVal;
+    inventory[existingIdx].addedAt = new Date().toISOString();
+    showToast(`${p.name} updated to ${countVal} ✓`, 'success');
+  } else {
+    inventory.push({ id: Date.now(), productId: selectedProductId, name: p.name, category: p.category, sku: p.sku, count: countVal, addedAt: new Date().toISOString() });
+    showToast(`${p.name} added ✓`, 'success');
+  }
   saveToStorage();
   renderInventory();
   clearSelection();
-  document.getElementById('countInput').value = '';
+  // Reset Add button label
+  const addBtn = document.querySelector('#pageCount .add-panel button[onclick="addItem()"]');
+  if (addBtn) addBtn.textContent = '＋ Add to Count';
   requestAnimationFrame(() => { try { window.scrollTo({ top: scrollY, behavior: 'instant' }); } catch(e) { window.scrollTo(0, scrollY); } });
 }
 
