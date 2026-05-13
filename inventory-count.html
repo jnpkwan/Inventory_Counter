@@ -715,7 +715,10 @@ function submitCode() {
 }
 
 function _saveSession(code) {
-  try { localStorage.setItem('sc_session', JSON.stringify({ code, ts: Date.now() })); } catch(e) {}
+  try {
+    const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+    localStorage.setItem('sc_session', JSON.stringify({ code, date: today }));
+  } catch(e) {}
 }
 
 function _checkStoredSession() {
@@ -723,7 +726,9 @@ function _checkStoredSession() {
     const raw = localStorage.getItem('sc_session');
     if (!raw) return false;
     const session = JSON.parse(raw);
-    if (Date.now() - session.ts > 20 * 24 * 60 * 60 * 1000) {
+    const today = new Date().toISOString().slice(0, 10);
+    // Expire if it's a new calendar day
+    if (session.date !== today) {
       localStorage.removeItem('sc_session');
       return false;
     }
