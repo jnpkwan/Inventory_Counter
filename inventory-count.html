@@ -154,6 +154,24 @@
   .inv-item-system { text-align: center; padding-left: 8px; border-left: 1px solid var(--border); }
   .inv-del-btn { background: var(--danger-light); border: none; color: var(--danger); cursor: pointer; padding: 7px; border-radius: 7px; font-size: 12px; font-weight: 700; line-height: 1; }
 
+  /* AUTH GATE */
+  .auth-gate { position: fixed; inset: 0; background: linear-gradient(160deg, #0f1f3d 0%, #1a4fa0 100%); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 24px; transition: opacity 0.3s ease; }
+  .auth-gate.hidden { display: none; }
+  .auth-logo { font-size: 48px; margin-bottom: 12px; }
+  .auth-title { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 4px; text-align: center; line-height: 1.3; }
+  .auth-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 36px; text-align: center; }
+  .auth-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 28px 24px; width: 100%; max-width: 360px; }
+  .auth-label { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block; }
+  .auth-input { width: 100%; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: #fff; font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 700; padding: 14px 16px; outline: none; letter-spacing: 3px; text-transform: uppercase; transition: border-color 0.15s, background 0.15s; text-align: center; -webkit-appearance: none; box-sizing: border-box; }
+  .auth-input::placeholder { color: rgba(255,255,255,0.25); font-size: 14px; letter-spacing: 0; font-weight: 500; }
+  .auth-input:focus { border-color: var(--accent); background: rgba(255,255,255,0.15); }
+  .auth-input.shake { animation: authShake 0.4s ease; }
+  @keyframes authShake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-8px)} 40%{transform:translateX(8px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} }
+  .auth-btn { width: 100%; margin-top: 16px; padding: 15px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; border: none; border-radius: 12px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer; transition: transform 0.1s, box-shadow 0.15s; box-shadow: 0 4px 16px rgba(45,184,75,0.35); letter-spacing: 0.2px; }
+  .auth-btn:active { transform: scale(0.97); }
+  .auth-error { margin-top: 12px; text-align: center; font-size: 13px; font-weight: 600; color: #f87171; min-height: 20px; }
+  .auth-footer { margin-top: 32px; font-size: 11px; color: rgba(255,255,255,0.25); text-align: center; }
+
   /* STICKY ADD PANEL — count page only */
   #pageCount .add-panel {
     position: sticky;
@@ -263,6 +281,22 @@
 </head>
 <body>
 
+<!-- AUTH GATE -->
+<div class="auth-gate" id="authGate">
+  <div class="auth-logo">🌿</div>
+  <div class="auth-title">AcaciaHBC<br>Inventory System</div>
+  <div class="auth-sub">Enter your access code to continue</div>
+  <div class="auth-card">
+    <label class="auth-label" for="authCodeInput">Access Code</label>
+    <input type="text" class="auth-input" id="authCodeInput"
+      placeholder="AHBC-XXXX" maxlength="9"
+      autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" />
+    <button class="auth-btn" onclick="submitCode()">Enter →</button>
+    <div class="auth-error" id="authError"></div>
+  </div>
+  <div class="auth-footer">AcaciaHBC · Authorised Personnel Only</div>
+</div>
+
 <!-- HEADER -->
 <div class="header">
   <div class="logo">
@@ -286,11 +320,11 @@
       <div class="card-title">Step 1 of 3 — Your Details</div>
       <div class="field">
         <label>Merchandiser Name</label>
-        <input type="text" id="setName" placeholder="Enter your full name" />
+        <input type="text" id="setName" readonly style="background:var(--bg);color:var(--text2);" />
       </div>
       <div class="field">
       <label>Location</label>
-<select id="setLocation">
+<select id="setLocation" onchange="confirmStoreChange(this)">
   <option value="">— Select a store —</option>
 </select>
       </div>
@@ -635,6 +669,98 @@
 // Data loaded from JSON files
 let PRODUCTS = [];
 let LOCATIONS = [];
+let AUTH_USERS = [];
+let currentUser = null;
+
+// =============================================
+// AUTHENTICATION
+// =============================================
+const MASTER_CODE = 'AHBC-0401';
+const MASTER_USER = { code: MASTER_CODE, name: 'Admin', store: '' };
+
+function loadAuth() {
+  return fetch('auth.json')
+    .then(r => r.json())
+    .then(data => { AUTH_USERS = data.users || []; })
+    .catch(() => { AUTH_USERS = []; });
+}
+
+function submitCode() {
+  const raw = document.getElementById('authCodeInput').value.trim().toUpperCase();
+  const errorEl = document.getElementById('authError');
+  const inputEl = document.getElementById('authCodeInput');
+  if (!raw) { errorEl.textContent = 'Please enter your access code.'; return; }
+
+  if (raw === MASTER_CODE) {
+    currentUser = MASTER_USER;
+    _saveSession(MASTER_CODE);
+    _dismissAuthGate();
+    return;
+  }
+
+  const user = AUTH_USERS.find(u => u.code.toUpperCase() === raw);
+  if (!user) {
+    errorEl.textContent = 'Invalid code. Please check and try again.';
+    inputEl.value = '';
+    inputEl.classList.add('shake');
+    setTimeout(() => inputEl.classList.remove('shake'), 400);
+    inputEl.focus();
+    return;
+  }
+
+  currentUser = user;
+  _saveSession(user.code);
+  _dismissAuthGate();
+}
+
+function _saveSession(code) {
+  try { localStorage.setItem('sc_session', JSON.stringify({ code, ts: Date.now() })); } catch(e) {}
+}
+
+function _checkStoredSession() {
+  try {
+    const raw = localStorage.getItem('sc_session');
+    if (!raw) return false;
+    const session = JSON.parse(raw);
+    if (Date.now() - session.ts > 20 * 24 * 60 * 60 * 1000) {
+      localStorage.removeItem('sc_session');
+      return false;
+    }
+    if (session.code.toUpperCase() === MASTER_CODE) { currentUser = MASTER_USER; return true; }
+    const user = AUTH_USERS.find(u => u.code.toUpperCase() === session.code.toUpperCase());
+    if (!user) { localStorage.removeItem('sc_session'); return false; }
+    currentUser = user;
+    return true;
+  } catch(e) { return false; }
+}
+
+function _dismissAuthGate() {
+  document.getElementById('authGate').classList.add('hidden');
+  if (currentUser) {
+    // Always set name from credential
+    settings.name = currentUser.name || settings.name;
+    // Pre-fill store only if user has one assigned and none already saved
+    if (currentUser.store && !settings.location) {
+      settings.location = currentUser.store;
+    }
+    saveToStorage();
+    populateSettingsForm();
+  }
+}
+
+// Store change confirmation — fires when user changes the location dropdown
+function confirmStoreChange(select) {
+  const newVal = select.value;
+  const currentVal = settings.location || '';
+  if (!currentVal || newVal === currentVal) return;
+  if (!confirm(`Are you sure you want to change store to "${newVal}"?\n\nThis will not clear your current count data.`)) {
+    select.value = currentVal;
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const inp = document.getElementById('authCodeInput');
+  if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') submitCode(); });
+});
 // Load products from JSON
 function loadProducts() {
   return fetch('products.json')
@@ -712,23 +838,31 @@ function populateLocationDropdown() {
 }
 
 function init() {
-  Promise.all([loadProducts(), loadLocations()]).then(() => {
-    loadFromStorage();
-    checkAndClearOldData();
-    loadSystemCountDataAndRender();
-    initSwipeNames();
-    updateDateTime();
-    setInterval(updateDateTime, 30000);
-    populateSettingsForm();
-    document.getElementById('searchInput').addEventListener('input', onSearch);
-    document.getElementById('searchInput').addEventListener('focus', onSearch);
-    document.getElementById('searchInputDamages').addEventListener('input', onSearchDamages);
-    document.getElementById('searchInputDamages').addEventListener('focus', onSearchDamages);
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.add-panel')) {
-        closeDropdown();
-        closeDropdownDamages();
-      }
+  loadAuth().then(() => {
+    const hasSession = _checkStoredSession();
+    if (!hasSession) {
+      // Show gate — load data in background so app is ready after auth
+      setTimeout(() => { document.getElementById('authCodeInput').focus(); }, 100);
+    }
+    Promise.all([loadProducts(), loadLocations()]).then(() => {
+      loadFromStorage();
+      checkAndClearOldData();
+      loadSystemCountDataAndRender();
+      initSwipeNames();
+      updateDateTime();
+      setInterval(updateDateTime, 30000);
+      populateSettingsForm();
+      if (hasSession) _dismissAuthGate();
+      document.getElementById('searchInput').addEventListener('input', onSearch);
+      document.getElementById('searchInput').addEventListener('focus', onSearch);
+      document.getElementById('searchInputDamages').addEventListener('input', onSearchDamages);
+      document.getElementById('searchInputDamages').addEventListener('focus', onSearchDamages);
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.add-panel')) {
+          closeDropdown();
+          closeDropdownDamages();
+        }
+      });
     });
   });
 }
@@ -1168,32 +1302,27 @@ function clearAllDamages() {
 
 function populateSettingsForm() {
   const period = getCurrentPeriod();
-  document.getElementById('setName').value = settings.name || '';
+  const displayName = (currentUser && currentUser.name) ? currentUser.name : (settings.name || '');
+  document.getElementById('setName').value = displayName;
   document.getElementById('setLocation').value = settings.location || '';
   document.getElementById('setPeriod').value = settings.period || period;
   if (!settings.period) settings.period = period;
-  document.getElementById('siName').textContent = settings.name || '— not set —';
+  document.getElementById('siName').textContent = displayName || '— not set —';
   document.getElementById('siLocation').textContent = settings.location || '—';
   document.getElementById('siPeriod').textContent = settings.period || period;
   document.getElementById('siPeriod').style.color = '';
 }
 
 function saveSettings() {
-  const name = document.getElementById('setName').value.trim();
-  const location = document.getElementById('setLocation').value;
-  if (!name) { showToast('Please enter your name', 'error'); return; }
-  if (!location) { showToast('Please select a store', 'error'); return; }
-
+  const location = document.getElementById("setLocation").value;
+  if (!location) { showToast("Please select a store", "error"); return; }
   const locationChanged = settings.location !== location;
-  settings.name = name; settings.location = location; settings.period = getCurrentPeriod();
+  settings.name = (currentUser && currentUser.name) ? currentUser.name : settings.name;
+  settings.location = location;
+  settings.period = getCurrentPeriod();
   saveToStorage(); populateSettingsForm();
-
-  // Re-render inventory if location changed so system counts update
-  if (locationChanged && inventory.length > 0) {
-    renderInventory();
-  }
-
-  showToast('Details saved ✓', 'success'); showPage('count');
+  if (locationChanged && inventory.length > 0) renderInventory();
+  showToast("Details saved ✓", "success"); showPage("count");
 }
 
 function getCurrentPeriod() {
@@ -1254,6 +1383,31 @@ function openSubmitModal() {
   }
 
   if (inventory.length === 0) { showToast('No items to submit', 'error'); return; }
+
+  // Master code bypasses live check
+  if (currentUser && currentUser.code === MASTER_CODE) {
+    _openSubmitModalBody(); return;
+  }
+  // Live auth re-validation
+  fetch('auth.json?ts=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      const valid = currentUser && (data.users || []).some(u => u.code.toUpperCase() === currentUser.code.toUpperCase());
+      if (!valid) {
+        localStorage.removeItem('sc_session');
+        showToast('Access revoked. Please contact your supervisor.', 'error');
+        setTimeout(() => location.reload(), 2000);
+        return;
+      }
+      _openSubmitModalBody();
+    })
+    .catch(() => {
+      showToast('Offline — submitting with cached credentials', '');
+      _openSubmitModalBody();
+    });
+}
+
+function _openSubmitModalBody() {
   const totalUnits = inventory.reduce((s,i) => s+i.count, 0);
   
   const modalBody = document.getElementById('submitModalBody');
