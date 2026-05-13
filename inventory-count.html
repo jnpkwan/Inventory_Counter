@@ -1379,6 +1379,11 @@ function saveProgress() { saveToStorage(); showToast('All data auto-saved ✓', 
 function openSubmitModal() {
   if (!settings.name || !settings.location) { showToast('Please complete Store Info first', 'error'); showPage('settings'); return; }
 
+  // Master code bypasses ALL checks — go straight to export
+  if (currentUser && currentUser.code === MASTER_CODE) {
+    _openSubmitModalBody(); return;
+  }
+
   // Block if any products haven't been counted yet
   const countedIds = new Set(inventory.map(i => i.productId));
   const missing = PRODUCTS.filter(p => !countedIds.has(p.id));
@@ -1390,11 +1395,7 @@ function openSubmitModal() {
 
   if (inventory.length === 0) { showToast('No items to submit', 'error'); return; }
 
-  // Master code bypasses live check
-  if (currentUser && currentUser.code === MASTER_CODE) {
-    _openSubmitModalBody(); return;
-  }
-  // Live auth re-validation
+  // Live auth re-validation for regular users
   fetch('auth.json?ts=' + Date.now())
     .then(r => r.json())
     .then(data => {
