@@ -286,8 +286,13 @@
   <img src="logo.png" alt="AcaciaHBC" style="width:140px;height:auto;margin-bottom:16px;object-fit:contain;" onerror="this.style.display='none';document.getElementById('authLogoFallback').style.display='block';" />
   <div id="authLogoFallback" style="display:none;font-size:48px;margin-bottom:12px;">🌿</div>
   <div class="auth-title">AcaciaHBC<br>Inventory System</div>
-  <div class="auth-sub">Enter your access code to continue</div>
+  <div class="auth-sub">Enter your name and access code to continue</div>
   <div class="auth-card">
+    <label class="auth-label" for="authNameInput">Full Name</label>
+    <input type="text" class="auth-input" id="authNameInput"
+      placeholder="Your full name" maxlength="60"
+      autocomplete="off" autocorrect="off" autocapitalize="words" spellcheck="false"
+      style="font-size:16px;letter-spacing:0.5px;margin-bottom:14px;" />
     <label class="auth-label" for="authCodeInput">Access Code</label>
     <input type="text" class="auth-input" id="authCodeInput"
       placeholder="AHBC-XXXX" maxlength="9"
@@ -687,30 +692,48 @@ function loadAuth() {
 }
 
 function submitCode() {
-  const raw = document.getElementById('authCodeInput').value.trim().toUpperCase();
+  const rawCode = document.getElementById('authCodeInput').value.trim().toUpperCase();
+  const rawName = document.getElementById('authNameInput').value.trim();
   const errorEl = document.getElementById('authError');
-  const inputEl = document.getElementById('authCodeInput');
-  if (!raw) { errorEl.textContent = 'Please enter your access code.'; return; }
+  const codeEl = document.getElementById('authCodeInput');
+  const nameEl = document.getElementById('authNameInput');
 
-  if (raw === MASTER_CODE) {
+  if (!rawName) { errorEl.textContent = 'Please enter your full name.'; nameEl.focus(); return; }
+  if (!rawCode) { errorEl.textContent = 'Please enter your access code.'; codeEl.focus(); return; }
+
+  // Master code — only requires code, no name check
+  if (rawCode === MASTER_CODE) {
     currentUser = MASTER_USER;
     _saveSession(MASTER_CODE);
     _dismissAuthGate();
     return;
   }
 
-  const user = AUTH_USERS.find(u => u.code.toUpperCase() === raw);
-  if (!user) {
-    errorEl.textContent = 'Invalid code. Please check and try again.';
-    inputEl.value = '';
-    inputEl.classList.add('shake');
-    setTimeout(() => inputEl.classList.remove('shake'), 400);
-    inputEl.focus();
+  // Find user by code first
+  const userByCode = AUTH_USERS.find(u => u.code.toUpperCase() === rawCode);
+  if (!userByCode) {
+    errorEl.textContent = 'Invalid access code. Please check and try again.';
+    codeEl.value = '';
+    codeEl.classList.add('shake');
+    setTimeout(() => codeEl.classList.remove('shake'), 400);
+    codeEl.focus();
     return;
   }
 
-  currentUser = user;
-  _saveSession(user.code);
+  // Now verify name matches — case-insensitive, trimmed
+  const nameMatch = userByCode.name.trim().toLowerCase() === rawName.toLowerCase();
+  if (!nameMatch) {
+    errorEl.textContent = 'Name does not match this access code. Please check and try again.';
+    nameEl.value = '';
+    nameEl.classList.add('shake');
+    setTimeout(() => nameEl.classList.remove('shake'), 400);
+    nameEl.focus();
+    return;
+  }
+
+  // Both match
+  currentUser = userByCode;
+  _saveSession(userByCode.code);
   _dismissAuthGate();
 }
 
@@ -763,9 +786,11 @@ function confirmStoreChange(select) {
     select.value = currentVal;
   }
 }
-document.addEventListener('DOMContentLoaded', () => {
-  const inp = document.getElementById('authCodeInput');
-  if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') submitCode(); });
+document.addEventListener("DOMContentLoaded", () => {
+  const nameInp = document.getElementById("authNameInput");
+  const codeInp = document.getElementById("authCodeInput");
+  if (nameInp) nameInp.addEventListener("keydown", e => { if (e.key === "Enter") codeInp && codeInp.focus(); });
+  if (codeInp) codeInp.addEventListener("keydown", e => { if (e.key === "Enter") submitCode(); });
 });
 // Load products from JSON
 function loadProducts() {
