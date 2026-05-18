@@ -766,10 +766,9 @@ function _checkStoredSession() {
 function _dismissAuthGate() {
   document.getElementById('authGate').classList.add('hidden');
   if (currentUser) {
-    // Always set name from credential
+    // Always set name and store from credential
     settings.name = currentUser.name || settings.name;
-    // Pre-fill store only if user has one assigned and none already saved
-    if (currentUser.store && !settings.location) {
+    if (currentUser.store) {
       settings.location = currentUser.store;
     }
     saveToStorage();
