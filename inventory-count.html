@@ -944,7 +944,7 @@ function updateDateTime() {
 }
 
 function saveToStorage() { try { localStorage.setItem('sc_inventory', JSON.stringify(inventory)); localStorage.setItem('sc_damages', JSON.stringify(damages)); localStorage.setItem('sc_settings', JSON.stringify(settings)); } catch(e) {} }
-function loadFromStorage() { try { const inv = localStorage.getItem('sc_inventory'); const dmg = localStorage.getItem('sc_damages'); const set = localStorage.getItem('sc_settings'); if (inv) inventory = JSON.parse(inv); if (dmg) damages = JSON.parse(dmg); if (set) settings = { ...settings, ...JSON.parse(set) }; } catch(e) {} }
+function loadFromStorage() { try { const inv = localStorage.getItem('sc_inventory'); const dmg = localStorage.getItem('sc_damages'); const set = localStorage.getItem('sc_settings'); if (inv) inventory = JSON.parse(inv); if (dmg) damages = JSON.parse(dmg); if (set) settings = { ...settings, ...JSON.parse(set) }; settings.period = getCurrentPeriod(); } catch(e) {} }
 
 function checkAndClearOldData() {
   try {
