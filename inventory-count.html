@@ -1777,7 +1777,7 @@ function _startCamera() {
       if (!result || _scanLock) return;
       _scanLock = true;
       const code = result.getText().replace(/\s+/g, '');
-      console.log('[SCANNER] read:', code);
+
       _onCode(code);
     }
   ).catch(e => {
