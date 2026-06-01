@@ -46,6 +46,8 @@
 
   /* HEADER */
   .header { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 16px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); }
+  .logout-btn { display: flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .logout-btn:active { background: var(--bg); color: var(--text); }
   .logo { display: flex; align-items: center; gap: 10px; }
   .logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--blue), var(--blue-dark)); border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 2px 8px rgba(46,204,143,0.3); }
   .logo-text { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; color: var(--text); line-height: 1.15; }
@@ -297,7 +299,7 @@
     <input type="text" class="auth-input" id="authCodeInput"
       placeholder="AHBC-XXXX" maxlength="9"
       autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" />
-    <button class="auth-btn" onclick="submitCode()">Enter →</button>
+    <button class="auth-btn" id="authBtn" onclick="submitCode()" disabled>Loading...</button>
     <div class="auth-error" id="authError"></div>
   </div>
   <div class="auth-footer">AcaciaHBC · Authorised Personnel Only</div>
@@ -312,7 +314,10 @@
       <span>Inventory System</span>
     </div>
   </div>
-
+  <button class="logout-btn" onclick="logout()" title="Log out">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:16px;height:16px;stroke-width:2.2;"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+    Log Out
+  </button>
 </div>
 
 <!-- PAGE 1: STORE INFO -->
@@ -686,9 +691,26 @@ const MASTER_USER = { code: MASTER_CODE, name: 'Admin', store: '' };
 
 function loadAuth() {
   return fetch('auth.json')
-    .then(r => r.json())
-    .then(data => { AUTH_USERS = data.users || []; })
-    .catch(() => { AUTH_USERS = []; });
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(data => {
+      AUTH_USERS = data.users || [];
+      console.log('[AUTH] Loaded', AUTH_USERS.length, 'users');
+      // Enable the login button once auth is loaded
+      const btn = document.querySelector('.auth-btn');
+      if (btn) { btn.disabled = false; btn.textContent = 'Enter →'; }
+    })
+    .catch(err => {
+      console.warn('[AUTH] Failed to load auth.json:', err);
+      AUTH_USERS = [];
+      // Show error on the auth gate
+      const errEl = document.getElementById('authError');
+      if (errEl) errEl.textContent = 'Could not load user list. Check your internet connection and reload the app.';
+      const btn = document.querySelector('.auth-btn');
+      if (btn) { btn.disabled = true; btn.textContent = 'Loading failed — reload app'; }
+    });
 }
 
 function submitCode() {
@@ -701,11 +723,17 @@ function submitCode() {
   if (!rawName) { errorEl.textContent = 'Please enter your full name.'; nameEl.focus(); return; }
   if (!rawCode) { errorEl.textContent = 'Please enter your access code.'; codeEl.focus(); return; }
 
-  // Master code — only requires code, no name check
+  // Master code — only requires code, no name check, works even if AUTH_USERS is empty
   if (rawCode === MASTER_CODE) {
     currentUser = MASTER_USER;
     _saveSession(MASTER_CODE);
     _dismissAuthGate();
+    return;
+  }
+
+  // Guard: if AUTH_USERS is empty, auth.json didn't load
+  if (AUTH_USERS.length === 0) {
+    errorEl.textContent = 'User list not loaded. Please check your internet connection and reload the app.';
     return;
   }
 
@@ -776,7 +804,16 @@ function _dismissAuthGate() {
   }
 }
 
-// Store change confirmation — fires when user changes the location dropdown
+function logout() {
+  // Show the auth gate again — session is preserved so same-day re-login is instant
+  document.getElementById('authGate').classList.remove('hidden');
+  // Pre-fill name if we know the user — so they just need to re-enter code
+  const nameEl = document.getElementById('authNameInput');
+  if (nameEl && currentUser && currentUser.name) nameEl.value = currentUser.name;
+  document.getElementById('authCodeInput').value = '';
+  document.getElementById('authError').textContent = '';
+  setTimeout(() => { document.getElementById('authCodeInput').focus(); }, 100);
+}
 function confirmStoreChange(select) {
   const newVal = select.value;
   const currentVal = settings.location || '';
