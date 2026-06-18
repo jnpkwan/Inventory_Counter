@@ -2,1521 +2,315 @@
   "products": [
     {
       "id": "P001",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS 1.5MM METAL 2S",
-      "category": "Metal Drill Bit",
-      "sku": "2080100936988"
+      "name": "CASTER SWIVEL HAUSMANN 24025NY FC NYLON 2.5CM",
+      "category": "Wheel Casters",
+      "sku": "2080101153230"
     },
     {
       "id": "P002",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS 2MM METAL 2S",
-      "category": "Metal Drill Bit",
-      "sku": "2080100936995"
+      "name": "CASTER SWIVEL HAUSMANN 24030NY FC NYLON 1.25IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153247"
     },
     {
       "id": "P003",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS 2.5MM METAL 2S",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937534"
+      "name": "CASTER SWIVEL HAUSMANN 24040NY FC NYLON 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153254"
     },
     {
       "id": "P004",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937008"
+      "name": "CASTER SWIVEL HAUSMANN 24050NY FC NYLON 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153261"
     },
     {
       "id": "P005",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS 3.5MM METAL 2S",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937565"
+      "name": "CASTER SWIVEL HAUSMANN 24065NY FC NYLON 2.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153278"
     },
     {
       "id": "P006",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS 4MM METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937589"
+      "name": "CASTER SWIVEL HAUSMANN 24075NY FC NYLON 3IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153285"
     },
     {
       "id": "P007",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS 4.5MM METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937015"
+      "name": "CASTER FIXED HAUSMANN 24030NYF FC NYLON 1.25IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153292"
     },
     {
       "id": "P008",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS 5MM METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937022"
+      "name": "CASTER FIXED HAUSMANN 24040NYF FC NYLON 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153308"
     },
     {
       "id": "P009",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS 6MM METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937039"
+      "name": "CASTER FIXED HAUSMANN 24050NYF FC NYLON 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153315"
     },
     {
       "id": "P010",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS 7MM METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937046"
+      "name": "CASTER FIXED HAUSMANN 24065NYF FC NYLON 2.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153322"
     },
     {
       "id": "P011",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS 8MM METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937602"
+      "name": "CASTER SWIVEL HAUSMANN 24040NYB FC NYLON WITH BRAKE 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153339"
     },
     {
       "id": "P012",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS 9MM METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937053"
+      "name": "CASTER SWIVEL HAUSMANN 24050NYB FC NYLON WITH BRAKE 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153346"
     },
     {
       "id": "P013",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS 10MM METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937527"
+      "name": "CASTER SWIVEL HAUSMANN 24065NYB FC NYLON WITH BRAKE 2.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153353"
     },
     {
       "id": "P014",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS (2,3,4,5,6,8MM) 6S METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937503"
+      "name": "CASTER SWIVEL HAUSMANN 24075NYB FC NYLON WITH BRAKE 3IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153360"
     },
     {
       "id": "P015",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS (1-10MM) 10S METAL",
-      "category": "Metal Drill Bit",
-      "sku": "2080100937480"
+      "name": "CASTER SWIVEL HAUSMANN 24040 FC RUBBER 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153377"
     },
     {
       "id": "P016",
-      "name": "DRILL BIT HAUSMANN LI 3MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100937442"
+      "name": "CASTER SWIVEL HAUSMANN 24050 FC RUBBER 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153384"
     },
     {
       "id": "P017",
-      "name": "DRILL BIT HAUSMANN LI 4MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100937459"
+      "name": "CASTER SWIVEL HAUSMANN 24065 FC RUBBER 2.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153391"
     },
     {
       "id": "P018",
-      "name": "DRILL BIT HAUSMANN LI  5MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100937404"
+      "name": "CASTER SWIVEL HAUSMANN 24075 FC RUBBER 3IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153414"
     },
     {
       "id": "P019",
-      "name": "DRILL BIT HAUSMANN LI  6MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100937411"
+      "name": "CASTER FIXED HAUSMANN 24050F FC RUBBER 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153421"
     },
     {
       "id": "P020",
-      "name": "DRILL BIT HAUSMANN LI 7MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100937466"
+      "name": "CASTER FIXED HAUSMANN 24075F FC RUBBER 3IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153438"
     },
     {
       "id": "P021",
-      "name": "DRILL BIT HAUSMANN LI 8MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100937473"
+      "name": "CASTER SWIVEL HAUSMANN 11100 FC INDUSTRIAL RUBBER 4IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153445"
     },
     {
       "id": "P022",
-      "name": "BIT DRILL HAUSMANN LI  9MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100936971"
+      "name": "CASTER SWIVEL HAUSMANN 11125 FC INDUSTRIAL RUBBER 5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153452"
     },
     {
       "id": "P023",
-      "name": "BIT DRILL HAUSMANN LI  10MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100936940"
+      "name": "CASTER SWIVEL HAUSMANN 11160 FC INDUSTRIAL RUBBER 6IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153469"
     },
     {
       "id": "P024",
-      "name": "DRILL BIT HAUSMANN LI 11MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100937435"
+      "name": "CASTER FIXED HAUSMANN 11100F FC INDUSTRIAL RUBBER 4IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153476"
     },
     {
       "id": "P025",
-      "name": "BIT DRILL HAUSMANN LI  12MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100936957"
+      "name": "CASTER FIXED HAUSMANN 11125F FC INDUSTRIAL RUBBER 5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153483"
     },
     {
       "id": "P026",
-      "name": "BIT DRILL HAUSMANN LI  13MM MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100936964"
+      "name": "CASTER SWIVEL HAUSMANN 11100B FC INDUSTRIAL RUBBER WITH BRAKE 4IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153490"
     },
     {
       "id": "P027",
-      "name": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-      "category": "Masonry Drill Bit",
-      "sku": "2080100937428"
+      "name": "CASTER SWIVEL HAUSMANN 11125B FC INDUSTRIAL RUBBER WITH BRAKE 5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153506"
     },
     {
       "id": "P028",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 1.5MM METAL 2S",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937060"
+      "name": "CASTER SWIVEL HAUSMANN 11160B FC INDUSTRIAL RUBBER WITH BRAKE 6IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153513"
     },
     {
       "id": "P029",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 2MM METAL 2S",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937626"
+      "name": "CASTER SWIVEL HAUSMANN BPD FC TPR BALL 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153520"
     },
     {
       "id": "P030",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 2.5MM METAL 2S",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937077"
+      "name": "CASTER SWIVEL HAUSMANN BTD FC TPR BALL 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153537"
     },
     {
       "id": "P031",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 3MM METAL 2S",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937084"
+      "name": "CASTER SWIVEL HAUSMANN 19050C FC CAST IRON 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153544"
     },
     {
       "id": "P032",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 3.5MM METAL 2S",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937633"
+      "name": "CASTER SWIVEL HAUSMANN 19075C FC CAST IRON 3IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153551"
     },
     {
       "id": "P033",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 4MM METAL",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937640"
+      "name": "CASTER FIXED HAUSMANN 19050CF FC CAST IRON 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153568"
     },
     {
       "id": "P034",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 4.5MM METAL",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937091"
+      "name": "CASTER FIXED HAUSMANN 19065CF FC CAST IRON 2.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153575"
     },
     {
       "id": "P035",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 5MM METAL",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937657"
+      "name": "CASTER FIXED HAUSMANN 19075CF FC CAST IRON 3IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153582"
     },
     {
       "id": "P036",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 6MM METAL",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937664"
+      "name": "CASTER SWIVEL HAUSMANN 19050CB FC CAST IRON WITH BRAKE 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153599"
     },
     {
       "id": "P037",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 7MM METAL",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937107"
+      "name": "CASTER SWIVEL HAUSMANN 19065CB FC CAST IRON WITH BRAKE 2.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153605"
     },
     {
       "id": "P038",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 8MM METAL",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937671"
+      "name": "CASTER SWIVEL HAUSMANN 19075CB FC CAST IRON WITH BRAKE 3IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153612"
     },
     {
       "id": "P039",
-      "name": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 9MM METAL",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937114"
+      "name": "CASTER FIXED HAUSMANN 60260F FC PNEUMATIC 10IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153629"
     },
     {
       "id": "P040",
-      "name": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 10MM METAL",
-      "category": "Cobalt Drill Bit",
-      "sku": "2080100937619"
+      "name": "CASTER FIXED HAUSMANN 60300F FC PNEUMATIC 12IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153636"
     },
     {
       "id": "P041",
-      "name": "BIT FORSTNER  HAUSMANN 15MM",
-      "category": "Forstner Bit",
-      "sku": "2080100937121"
+      "name": "CASTER SWIVEL HAUSMANN 24050J FC TPR WITH SINGLE BALL BEARING 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153643"
     },
     {
       "id": "P042",
-      "name": "BIT FORSTNER  HAUSMANN 22MM",
-      "category": "Forstner Bit",
-      "sku": "2080100937138"
+      "name": "CASTER FIXED HAUSMANN 24030JF FC TPR WITH SINGLE BALL BEARING 1.25IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153650"
     },
     {
       "id": "P043",
-      "name": "BIT FORSTNER  HAUSMANN 25MM",
-      "category": "Forstner Bit",
-      "sku": "2080100937145"
+      "name": "CASTER FIXED HAUSMANN 24040JF FC TPR WITH SINGLE BALL BEARING 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153667"
     },
     {
       "id": "P044",
-      "name": "BIT FORSTNER  HAUSMANN 35MM",
-      "category": "Forstner Bit",
-      "sku": "2080100937152"
+      "name": "CASTER SWIVEL HAUSMANN 24030JB FC TPR SINGLE BALL BEARING WITH BRAKE 1.25IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153674"
     },
     {
       "id": "P045",
-      "name": "BIT FORSTNER  HAUSMANN 54MM",
-      "category": "Forstner Bit",
-      "sku": "2080100937169"
+      "name": "CASTER SWIVEL HAUSMANN 24050JB FC TPR SINGLE BALL BEARING WITH BRAKE 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153681"
     },
     {
       "id": "P046",
-      "name": "BIT WOOD FLAT HAUSMANN 16MM HEX SHANK",
-      "category": "Spade/Flat Bit",
-      "sku": "2080100937176"
+      "name": "WHEEL SWIVEL HAUSMANN TWP-40 FC TWIN PLATE TYPE NYLON 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153698"
     },
     {
       "id": "P047",
-      "name": "BIT WOOD FLAT HAUSMANN 19MM HEX SHANK",
-      "category": "Spade/Flat Bit",
-      "sku": "2080100937183"
+      "name": "WHEEL SWIVEL HAUSMANN TWT-40 FC TWIN SCREW TYPE NYLON 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153704"
     },
     {
       "id": "P048",
-      "name": "BIT WOOD FLAT HAUSMANN 22MM HEX SHANK",
-      "category": "Spade/Flat Bit",
-      "sku": "2080100937190"
+      "name": "WHEEL SWIVEL HAUSMANN TWG-40 FC PIN TYPE WHEEL NYLON 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153711"
     },
     {
       "id": "P049",
-      "name": "BIT WOOD FLAT HAUSMANN 25MM HEX SHANK",
-      "category": "Spade/Flat Bit",
-      "sku": "2080100937206"
+      "name": "WHEEL SWIVEL HAUSMANN TWPB-40 FC TWIN PLATE TYPE NYLON WITH BRAKE 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153728"
     },
     {
       "id": "P050",
-      "name": "DRILL BIT  HAUSMANN 3MM HEX SHANK TIN COATED GLASS",
-      "category": "Ceramic/Glass/Tile Bit",
-      "sku": "2080100937336"
+      "name": "WHEEL SWIVEL HAUSMANN TWPB-50 FC TWIN PLATE TYPE NYLON WITH BRAKE 2IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153735"
     },
     {
       "id": "P051",
-      "name": "DRILL BIT  HAUSMANN 4MM HEX SHANK TIN COATED GLASS",
-      "category": "Ceramic/Glass/Tile Bit",
-      "sku": "2080100937343"
+      "name": "WHEEL SWIVEL HAUSMANN FC PIN TYPE WHEEL NYLON WITH BRAKE TWGB-40 1.5IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153742"
     },
     {
       "id": "P052",
-      "name": "DRILL BIT  HAUSMANN 5MM HEX SHANK TIN COATED GLASS",
-      "category": "Ceramic/Glass/Tile Bit",
-      "sku": "2080100937350"
-    },
-    {
-      "id": "P053",
-      "name": "DRILL BIT  HAUSMANN 6MM HEX SHANK TIN COATED GLASS",
-      "category": "Ceramic/Glass/Tile Bit",
-      "sku": "2080100937367"
-    },
-    {
-      "id": "P054",
-      "name": "DRILL BIT HAUSMANN 8MM HEX SHANK TIN COATED GLASS",
-      "category": "Ceramic/Glass/Tile Bit",
-      "sku": "2080100937398"
-    },
-    {
-      "id": "P055",
-      "name": "DRILL BIT HAUSMANN 10MM TRIANGLE SHANK TIN COATED GLASS",
-      "category": "Ceramic/Glass/Tile Bit",
-      "sku": "2080100937374"
-    },
-    {
-      "id": "P056",
-      "name": "DRILL BIT HAUSMANN 12MM TRIANGLE SHANK TIN COATED GLASS",
-      "category": "Ceramic/Glass/Tile Bit",
-      "sku": "2080100937381"
-    },
-    {
-      "id": "P057",
-      "name": "BIT  SCREWDRIVER HAUSMANN DOUBLE ENDED PH2X50MM 10s",
-      "category": "Screwdriver Bit",
-      "sku": "2080100936926"
-    },
-    {
-      "id": "P058",
-      "name": "BIT  SCREWDRIVER HAUSMANN DOUBLE ENDED PH2X65MM 3s",
-      "category": "Screwdriver Bit",
-      "sku": "2080100936933"
-    },
-    {
-      "id": "P059",
-      "name": "NUT SETTER  HAUSMANN M8X50MM",
-      "category": "Nut Setter",
-      "sku": "2080100937770"
-    },
-    {
-      "id": "P060",
-      "name": "NUT SETTER  HAUSMANN M8X65MM",
-      "category": "Nut Setter",
-      "sku": "2080100937787"
-    },
-    {
-      "id": "P061",
-      "name": "LOCK INSTALLATION KIT HAUSMANN CARBON STEEL 54MM",
-      "category": "Lock Installation Kit",
-      "sku": "2080100937763"
-    },
-    {
-      "id": "P062",
-      "name": "BLADE DIAMOND HAUSMANN  105X1.2/2.2X7.5X20 TURBO",
-      "category": "Diamond Blade",
-      "sku": "2080100937213"
-    },
-    {
-      "id": "P063",
-      "name": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20  SUPER THIN",
-      "category": "Diamond Blade",
-      "sku": "2080100937220"
-    },
-    {
-      "id": "P064",
-      "name": "BLADE DIAMOND HAUSMANN 105X1.2/1.7X5X20  CONTINUOUS",
-      "category": "Diamond Blade",
-      "sku": "2080100937237"
-    },
-    {
-      "id": "P065",
-      "name": "BLADE DIAMOND HAUSMANN 105X1.2/1.7X7.5X20  SEGMENTED",
-      "category": "Diamond Blade",
-      "sku": "2080100937244"
-    },
-    {
-      "id": "P066",
-      "name": "BLADE DIAMOND HAUSMANN 105X1.2/2.2X7.5X20 DE LUXE",
-      "category": "Diamond Blade",
-      "sku": "2080100937251"
-    },
-    {
-      "id": "P067",
-      "name": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
-      "category": "Cutting Disc",
-      "sku": "2080100937312"
-    },
-    {
-      "id": "P068",
-      "name": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
-      "category": "Cutting Disc",
-      "sku": "2080100937305"
-    },
-    {
-      "id": "P069",
-      "name": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
-      "category": "Cutting Disc",
-      "sku": "2080100937329"
-    },
-    {
-      "id": "P070",
-      "name": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
-      "category": "Super Thin Cutting Disc",
-      "sku": "2080100937794"
-    },
-    {
-      "id": "P071",
-      "name": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801101 105X1.01X16MM FOR SS AND METAL",
-      "category": "Super Thin Cutting Disc",
-      "sku": "2080100937800"
-    },
-    {
-      "id": "P072",
-      "name": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-      "category": "Super Thin Cutting Disc",
-      "sku": "2080100937817"
-    },
-    {
-      "id": "P073",
-      "name": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801105 102X3X16MM T-27 FOR STONE",
-      "category": "Grinding Disc",
-      "sku": "2080100937725"
-    },
-    {
-      "id": "P074",
-      "name": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801106 102X3X16MM T-27 FOR METAL",
-      "category": "Grinding Disc",
-      "sku": "2080100937732"
-    },
-    {
-      "id": "P075",
-      "name": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
-      "category": "Grinding Disc",
-      "sku": "2080100937749"
-    },
-    {
-      "id": "P076",
-      "name": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
-      "category": "Grinding Disc",
-      "sku": "2080100937756"
-    },
-    {
-      "id": "P077",
-      "name": "CIRCULAR BLADE HAUSMANN ABHLX721-61311002 30 110X20 FOR WOOD",
-      "category": "Circular Saw Blade for Wood",
-      "sku": "2080100937268"
-    },
-    {
-      "id": "P078",
-      "name": "CIRCULAR BLADE HAUSMANN ABHLX721-61318009 40 180X25 FOR WOOD",
-      "category": "Circular Saw Blade for Wood",
-      "sku": "2080100937275"
-    },
-    {
-      "id": "P079",
-      "name": "FLAP DISC HAUSMANN FDHLX721-80201001 #40D 100X16MM",
-      "category": "Flap Disc",
-      "sku": "2080100937688"
-    },
-    {
-      "id": "P080",
-      "name": "FLAP DISC HAUSMANN FDHLX721-80201002 #60D 100X16MM",
-      "category": "Flap Disc",
-      "sku": "2080100937695"
-    },
-    {
-      "id": "P081",
-      "name": "FLAP DISC HAUSMANN FDHLX721-80201003 #80D 100X16MM",
-      "category": "Flap Disc",
-      "sku": "2080100937701"
-    },
-    {
-      "id": "P082",
-      "name": "FLAP DISC HAUSMANN FDHLX721-80201004 #120D 100X16MM",
-      "category": "Flap Disc",
-      "sku": "2080100937718"
-    },
-    {
-      "id": "P083",
-      "name": "CUP BRUSH HAUSMANN BOWL CUP BRUSH-TWIST KNOT",
-      "category": "Cup Brush",
-      "sku": "2080100937282"
-    },
-    {
-      "id": "P084",
-      "name": "CUP BRUSH HAUSMANN CUP BRUSH-CRIMPED",
-      "category": "Cup Brush",
-      "sku": "2080100937299"
-    },
-    {
-      "id": "P085",
-      "name": "+BIT DRILL HAUSMANN LT  DIN338 HSS 10.0MM COBALT",
-      "category": "Phased Out",
-      "sku": "2080100937824"
-    },
-    {
-      "id": "P086",
-      "name": "+BIT DRILL HAUSMANN LT  DIN338 HSS 2.5MM COBALT",
-      "category": "Phased Out",
-      "sku": "2080100937831"
-    },
-    {
-      "id": "P087",
-      "name": "+BIT DRILL HAUSMANN LT  DIN338 HSS 3.0MM COBALT",
-      "category": "Phased Out",
-      "sku": "2080100937848"
-    },
-    {
-      "id": "P088",
-      "name": "+BIT DRILL HAUSMANN LT  DIN338 HSS 3.2MM COBALT",
-      "category": "Phased Out",
-      "sku": "2080100937855"
-    },
-    {
-      "id": "P089",
-      "name": "+BIT DRILL HAUSMANN LT  DIN338 HSS 5.0MM COBALT",
-      "category": "Phased Out",
-      "sku": "2080100937862"
-    },
-    {
-      "id": "P090",
-      "name": "+BIT DRILL HAUSMANN LT  DIN338 HSS 6.5MM COBALT",
-      "category": "Phased Out",
-      "sku": "2080100937879"
-    },
-    {
-      "id": "P091",
-      "name": "+BIT DRILL HAUSMANN LT  DIN338 HSS 8.0MM COBALT",
-      "category": "Phased Out",
-      "sku": "2080100937886"
-    },
-    {
-      "id": "P092",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 4.0MM COBALT",
-      "category": "Phased Out",
-      "sku": "2080100938067"
-    },
-    {
-      "id": "P093",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 6.0MM COBALT",
-      "category": "Phased Out",
-      "sku": "2080100938098"
-    },
-    {
-      "id": "P094",
-      "name": "+DRILL BIT HAUSMANN FH COBALT-M35 HSS 3MM BOX OF 10PCS",
-      "category": "Phased Out",
-      "sku": "2080100938142"
-    },
-    {
-      "id": "P095",
-      "name": "+DRILL BIT HAUSMANN FH COBALT-M35 HSS 4MM BOX OF 10PCS",
-      "category": "Phased Out",
-      "sku": "2080100938159"
-    },
-    {
-      "id": "P096",
-      "name": "+DRILL BIT HAUSMANN FH COBALT-M35 HSS 5MM BOX OF 10PCS",
-      "category": "Phased Out",
-      "sku": "2080100938166"
-    },
-    {
-      "id": "P097",
-      "name": "+BLADE DIAMOND HAUSMANN WT 105X1.0/1.4X7.5X20MM  SUPER THIN",
-      "category": "Phased Out",
-      "sku": "2080100938234"
-    },
-    {
-      "id": "P098",
-      "name": "+BLADE DIAMOND HAUSMANN WT 105X1.2/1.7X5X16MM CONTINUOUS RIM",
-      "category": "Phased Out",
-      "sku": "2080100938241"
-    },
-    {
-      "id": "P099",
-      "name": "+BLADE DIAMOND HAUSMANN WT 105X1.2/1.7X7.5X20MM   SEGMENTED",
-      "category": "Phased Out",
-      "sku": "2080100938258"
-    },
-    {
-      "id": "P100",
-      "name": "+BLADE DIAMOND HAUSMANN WT 105X1.2/2.2X7.5X20MM  DE LUXE",
-      "category": "Phased Out",
-      "sku": "2080100938265"
-    },
-    {
-      "id": "P101",
-      "name": "+BLADE DIAMOND HAUSMANN WT 105X1.2/2.2X7X20MM  TURBO",
-      "category": "Phased Out",
-      "sku": "2080100938272"
-    },
-    {
-      "id": "P102",
-      "name": "+BIT DRILL HAUSMANN LT  HCS YG8 10.0MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937909"
-    },
-    {
-      "id": "P103",
-      "name": "+BIT DRILL HAUSMANN LT  HCS YG8 13.0MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937923"
-    },
-    {
-      "id": "P104",
-      "name": "+BIT DRILL HAUSMANN LT  HCS YG8 3.0MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937930"
-    },
-    {
-      "id": "P105",
-      "name": "+BIT DRILL HAUSMANN LT  HCS YG8 4.0MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937947"
-    },
-    {
-      "id": "P106",
-      "name": "+BIT DRILL HAUSMANN LT  HCS YG8 5.0MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937954"
-    },
-    {
-      "id": "P107",
-      "name": "+BIT DRILL HAUSMANN LT  HCS YG8 6.0MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937978"
-    },
-    {
-      "id": "P108",
-      "name": "+BIT DRILL HAUSMANN LT  HCS YG8 6.5MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937985"
-    },
-    {
-      "id": "P109",
-      "name": "+BIT DRILL HAUSMANN LT  HCS YG8 7.0MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937992"
-    },
-    {
-      "id": "P110",
-      "name": "+BIT DRILL HAUSMANN LT  HCS YG8 8.0MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100938005"
-    },
-    {
-      "id": "P111",
-      "name": "+BIT DRILL HAUSMANN LT HCS YG8 5-PCS SET MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937893"
-    },
-    {
-      "id": "P112",
-      "name": "+BIT DRILL HAUSMANN LT HCS YG8 5.5MM MASONRY",
-      "category": "Phased Out",
-      "sku": "2080100937961"
-    },
-    {
-      "id": "P113",
-      "name": "+DRILL BIT HAUSMANN FH MASONRY 4MM BOX OF 10PCS",
-      "category": "Phased Out",
-      "sku": "2080100938173"
-    },
-    {
-      "id": "P114",
-      "name": "+DRILL BIT HAUSMANN FH MASONRY 5MM BOX OF 10PCS",
-      "category": "Phased Out",
-      "sku": "2080100938180"
-    },
-    {
-      "id": "P115",
-      "name": "+DRILL BIT HAUSMANN FH MASONRY 6MM BOX OF 10PCS",
-      "category": "Phased Out",
-      "sku": "2080100938197"
-    },
-    {
-      "id": "P116",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 10-PCS SET METAL",
-      "category": "Phased Out",
-      "sku": "2080100938029"
-    },
-    {
-      "id": "P117",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 10.0MM  METAL",
-      "category": "Phased Out",
-      "sku": "2080100938012"
-    },
-    {
-      "id": "P118",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 2.5MM METAL",
-      "category": "Phased Out",
-      "sku": "2080100938036"
-    },
-    {
-      "id": "P119",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 3.0MM METAL",
-      "category": "Phased Out",
-      "sku": "2080100938043"
-    },
-    {
-      "id": "P120",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 3.2MM METAL",
-      "category": "Phased Out",
-      "sku": "2080100938050"
-    },
-    {
-      "id": "P121",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 4.0MM METAL",
-      "category": "Phased Out",
-      "sku": "2080100938074"
-    },
-    {
-      "id": "P122",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 5.0MM METAL",
-      "category": "Phased Out",
-      "sku": "2080100938081"
-    },
-    {
-      "id": "P123",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 6-PCS SET METAL",
-      "category": "Phased Out",
-      "sku": "2080100938128"
-    },
-    {
-      "id": "P124",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 6.0MM METAL",
-      "category": "Phased Out",
-      "sku": "2080100938104"
-    },
-    {
-      "id": "P125",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 6.5MM METAL",
-      "category": "Phased Out",
-      "sku": "2080100938111"
-    },
-    {
-      "id": "P126",
-      "name": "+BIT DRILL HAUSMANN LT DIN338 HSS 8.0MM METAL",
-      "category": "Phased Out",
-      "sku": "2080100938135"
-    },
-    {
-      "id": "P127",
-      "name": "+DRILL BIT HAUSMANN FH STEEL-M2 HSS 3MM BOX OF 10PCS",
-      "category": "Phased Out",
-      "sku": "2080100938203"
-    },
-    {
-      "id": "P128",
-      "name": "+DRILL BIT HAUSMANN FH STEEL-M2 HSS 4MM BOX OF 10PCS",
-      "category": "Phased Out",
-      "sku": "2080100938210"
-    },
-    {
-      "id": "P129",
-      "name": "+DRILL BIT HAUSMANN FH STEEL-M2 HSS 5MM BOX OF 10PCS",
-      "category": "Phased Out",
-      "sku": "2080100938227"
-    },
-    {
-      "id": "P130",
-      "name": "NFS-DOOR SEAL HAUSMANN FD B2 RUBBER 1MX39MM WHITE ALU.HOLDER",
-      "category": "Door Seal",
-      "sku": "2080101008752"
-    },
-    {
-      "id": "P131",
-      "name": "NFS-DOOR SEAL HAUSMANN FD B2 RUBBER1MX39MM BROWN ALU.HOLDER",
-      "category": "Door Seal",
-      "sku": "2080101008738"
-    },
-    {
-      "id": "P132",
-      "name": "NFS-DOOR SEAL HAUSMANN FD C1 BRUSH 1MX45MM TRANSPARENT PVC HOLDER",
-      "category": "Door Seal",
-      "sku": "2080101008745"
-    },
-    {
-      "id": "P133",
-      "name": "NFS-DOOR SEAL HAUSMANN FD C1 BRUSH 1MX45MM BROWN PVC HOLDER",
-      "category": "Door Seal",
-      "sku": "2080101008769"
-    },
-    {
-      "id": "P134",
-      "name": "DOOR SEAL HAUSMANN DHF1123-FYRG03 TRANSPARENT PVC VISIBLE",
-      "category": "Door Seal",
-      "sku": "2080101008783"
-    },
-    {
-      "id": "P135",
-      "name": "DOOR SEAL HAUSMANN DHF1123-FYRG03 BROWN PVC VISIBLE",
-      "category": "Door Seal",
-      "sku": "2080101008776"
-    },
-    {
-      "id": "P136",
-      "name": "DOOR SEAL HAUSMANN DHF1123-OC-1 BLACK OXFORD CLOTH 600D & EPE VISIBLE",
-      "category": "Door Seal",
-      "sku": "2080101008813"
-    },
-    {
-      "id": "P137",
-      "name": "DOOR SEAL HAUSMANN DHF1123-OC-1 GREY OXFORD CLOTH 600D & EPE VISIBLE",
-      "category": "Door Seal",
-      "sku": "2080101008790"
-    },
-    {
-      "id": "P138",
-      "name": "DOOR SEAL HAUSMANN DHF1123-OC-1 BROWN OXFORD CLOTH 600D & EPE VISIBLE",
-      "category": "Door Seal",
-      "sku": "2080101008806"
-    },
-    {
-      "id": "P139",
-      "name": "DOOR CLOSER HAUSMANN DHO1123-103CDC 54.5X10.9X4CM SILVER ALUMINIUM",
-      "category": "Door Closer",
-      "sku": "2080101008400"
-    },
-    {
-      "id": "P140",
-      "name": "DOOR CLOSER HAUSMANN DHO1123-FR40 29.6X13.8X8.4CM GREY IRON",
-      "category": "Door Closer",
-      "sku": "2080101008417"
-    },
-    {
-      "id": "P141",
-      "name": "DOOR CLOSER HAUSMANN DHO1123-FR50 29.6X13.8X8.4CM GREY IRON",
-      "category": "Door Closer",
-      "sku": "2080101008431"
-    },
-    {
-      "id": "P142",
-      "name": "DOOR CLOSER HAUSMANN OS #602 25-45KG SILVER",
-      "category": "Door Closer",
-      "sku": "2080101008349"
-    },
-    {
-      "id": "P143",
-      "name": "DOOR CLOSER HAUSMANN OS #603 40-65KG SILVER",
-      "category": "Door Closer",
-      "sku": "2080101008332"
-    },
-    {
-      "id": "P144",
-      "name": "DOOR CLOSER HAUSMANN OS #604 60-85KG SILVER",
-      "category": "Door Closer",
-      "sku": "2080101008356"
-    },
-    {
-      "id": "P145",
-      "name": "DOOR CLOSER HAUSMANN DHO0423-602 25-45KG 148X37X57.5MM BLACK ALUMINUM",
-      "category": "Door Closer",
-      "sku": "2080101008363"
-    },
-    {
-      "id": "P146",
-      "name": "DOOR CLOSER HAUSMANN DHO0423-603 40-65KG 186X44.5X67MM BLACK ALUMINUM",
-      "category": "Door Closer",
-      "sku": "2080101008370"
-    },
-    {
-      "id": "P147",
-      "name": "DOOR CLOSER HAUSMANN DHO0423-604 60-85KG 223X44.5X72.5MM BLACK ALUMINUM",
-      "category": "Door Closer",
-      "sku": "2080101008387"
-    },
-    {
-      "id": "P148",
-      "name": "DOOR CLOSER HAUSMANN GY WNS-02 25KG ALUMINUM",
-      "category": "Door Closer",
-      "sku": "2080101008394"
-    },
-    {
-      "id": "P149",
-      "name": "BARREL BOLT HAUSMANN C646-1.5 AB 33X58MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101008042"
-    },
-    {
-      "id": "P150",
-      "name": "BARREL BOLT HAUSMANN C646-1.5 BSN 33X58MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101008059"
-    },
-    {
-      "id": "P151",
-      "name": "BARREL BOLT HAUSMANN DHW1022-C646-1.5IN. MATTE BLACK ZINC ALLOY",
-      "category": "Barrel Bolt",
-      "sku": "2080101008103"
-    },
-    {
-      "id": "P152",
-      "name": "BARREL BOLT HAUSMANN C605-2 AB 32X62MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101008035"
-    },
-    {
-      "id": "P153",
-      "name": "BARREL BOLT HAUSMANN C605-2 BSN 32X62MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101008011"
-    },
-    {
-      "id": "P154",
-      "name": "BARREL BOLT HAUSMANN DHW1022-C605-2IN. MATTE BLACK ZINC ALLOY+STEEL",
-      "category": "Barrel Bolt",
-      "sku": "2080101008097"
-    },
-    {
-      "id": "P155",
-      "name": "BARREL BOLT HAUSMANN C605-2.5 AB 33X74MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101007977"
-    },
-    {
-      "id": "P156",
-      "name": "BARREL BOLT HAUSMANN C605-2.5 BSN 33X74MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101007984"
-    },
-    {
-      "id": "P157",
-      "name": "BARREL BOLT HAUSMANN DHW1022-C605-2.5IN. MATTE BLACK ZINC ALLOY+STEEL",
-      "category": "Barrel Bolt",
-      "sku": "2080101008080"
-    },
-    {
-      "id": "P158",
-      "name": "BARREL BOLT HAUSMANN C605-3 AB 33X87MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101007960"
-    },
-    {
-      "id": "P159",
-      "name": "BARREL BOLT HAUSMANN C605-3 BSN 33X87MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101008004"
-    },
-    {
-      "id": "P160",
-      "name": "BARREL BOLT HAUSMANN DHW1022-C605-3 MATTE BLACK ZINC ALLOY+STEEL",
-      "category": "Barrel Bolt",
-      "sku": "2080101008073"
-    },
-    {
-      "id": "P161",
-      "name": "BARREL BOLT HAUSMANN C605-4 AB 33X112MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101007991"
-    },
-    {
-      "id": "P162",
-      "name": "BARREL BOLT HAUSMANN C605-4 BSN 33X112MM",
-      "category": "Barrel Bolt",
-      "sku": "2080101008028"
-    },
-    {
-      "id": "P163",
-      "name": "BARREL BOLT HAUSMANN DHW1022-C605-4 MATTE BLACK ZINC ALLOY+STEEL",
-      "category": "Barrel Bolt",
-      "sku": "2080101008066"
-    },
-    {
-      "id": "P164",
-      "name": "DOOR CATCH HAUSMANN C758 AB",
-      "category": "Door Catch | Magnetic Door Catch",
-      "sku": "2080101008141"
-    },
-    {
-      "id": "P165",
-      "name": "DOOR CATCH HAUSMANN C758 BSN",
-      "category": "Door Catch | Magnetic Door Catch",
-      "sku": "2080101008158"
-    },
-    {
-      "id": "P166",
-      "name": "DOOR CATCH HAUSMANN DHW1022-C758 MATTE BLACK ZINC ALLOY+STEEL",
-      "category": "Door Catch | Magnetic Door Catch",
-      "sku": "2080101008165"
-    },
-    {
-      "id": "P167",
-      "name": "MAGNETIC DOOR CATCH HAUSMANN C5312 AB 40X73MM",
-      "category": "Door Catch | Magnetic Door Catch",
-      "sku": "2080101008172"
-    },
-    {
-      "id": "P168",
-      "name": "MAGNETIC DOOR CATCH HAUSMANN C5312 BSN 40X73MM",
-      "category": "Door Catch | Magnetic Door Catch",
-      "sku": "2080101008189"
-    },
-    {
-      "id": "P169",
-      "name": "MAGNETIC DOOR CATCH HAUSMANN DHW1022-C5312 MATTE BLACK ZINC ALLOY",
-      "category": "Door Catch | Magnetic Door Catch",
-      "sku": "2080101008196"
-    },
-    {
-      "id": "P170",
-      "name": "DOOR CHAIN HAUSMANN C1100 AB",
-      "category": "Door Chain | Door Chain and Bolt",
-      "sku": "2080101008264"
-    },
-    {
-      "id": "P171",
-      "name": "DOOR CHAIN HAUSMANN C1100 BSN",
-      "category": "Door Chain | Door Chain and Bolt",
-      "sku": "2080101029160"
-    },
-    {
-      "id": "P172",
-      "name": "DOOR CHAIN HAUSMANN DHW1022-C1100 MATTE BLACK ZINC ALLOY",
-      "category": "Door Chain | Door Chain and Bolt",
-      "sku": "2080101008288"
-    },
-    {
-      "id": "P173",
-      "name": "DOOR CHAIN AND BOLT HAUSMANN C715 AB",
-      "category": "Door Chain | Door Chain and Bolt",
-      "sku": "2080101008257"
-    },
-    {
-      "id": "P174",
-      "name": "DOOR CHAIN AND BOLT HAUSMANN C715 BSN",
-      "category": "Door Chain | Door Chain and Bolt",
-      "sku": "2080101008240"
-    },
-    {
-      "id": "P175",
-      "name": "DOOR CHAIN AND BOLT HAUSMANN DHW1022-C715 MATTE BLACK ZINC ALLOY",
-      "category": "Door Chain | Door Chain and Bolt",
-      "sku": "2080101008271"
-    },
-    {
-      "id": "P176",
-      "name": "DOOR GUARD HAUSMANN C909 AB 107X62MM",
-      "category": "Door Guard",
-      "sku": "2080101008646"
-    },
-    {
-      "id": "P177",
-      "name": "DOOR GUARD HAUSMANN C909 BSN 107X62MM",
-      "category": "Door Guard",
-      "sku": "2080101008653"
-    },
-    {
-      "id": "P178",
-      "name": "DOOR GUARD HAUSMANN DHW1022-C909 MATTE BLACK ZINC ALLOY",
-      "category": "Door Guard",
-      "sku": "2080101008660"
-    },
-    {
-      "id": "P179",
-      "name": "DOOR STOPPER HAUSMANN C584 AB",
-      "category": "Door Stopper",
-      "sku": "2080101008882"
-    },
-    {
-      "id": "P180",
-      "name": "DOOR STOPPER HAUSMANN C584 BSN",
-      "category": "Door Stopper",
-      "sku": "2080101008899"
-    },
-    {
-      "id": "P181",
-      "name": "DOOR STOPPER HAUSMANN DHW1022-C584 MATTE BLACK ZINC ALLOY",
-      "category": "Door Stopper",
-      "sku": "2080101008929"
-    },
-    {
-      "id": "P182",
-      "name": "DOOR STOPPER HAUSMANN C837 AB",
-      "category": "Door Stopper",
-      "sku": "2080101008837"
-    },
-    {
-      "id": "P183",
-      "name": "DOOR STOPPER HAUSMANN C837 BSN",
-      "category": "Door Stopper",
-      "sku": "2080101008851"
-    },
-    {
-      "id": "P184",
-      "name": "DOOR STOPPER HAUSMANN DHW1022-C837 MATTE BLACK ZINC ALLOY",
-      "category": "Door Stopper",
-      "sku": "2080101008912"
-    },
-    {
-      "id": "P185",
-      "name": "DOOR STOPPER HAUSMANN C884 AB 45X27MM",
-      "category": "Door Stopper",
-      "sku": "2080101008875"
-    },
-    {
-      "id": "P186",
-      "name": "DOOR STOPPER HAUSMANN C884 BSN 45X27MM",
-      "category": "Door Stopper",
-      "sku": "2080101008868"
-    },
-    {
-      "id": "P187",
-      "name": "DOOR STOPPER HAUSMANN DHW1022-C884 MATTE BLACK ZINC ALLOY",
-      "category": "Door Stopper",
-      "sku": "2080101008905"
-    },
-    {
-      "id": "P188",
-      "name": "DOOR VIEWER HAUSMANN 180DEG 35-60MM 14MM MB",
-      "category": "Door Viewer",
-      "sku": "2080101066509"
-    },
-    {
-      "id": "P189",
-      "name": "DOOR VIEWER HAUSMANN 180DEG 35-60MM 14MM BSN",
-      "category": "Door Viewer",
-      "sku": "2080101066493"
-    },
-    {
-      "id": "P190",
-      "name": "DOOR VIEWER HAUSMANN 180DEG 35-60MM 14MM AB",
-      "category": "Door Viewer",
-      "sku": "2080101066486"
-    },
-    {
-      "id": "P191",
-      "name": "WINDOW LATCH HAUSMANN ZHC720D AB",
-      "category": "Window Latch",
-      "sku": "2080101008998"
-    },
-    {
-      "id": "P192",
-      "name": "WINDOW LATCH HAUSMANN ZHC720D BSN",
-      "category": "Window Latch",
-      "sku": "2080101009001"
-    },
-    {
-      "id": "P193",
-      "name": "WINDOW LATCH HAUSMANN DHW1022-C720D MATTE BLACK ZINC ALLOY",
-      "category": "Window Latch",
-      "sku": "2080101009018"
-    },
-    {
-      "id": "P194",
-      "name": "WINDOW LOCK HAUSMANN C862 AB",
-      "category": "Window Lock",
-      "sku": "2080101009049"
-    },
-    {
-      "id": "P195",
-      "name": "WINDOW LOCK HAUSMANN C862 BSN",
-      "category": "Window Lock",
-      "sku": "2080101009032"
-    },
-    {
-      "id": "P196",
-      "name": "WINDOW LOCK HAUSMANN DHW1022-C862 MATTE BLACK ZINC ALLOY",
-      "category": "Window Lock",
-      "sku": "2080101009056"
-    },
-    {
-      "id": "P197",
-      "name": "SCB-FLUSH BOLT HAUSMANN ZHC711-10IN. AB",
-      "category": "Flush Bolt",
-      "sku": "2080101008547"
-    },
-    {
-      "id": "P198",
-      "name": "PANIC EXIT BAR HAUSMANN PHO0122 1510P PUSH TYPE 17X9X105CM SILVER STEEL BAR 1050MM",
-      "category": "Exit Bar",
-      "sku": "2080101018997"
-    },
-    {
-      "id": "P199",
-      "name": "PANIC EXIT HANDLE HAUSMANN PHO0122 016F FOR 1510 SERIES 18X8X6.35CM SILVER ZINC",
-      "category": "Exit Bar",
-      "sku": "2080101019000"
-    },
-    {
-      "id": "P200",
-      "name": "+DOOR HOLDER HAUSMANN ZHC898L AB",
-      "category": "Phased Out",
-      "sku": "2080101008684"
-    },
-    {
-      "id": "P201",
-      "name": "+DOOR HOLDER HAUSMANN ZHC898L BSN",
-      "category": "Phased Out",
-      "sku": "2080101008677"
-    },
-    {
-      "id": "P202",
-      "name": "+DOOR STOPPER HAUSMANN DHW1022-C898L MATTE BLACK ZINC ALLOY",
-      "category": "Phased Out",
-      "sku": "2080101008943"
-    },
-    {
-      "id": "P203",
-      "name": "+DOOR STOPPER HAUSMANN ZHC830 AB",
-      "category": "Phased Out",
-      "sku": "2080101008820"
-    },
-    {
-      "id": "P204",
-      "name": "+DOOR STOPPER HAUSMANN ZHC830 BSN",
-      "category": "Phased Out",
-      "sku": "2080101008844"
-    },
-    {
-      "id": "P205",
-      "name": "+DOOR STOPPER HAUSMANN DHW1022-C830 MATTE BLACK ZINC ALLOY",
-      "category": "Phased Out",
-      "sku": "2080101008936"
-    },
-    {
-      "id": "P206",
-      "name": "+DOOR VIEWER HAUSMANN OI 1012/35-55 12MM SC",
-      "category": "Phased Out",
-      "sku": "2080101008974"
-    },
-    {
-      "id": "P207",
-      "name": "+DOOR VIEWER HAUSMANN OI 1012/35-55 12MM AB",
-      "category": "Phased Out",
-      "sku": "2080101008981"
-    },
-    {
-      "id": "P208",
-      "name": "+BARREL BOLT HAUSMANN C605-6 AB 33X162MM",
-      "category": "Phased Out",
-      "sku": "2080101008110"
-    },
-    {
-      "id": "P209",
-      "name": "+BARREL BOLT HAUSMANN C605-6 BSN 33X162MM",
-      "category": "Phased Out",
-      "sku": "2080101008127"
-    },
-    {
-      "id": "P210",
-      "name": "+BARREL BOLT HAUSMANN C605-6 SC 33X162MM",
-      "category": "Phased Out",
-      "sku": "2080101008134"
-    },
-    {
-      "id": "P211",
-      "name": "+MAGNETIC DOOR CATCH HAUSMANN C891 BROWN 45X75MM",
-      "category": "Phased Out",
-      "sku": "2080101008226"
-    },
-    {
-      "id": "P212",
-      "name": "+MAGNETIC DOOR CATCH HAUSMANN C5312 SC 40X73MM",
-      "category": "Phased Out",
-      "sku": "2080101008233"
-    },
-    {
-      "id": "P213",
-      "name": "+FLANGE HAUSMANN C900-15MMD CHROME",
-      "category": "Phased Out",
-      "sku": "2080101008509"
-    },
-    {
-      "id": "P214",
-      "name": "+FLANGE HAUSMANN C900-19MMD CHROME",
-      "category": "Phased Out",
-      "sku": "2080101008493"
-    },
-    {
-      "id": "P215",
-      "name": "+FLANGE HAUSMANN C900-25MMD CHROME",
-      "category": "Phased Out",
-      "sku": "2080101008516"
-    },
-    {
-      "id": "P216",
-      "name": "+FLANGE SLICK C900-15MMD CHROME",
-      "category": "Phased Out",
-      "sku": "2080101008486"
-    },
-    {
-      "id": "P217",
-      "name": "+FLANGE SLICK C900-19MMD CHROME",
-      "category": "Phased Out",
-      "sku": "2080101008530"
-    },
-    {
-      "id": "P218",
-      "name": "+FLANGE SLICK C900-25MMD CHROME",
-      "category": "Phased Out",
-      "sku": "2080101008523"
-    },
-    {
-      "id": "P219",
-      "name": "+DOOR STOPPER HAUSMANN C885 AB 79X39MM",
-      "category": "Phased Out",
-      "sku": "2080101008950"
-    },
-    {
-      "id": "P220",
-      "name": "+DOOR STOPPER HAUSMANN C885 BSN 78X39MM",
-      "category": "Phased Out",
-      "sku": "2080101008967"
-    },
-    {
-      "id": "P221",
-      "name": "+DOOR STOPPER HAUSMANN C831 SC",
-      "category": "Phased Out",
-      "sku": "2080101009063"
-    },
-    {
-      "id": "P222",
-      "name": "+DOOR CATCH HAUSMANN C5307 AB",
-      "category": "Phased Out",
-      "sku": "2080101008202"
-    },
-    {
-      "id": "P223",
-      "name": "+DOOR CATCH HAUSMANN C5307 BSN",
-      "category": "Phased Out",
-      "sku": "2080101008219"
-    },
-    {
-      "id": "P224",
-      "name": "+DOOR CHAIN HAUSMANN ZHC905 AB",
-      "category": "Phased Out",
-      "sku": "2080101008295"
-    },
-    {
-      "id": "P225",
-      "name": "+DOOR CHAIN HAUSMANN ZHC905 BSN",
-      "category": "Phased Out",
-      "sku": "2080101008301"
-    },
-    {
-      "id": "P226",
-      "name": "+DOOR CHAIN HAUSMANN ZHC905 SC",
-      "category": "Phased Out",
-      "sku": "2080101008318"
-    },
-    {
-      "id": "P227",
-      "name": "+DOOR CHAIN HAUSMANN C1094 SC",
-      "category": "Phased Out",
-      "sku": "2080101008325"
-    },
-    {
-      "id": "P228",
-      "name": "+COAT HOOK HAUSMANN C738 AB",
-      "category": "Phased Out",
-      "sku": "2080101008448"
-    },
-    {
-      "id": "P229",
-      "name": "+COAT HOOK HAUSMANN C738 BSN",
-      "category": "Phased Out",
-      "sku": "2080101008455"
-    },
-    {
-      "id": "P230",
-      "name": "+COAT HOOK HAUSMANN C809 AB",
-      "category": "Phased Out",
-      "sku": "2080101008479"
-    },
-    {
-      "id": "P231",
-      "name": "+COAT HOOK HAUSMANN C809 BSN",
-      "category": "Phased Out",
-      "sku": "2080101008462"
-    },
-    {
-      "id": "P232",
-      "name": "+FLUSH BOLT HAUSMANN ZHC711-6IN. AB",
-      "category": "Phased Out",
-      "sku": "2080101008578"
-    },
-    {
-      "id": "P233",
-      "name": "+FLUSH BOLT HAUSMANN ZHC711-6IN. BSN",
-      "category": "Phased Out",
-      "sku": "2080101008585"
-    },
-    {
-      "id": "P234",
-      "name": "+FLUSH BOLT HAUSMANN ZHC711-6IN. SC",
-      "category": "Phased Out",
-      "sku": "2080101008639"
-    },
-    {
-      "id": "P235",
-      "name": "+FLUSH BOLT HAUSMANN ZHC711-8IN. AB",
-      "category": "Phased Out",
-      "sku": "2080101008554"
-    },
-    {
-      "id": "P236",
-      "name": "+FLUSH BOLT HAUSMANN ZHC711-8IN. BSN",
-      "category": "Phased Out",
-      "sku": "2080101008592"
-    },
-    {
-      "id": "P237",
-      "name": "+FLUSH BOLT HAUSMANN ZHC711-8IN. SC",
-      "category": "Phased Out",
-      "sku": "2080101008608"
-    },
-    {
-      "id": "P238",
-      "name": "+FLUSH BOLT HAUSMANN ZHC711-10IN. AB",
-      "category": "Phased Out",
-      "sku": "2080101008561"
-    },
-    {
-      "id": "P239",
-      "name": "+FLUSH BOLT HAUSMANN ZHC711-10IN. BSN",
-      "category": "Phased Out",
-      "sku": "2080101008622"
-    },
-    {
-      "id": "P240",
-      "name": "+FLUSH BOLT HAUSMANN ZHC711-10IN. SC",
-      "category": "Phased Out",
-      "sku": "2080101008615"
-    },
-    {
-      "id": "P241",
-      "name": "+DOOR HOLDER HAUSMANN ZHC898L SC",
-      "category": "Phased Out",
-      "sku": "2080101008691"
-    },
-    {
-      "id": "P242",
-      "name": "+DOOR LATCH HAUSMANN ZHC717 AB",
-      "category": "Phased Out",
-      "sku": "2080101008707"
-    },
-    {
-      "id": "P243",
-      "name": "+DOOR LATCH HAUSMANN ZHC717 BSN",
-      "category": "Phased Out",
-      "sku": "2080101008714"
-    },
-    {
-      "id": "P244",
-      "name": "+DOOR LATCH HAUSMANN ZHC717 SC",
-      "category": "Phased Out",
-      "sku": "2080101008721"
-    },
-    {
-      "id": "P245",
-      "name": "+WINDOW LATCH HAUSMANN ZHC720D SC",
-      "category": "Phased Out",
-      "sku": "2080101009025"
-    },
-    {
-      "id": "P246",
-      "name": "+FLOOR HINGE HAUSMANN OS FR39",
-      "category": "Phased Out",
-      "sku": "2080101021959"
-    },
-    {
-      "id": "P247",
-      "name": "COAT HOOK HAUSMANN C744 SATIN NICKEL",
-      "category": "Phased Out",
-      "sku": "2080101078861"
-    },
-    {
-      "id": "P248",
-      "name": "COAT HOOK HAUSMANN C744 ANTIQUE BRASS",
-      "category": "Phased Out",
-      "sku": "2080101078854"
-    },
-    {
-      "id": "P249",
-      "name": "COAT HOOK HAUSMANN C815 SATIN NICKEL",
-      "category": "Phased Out",
-      "sku": "2080101078847"
-    },
-    {
-      "id": "P250",
-      "name": "COAT HOOK HAUSMANN C815 ANTIQUE BRASS",
-      "category": "Phased Out",
-      "sku": "2080101078830"
-    },
-    {
-      "id": "P251",
-      "name": "DOOR CATCH HAUSMANN C5313 SATIN NICKEL",
-      "category": "Phased Out",
-      "sku": "2080101078823"
-    },
-    {
-      "id": "P252",
-      "name": "DOOR CATCH HAUSMANN C5313 ANTIQUE BRASS",
-      "category": "Phased Out",
-      "sku": "2080101078816"
-    },
-    {
-      "id": "P253",
-      "name": "DOOR CHAIN HAUSMANN A1100 SATIN CHROME",
-      "category": "Phased Out",
-      "sku": "2080101078809"
+      "name": "NFS CASTER SWIVEL HAUSMANN CHF1020 31200 SCAFFOLDING RUBBER WITH BRAKE 8IN.",
+      "category": "Wheel Casters",
+      "sku": "2080101153759"
     }
   ]
 }
