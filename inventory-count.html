@@ -829,6 +829,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const codeInp = document.getElementById("authCodeInput");
   if (nameInp) nameInp.addEventListener("keydown", e => { if (e.key === "Enter") codeInp && codeInp.focus(); });
   if (codeInp) codeInp.addEventListener("keydown", e => { if (e.key === "Enter") submitCode(); });
+  if (codeInp) codeInp.addEventListener("input", e => {
+    const el = e.target;
+    const wasAtEnd = el.selectionStart === el.value.length;
+    let v = el.value.toUpperCase().replace(/\s+/g, "");
+    // Normalise: strip dashes, then re-insert one after the AHBC prefix
+    const compact = v.replace(/-/g, "");
+    if (compact.startsWith("AHBC") && compact.length > 4) {
+      v = "AHBC-" + compact.slice(4, 8);
+    } else {
+      v = compact;
+    }
+    if (v !== el.value) {
+      el.value = v;
+      if (wasAtEnd) el.setSelectionRange(v.length, v.length);
+    }
+  });
 });
 // Load products from JSON
 function loadProducts() {
