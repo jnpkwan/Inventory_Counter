@@ -1447,9 +1447,11 @@ function openSubmitModal() {
     _openSubmitModalBody(); return;
   }
 
-  // Block if any products haven't been counted yet
-  const countedIds = new Set(inventory.map(i => i.productId));
-  const missing = PRODUCTS.filter(p => !countedIds.has(p.id));
+  // Block if any products haven't been counted yet.
+  // Match on sku (the unique barcode), not id — product ids are not reliably unique
+  // across the merged batch files, which let uncounted SKUs slip past this check.
+  const countedSkus = new Set(inventory.map(i => i.sku));
+  const missing = PRODUCTS.filter(p => !countedSkus.has(p.sku));
   if (missing.length > 0) {
     showToast(`${missing.length} product${missing.length > 1 ? 's' : ''} still pending — count everything first`, 'error');
     showPage('count');
