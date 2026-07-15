@@ -5,24 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AcaciaHBC Inventory App — Paano Gamitin</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
   :root {
-    --blue: #1a4fa0;
-    --blue-dark: #0f1f3d;
-    --blue-light: #e8eef8;
-    --green: #2db84b;
-    --green-dark: #1e9e38;
-    --green-light: #e8f7ec;
-    --red: #ef4444;
-    --red-light: #fef2f2;
+    --blue: #1B4DA0;
+    --blue-dark: #12294E;
+    --blue-light: #EDF1F7;
+    --green: #22A749;
+    --green-dark: #1A713E;
+    --green-light: #EDF8F0;
+    --red: #C0392B;
+    --red-light: #FBEAE8;
     --yellow: #f59e0b;
-    --bg: #f4f6f9;
-    --white: #ffffff;
-    --text: #0f1f3d;
+    --bg: #F5F5F5;
+    --white: #FFFFFF;
+    --text: #2C2C2C;
     --text2: #4a5568;
-    --text3: #94a3b8;
-    --border: #e2e8f0;
+    --text3: #97A0AD;
+    --border: #DDDDDD;
+    --gradient: linear-gradient(135deg, #22A749 0%, #1E7A74 50%, #1B4DA0 100%);
     --radius: 16px;
     --radius-sm: 10px;
   }
@@ -30,7 +31,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
@@ -38,7 +39,7 @@
 
   /* HERO */
   .hero {
-    background: linear-gradient(135deg, #0f1f3d 0%, #1a4fa0 100%);
+    background: var(--gradient);
     padding: 48px 24px 56px;
     text-align: center;
     position: relative;
@@ -47,10 +48,16 @@
   .hero::before {
     content: '';
     position: absolute;
-    top: -60px; right: -60px;
-    width: 200px; height: 200px;
-    background: rgba(45,184,75,0.08);
-    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px; height: 320px;
+    background-image: url('tree-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1);
+    opacity: 0.06;
+    pointer-events: none;
   }
   .hero::after {
     content: '';
@@ -62,41 +69,54 @@
   }
   .hero-badge {
     display: inline-block;
-    background: rgba(45,184,75,0.2);
-    color: #6ee7a0;
-    border: 1px solid rgba(45,184,75,0.3);
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
     border-radius: 30px;
     padding: 5px 16px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 16px;
+    position: relative;
   }
   .hero-icon {
-    width: 64px; height: 64px;
-    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    width: 72px; height: 72px;
+    background: rgba(255,255,255,0.14);
     border-radius: 18px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 30px;
     margin: 0 auto 18px;
-    box-shadow: 0 8px 24px rgba(45,184,75,0.35);
+    box-shadow: 0 8px 24px rgba(18,41,78,0.35);
+    position: relative;
+    padding: 12px;
+  }
+  .hero-icon::after {
+    content: '';
+    width: 100%; height: 100%;
+    background-image: url('tree-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1);
   }
   .hero h1 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 26px;
     font-weight: 900;
     color: #fff;
     margin-bottom: 8px;
     line-height: 1.2;
+    position: relative;
   }
   .hero p {
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.72);
     font-size: 14px;
     font-weight: 500;
     max-width: 340px;
     margin: 0 auto;
+    position: relative;
   }
 
   /* TABLE OF CONTENTS */
@@ -106,7 +126,7 @@
     padding: 20px 24px;
   }
   .toc-title {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 11px;
     font-weight: 700;
     color: var(--text3);
@@ -132,7 +152,7 @@
     font-weight: 700;
     color: var(--text2);
     text-decoration: none;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     transition: all 0.15s;
   }
   .toc-list a:hover { background: var(--blue-light); border-color: var(--blue); color: var(--blue); }
@@ -153,21 +173,21 @@
     background: linear-gradient(135deg, var(--blue), var(--blue-dark));
     border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     font-weight: 900;
     color: #fff;
     flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(26,79,160,0.25);
+    box-shadow: 0 3px 10px rgba(27,77,160,0.25);
   }
-  .section-num.green { background: linear-gradient(135deg, var(--green), var(--green-dark)); box-shadow: 0 3px 10px rgba(45,184,75,0.25); }
+  .section-num.green { background: linear-gradient(135deg, var(--green), var(--green-dark)); box-shadow: 0 3px 10px rgba(34,167,73,0.25); }
   .section-num.red { background: linear-gradient(135deg, var(--red), #dc2626); box-shadow: 0 3px 10px rgba(239,68,68,0.25); }
   .section-num.yellow { background: linear-gradient(135deg, var(--yellow), #d97706); box-shadow: 0 3px 10px rgba(245,158,11,0.25); }
   .section-num.plain { background: linear-gradient(135deg, #64748b, #475569); box-shadow: 0 3px 10px rgba(100,116,139,0.25); }
 
   .section-title-wrap {}
   .section-title {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 900;
     color: var(--text);
@@ -201,10 +221,10 @@
   .step-bubble {
     width: 28px; height: 28px;
     background: var(--green-light);
-    border: 2px solid rgba(45,184,75,0.3);
+    border: 2px solid rgba(34,167,73,0.3);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: 900;
     color: var(--green-dark);
@@ -213,7 +233,7 @@
   }
   .step-body {}
   .step-label {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 800;
     color: var(--text);
@@ -236,7 +256,7 @@
   }
   .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
   .callout-body { font-size: 13px; line-height: 1.6; }
-  .callout-title { font-family: 'Nunito', sans-serif; font-weight: 800; margin-bottom: 2px; font-size: 13px; }
+  .callout-title { font-family: 'Montserrat', sans-serif; font-weight: 800; margin-bottom: 2px; font-size: 13px; }
   .callout.tip { background: var(--green-light); border-left: 3px solid var(--green); }
   .callout.tip .callout-title { color: var(--green-dark); }
   .callout.warn { background: #fffbeb; border-left: 3px solid var(--yellow); }
@@ -262,7 +282,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
   .ui-field {
     background: var(--white);
@@ -273,13 +293,13 @@
     color: var(--text2);
     margin-bottom: 8px;
     width: 100%;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
   .ui-btn {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 8px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 800;
     color: #fff;
@@ -288,9 +308,9 @@
     cursor: default;
     width: 100%;
     text-align: center;
-    box-shadow: 0 3px 10px rgba(45,184,75,0.3);
+    box-shadow: 0 3px 10px rgba(34,167,73,0.3);
   }
-  .ui-btn.blue { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); box-shadow: 0 3px 10px rgba(26,79,160,0.3); }
+  .ui-btn.blue { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); box-shadow: 0 3px 10px rgba(27,77,160,0.3); }
   .ui-btn.red { background: linear-gradient(135deg, #ef4444, #dc2626); box-shadow: 0 3px 10px rgba(239,68,68,0.3); }
 
   /* NAV MOCK */
@@ -306,7 +326,7 @@
     flex: 1;
     padding: 10px 4px;
     text-align: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     font-weight: 700;
     color: var(--text3);
@@ -324,9 +344,9 @@
   }
 
   /* HIGHLIGHT */
-  .hl { background: var(--green-light); color: var(--green-dark); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: 'Nunito', sans-serif; font-size: 0.92em; }
-  .hl-blue { background: var(--blue-light); color: var(--blue); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: 'Nunito', sans-serif; font-size: 0.92em; }
-  .hl-red { background: var(--red-light); color: var(--red); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: 'Nunito', sans-serif; font-size: 0.92em; }
+  .hl { background: var(--green-light); color: var(--green-dark); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 0.92em; }
+  .hl-blue { background: var(--blue-light); color: var(--blue); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 0.92em; }
+  .hl-red { background: var(--red-light); color: var(--red); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 0.92em; }
 
   /* SUMMARY STEPS */
   .summary-flow {
@@ -348,7 +368,7 @@
     width: 32px; height: 32px;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 900;
     color: #fff;
@@ -363,7 +383,7 @@
   }
   .flow-item:last-child .flow-connector { display: none; }
   .flow-body { padding: 4px 0 20px; }
-  .flow-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; color: var(--text); margin-bottom: 3px; }
+  .flow-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; color: var(--text); margin-bottom: 3px; }
   .flow-desc { font-size: 13px; color: var(--text2); }
 
   /* FOOTER */
@@ -384,8 +404,8 @@
     width: 100%; padding: 15px 20px;
     background: linear-gradient(135deg, var(--blue), var(--blue-dark));
     color: #fff; border: none; border-radius: var(--radius-sm);
-    font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800;
-    cursor: pointer; box-shadow: 0 4px 16px rgba(26,79,160,0.35);
+    font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(27,77,160,0.35);
     transition: transform 0.1s, box-shadow 0.15s; margin-bottom: 10px;
   }
   .install-btn:active { transform: scale(0.97); }
@@ -396,7 +416,7 @@
   .ios-step:last-child { margin-bottom: 0; }
   .ios-icon { font-size: 22px; flex-shrink: 0; width: 32px; text-align: center; }
   .ios-text { font-size: 13px; color: var(--text2); line-height: 1.6; }
-  .ios-text strong { color: var(--text); font-family: 'Nunito', sans-serif; }
+  .ios-text strong { color: var(--text); font-family: 'Montserrat', sans-serif; }
 
   @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
@@ -434,7 +454,7 @@
 </style>
 </head>
 <body>
-<header style="position: sticky; top: 0; background-color: #1a4fa0; color: white; padding: 16px 20px; display: flex; align-items: center; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.15); font-family: 'Nunito', sans-serif;">
+<header style="position: sticky; top: 0; background-color: #1B4DA0; color: white; padding: 16px 20px; display: flex; align-items: center; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.15); font-family: 'Montserrat', sans-serif;">
     
     <a href="inventory-count.html" style="color: white; text-decoration: none; display: flex; align-items: center; font-weight: 600; font-size: 16px;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 22px; height: 22px; stroke-width: 2.5; margin-right: 6px; stroke-linecap: round; stroke-linejoin: round;">
@@ -452,7 +472,7 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-badge">📋 User Guide · Taglish Edition</div>
-  <div class="hero-icon">🌿</div>
+  <div class="hero-icon"></div>
   <h1>AcaciaHBC<br>Inventory App</h1>
   <p>Simple guide para malaman mo kung paano gamitin ang app na ito — mula simula hanggang tapos!</p>
 </div>
@@ -565,7 +585,7 @@
   <!-- INSTALL APP -->
   <div class="guide-section" id="install">
     <div class="section-header">
-      <div class="section-num" style="background:linear-gradient(135deg,#7c3aed,#5b21b6);box-shadow:0 3px 10px rgba(124,58,237,0.25);">📲</div>
+      <div class="section-num" style="background:var(--gradient);box-shadow:0 3px 10px rgba(27,77,160,0.25);">📲</div>
       <div class="section-title-wrap">
         <div class="section-title">I-install ang App sa Home Screen</div>
         <div class="section-sub">Para mas madaling buksan — tulad ng regular na app!</div>
@@ -582,7 +602,7 @@
 
     <!-- ANDROID -->
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🤖 Para sa Android (Google Chrome)</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🤖 Para sa Android (Google Chrome)</div>
 
       <button class="install-btn" id="androidInstallBtn" onclick="triggerInstall()">
         <span style="font-size:20px;">📲</span>
@@ -610,7 +630,7 @@
 
     <!-- iOS -->
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🍎 Para sa iPhone / iPad (Safari)</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🍎 Para sa iPhone / iPad (Safari)</div>
 
       <div class="callout warn">
         <div class="callout-icon">⚠️</div>
@@ -740,7 +760,7 @@
     </div>
 
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📷 Paraan 1: Gamitin ang Barcode Scanner (pinakamabilis!)</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📷 Paraan 1: Gamitin ang Barcode Scanner (pinakamabilis!)</div>
       <div class="step-item">
         <div class="step-bubble">1</div>
         <div class="step-body">
@@ -772,7 +792,7 @@
     </div>
 
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🔍 Paraan 2: Manual Search</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🔍 Paraan 2: Manual Search</div>
       <div class="step-item">
         <div class="step-bubble">1</div>
         <div class="step-body">
@@ -797,7 +817,7 @@
     </div>
 
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🔢 Paano ilagay ang bilang (Qty)</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">🔢 Paano ilagay ang bilang (Qty)</div>
       <div class="step-item">
         <div class="step-bubble">1</div>
         <div class="step-body">
@@ -822,7 +842,7 @@
     </div>
 
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📋 Ang iyong listahan ng Lahat ng SKUs</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📋 Ang iyong listahan ng Lahat ng SKUs</div>
       <div class="step-item">
         <div class="step-bubble">👀</div>
         <div class="step-body">
@@ -857,7 +877,7 @@
       <div style="display:flex;gap:12px;align-items:flex-start;">
         <div style="font-size:28px;flex-shrink:0;margin-top:2px;">🚨</div>
         <div>
-          <div style="font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:0.2px;">MAHALAGA: Lagyan ng ZERO ang walang stock!</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:0.2px;">MAHALAGA: Lagyan ng ZERO ang walang stock!</div>
           <div style="font-size:13px;color:rgba(255,255,255,0.88);line-height:1.7;">
             Kung ang isang SKU ay <strong style="color:#fca5a5;">nasa tindahan</strong> pero <strong style="color:#fca5a5;">wala kang makitang stock</strong> — huwag itong laktawan! Kailangan mo pa rin itong hanapin at idagdag na may bilang na <strong style="color:#fff;font-size:15px;">0</strong>.<br><br>
             Bakit? Para malaman ng sistema na <strong style="color:#fca5a5;">tiningnan mo ito</strong> — hindi lang nakalimutan o nalaktawan. Ang produktong wala sa iyong listahan ay mukhang hindi na-count, kahit wala talagang stock.
@@ -974,7 +994,7 @@
     </div>
 
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📋 Paano mag-review</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📋 Paano mag-review</div>
       <div class="step-item">
         <div class="step-bubble">1</div>
         <div class="step-body">
@@ -1006,7 +1026,7 @@
     </div>
 
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📊 Paano mag-export ng Excel</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📊 Paano mag-export ng Excel</div>
       <div class="step-item">
         <div class="step-bubble">1</div>
         <div class="step-body">
@@ -1031,7 +1051,7 @@
     </div>
 
     <div class="card">
-      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📤 Paano i-send ang file</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--text);margin-bottom:14px;">📤 Paano i-send ang file</div>
       <div class="step-item">
         <div class="step-bubble">A</div>
         <div class="step-body">
@@ -1133,8 +1153,8 @@
       <table style="width:100%;border-collapse:collapse;font-size:13px;">
         <thead>
           <tr style="background:var(--bg);">
-            <th style="padding:10px 12px;text-align:left;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid var(--border);">Gagawin</th>
-            <th style="padding:10px 12px;text-align:left;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid var(--border);">Paano</th>
+            <th style="padding:10px 12px;text-align:left;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid var(--border);">Gagawin</th>
+            <th style="padding:10px 12px;text-align:left;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid var(--border);">Paano</th>
           </tr>
         </thead>
         <tbody>
