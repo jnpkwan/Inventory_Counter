@@ -757,7 +757,7 @@ const MASTER_CODE = 'AHBC-0401';
 const MASTER_USER = { code: MASTER_CODE, name: 'Admin', store: '' };
 
 function loadAuth() {
-  return fetch('auth.json')
+  return fetch('auth.json', { cache: 'no-store' })
     .then(r => {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
@@ -897,7 +897,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Load products from JSON
 function loadProducts() {
-  return fetch('products.json')
+  return fetch('products.json', { cache: 'no-store' })
     .then(response => response.json())
     .then(data => {
       PRODUCTS = data.products || [];
@@ -936,7 +936,7 @@ function loadProducts() {
 
 // Load locations from JSON
 function loadLocations() {
-  return fetch('locations.json')
+  return fetch('locations.json', { cache: 'no-store' })
     .then(response => response.json())
     .then(data => { LOCATIONS = data.locations || []; populateLocationDropdown(); })
     .catch(error => {
