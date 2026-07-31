@@ -934,7 +934,6 @@ let selectedProductId = null;
 let selectedProductIdDamages = null;
 let settings = { name: '', location: '', email: '', period: '' };
 let lastExportedFile = null;
-let systemCountData = {};
 
 function populateLocationDropdown() {
   const select = document.getElementById('setLocation');
@@ -963,7 +962,8 @@ function init() {
     Promise.all([loadProducts(), loadLocations()]).then(() => {
       loadFromStorage();
       checkAndClearOldData();
-      loadSystemCountDataAndRender();
+      renderInventory();
+      renderDamages();
       initSwipeNames();
       updateDateTime();
       setInterval(updateDateTime, 30000);
@@ -1017,20 +1017,6 @@ function checkAndClearOldData() {
   } catch(e) {
     console.log('Error checking clear date:', e);
   }
-}
-
-function loadSystemCountData() {
-  return fetch('system-count.json')
-    .then(response => response.json())
-    .then(data => { systemCountData = data; })
-    .catch(error => { console.log('System count data not loaded'); systemCountData = {}; });
-}
-
-function loadSystemCountDataAndRender() {
-  loadSystemCountData().then(() => {
-    renderInventory();
-    renderDamages();
-  });
 }
 
 function hasUnsavedCountEntry() {
