@@ -1,6 +1,6 @@
 // Bump SW_VERSION on every deploy — changing these bytes is what tells the
 // browser a new service worker exists and forces installed PWAs to update.
-const SW_VERSION = '2026-07-31-2';
+const SW_VERSION = '2026-07-31-3';
 const CACHE_NAME = 'ahbc-inventory-' + SW_VERSION;
 
 // Precache is a convenience, not a requirement: the fetch handler is network-first
@@ -30,11 +30,14 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activate: delete ALL old caches immediately
+// Activate: delete every cache EXCEPT the one install just built.
+// Filtering on CACHE_NAME is load-bearing — without it the fresh precache is
+// deleted milliseconds after it is written, and only files the page happens to
+// request end up cached (the instruction manual never would).
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.map(k => caches.delete(k)))
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
     ).then(() => self.clients.claim())
   );
 });
