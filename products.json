@@ -1001,6 +1001,18 @@
       "name": "DISC GRINDING GOLD ELEPHANT 27WA1023016W 102X3X16MM FOR S/S",
       "category": "Powertool Accessories",
       "sku": "2080100938531"
+    },
+    {
+      "id": "P168",
+      "name": "PLANER HAUSMANN HEP600 YELLOW 600W",
+      "category": "Powertools",
+      "sku": "2080101145419"
+    },
+    {
+      "id": "P169",
+      "name": "DEMOLITION HAMMER HAUSMANN HCH25 YELLOW 12500W",
+      "category": "Powertools",
+      "sku": "2080101145426"
     }
   ]
 }
