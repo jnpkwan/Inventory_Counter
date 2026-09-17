@@ -1,6 +1,6 @@
 // Bump SW_VERSION on every deploy — changing these bytes is what tells the
 // browser a new service worker exists and forces installed PWAs to update.
-const SW_VERSION = '2026-07-31-3';
+const SW_VERSION = '2026-09-04-1';
 const CACHE_NAME = 'ahbc-inventory-' + SW_VERSION;
 
 // Precache is a convenience, not a requirement: the fetch handler is network-first
@@ -8,6 +8,7 @@ const CACHE_NAME = 'ahbc-inventory-' + SW_VERSION;
 const ASSETS = [
   './inventory-count.html',
   './instruction-manual.html',
+  './deliveries.json',
   './manifest.json',
   './logo.png',
   './tree-mark.png',
