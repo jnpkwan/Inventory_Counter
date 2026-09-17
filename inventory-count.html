@@ -80,6 +80,7 @@
   input[type="text"], input[type="number"], select { width: 100%; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 13px 14px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; appearance: none; -webkit-appearance: none; }
   input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(34,167,73,0.15); background: var(--white); }
   input[readonly] { background: var(--bg); color: var(--text2); cursor: default; }
+  select.locked { background-image: none; padding-right: 14px; color: var(--text2); pointer-events: none; cursor: default; }
   select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2397A0AD' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
 
   /* BUTTONS */
@@ -284,6 +285,31 @@
   .oc-head { font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.01em; color:var(--text); line-height:1.2; }
   .oc-sub { font-size:12px; color:var(--text2); margin-top:3px; }
   .oc-chev { stroke:var(--oc-amber); stroke-width:2.4; fill:none; width:17px; height:17px; flex-shrink:0; }
+
+  /* ===== HUB — the landing page after auth ===== */
+  .hub-pick { width:100%; text-align:left; background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:18px 16px; margin-bottom:12px; display:flex; align-items:center; gap:14px; box-shadow:var(--shadow-sm); cursor:pointer; font-family:inherit; }
+  .hub-pick .oc-ico { width:46px; height:46px; border-radius:13px; background:var(--blue); }
+  .hub-pick .oc-ico svg { width:23px; height:23px; }
+  .hub-pick .oc-head { font-size:17px; }
+  .hub-pick .oc-chev { stroke:var(--text3); width:19px; height:19px; }
+  .hub-pick.amber { background:var(--oc-amber-light); border-color:var(--oc-amber-border); }
+  .hub-pick.amber .oc-ico { background:var(--oc-amber); }
+  .hub-pick.amber .oc-kicker, .hub-pick.amber .oc-chev { color:var(--oc-amber); stroke:var(--oc-amber); }
+  .hub-pick.green .oc-ico { background:var(--accent-dark); }
+  .hub-pick.green .oc-kicker { color:var(--accent-dark); }
+  .hub-pick.grey { cursor:default; }
+  .hub-pick.grey .oc-ico { background:var(--border2); }
+  .hub-pick.grey .oc-kicker { color:var(--text3); }
+  .hub-pick.err { background:var(--danger-light); border-color:#EFC9C4; cursor:default; }
+  .hub-pick.err .oc-ico { background:var(--danger); }
+  .hub-pick.err .oc-kicker { color:var(--danger); }
+  .hub-group { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:var(--text3); margin:22px 2px 10px; }
+
+  /* Contextual bottom nav — tabs declare which modes they belong to. */
+  .nav-tabs[data-mode="hub"] { display:none; }
+  .nav-tabs[data-mode="count"] .nav-tab:not([data-mode~="count"]) { display:none; }
+  .nav-tabs[data-mode="order"] .nav-tab:not([data-mode~="order"]) { display:none; }
+  body[data-mode="hub"] .page { padding-bottom:24px; }
   .oc-asof { font-size:10.5px; color:var(--text3); margin:-8px 2px 14px; font-style:italic; }
 
   /* Pinned under the brand header; compacts on scroll. */
@@ -449,50 +475,44 @@
   </div>
 </div>
 
-<!-- PAGE 1: STORE INFO -->
-<div class="page active" id="pageSettings">
+<!-- PAGE 0: HUB — landing page after auth -->
+<div class="page active" id="pageHub">
   <div class="page-hero">
-    <div class="hero-eyebrow">Step 1 of 3 · Your details</div>
-    <div class="hero-title">Let's set up<span class="light">this count session.</span></div>
-    <div class="hero-progress">
-      <div class="hero-step on"></div>
-      <div class="hero-step"></div>
-      <div class="hero-step"></div>
-    </div>
-    <div class="hero-step-label">Store Info → Count → Review</div>
+    <div class="hero-eyebrow" id="hubEyebrow">Merchandiser</div>
+    <div class="hero-title" id="hubName">—<span class="light" id="hubWhere">—</span></div>
   </div>
   <div class="section">
-    <div id="ocBannerWrap"></div>
     <div class="card">
-      <div class="card-title">Merchandiser &amp; Location</div>
+      <div class="card-title">Merchandiser &amp; Store</div>
       <div class="field">
         <label>Merchandiser Name</label>
         <input type="text" id="setName" readonly style="background:var(--bg);color:var(--text2);" />
       </div>
       <div class="field">
-      <label>Location</label>
-<select id="setLocation" onchange="confirmStoreChange(this)">
-  <option value="">— Select a store —</option>
-</select>
+        <label>Store</label>
+        <select id="setLocation" onchange="onStoreChanged(this)">
+          <option value="">— Select a store —</option>
+        </select>
       </div>
-      <div class="field">
-        <label>Count Period</label>
-        <input type="text" id="setPeriod" readonly />
-      </div>
-      <div class="field">
-        <label>Date & Time</label>
+      <div class="field" style="margin-bottom:0;">
+        <label>Date &amp; Time</label>
         <input type="text" id="setDateTime" readonly />
       </div>
-      <div class="field">
-        <label>Total Unique SKUs Loaded</label>
-        <input type="text" id="setSkuCount" readonly style="color:var(--accent-dark);font-weight:700;font-family:'Montserrat',sans-serif;" />
-      </div>
     </div>
-    <button class="btn btn-gradient" onclick="saveSettings()">
-      Save & Start Counting →
+
+    <div class="hub-group">What are you doing today?</div>
+    <div id="hubOrdersWrap"></div>
+    <button class="hub-pick green" onclick="enterCycleCount()">
+      <div class="oc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+      <div class="oc-body">
+        <div class="oc-kicker">Cycle count</div>
+        <div class="oc-head">Count stock on shelf</div>
+        <div class="oc-sub" id="hubCountSub">—</div>
+      </div>
+      <svg class="oc-chev" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
     </button>
-    <p style="text-align:center;font-size:12px;color:var(--text3);margin-top:10px;margin-bottom:4px;">You can return here anytime to update your details.</p>
-    <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center;">
+
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center;">
         <h3 style="font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px;">Need Help?</h3>
         <a href="instruction-manual.html" class="btn btn-secondary" style="text-decoration: none; display: flex;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:18px;height:18px;stroke-width:2.5;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
@@ -722,10 +742,6 @@
     <div class="oc-title">Incoming<span class="light" id="ocListSub">—</span></div>
   </div>
   <div class="section">
-    <div id="ocStoreFilterWrap" style="display:none;" class="field">
-      <label>Filter by store</label>
-      <select id="ocStoreFilter" onchange="renderDeliveryList()"></select>
-    </div>
     <div class="oc-note"><b>WHEN IT ARRIVES</b>Open the CDF, check every line, then send the report. Message your Inventory Associate on Messenger after sending.</div>
     <div id="ocListBody"></div>
     <div class="oc-asof" id="ocListAsOf" style="text-align:center;margin-top:16px;"></div>
@@ -775,31 +791,37 @@
   </button>
 </div>
 
-<!-- BOTTOM NAV -->
-<div class="nav-tabs">
-  <button class="nav-tab active" id="tabSettings" onclick="showPage('settings')">
+<!-- BOTTOM NAV — contextual: tabs declare the modes they belong to -->
+<div class="nav-tabs" id="navTabs" data-mode="hub">
+  <button class="nav-tab" id="tabHub" data-mode="count order" onclick="showPage('hub')">
     <div class="nav-icon-wrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     </div>
-    1 · Store Info
+    Home
   </button>
-  <button class="nav-tab" id="tabCount" onclick="showPage('count')">
+  <button class="nav-tab" id="tabDeliveries" data-mode="order" onclick="showPage('deliveries')">
+    <div class="nav-icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    </div>
+    Incoming Orders
+  </button>
+  <button class="nav-tab" id="tabCount" data-mode="count" onclick="showPage('count')">
     <div class="nav-icon-wrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
     </div>
-    2 · Count
+    1 &middot; Count
   </button>
-  <button class="nav-tab" id="tabDamages" onclick="showPage('damages')">
+  <button class="nav-tab" id="tabDamages" data-mode="count" onclick="showPage('damages')">
     <div class="nav-icon-wrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,2 10,9 13,10 11,22"/></svg>
     </div>
-    3 · Damages
+    2 &middot; Damages
   </button>
-  <button class="nav-tab" id="tabSummary" onclick="showPage('summary')">
+  <button class="nav-tab" id="tabSummary" data-mode="count" onclick="showPage('summary')">
     <div class="nav-icon-wrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
     </div>
-    4 · Review
+    3 &middot; Review
   </button>
 </div>
 
@@ -905,6 +927,17 @@ let currentUser = null;
 // =============================================
 const MASTER_CODE = 'AHBC-0401';
 const MASTER_USER = { code: MASTER_CODE, name: 'Admin', store: '' };
+
+// The stores this login is assigned to. Both auth.json shapes work:
+//   { "code":"AAA-1111", "name":"Maria", "store":"ANTIQUE" }             one store
+//   { "code":"BBB-2222", "name":"Jun", "stores":["ANTIQUE","ACMAC"] }    several
+// Empty result = unassigned (coordinators, master code) and means every store.
+function userStores() {
+  if (!currentUser) return [];
+  const many = Array.isArray(currentUser.stores) ? currentUser.stores : [];
+  const one  = currentUser.store ? [currentUser.store] : [];
+  return Array.from(new Set(many.concat(one).map(v => String(v).trim()).filter(Boolean)));
+}
 
 function loadAuth() {
   return fetch('auth.json', { cache: 'no-store' })
@@ -1013,11 +1046,18 @@ function _dismissAuthGate() {
   if (currentUser) {
     // Always set name and store from credential
     settings.name = currentUser.name || settings.name;
-    if (currentUser.store) {
-      settings.location = currentUser.store;
+    const assigned = userStores();
+    if (assigned.length) {
+      // Keep their last store if it is still one of theirs; otherwise pin to the first.
+      if (assigned.indexOf(settings.location) === -1) settings.location = assigned[0];
+    } else {
+      // Unassigned login: start on every store rather than inheriting a stale one.
+      settings.location = '';
     }
     saveToStorage();
+    populateLocationDropdown();
     populateSettingsForm();
+    renderHub();
   }
 }
 
@@ -1031,13 +1071,28 @@ function logout() {
   document.getElementById('authError').textContent = '';
   setTimeout(() => { document.getElementById('authCodeInput').focus(); }, 100);
 }
-function confirmStoreChange(select) {
+function onStoreChanged(select) {
   const newVal = select.value;
   const currentVal = settings.location || '';
-  if (!currentVal || newVal === currentVal) return;
-  if (!confirm(`Are you sure you want to change store to "${newVal}"?\n\nThis will not clear your current count data.`)) {
-    select.value = currentVal;
+  if (newVal === currentVal) return;
+
+  // Never accept a store this login is not assigned to — including blank ("all stores").
+  const assigned = userStores();
+  if (assigned.length && assigned.indexOf(newVal) === -1) { select.value = currentVal; return; }
+
+  const label = newVal || 'all stores';
+  if (currentVal) {
+    const msg = 'Change store to "' + label + '"?\n\n' +
+      '\u2022 Incoming Orders and Cycle Count will both switch to ' + label + '.\n' +
+      '\u2022 Your cycle count data will NOT be cleared \u2014 it stays as counted, under the new store.';
+    if (!confirm(msg)) { select.value = currentVal; return; }
   }
+
+  settings.location = newVal;
+  settings.period = settings.period || getCurrentPeriod();
+  saveToStorage();
+  populateSettingsForm();
+  renderHub();
 }
 document.addEventListener("DOMContentLoaded", () => {
   const nameInp = document.getElementById("authNameInput");
@@ -1051,9 +1106,6 @@ function loadProducts() {
     .then(response => response.json())
     .then(data => {
       PRODUCTS = data.products || [];
-      const uniqueSkus = new Set(PRODUCTS.map(p => p.sku)).size;
-      const el = document.getElementById('setSkuCount');
-      if (el) el.value = uniqueSkus + ' SKUs';
     })
     .catch(error => {
       console.log('Products data not loaded — loading demo data');
@@ -1079,8 +1131,6 @@ function loadProducts() {
         { id: 'P019', name: 'CHOCO BAR MILK 90ML', category: 'Cones and Bars', sku: '2080100000019' },
         { id: 'P020', name: 'STRAWBERRY SUNDAE CUP 120ML', category: 'Cones and Bars', sku: '2080100000020' },
       ];
-      const el = document.getElementById('setSkuCount');
-      if (el) el.value = PRODUCTS.length + ' SKUs (demo)';
     });
 }
 
@@ -1109,19 +1159,34 @@ let ocCurrentCdf = null;
 
 function populateLocationDropdown() {
   const select = document.getElementById('setLocation');
-  // Keep the placeholder option
-  const placeholder = select.querySelector('option[value=""]');
-  // Remove all other options
-  while (select.options.length > 1) {
-    select.remove(1);
+  if (!select) return;
+  const assigned = userStores();
+  // Assigned logins see only their own stores. Unassigned logins see all, plus
+  // an "All stores" option. An assigned store missing from locations.json is
+  // still offered — it is a data error worth seeing, not one worth hiding.
+  const list = assigned.length
+    ? assigned.slice().sort()
+    : LOCATIONS.slice();
+  select.innerHTML = '';
+  if (!assigned.length) {
+    const ph = document.createElement('option');
+    ph.value = ''; ph.textContent = '— All stores —';
+    select.appendChild(ph);
   }
-  // Add locations from JSON
-  LOCATIONS.forEach(location => {
+  list.forEach(location => {
     const option = document.createElement('option');
     option.value = location;
     option.textContent = location;
     select.appendChild(option);
   });
+  select.value = settings.location || '';
+  // One assigned store is not a choice — present it as a readonly field.
+  const locked = (assigned.length === 1);
+  select.classList.toggle('locked', locked);
+  select.tabIndex = locked ? -1 : 0;
+  if (locked) select.setAttribute('aria-disabled', 'true'); else select.removeAttribute('aria-disabled');
+  const lbl = select.closest('.field') && select.closest('.field').querySelector('label');
+  if (lbl) lbl.textContent = locked ? 'Store' : 'Store — tap to switch';
 }
 
 function init() {
@@ -1141,6 +1206,8 @@ function init() {
       updateDateTime();
       setInterval(updateDateTime, 30000);
       populateSettingsForm();
+      setNavMode('hub');
+      renderHub();
       if (hasSession) _dismissAuthGate();
       document.getElementById('searchInput').addEventListener('input', onSearch);
       document.getElementById('searchInput').addEventListener('focus', onSearch);
@@ -1183,16 +1250,12 @@ function loadDeliveries() {
 function saveOcChecks() { try { localStorage.setItem('sc_ordercheck', JSON.stringify(ocChecks)); } catch(e) {} }
 function loadOcChecks() { try { const v = localStorage.getItem('sc_ordercheck'); if (v) ocChecks = JSON.parse(v) || {}; } catch(e) { ocChecks = {}; } }
 
-// True when this user picks their own store (no store on the credential).
-function ocIsFreeStoreUser() { return !(currentUser && currentUser.store); }
+// ONE source of truth for the store: settings.location, set by the hub dropdown.
+// Blank means every store, which only a free-store user can reach.
+function ocActiveScope() { return settings.location || ''; }
 
 function ocVisibleDeliveries() {
-  if (!ocIsFreeStoreUser()) {
-    const mine = currentUser.store;
-    return DELIVERIES.filter(d => d.store === mine);
-  }
-  const sel = document.getElementById('ocStoreFilter');
-  const pick = sel ? sel.value : '';
+  const pick = ocActiveScope();
   return pick ? DELIVERIES.filter(d => d.store === pick) : DELIVERIES.slice();
 }
 
@@ -1271,18 +1334,21 @@ function ocCdfProgress(d) {
   return { done, total, remaining: total - done, counts, complete: total > 0 && done === total };
 }
 
-// ===== Store Info banner =====
+// ===== Hub: Incoming Orders card =====
 function renderDeliveryBanner() {
-  const wrap = document.getElementById('ocBannerWrap');
+  const wrap = document.getElementById('hubOrdersWrap');
   if (!wrap) return;
+  const esc = ocEsc;
+  const truckIco = '<div class="oc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>';
+  const chev = '<svg class="oc-chev" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>';
+
   if (!deliveriesMeta.loaded) { wrap.innerHTML = ''; return; }
 
-  const esc = ocEsc;
   if (!deliveriesMeta.ok) {
     wrap.innerHTML =
-      '<div class="oc-banner err">' +
-        '<div class="oc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>' +
-        '<div class="oc-body"><div class="oc-kicker">Incoming deliveries</div>' +
+      '<div class="hub-pick err">' +
+        '<div class="oc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>' +
+        '<div class="oc-body"><div class="oc-kicker">Incoming orders</div>' +
         '<div class="oc-head">Can\'t load right now</div>' +
         '<div class="oc-sub">Connect to the internet and reopen the app. Do not assume there are no deliveries.</div></div>' +
       '</div>';
@@ -1290,14 +1356,16 @@ function renderDeliveryBanner() {
   }
 
   const list = ocVisibleDeliveries();
-  const scope = ocIsFreeStoreUser() ? 'all stores' : (currentUser.store || '');
-  const asOf = deliveriesMeta.updated ? '<div class="oc-asof">Delivery list as of ' + esc(ocFmtStamp(deliveriesMeta.updated)) + '</div>' : '';
+  const scope = ocActiveScope() || 'all stores';
+  const asOf = deliveriesMeta.updated
+    ? '<div class="oc-asof" style="margin:-6px 2px 12px;">Delivery list as of ' + esc(ocFmtStamp(deliveriesMeta.updated)) + '</div>'
+    : '';
 
   if (list.length === 0) {
     wrap.innerHTML =
-      '<div class="oc-banner quiet">' +
-        '<div class="oc-ico"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>' +
-        '<div class="oc-body"><div class="oc-kicker">Incoming deliveries</div>' +
+      '<div class="hub-pick grey">' +
+        '<div class="oc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>' +
+        '<div class="oc-body"><div class="oc-kicker">Incoming orders</div>' +
         '<div class="oc-head">Nothing on the way</div>' +
         '<div class="oc-sub">No pending orders for ' + esc(scope) + '</div></div>' +
       '</div>' + asOf;
@@ -1305,14 +1373,12 @@ function renderDeliveryBanner() {
   }
 
   const dates = list.map(d => d.date).filter(Boolean).sort();
-  const sub = dates.length ? 'Earliest dated ' + esc(ocFmtDate(dates[0])) : 'Tap to check';
+  const sub = esc(scope) + (dates.length ? ' \u00b7 earliest dated ' + esc(ocFmtDate(dates[0])) : '');
   wrap.innerHTML =
-    '<button class="oc-banner" onclick="showPage(\'deliveries\')">' +
-      '<div class="oc-ico"><svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>' +
-      '<div class="oc-body"><div class="oc-kicker">Incoming deliveries</div>' +
-      '<div class="oc-head">' + list.length + ' order' + (list.length > 1 ? 's' : '') + ' on the way</div>' +
-      '<div class="oc-sub">' + sub + '</div></div>' +
-      '<svg class="oc-chev" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>' +
+    '<button class="hub-pick amber" onclick="enterOrderCheck()">' + truckIco +
+      '<div class="oc-body"><div class="oc-kicker">Incoming orders</div>' +
+      '<div class="oc-head">' + list.length + ' order' + (list.length > 1 ? 's' : '') + ' to check</div>' +
+      '<div class="oc-sub">' + sub + '</div></div>' + chev +
     '</button>' + asOf;
 }
 
@@ -1330,24 +1396,8 @@ function renderDeliveryList() {
   if (!body) return;
   const esc = ocEsc;
 
-  const filtWrap = document.getElementById('ocStoreFilterWrap');
-  if (ocIsFreeStoreUser()) {
-    filtWrap.style.display = '';
-    const sel = document.getElementById('ocStoreFilter');
-    if (sel && !sel.dataset.built) {
-      const stores = Array.from(new Set(DELIVERIES.map(d => d.store))).sort();
-      sel.innerHTML = '<option value="">— All stores —</option>' +
-        stores.map(st => '<option value="' + esc(st) + '">' + esc(st) + '</option>').join('');
-      sel.dataset.built = '1';
-    }
-  } else {
-    filtWrap.style.display = 'none';
-  }
-
   const list = ocVisibleDeliveries();
-  const scope = ocIsFreeStoreUser()
-    ? ((document.getElementById('ocStoreFilter') || {}).value || 'All stores')
-    : (currentUser.store || '');
+  const scope = ocActiveScope() || 'All stores';
   sub.textContent = scope + ' · ' + list.length + ' pending';
   asOf.textContent = deliveriesMeta.updated ? 'Delivery list as of ' + ocFmtStamp(deliveriesMeta.updated) : '';
 
@@ -1363,7 +1413,7 @@ function renderDeliveryList() {
   const groups = {};
   list.forEach(d => { (groups[d.store] = groups[d.store] || []).push(d); });
   let html = '';
-  const showGroups = ocIsFreeStoreUser();
+  const showGroups = !ocActiveScope();
   Object.keys(groups).sort().forEach(store => {
     if (showGroups) html += '<div class="oc-group">' + esc(store) + ' · ' + groups[store].length + '</div>';
     groups[store].forEach(d => {
@@ -1385,7 +1435,7 @@ function renderDeliveryList() {
   body.innerHTML = html;
 }
 
-function ocBackToSettings() { showPage('settings'); }
+function ocBackToSettings() { showPage('hub'); }
 
 // ===== Order Check screen =====
 function openOrderCheck(cdf) {
@@ -1616,16 +1666,71 @@ function showPage(page) {
     }
   }
   
+  // 'settings' is the old Store Info route — it is now the hub.
+  if (page === 'settings') page = 'hub';
+
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  if (page === 'settings') { document.getElementById('pageSettings').classList.add('active'); document.getElementById('tabSettings').classList.add('active'); }
+  if (page === 'hub') { document.getElementById('pageHub').classList.add('active'); renderHub(); }
   else if (page === 'count') { document.getElementById('pageCount').classList.add('active'); document.getElementById('tabCount').classList.add('active'); }
   else if (page === 'damages') { document.getElementById('pageDamages').classList.add('active'); document.getElementById('tabDamages').classList.add('active'); updateDamagesBanner(); }
   else if (page === 'summary') { document.getElementById('pageSummary').classList.add('active'); document.getElementById('tabSummary').classList.add('active'); updateSummary(); }
-  else if (page === 'deliveries') { document.getElementById('pageDeliveries').classList.add('active'); document.getElementById('tabSettings').classList.add('active'); renderDeliveryList(); }
-  else if (page === 'ordercheck') { document.getElementById('pageOrderCheck').classList.add('active'); document.getElementById('tabSettings').classList.add('active'); renderOrderCheck(); }
+  else if (page === 'deliveries') { document.getElementById('pageDeliveries').classList.add('active'); document.getElementById('tabDeliveries').classList.add('active'); renderDeliveryList(); }
+  else if (page === 'ordercheck') { document.getElementById('pageOrderCheck').classList.add('active'); document.getElementById('tabDeliveries').classList.add('active'); renderOrderCheck(); }
+
+  setNavMode(page === 'hub' ? 'hub'
+           : (page === 'deliveries' || page === 'ordercheck') ? 'order'
+           : 'count');
+  window.scrollTo(0, 0);
   ocUpdateJump();
   ocSyncHero();
+}
+
+// Contextual nav: the tab bar shows only the flow the merchandiser is in.
+function setNavMode(mode) {
+  const nav = document.getElementById('navTabs');
+  if (nav) nav.setAttribute('data-mode', mode);
+  document.body.setAttribute('data-mode', mode);
+}
+
+// Entering cycle count saves the store selection — no separate save button.
+function enterCycleCount() {
+  const location = document.getElementById('setLocation').value;
+  if (!location) { showToast('Please select a store first', 'error'); return; }
+  const locationChanged = settings.location !== location;
+  settings.name = (currentUser && currentUser.name) ? currentUser.name : settings.name;
+  settings.location = location;
+  settings.period = getCurrentPeriod();
+  saveToStorage();
+  populateSettingsForm();
+  if (locationChanged && inventory.length > 0) renderInventory();
+  showPage('count');
+}
+
+// The hub dropdown already persists the store, so this only navigates.
+// A blank store is legitimate here: coordinators and the master code see every store.
+function enterOrderCheck() { showPage('deliveries'); }
+
+// Hub identity strip. Card states are rendered by renderDeliveryBanner().
+function renderHub() {
+  const nameEl = document.getElementById('hubName');
+  const whereEl = document.getElementById('hubWhere');
+  const subEl = document.getElementById('hubCountSub');
+  if (nameEl) nameEl.firstChild.textContent = (currentUser && currentUser.name) ? currentUser.name : (settings.name || 'Merchandiser');
+  const period = settings.period || getCurrentPeriod();
+  if (whereEl) {
+    // Blank is a real state for coordinators and the master code: every store.
+    whereEl.textContent = settings.location ? settings.location + ' \u00b7 ' + period
+      : (!userStores().length) ? 'All stores \u00b7 ' + period
+      : 'Select your store below';
+  }
+  if (subEl) {
+    const skus = new Set(PRODUCTS.map(p => p.sku)).size;
+    subEl.textContent = skus
+      ? (settings.period || getCurrentPeriod()) + ' \u00b7 ' + skus + ' SKUs loaded'
+      : (settings.period || getCurrentPeriod());
+  }
+  renderDeliveryBanner();
 }
 
 // Compact the pinned hero once the page has scrolled past it.
@@ -1985,7 +2090,6 @@ function populateSettingsForm() {
   const displayName = (currentUser && currentUser.name) ? currentUser.name : (settings.name || '');
   document.getElementById('setName').value = displayName;
   document.getElementById('setLocation').value = settings.location || '';
-  document.getElementById('setPeriod').value = settings.period || period;
   if (!settings.period) settings.period = period;
   document.getElementById('siName').textContent = displayName || '— not set —';
   document.getElementById('siLocation').textContent = settings.location || '—';
@@ -2053,7 +2157,7 @@ function updateSummary() {
 function saveProgress() { saveToStorage(); showToast('All data auto-saved ✓', 'success'); }
 
 function openSubmitModal() {
-  if (!settings.name || !settings.location) { showToast('Please complete Store Info first', 'error'); showPage('settings'); return; }
+  if (!settings.name || !settings.location) { showToast('Set your store on the home page first', 'error'); showPage('hub'); return; }
 
   // Master code bypasses ALL checks — go straight to export
   if (currentUser && currentUser.code === MASTER_CODE) {
