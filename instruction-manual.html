@@ -3,24 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1B4DA0">
 <title>AcaciaHBC Inventory App — Paano Gamitin</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322A749'/%3E%3Cstop offset='1' stop-color='%231B4DA0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3Cpath d='M16 7c4.4 0 8 2.9 8 6.4 0 2.6-2 4.8-4.9 5.8l.4 6.3h-7l.4-6.3C10 18.2 8 16 8 13.4 8 9.9 11.6 7 16 7z' fill='%23fff'/%3E%3C/svg%3E">
 <style>
+
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
   :root {
     --blue: #1B4DA0;
-    --blue-dark: #12294E;
+    --blue-dark: #15366B;   /* Blue 700 */
+    --midnight: #12294E;    /* Midnight */
+    --ink: #10213B;         /* Deep Ink */
     --blue-light: #EDF1F7;
     --green: #22A749;
     --green-dark: #1A713E;
     --green-light: #EDF8F0;
     --red: #C0392B;
+    --red-dark: #8E2B20;
+    --red-border: #EFC9C4;
     --red-light: #FBEAE8;
-    --yellow: #f59e0b;
+    --amber: #B26A00;       /* documented exception: the third state */
+    --amber-dark: #8A5200;
+    --amber-light: #FDF4E6;
+    --amber-border: #F0DCBC;
     --bg: #F5F5F5;
     --white: #FFFFFF;
     --text: #2C2C2C;
-    --text2: #4a5568;
+    --text2: #5A6472;
     --text3: #97A0AD;
     --border: #DDDDDD;
     --gradient: linear-gradient(135deg, #22A749 0%, #1E7A74 50%, #1B4DA0 100%);
@@ -40,7 +50,7 @@
   /* HERO */
   .hero {
     background: var(--gradient);
-    padding: 48px 24px 56px;
+    padding: 48px 24px 64px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -88,7 +98,7 @@
     border-radius: 18px;
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 18px;
-    box-shadow: 0 8px 24px rgba(18,41,78,0.35);
+    box-shadow: 0 12px 32px rgba(27,77,160,0.22);
     position: relative;
     padding: 12px;
   }
@@ -103,8 +113,9 @@
   }
   .hero h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
+    font-size: 32px;
     font-weight: 900;
+    letter-spacing: -0.02em;
     color: #fff;
     margin-bottom: 8px;
     line-height: 1.2;
@@ -112,7 +123,7 @@
   }
   .hero p {
     color: rgba(255,255,255,0.72);
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     max-width: 340px;
     margin: 0 auto;
@@ -158,10 +169,10 @@
   .toc-list a:hover { background: var(--blue-light); border-color: var(--blue); color: var(--blue); }
 
   /* MAIN */
-  .container { max-width: 680px; margin: 0 auto; padding: 0 16px 60px; }
+  .container { max-width: 680px; margin: 0 auto; padding: 0 16px 64px; }
 
   /* SECTION */
-  .guide-section { margin-top: 36px; }
+  .guide-section { margin-top: 48px; }
   .section-header {
     display: flex;
     align-items: center;
@@ -170,7 +181,7 @@
   }
   .section-num {
     width: 36px; height: 36px;
-    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    background: var(--blue);
     border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     font-family: 'Montserrat', sans-serif;
@@ -180,15 +191,16 @@
     flex-shrink: 0;
     box-shadow: 0 3px 10px rgba(27,77,160,0.25);
   }
-  .section-num.green { background: linear-gradient(135deg, var(--green), var(--green-dark)); box-shadow: 0 3px 10px rgba(34,167,73,0.25); }
-  .section-num.red { background: linear-gradient(135deg, var(--red), #dc2626); box-shadow: 0 3px 10px rgba(239,68,68,0.25); }
-  .section-num.yellow { background: linear-gradient(135deg, var(--yellow), #d97706); box-shadow: 0 3px 10px rgba(245,158,11,0.25); }
-  .section-num.plain { background: linear-gradient(135deg, #64748b, #475569); box-shadow: 0 3px 10px rgba(100,116,139,0.25); }
+  .section-num.green { background: var(--green-dark); box-shadow: 0 3px 10px rgba(26,113,62,0.25); }
+  .section-num.red { background: var(--red); box-shadow: 0 3px 10px rgba(192,57,43,0.25); }
+  .section-num.yellow { background: var(--amber); box-shadow: 0 3px 10px rgba(178,106,0,0.25); }
+  .section-num.plain { background: var(--midnight); box-shadow: 0 3px 10px rgba(18,41,78,0.25); }
 
   .section-title-wrap {}
   .section-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
+    letter-spacing: -0.01em;
     font-weight: 900;
     color: var(--text);
     line-height: 1.2;
@@ -205,9 +217,9 @@
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 24px;
     margin-bottom: 12px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 14px rgba(27,77,160,0.07);
   }
 
   /* STEP ITEMS */
@@ -215,7 +227,7 @@
     display: flex;
     gap: 14px;
     align-items: flex-start;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   .step-item:last-child { margin-bottom: 0; }
   .step-bubble {
@@ -240,7 +252,7 @@
     margin-bottom: 3px;
   }
   .step-desc {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text2);
     line-height: 1.65;
   }
@@ -248,21 +260,21 @@
   /* CALLOUT */
   .callout {
     border-radius: var(--radius-sm);
-    padding: 14px 16px;
+    padding: 16px;
     margin-bottom: 12px;
     display: flex;
     gap: 12px;
     align-items: flex-start;
   }
   .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-  .callout-body { font-size: 13px; line-height: 1.6; }
+  .callout-body { font-size: 14px; line-height: 1.65; }
   .callout-title { font-family: 'Montserrat', sans-serif; font-weight: 800; margin-bottom: 2px; font-size: 13px; }
   .callout.tip { background: var(--green-light); border-left: 3px solid var(--green); }
   .callout.tip .callout-title { color: var(--green-dark); }
-  .callout.warn { background: #fffbeb; border-left: 3px solid var(--yellow); }
-  .callout.warn .callout-title { color: #92400e; }
+  .callout.warn { background: var(--amber-light); border-left: 3px solid var(--amber); }
+  .callout.warn .callout-title { color: var(--amber-dark); }
   .callout.danger { background: var(--red-light); border-left: 3px solid var(--red); }
-  .callout.danger .callout-title { color: #991b1b; }
+  .callout.danger .callout-title { color: var(--red-dark); }
   .callout.info { background: var(--blue-light); border-left: 3px solid var(--blue); }
   .callout.info .callout-title { color: var(--blue); }
 
@@ -303,15 +315,15 @@
     font-size: 13px;
     font-weight: 800;
     color: #fff;
-    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    background: var(--green-dark);
     border: none;
     cursor: default;
     width: 100%;
     text-align: center;
     box-shadow: 0 3px 10px rgba(34,167,73,0.3);
   }
-  .ui-btn.blue { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); box-shadow: 0 3px 10px rgba(27,77,160,0.3); }
-  .ui-btn.red { background: linear-gradient(135deg, #ef4444, #dc2626); box-shadow: 0 3px 10px rgba(239,68,68,0.3); }
+  .ui-btn.blue { background: var(--blue); box-shadow: 0 3px 10px rgba(27,77,160,0.3); }
+  .ui-btn.red { background: var(--red); box-shadow: 0 3px 10px rgba(192,57,43,0.3); }
 
   /* NAV MOCK */
   .nav-mock {
@@ -384,11 +396,11 @@
   .flow-item:last-child .flow-connector { display: none; }
   .flow-body { padding: 4px 0 20px; }
   .flow-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; color: var(--text); margin-bottom: 3px; }
-  .flow-desc { font-size: 13px; color: var(--text2); }
+  .flow-desc { font-size: 14px; color: var(--text2); }
 
   /* FOOTER */
   .footer {
-    background: var(--blue-dark);
+    background: var(--midnight);
     color: rgba(255,255,255,0.5);
     text-align: center;
     padding: 28px 20px;
@@ -402,7 +414,7 @@
   .install-btn {
     display: flex; align-items: center; justify-content: center; gap: 10px;
     width: 100%; padding: 15px 20px;
-    background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+    background: var(--blue);
     color: #fff; border: none; border-radius: var(--radius-sm);
     font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 800;
     cursor: pointer; box-shadow: 0 4px 16px rgba(27,77,160,0.35);
@@ -415,7 +427,7 @@
   .ios-step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
   .ios-step:last-child { margin-bottom: 0; }
   .ios-icon { font-size: 22px; flex-shrink: 0; width: 32px; text-align: center; }
-  .ios-text { font-size: 13px; color: var(--text2); line-height: 1.6; }
+  .ios-text { font-size: 14px; color: var(--text2); line-height: 1.6; }
   .ios-text strong { color: var(--text); font-family: 'Montserrat', sans-serif; }
 
   @media print {
@@ -451,30 +463,85 @@
     .section-divider { margin: 16px 0 0; }
   }
 
+.math{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin:12px 0;text-align:center;page-break-inside:avoid;break-inside:avoid}
+.math-eq{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:900;color:var(--text);margin-bottom:6px}
+.g{color:var(--green-dark)}
+.y{color:var(--amber)}
+.math-cap{font-size:13px;color:var(--text3)}
+.who{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--border)}
+.who-tag{font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;margin-top:1px}
+.t-sc{background:var(--blue-light);color:var(--blue)}
+.t-ia{background:var(--green-light);color:var(--green-dark)}
+.t-mc{background:var(--amber-light);color:var(--amber)}
+.t-mgt{background:var(--blue-light);color:var(--text2)}
+.who-txt{font-size:14px;color:var(--text2);line-height:1.6}
+.check{list-style:none}
+.qr-item{display:flex;gap:11px;align-items:flex-start;margin-bottom:13px}
+.qr-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:7px}
+.qr-txt{font-size:14px;color:rgba(255,255,255,.88);line-height:1.6}
+  /* ===== Added for the combined guide ===== */
+  .check li { display:flex; gap:12px; align-items:flex-start; font-size:14px; color:var(--text2); line-height:1.6; margin-bottom:11px; }
+  .check li:last-child { margin-bottom:0; }
+  .check li::before { content:''; width:16px; height:16px; border:2px solid var(--border); border-radius:5px; flex-shrink:0; margin-top:3px; }
+
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; }
+  thead th { background:var(--blue); color:#fff; font-family:'Montserrat',sans-serif; font-weight:800; font-size:11px; letter-spacing:.06em; text-transform:uppercase; text-align:left; padding:10px 12px; }
+  tbody td { padding:10px 12px; border-bottom:1px solid var(--border); color:var(--text2); vertical-align:top; line-height:1.55; }
+  tbody tr:nth-child(even) td { background:var(--bg); }
+  tbody td:first-child { font-family:'Montserrat',sans-serif; font-weight:700; color:var(--text); white-space:nowrap; }
+  .t-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:var(--radius-sm); }
+  table.free tbody td:first-child { white-space:normal; }
+
+  /* Hub picker mock */
+  .pick-mock { display:flex; gap:12px; align-items:center; background:var(--white); border:1.5px solid var(--border); border-radius:12px; padding:14px; margin:8px 0; }
+  .pick-mock.amber { background:var(--amber-light); border-color:var(--amber-border); }
+  .pick-ico { width:40px; height:40px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:19px; flex-shrink:0; background:var(--green-dark); }
+  .pick-mock.amber .pick-ico { background:var(--amber); }
+  .pick-kick { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:var(--green-dark); }
+  .pick-mock.amber .pick-kick { color:var(--amber); }
+  .pick-head { font-family:'Montserrat',sans-serif; font-size:15px; font-weight:800; color:var(--text); line-height:1.25; }
+  .pick-sub { font-size:13px; color:var(--text2); margin-top:2px; }
+
+  /* Audience break before the SC / IA half */
+  .aud-break { margin:48px 0 0; border-radius:var(--radius); background:var(--ink); background-image:linear-gradient(160deg,var(--midnight) 0%,var(--ink) 100%); padding:32px 24px; text-align:center; }
+  .aud-break .ab-eyebrow { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:#ABDEBA; margin-bottom:10px; }
+  .aud-break .ab-title { font-family:'Montserrat',sans-serif; font-size:26px; font-weight:900; color:#fff; line-height:1.15; letter-spacing:-0.02em; }
+  .aud-break .ab-sub { font-size:14px; color:rgba(255,255,255,0.68); margin-top:10px; max-width:420px; margin-left:auto; margin-right:auto; line-height:1.6; }
+
+  .closer { text-align:center; font-family:'Montserrat',sans-serif; font-weight:700; font-size:14px; letter-spacing:.12em; color:var(--text3); padding:32px 0 4px; }
+  .closer b { color:var(--green-dark); font-weight:800; }
+
+  .qr-dark { background:var(--ink); background-image:linear-gradient(160deg,var(--midnight) 0%,var(--ink) 100%); border:none; }
+  .qr-dark .ui-label { color:rgba(255,255,255,0.45); }
+
+  @media print {
+    .t-wrap, table, .pick-mock, .aud-break, .math, .who { page-break-inside:avoid; break-inside:avoid; }
+    .aud-break { page-break-before:always; break-before:page; margin-top:0; }
+  }
+
 </style>
 </head>
 <body>
-<header style="position: sticky; top: 0; background-color: #1B4DA0; color: white; padding: 16px 20px; display: flex; align-items: center; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.15); font-family: 'Montserrat', sans-serif;">
-    
-    <a href="inventory-count.html" style="color: white; text-decoration: none; display: flex; align-items: center; font-weight: 600; font-size: 16px;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 22px; height: 22px; stroke-width: 2.5; margin-right: 6px; stroke-linecap: round; stroke-linejoin: round;">
-        <line x1="19" y1="12" x2="5" y2="12"></line>
-        <polyline points="12 19 5 12 12 5"></polyline>
-      </svg>
-      Back
-    </a>
 
-    <div style="flex-grow: 1; text-align: center; font-size: 18px; font-weight: 700; padding-right: 60px;">
-      Instruction Manual
-    </div>
-    
-  </header>
+<header style="position: sticky; top: 0; background-color: #1B4DA0; color: white; padding: 16px 20px; display: flex; align-items: center; z-index: 1000; box-shadow: 0 4px 14px rgba(27,77,160,0.18); font-family: 'Montserrat', sans-serif;">
+  <a href="inventory-count.html" style="color: white; text-decoration: none; display: flex; align-items: center; font-weight: 600; font-size: 16px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 22px; height: 22px; stroke-width: 2.5; margin-right: 6px; stroke-linecap: round; stroke-linejoin: round;">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Back
+  </a>
+  <div style="flex-grow: 1; text-align: center; font-size: 18px; font-weight: 700; padding-right: 60px;">
+    Instruction Manual
+  </div>
+</header>
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-badge">📋 User Guide · Taglish Edition</div>
   <div class="hero-icon"></div>
   <h1>AcaciaHBC<br>Inventory App</h1>
-  <p>Simple guide para malaman mo kung paano gamitin ang app na ito — mula simula hanggang tapos!</p>
+  <p>Dalawa ang trabaho ng app na ito — <strong>Incoming Orders</strong> at <strong>Cycle Count</strong>. Nandito ang parehong gabay.</p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -482,110 +549,88 @@
   <div class="toc-title">📑 Nilalaman</div>
   <ul class="toc-list">
     <li><a href="#overview">🗺 Overview</a></li>
-    <li><a href="#install">📲 I-install ang App</a></li>
-    <li><a href="#step1">1 · Store Info</a></li>
-    <li><a href="#step2">2 · Count</a></li>
-    <li><a href="#step3">3 · Damages</a></li>
-    <li><a href="#step4">4 · Review & Export</a></li>
+    <li><a href="#install">📲 I-install</a></li>
+    <li><a href="#login">🔑 Log In</a></li>
+    <li><a href="#hub">🏠 Home</a></li>
+    <li><a href="#orders">🚚 A · Incoming Orders</a></li>
+    <li><a href="#count">📦 B1 · Count</a></li>
+    <li><a href="#damages">⚠️ B2 · Damages</a></li>
+    <li><a href="#review">✅ B3 · Review &amp; Export</a></li>
     <li><a href="#tips">💡 Tips</a></li>
+    <li><a href="#quickref">📌 Quick Reference</a></li>
+    <li><a href="#forsc">👥 Para sa SC at IA</a></li>
   </ul>
 </div>
 
 <div class="container">
 
-  <!-- OVERVIEW -->
-  <div class="guide-section" id="overview">
-    <div class="section-header">
-      <div class="section-num plain">🗺</div>
-      <div class="section-title-wrap">
-        <div class="section-title">Ano ang app na ito?</div>
-        <div class="section-sub">Overview — basahin mo muna ito!</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <p style="font-size:14px;color:var(--text2);margin-bottom:14px;">Ang <strong>AcaciaHBC Inventory App</strong> ay ginagamit para <strong>mag-count ng mga produkto sa isang tindahan</strong>. Bilhin mo lang ang bilang ng bawat SKU, i-record ang may sira, tapos i-export bilang Excel file — tapos na! 🎉</p>
-
-      <div class="summary-flow">
-        <div class="flow-item">
-          <div class="flow-line">
-            <div class="flow-dot" style="background:var(--blue);">1</div>
-            <div class="flow-connector"></div>
-          </div>
-          <div class="flow-body">
-            <div class="flow-title">🏠 Punan ang iyong impormasyon</div>
-            <div class="flow-desc">Pangalan mo at kung saang tindahan ka.</div>
-          </div>
-        </div>
-        <div class="flow-item">
-          <div class="flow-line">
-            <div class="flow-dot" style="background:var(--green);">2</div>
-            <div class="flow-connector"></div>
-          </div>
-          <div class="flow-body">
-            <div class="flow-title">📦 I-count ang mga produkto</div>
-            <div class="flow-desc">Hanapin ang bawat SKU, ilagay ang bilang.</div>
-          </div>
-        </div>
-        <div class="flow-item">
-          <div class="flow-line">
-            <div class="flow-dot" style="background:var(--red);">3</div>
-            <div class="flow-connector"></div>
-          </div>
-          <div class="flow-body">
-            <div class="flow-title">⚠️ I-record ang mga sira</div>
-            <div class="flow-desc">Kung may damaged na produkto, ilagay ito.</div>
-          </div>
-        </div>
-        <div class="flow-item">
-          <div class="flow-line">
-            <div class="flow-dot" style="background:var(--yellow);">4</div>
-            <div class="flow-connector"></div>
-          </div>
-          <div class="flow-body">
-            <div class="flow-title">📊 I-review at i-export</div>
-            <div class="flow-desc">Tingnan ang summary, tapos i-download ang Excel file.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="callout info">
-      <div class="callout-icon">📱</div>
-      <div class="callout-body">
-        <div class="callout-title">Gumagana ito sa phone!</div>
-        Ang app na ito ay ginawa para sa mobile. Gamitin mo ito sa iyong smartphone para mas madali mag-count sa loob ng tindahan.
-      </div>
-    </div>
-
-    <div class="callout warn">
-      <div class="callout-icon">📶</div>
-      <div class="callout-body">
-        <div class="callout-title">Internet — kailangan sa simula at sa pagpapadala lang!</div>
-        <strong>Sa simula:</strong> Kailangan ng internet nang buksan mo ang app para ma-download ang listahan ng mga produkto, stores, at system count data. Kapag na-load na ito, <strong>pwede ka nang mag-count kahit walang signal</strong> — offline na ang lahat ng counting at encoding.<br><br>
-        <strong>Sa pagpapadala:</strong> Kailangan ulit ng internet kapag ise-share mo ang file via Messenger o ibang app.
-      </div>
-    </div>
-
-    <!-- NAV EXPLANATION -->
-    <div class="card">
-      <div class="ui-label">Ang 4 na Tab sa Ibaba ng Screen</div>
-      <div class="nav-mock">
-        <div class="nav-mock-tab active"><span class="ni">🏠</span>1 · Store Info</div>
-        <div class="nav-mock-tab"><span class="ni">📦</span>2 · Count</div>
-        <div class="nav-mock-tab"><span class="ni">⚠️</span>3 · Damages</div>
-        <div class="nav-mock-tab"><span class="ni">✅</span>4 · Review</div>
-      </div>
-      <p style="font-size:13px;color:var(--text2);margin-top:8px;">I-tap ang bawat tab para lumipat sa ibang parte ng app. Sundan mo ang order — 1, 2, 3, 4!</p>
+<!-- ═══════════ OVERVIEW ═══════════ -->
+<div class="guide-section" id="overview">
+  <div class="section-header">
+    <div class="section-num plain">🗺</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Ano ang app na ito?</div>
+      <div class="section-sub">Overview — basahin mo muna ito!</div>
     </div>
   </div>
 
-  <hr class="section-divider">
+  <div class="card">
+    <p style="font-size:14px;color:var(--text2);margin-bottom:16px;">
+      Ang <span class="hl">AcaciaHBC Inventory App</span> ay may <strong>dalawang magkahiwalay na trabaho</strong>.
+      Pagkatapos mong mag-log in, ikaw ang pipili kung alin sa dalawa ang gagawin mo ngayon.
+      <strong>Walang kinalaman ang isa sa isa.</strong>
+    </p>
 
-  <!-- INSTALL APP -->
-  <div class="guide-section" id="install">
+    <div class="pick-mock amber">
+      <div class="pick-ico">🚚</div>
+      <div>
+        <div class="pick-kick">Incoming orders</div>
+        <div class="pick-head">Che-check ang dumating na delivery</div>
+        <div class="pick-sub">Linya por linya kada CDF · may sariling Excel report</div>
+      </div>
+    </div>
+
+    <div class="pick-mock">
+      <div class="pick-ico">📦</div>
+      <div>
+        <div class="pick-kick">Cycle count</div>
+        <div class="pick-head">Bilangin ang stock sa shelf</div>
+        <div class="pick-sub">Count → Damages → Review &amp; Export</div>
+      </div>
+    </div>
+
+    <div class="callout info" style="margin-top:14px;">
+      <div class="callout-icon">ℹ️</div>
+      <div class="callout-body">
+        <div class="callout-title">Hiwalay ang dalawa</div>
+        Hindi nakakaapekto sa cycle count mo ang pag-check ng delivery, at ganoon din sa kabila.
+        Pwede kang lumipat-lipat anumang oras sa pamamagitan ng <span class="hl-blue">🏠 Home</span> tab sa ibaba.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">📱</div>
+    <div class="callout-body">
+      <div class="callout-title">Gumagana ito sa phone!</div>
+      Ang app na ito ay ginawa para sa mobile. Gamitin mo ito sa iyong smartphone para mas madali sa loob ng tindahan.
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">📶</div>
+    <div class="callout-body">
+      <div class="callout-title">Internet — kailangan sa simula at sa pagpapadala lang!</div>
+      <strong>Sa simula:</strong> Kailangan ng internet nang buksan mo ang app para ma-download ang listahan ng mga produkto, stores, delivery list, at system count data. Kapag na-load na ito, <strong>pwede ka nang magtrabaho kahit walang signal</strong> — offline na ang lahat ng counting at encoding.<br><br>
+      <strong>Sa pagpapadala:</strong> Kailangan ulit ng internet kapag ise-share mo ang file via Messenger o ibang app.
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+<div class="guide-section" id="install">
     <div class="section-header">
-      <div class="section-num" style="background:var(--gradient);box-shadow:0 3px 10px rgba(27,77,160,0.25);">📲</div>
+      <div class="section-num">📲</div>
       <div class="section-title-wrap">
         <div class="section-title">I-install ang App sa Home Screen</div>
         <div class="section-sub">Para mas madaling buksan — tulad ng regular na app!</div>
@@ -671,83 +716,322 @@
     </div>
   </div>
 
-  <hr class="section-divider">
-  <div class="guide-section" id="step1">
-    <div class="section-header">
-      <div class="section-num">1</div>
-      <div class="section-title-wrap">
-        <div class="section-title">Store Info — Punan ang Iyong Detalye</div>
-        <div class="section-sub">Tab 1 · Gawin ito MUNA bago mag-count</div>
+  
+<hr class="section-divider">
+
+<hr class="section-divider">
+
+<!-- ═══════════ LOGIN ═══════════ -->
+<div class="guide-section" id="login">
+  <div class="section-header">
+    <div class="section-num">🔑</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Log In — Pangalan at Code</div>
+      <div class="section-sub">Ito ang unang makikita mo tuwing bubuksan mo ang app</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="step-item">
+      <div class="step-bubble">1</div>
+      <div class="step-body">
+        <div class="step-label">Ilagay ang iyong pangalan</div>
+        <div class="step-desc">Buong pangalan. Halimbawa: <span class="hl">Juan dela Cruz</span></div>
       </div>
     </div>
-
-    <div class="callout tip">
-      <div class="callout-icon">👋</div>
-      <div class="callout-body">
-        <div class="callout-title">Ito ang unang gagawin mo!</div>
-        Kapag binuksan mo ang app, dito ka darating. Kailangan mong punan ito bago ka makapag-start ng counting.
+    <div class="step-item">
+      <div class="step-bubble">2</div>
+      <div class="step-body">
+        <div class="step-label">Ilagay ang iyong access code</div>
+        <div class="step-desc">Ang code na binigay sa iyo ng supervisor mo. Ganito ang hitsura: <span class="hl-blue">AAA-1111</span>. Kung mali, sasabihin sa iyo agad.</div>
       </div>
     </div>
-
-    <div class="card">
-      <div class="step-item">
-        <div class="step-bubble">1</div>
-        <div class="step-body">
-          <div class="step-label">Ilagay ang iyong pangalan</div>
-          <div class="step-desc">Sa field na <span class="hl-blue">Merchandiser Name</span>, i-type ang iyong buong pangalan. Halimbawa: <em>"Juan dela Cruz"</em></div>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-bubble">2</div>
-        <div class="step-body">
-          <div class="step-label">Piliin ang tindahan</div>
-          <div class="step-desc">Sa field na <span class="hl-blue">Location</span>, i-tap ang dropdown menu at piliin ang pangalan ng tindahan kung saan ka nag-icount ngayon.</div>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-bubble">3</div>
-        <div class="step-body">
-          <div class="step-label">Count Period, Date/Time, at Total Unique SKUs — automatic na!</div>
-          <div class="step-desc">Hindi mo na kailangang baguhin ito. Awtomatiko itong naka-fill ng app. Ang <span class="hl-blue">Total Unique SKUs</span> ay nagpapakita kung ilang produkto ang naka-load — gamitin ito para ma-verify na kumpleto ang listahan. ✅</div>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-bubble">4</div>
-        <div class="step-body">
-          <div class="step-label">I-tap ang "Save & Start Counting →"</div>
-          <div class="step-desc">Kapag puno na ang lahat, i-tap ang <span class="hl">Save & Start Counting →</span> na berdeng button. Lilipat ka na sa Count tab!</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui-mock">
-      <div class="ui-label">Ganito ang hitsura ng form</div>
-      <div class="ui-field">Juan dela Cruz</div>
-      <div class="ui-field">GENSAN ▾</div>
-      <div class="ui-field" style="color:var(--text3);">March 2026 (auto-filled)</div>
-      <div class="ui-field" style="color:var(--text3);">28 Mar 2026, 10:45 (auto-filled)</div>
-      <div class="ui-field" style="color:var(--green-dark);font-weight:700;">142 SKUs</div>
-      <div class="ui-btn">Save & Start Counting →</div>
-    </div>
-
-    <div class="callout warn">
-      <div class="callout-icon">⚠️</div>
-      <div class="callout-body">
-        <div class="callout-title">Huwag kalimutan ang pangalan at store!</div>
-        Kung wala kang name at location, hindi ka makakapagsave. Makikita mo ang error. I-ulit lang — simple lang!
+    <div class="step-item">
+      <div class="step-bubble">3</div>
+      <div class="step-body">
+        <div class="step-label">Tapos na — dadalhin ka sa Home</div>
+        <div class="step-desc">Hindi ka na mag-lo-log in ulit sa susunod. Nakatago na sa phone mo ang session.</div>
       </div>
     </div>
   </div>
 
-  <hr class="section-divider">
+  <div class="callout info">
+    <div class="callout-icon">🏬</div>
+    <div class="callout-body">
+      <div class="callout-title">Nakatali sa code mo ang tindahan</div>
+      Ang code mo ang nagsasabi kung <strong>aling tindahan</strong> ang hawak mo. Hindi mo makikita ang delivery o count ng ibang store —
+      at hindi mo rin ito mababago. Kung may hawak kang <strong>higit sa isang tindahan</strong>, nakalagay na rin iyon sa code mo,
+      at makakapili ka sa kanila sa Home page.
+    </div>
+  </div>
 
-  <!-- STEP 2: COUNT -->
-  <div class="guide-section" id="step2">
+  <div class="callout danger">
+    <div class="callout-icon">🔐</div>
+    <div class="callout-body">
+      <div class="callout-title">Huwag ipahiram ang code mo</div>
+      Nakasulat ang pangalan mo sa bawat report na naipapadala. Kung ibang tao ang gagamit ng code mo, ikaw ang lalabas na nag-check.
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ═══════════ HUB ═══════════ -->
+<div class="guide-section" id="hub">
+  <div class="section-header">
+    <div class="section-num">🏠</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Home — Dito Ka Pipili</div>
+      <div class="section-sub">Ito ang sentro ng app. Lahat ng simula, dito.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p style="font-size:14px;color:var(--text2);margin-bottom:14px;">
+      Pagkatapos mag-log in, dito ka darating. May tatlong bagay sa page na ito:
+    </p>
+
+    <div class="step-item">
+      <div class="step-bubble">1</div>
+      <div class="step-body">
+        <div class="step-label">Ang detalye mo</div>
+        <div class="step-desc">Pangalan mo, tindahan, at petsa. Awtomatiko na ang pangalan at petsa — galing sa code mo at sa phone mo.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-bubble">2</div>
+      <div class="step-body">
+        <div class="step-label">Ang tindahan</div>
+        <div class="step-desc">
+          Kung <strong>isang tindahan</strong> lang ang hawak mo, nakalagay na ito at hindi mo na kailangang galawin — hindi ito dropdown.<br>
+          Kung <strong>marami</strong>, i-tap ang <span class="hl-blue">Store — tap to switch</span> at piliin kung saan ka ngayon.
+        </div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-bubble">3</div>
+      <div class="step-body">
+        <div class="step-label">Ang dalawang pagpipilian</div>
+        <div class="step-desc">Incoming Orders o Cycle Count. I-tap kung alin ang gagawin mo ngayon.</div>
+      </div>
+    </div>
+
+    <div class="ui-mock">
+      <div class="ui-label">Ganito ang hitsura ng Home</div>
+      <div class="ui-field">Juan dela Cruz</div>
+      <div class="ui-field">DAHICAN ▾</div>
+      <div class="ui-field">17 Sep 2026, 15:03</div>
+      <div class="pick-mock amber" style="margin-top:12px;">
+        <div class="pick-ico">🚚</div>
+        <div>
+          <div class="pick-kick">Incoming orders</div>
+          <div class="pick-head">5 orders to check</div>
+          <div class="pick-sub">DAHICAN · earliest dated 29 Aug 2026</div>
+        </div>
+      </div>
+      <div class="pick-mock">
+        <div class="pick-ico">📦</div>
+        <div>
+          <div class="pick-kick">Cycle count</div>
+          <div class="pick-head">Count stock on shelf</div>
+          <div class="pick-sub">September 2026 · 253 SKUs loaded</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout danger">
+    <div class="callout-icon">🏬</div>
+    <div class="callout-body">
+      <div class="callout-title">Kapag pinalitan mo ang tindahan, <u>parehong</u> lilipat</div>
+      Susunod ang <strong>Incoming Orders</strong> at ang <strong>Cycle Count</strong> sa piniling tindahan — iisa lang ang store sa buong app.
+      Magtatanong muna ito bago palitan.<br><br>
+      <strong>Hindi mabubura ang nabilang mo na</strong> — pero mapupunta ito sa <em>bagong</em> tindahan. Kaya siguraduhing tama ang store bago ka magsimulang mag-count.
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">🏠</div>
+    <div class="callout-body">
+      <div class="callout-title">Palaging may Home tab sa ibaba</div>
+      Nasaan ka man sa app, ang <strong>🏠 Home</strong> ang unang tab sa ibaba. Ito ang balikan mo para lumipat sa kabilang trabaho.
+    </div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-icon">🔄</div>
+    <div class="callout-body">
+      <div class="callout-title">Nagbabago ang mga tab sa ibaba</div>
+      Sa <strong>Incoming Orders</strong>: 🏠 Home · 🚚 Incoming Orders.<br>
+      Sa <strong>Cycle Count</strong>: 🏠 Home · 1 Count · 2 Damages · 3 Review.<br>
+      Normal ito — ipinapakita lang ng app ang kailangan mo sa ginagawa mo ngayon.
+    </div>
+  </div>
+</div>
+
+<div class="aud-break" style="margin:48px 0 0;background:var(--gradient);background-image:var(--gradient);">
+  <div class="ab-eyebrow" style="color:rgba(255,255,255,0.75);">Part A</div>
+  <div class="ab-title">Incoming Orders</div>
+  <div class="ab-sub" style="color:rgba(255,255,255,0.85);">Pag-check ng dumating na delivery, linya por linya.</div>
+</div>
+
+<!-- ═══════════ A · INCOMING ORDERS ═══════════ -->
+<div class="guide-section" id="orders">
+  <div class="section-header">
+    <div class="section-num yellow">🚚</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Paano mag-check ng delivery</div>
+      <div class="section-sub">Home → Incoming Orders</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="step-item">
+      <div class="step-bubble">1</div>
+      <div class="step-body">
+        <div class="step-label">Buksan ang Incoming Orders</div>
+        <div class="step-desc">Sa <span class="hl-blue">🏠 Home</span>, i-tap ang <strong>kahel na card</strong> na nagsasabi kung ilang order ang dapat i-check. Kung walang paparating, <span class="hl">Nothing on the way</span> ang nakalagay at hindi ito matatap.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-bubble">2</div>
+      <div class="step-body">
+        <div class="step-label">Piliin ang CDF</div>
+        <div class="step-desc">Lalabas ang listahan ng mga CDF para sa tindahan mo. I-tap ang dumating. May timestamp sa ilalim — kung gaano kabago ang listahan.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-bubble">3</div>
+      <div class="step-body">
+        <div class="step-label">Dalawang numero kada linya</div>
+        <div class="step-desc"><span class="hl">Received good</span> — maayos. <span class="hl-red">Damaged</span> — sira. Kung walang dumating, <strong>0 at 0</strong> — huwag iwang blangko.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-bubble">4</div>
+      <div class="step-body">
+        <div class="step-label">Ipadala</div>
+        <div class="step-desc">Kapag kumpleto lahat ng linya, magiging berde ang export button. Bubukas ang share sheet — parehong paraan sa cycle count. <strong>Mag-message sa IA pagkatapos</strong> — walang ini-notify ang app.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout danger">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body">
+      <div class="callout-title">Magkahiwalay ang dalawang numero</div>
+      Ito ang pinakamadalas na namamali. Ipinapakita ng app ang math sa ilalim ng bawat linya habang nagta-type ka — basahin mo ito.
+    </div>
+  </div>
+
+  <div class="math">
+    <div class="math-eq"><span class="g">85</span> + <span class="y">5</span> = 90 <span style="color:var(--text3);font-weight:700;">of 100</span></div>
+    <div class="math-cap">100 approved. 90 ang dumating, may yupi ang 5.<br>Received good <strong>85</strong> · Damaged <strong>5</strong> · Kulang ng 10.</div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-icon">📊</div>
+    <div class="callout-body">
+      <div class="callout-title">Laging nakikita ang progress</div>
+      Nakadikit sa itaas ng screen ang CDF number at ang tindahan habang nag-i-scroll ka, kasama ang bilang na <span class="hl-blue">12/15</span> —
+      kung ilang linya na ang tapos. Hindi ka mawawala.
+    </div>
+  </div>
+
+  <div class="ui-mock">
+    <div class="ui-label">Kung… / Gawin</div>
+    <div class="t-wrap">
+      <table class="free">
+        <thead><tr><th>Kung…</th><th>Gawin</th></tr></thead>
+        <tbody>
+          <tr><td>May dumating na wala sa CDF</td><td>Gamitin ang <strong>Add an item not on the CDF</strong>. Ikaw ang magta-type ng code at description.</td></tr>
+          <tr><td>Kakaiba ang numero</td><td>Maglagay ng note. Mas malaki ang halaga ng <em>"5 pcs bent, box crushed"</em> kaysa hubad na 5.</td></tr>
+          <tr><td>May nalaktawan ka</td><td>Pindutin ang <strong>Next unchecked</strong> — dadalhin ka nito sa unang linyang walang laman.</td></tr>
+          <tr><td>Hindi mapindot ang export</td><td>May linyang walang laman pa. Hindi bug ito.</td></tr>
+          <tr><td>Pulang banner</td><td>Hindi ma-load ang listahan — kadalasan walang signal. <strong>Hindi ito ibig sabihing walang delivery.</strong> Maghanap ng signal, buksan muli.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">🔁</div>
+    <div class="callout-body">
+      <div class="callout-title">Nananatili ang CDF kahit naipadala na ang report</div>
+      Kada linggo lang ina-upload ang bagong listahan. Hangga't hindi pa, nakikita pa rin ang na-check na CDF — kasama ang mga numerong inilagay mo.
+      <strong>Tama ito. Nakasave ang lahat.</strong><br><br>
+      <strong>Walang gagawin.</strong> Naipadala na ang report at na-message na ang IA. Mawawala ang CDF sa susunod na refresh.<br>
+      <strong>Huwag magpadala ulit</strong> — doble ang lalabas at kailangan pang ayusin ng IA.
+    </div>
+  </div>
+
+  <div class="ui-mock">
+    <div class="ui-label">Ang status ng bawat linya</div>
+    <div class="t-wrap">
+      <table>
+        <thead><tr><th>Status</th><th>Ibig sabihin</th></tr></thead>
+        <tbody>
+          <tr><td>Complete</td><td>Kumpleto, walang sira</td></tr>
+          <tr><td>Complete · damaged</td><td>Kumpleto ang bilang, may sira</td></tr>
+          <tr><td>Short</td><td>Kulang sa approved</td></tr>
+          <tr><td>Not received</td><td>Walang dumating</td></tr>
+          <tr><td>Over</td><td>Sobra sa approved</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-icon">🔒</div>
+    <div class="callout-body">
+      <div class="callout-title">Ang numero ang nagdedesisyon ng status</div>
+      Hindi mo kayang markahang "Complete" ang linya kung 30 of 36 ang inilagay mo. Ang app ang kumukuwenta.
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">📄</div>
+    <div class="callout-body">
+      <div class="callout-title">Dalawang sheet ang report</div>
+      <strong>Sheet 1 · Order Check</strong> — bawat linya: Approved, Received Good, Damaged, Variance, Status, note. May sign ang variance:
+      <span class="hl-red">−6</span> kulang, <span class="hl-blue">+2</span> sobra. Sa ibaba, magkahiwalay ang <strong>Short by</strong> at <strong>Over by</strong> — para hindi magkansela.<br><br>
+      <strong>Sheet 2 · Not On CDF</strong> — mga idinagdag na wala sa orihinal.
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">📅</div>
+    <div class="callout-body">
+      <div class="callout-title">20 araw ang tanda ng app</div>
+      Nakatago ang mga na-check mo nang <strong>20 araw</strong>. Kaya kung may tanong ang IA tungkol sa isang delivery noong isang linggo, mabubuksan mo pa ito at maipapakita.
+    </div>
+  </div>
+</div>
+
+<div class="aud-break" style="margin:48px 0 0;background:var(--gradient);background-image:var(--gradient);">
+  <div class="ab-eyebrow" style="color:rgba(255,255,255,0.75);">Part B</div>
+  <div class="ab-title">Cycle Count</div>
+  <div class="ab-sub" style="color:rgba(255,255,255,0.85);">Ang buwanang bilangan ng stock sa shelf. Tatlong tab: Count → Damages → Review.</div>
+</div>
+
+<div class="guide-section">
+  <div class="card">
+    <div class="ui-label">Ang 3 tab sa ibaba kapag nasa Cycle Count ka</div>
+    <div class="nav-mock">
+      <div class="nav-mock-tab"><span class="ni">🏠</span>Home</div>
+      <div class="nav-mock-tab active"><span class="ni">📦</span>1 · Count</div>
+      <div class="nav-mock-tab"><span class="ni">⚠️</span>2 · Damages</div>
+      <div class="nav-mock-tab"><span class="ni">✅</span>3 · Review</div>
+    </div>
+    <div style="font-size:14px;color:var(--text2);">Sundan mo ang order — 1, 2, 3. Ang <strong>🏠 Home</strong> ang balikan mo kung lilipat ka sa Incoming Orders.</div>
+  </div>
+</div>
+<div class="guide-section" id="count">
     <div class="section-header">
-      <div class="section-num green">2</div>
+      <div class="section-num green">1</div>
       <div class="section-title-wrap">
         <div class="section-title">Count — Bilang ang mga Produkto</div>
-        <div class="section-sub">Tab 2 · Dito mo ida-dagdag ang bawat SKU</div>
+        <div class="section-sub">1 · Count · Dito mo ida-dagdag ang bawat SKU</div>
       </div>
     </div>
 
@@ -873,17 +1157,17 @@
       </div>
     </div>
 
-    <div style="background:linear-gradient(135deg,#7f1d1d,#991b1b);border-radius:var(--radius);padding:20px;margin-bottom:12px;border:2px solid #dc2626;box-shadow:0 4px 18px rgba(239,68,68,0.25);page-break-inside:avoid;break-inside:avoid;">
+    <div style="background:var(--ink);background-image:linear-gradient(160deg,var(--midnight) 0%,var(--ink) 100%);border-radius:var(--radius);padding:24px;margin-bottom:12px;border-left:6px solid var(--red);box-shadow:0 12px 32px rgba(18,41,78,0.28);page-break-inside:avoid;break-inside:avoid;">
       <div style="display:flex;gap:12px;align-items:flex-start;">
         <div style="font-size:28px;flex-shrink:0;margin-top:2px;">🚨</div>
         <div>
           <div style="font-family:'Montserrat',sans-serif;font-size:15px;font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:0.2px;">MAHALAGA: Lagyan ng ZERO ang walang stock!</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.88);line-height:1.7;">
-            Kung ang isang SKU ay <strong style="color:#fca5a5;">nasa tindahan</strong> pero <strong style="color:#fca5a5;">wala kang makitang stock</strong> — huwag itong laktawan! Kailangan mo pa rin itong hanapin at idagdag na may bilang na <strong style="color:#fff;font-size:15px;">0</strong>.<br><br>
-            Bakit? Para malaman ng sistema na <strong style="color:#fca5a5;">tiningnan mo ito</strong> — hindi lang nakalimutan o nalaktawan. Ang produktong wala sa iyong listahan ay mukhang hindi na-count, kahit wala talagang stock.
+          <div style="font-size:14px;color:rgba(255,255,255,0.88);line-height:1.7;">
+            Kung ang isang SKU ay <strong style="color:#F3B7B0;">nasa tindahan</strong> pero <strong style="color:#F3B7B0;">wala kang makitang stock</strong> — huwag itong laktawan! Kailangan mo pa rin itong hanapin at idagdag na may bilang na <strong style="color:#fff;font-size:15px;">0</strong>.<br><br>
+            Bakit? Para malaman ng sistema na <strong style="color:#F3B7B0;">tiningnan mo ito</strong> — hindi lang nakalimutan o nalaktawan. Ang produktong wala sa iyong listahan ay mukhang hindi na-count, kahit wala talagang stock.
           </div>
-          <div style="margin-top:12px;background:rgba(0,0,0,0.25);border-radius:8px;padding:12px 14px;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.6;">
-            <strong style="color:#fca5a5;">Halimbawa:</strong> May curtain rod na dapat nasa shelf, pero empty ang shelf ngayon. Hanapin ang SKU → ilagay ang qty na <strong style="color:#fff;">0</strong> → i-tap ang <strong style="color:#fff;">Add to Count</strong>. ✅
+          <div style="margin-top:12px;background:rgba(255,255,255,0.07);border-radius:8px;padding:12px 14px;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;">
+            <strong style="color:#F3B7B0;">Halimbawa:</strong> May curtain rod na dapat nasa shelf, pero empty ang shelf ngayon. Hanapin ang SKU → ilagay ang qty na <strong style="color:#fff;">0</strong> → i-tap ang <strong style="color:#fff;">Add to Count</strong>. ✅
           </div>
         </div>
       </div>
@@ -906,15 +1190,14 @@
     </div>
   </div>
 
-  <hr class="section-divider">
-
-  <!-- STEP 3: DAMAGES -->
-  <div class="guide-section" id="step3">
+  
+<hr class="section-divider">
+<div class="guide-section" id="damages">
     <div class="section-header">
-      <div class="section-num red">3</div>
+      <div class="section-num red">2</div>
       <div class="section-title-wrap">
         <div class="section-title">Damages — I-record ang mga Sira</div>
-        <div class="section-sub">Tab 3 · Para sa mga damaged na produkto</div>
+        <div class="section-sub">2 · Damages · Para sa mga damaged na produkto</div>
       </div>
     </div>
 
@@ -930,7 +1213,7 @@
       <div class="step-item">
         <div class="step-bubble">1</div>
         <div class="step-body">
-          <div class="step-label">I-tap ang "3 · Damages" tab</div>
+          <div class="step-label">I-tap ang "2 · Damages" tab</div>
           <div class="step-desc">Pumunta sa Damages tab sa ibaba ng screen.</div>
         </div>
       </div>
@@ -973,15 +1256,14 @@
     </div>
   </div>
 
-  <hr class="section-divider">
-
-  <!-- STEP 4: REVIEW & EXPORT -->
-  <div class="guide-section" id="step4">
+  
+<hr class="section-divider">
+<div class="guide-section" id="review">
     <div class="section-header">
-      <div class="section-num yellow">4</div>
+      <div class="section-num yellow">3</div>
       <div class="section-title-wrap">
         <div class="section-title">Review & Export — Tapusin na!</div>
-        <div class="section-sub">Tab 4 · I-check ang lahat bago mag-submit</div>
+        <div class="section-sub">3 · Review · I-check ang lahat bago mag-submit</div>
       </div>
     </div>
 
@@ -998,15 +1280,15 @@
       <div class="step-item">
         <div class="step-bubble">1</div>
         <div class="step-body">
-          <div class="step-label">I-tap ang "4 · Review" tab</div>
+          <div class="step-label">I-tap ang "3 · Review" tab</div>
           <div class="step-desc">Pumunta sa Review tab sa ibaba ng screen. Makikita mo ang lahat ng impormasyon.</div>
         </div>
       </div>
       <div class="step-item">
         <div class="step-bubble">2</div>
         <div class="step-body">
-          <div class="step-label">Tingnan ang Store Info</div>
-          <div class="step-desc">I-check kung tama ang iyong pangalan, store, at count period. Kung may mali — bumalik sa Tab 1 at baguhin.</div>
+          <div class="step-label">Tingnan ang detalye mo</div>
+          <div class="step-desc">I-check kung tama ang iyong pangalan, store, at count period. Kung may mali — bumalik sa 🏠 Home at baguhin ang tindahan doon.</div>
         </div>
       </div>
       <div class="step-item">
@@ -1077,10 +1359,9 @@
     </div>
   </div>
 
-  <hr class="section-divider">
-
-  <!-- TIPS -->
-  <div class="guide-section" id="tips">
+  
+<hr class="section-divider">
+<div class="guide-section" id="tips">
     <div class="section-header">
       <div class="section-num plain">💡</div>
       <div class="section-title-wrap">
@@ -1140,81 +1421,158 @@
   </div>
 
   <!-- QUICK REFERENCE -->
-  <hr class="section-divider before-quick-ref">
-  <div class="guide-section quick-ref">
-    <div class="section-header">
-      <div class="section-num plain">📌</div>
-      <div class="section-title-wrap">
-        <div class="section-title">Quick Reference</div>
-        <div class="section-sub">I-screenshot ito para sa mabilis na reference!</div>
-      </div>
+  
+<hr class="section-divider">
+
+<!-- ═══════════ QUICK REFERENCE ═══════════ -->
+<div class="guide-section quick-ref" id="quickref">
+  <div class="section-header">
+    <div class="section-num plain">📌</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Quick Reference</div>
+      <div class="section-sub">I-screenshot ito para sa mabilis na reference!</div>
     </div>
-    <div class="card">
-      <table style="width:100%;border-collapse:collapse;font-size:13px;">
-        <thead>
-          <tr style="background:var(--bg);">
-            <th style="padding:10px 12px;text-align:left;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid var(--border);">Gagawin</th>
-            <th style="padding:10px 12px;text-align:left;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid var(--border);">Paano</th>
-          </tr>
-        </thead>
+  </div>
+
+  <div class="card" style="padding:0;overflow:hidden;">
+    <div class="t-wrap">
+      <table class="free">
+        <thead><tr><th>Gagawin</th><th>Paano</th></tr></thead>
         <tbody>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:10px 12px;font-weight:600;color:var(--text);">I-install ang app</td>
-            <td style="padding:10px 12px;color:var(--text2);">How to Use → I-install → Sundan ang steps</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);background:var(--bg);">
-            <td style="padding:10px 12px;font-weight:600;color:var(--text);">Simulan ang counting</td>
-            <td style="padding:10px 12px;color:var(--text2);">Tab 1 → Punan → Save & Start Counting</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:10px 12px;font-weight:600;color:var(--text);">Mag-scan ng barcode</td>
-            <td style="padding:10px 12px;color:var(--text2);">Tab 2 → Scan Barcode → I-point sa shelf label</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);background:var(--bg);">
-            <td style="padding:10px 12px;font-weight:600;color:var(--text);">Magdagdag ng SKU count</td>
-            <td style="padding:10px 12px;color:var(--text2);">Tab 2 → Search o Scan → Qty → Add to Count</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:10px 12px;font-weight:600;color:var(--text);">Mag-record ng sira</td>
-            <td style="padding:10px 12px;color:var(--text2);">Tab 3 → Scan o Search → Qty → Description → Record Damage</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);background:var(--bg);">
-            <td style="padding:10px 12px;font-weight:600;color:var(--text);">I-export ang report</td>
-            <td style="padding:10px 12px;color:var(--text2);">Tab 4 → Export & Save Excel → Let's Go</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:10px 12px;font-weight:600;color:var(--text);">I-send ang file</td>
-            <td style="padding:10px 12px;color:var(--text2);">Share button → piliin ang app → Send</td>
-          </tr>
-          <tr style="background:var(--bg);">
-            <td style="padding:10px 12px;font-weight:600;color:var(--red);">Clear all (mag-ingat!)</td>
-            <td style="padding:10px 12px;color:var(--text2);">🗑 Clear All Data → Confirm → Permanente!</td>
-          </tr>
+          <tr><td>I-install ang app</td><td>Instruction Manual → I-install → Sundan ang steps</td></tr>
+          <tr><td>Mag-log in</td><td>Pangalan → Access code → Home</td></tr>
+          <tr><td>Palitan ang tindahan</td><td>🏠 Home → Store dropdown → Confirm</td></tr>
+          <tr><td><strong>Mag-check ng delivery</strong></td><td>🏠 Home → kahel na card → piliin ang CDF</td></tr>
+          <tr><td>Maglagay ng linya</td><td>Received good + Damaged → basahin ang math sa ilalim</td></tr>
+          <tr><td>Walang dumating na linya</td><td>0 at 0 — huwag iwang blangko</td></tr>
+          <tr><td>May dumating na wala sa CDF</td><td>Add an item not on the CDF → code + description</td></tr>
+          <tr><td>May nalaktawan</td><td>Next unchecked</td></tr>
+          <tr><td>Ipadala ang OC report</td><td>Export → share sheet → <strong>mag-message sa IA</strong></td></tr>
+          <tr><td><strong>Magsimula ng cycle count</strong></td><td>🏠 Home → Cycle count card</td></tr>
+          <tr><td>Mag-scan ng barcode</td><td>1 · Count → Scan Barcode → I-point sa shelf label</td></tr>
+          <tr><td>Magdagdag ng SKU count</td><td>1 · Count → Search o Scan → Qty → Add to Count</td></tr>
+          <tr><td>Walang stock na SKU</td><td>Hanapin pa rin → qty <strong>0</strong> → Add to Count</td></tr>
+          <tr><td>Mag-record ng sira</td><td>2 · Damages → Scan o Search → Qty → Description → Record Damage</td></tr>
+          <tr><td>I-export ang count</td><td>3 · Review → Export &amp; Save Excel → Let's Go</td></tr>
+          <tr><td>I-send ang file</td><td>Share button → piliin ang app → Send</td></tr>
+          <tr><td style="color:var(--red);">Clear all (mag-ingat!)</td><td>🗑 Clear All Data → Confirm → Permanente!</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
+  <div class="closer">Bold. <b>Rooted.</b> Trusted.</div>
+</div>
+
+<!-- ═══════════════ AUDIENCE BREAK ═══════════════ -->
+<div class="aud-break" id="forsc">
+  <div class="ab-eyebrow">Dito na tapos ang gabay ng merchandiser</div>
+  <div class="ab-title">Para sa SC at IA</div>
+  <div class="ab-sub">Proseso at weekly refresh. Hindi na kailangang basahin ng merchandiser ang bahaging ito.</div>
+</div>
+
+<!-- ═══════════ SC1 · ANG PROSESO ═══════════ -->
+<div class="guide-section">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Ang proseso</div>
+      <div class="section-sub">Mula delivery hanggang report</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p style="font-size:14px;color:var(--text2);margin-bottom:14px;">
+      Pangalawang function ito ng inventory app. <strong>Walang kinalaman sa buwanang count.</strong>
+      Nakikita ng merchandiser ang mga paparating na delivery sa <strong>Home</strong> screen. Pagdating, che-check niya ito linya por linya, tapos magpapadala ng Excel report sa IA.
+    </p>
+    <div class="who"><span class="who-tag t-mgt">Mgt</span><span class="who-txt">Ina-upload ang delivery list. <strong>Kada linggo.</strong></span></div>
+    <div class="who"><span class="who-tag t-mc">Merch</span><span class="who-txt">Che-check ang delivery, ipapadala ang OC report, tapos mag-me-message sa IA sa Messenger.</span></div>
+    <div class="who"><span class="who-tag t-ia">IA</span><span class="who-txt">I-se-save sa Google Drive, ia-update ang Acacia system at Inventory Hub.</span></div>
+    <div class="who" style="border-bottom:none;"><span class="who-tag t-sc">SC</span><span class="who-txt">Nagte-train, sumasagot ng tanong, umaakyat ng escalation.</span></div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-icon">🏬</div>
+    <div class="callout-body">
+      <div class="callout-title">Nakatali sa access code ang tindahan</div>
+      Nakalagay sa <span class="hl-blue">auth.json</span> kung aling store ang hawak ng bawat merchandiser. Kung marami siyang hawak, nakalista silang lahat doon —
+      at iyon lang ang makikita niya sa dropdown. <strong>Hindi niya maaabot ang tindahang hindi naka-assign sa kanya.</strong><br><br>
+      Ang mga walang nakatalagang store — Sales Coordinators at ang master code — ang tanging nakakakita ng lahat ng tindahan.
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ═══════════ SC2 · WEEKLY REFRESH ═══════════ -->
+<div class="guide-section">
+  <div class="section-header">
+    <div class="section-num yellow">2</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Ang weekly refresh</div>
+      <div class="section-sub">Ituro ito bago pa nila maranasan</div>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">🔁</div>
+    <div class="callout-body">
+      <div class="callout-title">Nananatili ang CDF kahit naipadala na ang report</div>
+      Kada linggo lang ina-upload ang bagong listahan. Hangga't hindi pa, nakikita pa rin ang na-check na CDF — kasama ang mga numerong inilagay nila.
+      <strong>Tama ito. Nakasave ang lahat.</strong><br><br>
+      <strong>Walang gagawin ang merchandiser.</strong> Naipadala na ang report at na-message na ang IA. Mawawala ang CDF sa susunod na refresh.<br>
+      <strong>Huwag magpadala ulit.</strong> Doble ang lalabas at kailangan pang ayusin ng IA.
+    </div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-icon">📉</div>
+    <div class="callout-body">
+      <div class="callout-title">Kusang nauubos ang listahan</div>
+      Walang tinatanggal dahil sa tanda. Ang matagal nang bukas na order ay iyon mismo ang kailangang habulin.
+      Nawawala ang CDF kapag na-clear na ito ng IA sa ERP at hindi na kasama sa susunod na export. <strong>Iyon lang ang paraan ng pagretiro.</strong>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ═══════════ SC QUICK REF ═══════════ -->
+<div class="guide-section quick-ref">
+  <div class="section-header">
+    <div class="section-num plain">📌</div>
+    <div class="section-title-wrap">
+      <div class="section-title">Quick Reference · SC</div>
+      <div class="section-sub">Ang apat na madalas itanong</div>
+    </div>
+  </div>
+  <div class="card qr-dark">
+    <div class="qr-item"><div class="qr-dot"></div><div class="qr-txt"><strong style="color:#fff;">Dalawang magkahiwalay na numero:</strong> received good, damaged</div></div>
+    <div class="qr-item"><div class="qr-dot"></div><div class="qr-txt"><strong style="color:#fff;">Kada linggo ang refresh</strong> — nananatili ang na-check na CDF, at tama iyon</div></div>
+    <div class="qr-item"><div class="qr-dot"></div><div class="qr-txt"><strong style="color:#fff;">Pulang banner ≠ walang delivery</strong></div></div>
+    <div class="qr-item"><div class="qr-dot"></div><div class="qr-txt"><strong style="color:#fff;">Nakatali sa code ang store</strong> — hindi mapapalitan ng merchandiser</div></div>
+    <div class="qr-item" style="margin-bottom:0;"><div class="qr-dot"></div><div class="qr-txt"><strong style="color:#fff;">Bug report:</strong> sino · aling CDF · ano ang ginawa · ano ang nangyari</div></div>
+  </div>
+</div>
+
 </div>
 
 <!-- FOOTER -->
-<div class="footer" style="page-break-before:avoid;break-before:avoid;">
+<div class="footer">
   <strong>AcaciaHBC Inventory System</strong><br>
-  User Guide · Taglish Edition<br><br>
+  User Guide · Taglish Edition<br>
   May tanong ka? Makipag-ugnayan sa iyong supervisor o IT support.
 </div>
 
-<!-- ANDROID INSTALL PROMPT -->
 <script>
   let _deferredPrompt = null;
 
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     _deferredPrompt = e;
-    // Show the install button
     const btn = document.getElementById('androidInstallBtn');
     if (btn) btn.style.display = 'flex';
-    // Hide the unavailable notice if it was shown
     const unavail = document.getElementById('androidInstallUnavail');
     if (unavail) unavail.style.display = 'none';
   });
@@ -1232,7 +1590,6 @@
         }
       });
     } else {
-      // No deferred prompt — already installed or not Chrome
       document.getElementById('androidInstallUnavail').style.display = 'flex';
       document.getElementById('androidInstallBtn').style.display = 'none';
     }
@@ -1246,5 +1603,6 @@
     _deferredPrompt = null;
   });
 </script>
+
 </body>
 </html>
