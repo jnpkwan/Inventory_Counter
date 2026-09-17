@@ -286,11 +286,24 @@
   .oc-chev { stroke:var(--oc-amber); stroke-width:2.4; fill:none; width:17px; height:17px; flex-shrink:0; }
   .oc-asof { font-size:10.5px; color:var(--text3); margin:-8px 2px 14px; font-style:italic; }
 
-  .oc-head-hero { background:var(--gradient); padding:22px 20px; position:relative; overflow:hidden; }
-  .oc-back { display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.16); border:none; color:#fff; font-family:'Montserrat',sans-serif; font-size:11.5px; font-weight:700; padding:7px 13px; border-radius:20px; margin-bottom:14px; letter-spacing:0.04em; cursor:pointer; }
-  .oc-back svg { width:13px; height:13px; stroke:#fff; stroke-width:2.6; fill:none; }
-  .oc-title { font-family:'Montserrat',sans-serif; font-size:25px; font-weight:800; color:#fff; letter-spacing:-0.02em; line-height:1.05; position:relative; }
+  /* Pinned under the brand header; compacts on scroll. */
+  :root { --hdr-h: calc(60px + env(safe-area-inset-top)); }
+  .oc-head-hero { background:var(--gradient); padding:22px 20px; position:sticky; top:var(--hdr-h); z-index:99; overflow:hidden; display:flex; flex-wrap:wrap; align-items:center; transition:padding 0.18s cubic-bezier(0.4,0,0.2,1); }
+  .oc-back { display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.16); border:none; color:#fff; font-family:'Montserrat',sans-serif; font-size:11.5px; font-weight:700; padding:7px 13px; border-radius:20px; margin-bottom:14px; letter-spacing:0.04em; cursor:pointer; flex:0 0 auto; transition:padding 0.18s, margin 0.18s; }
+  .oc-back svg { width:13px; height:13px; stroke:#fff; stroke-width:2.6; fill:none; flex-shrink:0; }
+  .oc-title { font-family:'Montserrat',sans-serif; font-size:25px; font-weight:800; color:#fff; letter-spacing:-0.02em; line-height:1.05; position:relative; flex:0 0 100%; min-width:0; transition:font-size 0.18s; }
   .oc-title .light { display:block; font-size:14px; font-weight:500; color:rgba(255,255,255,0.85); margin-top:6px; letter-spacing:0; }
+
+  /* Compact state — one line, ~52px, so the lines being counted keep the screen. */
+  .oc-head-hero.compact { padding:9px 16px; }
+  .oc-head-hero.compact .oc-back { font-size:0; gap:0; padding:7px 8px; margin:0 10px 0 0; }
+  .oc-head-hero.compact .oc-title { flex:1 1 auto; font-size:15px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .oc-head-hero.compact .oc-title .light { display:inline; font-size:11px; margin:0 0 0 8px; }
+  .oc-mini { display:none; flex:0 0 auto; margin-left:10px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:800; color:#fff; background:rgba(255,255,255,0.18); border-radius:999px; padding:5px 11px; letter-spacing:0.02em; white-space:nowrap; }
+  .oc-head-hero.compact .oc-mini { display:block; }
+  .oc-hero-bar { position:absolute; left:0; right:0; bottom:0; height:3px; background:rgba(255,255,255,0.18); opacity:0; transition:opacity 0.18s; }
+  .oc-head-hero.compact .oc-hero-bar { opacity:1; }
+  .oc-hero-fill { height:100%; width:0%; background:#fff; transition:width 0.25s; }
 
   .oc-card { background:var(--white); border-radius:var(--radius); border:1px solid var(--border); box-shadow:var(--shadow-sm); padding:16px 17px; margin-bottom:11px; border-left:4px solid var(--oc-amber); cursor:pointer; }
   .oc-card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:14px; }
@@ -306,11 +319,11 @@
   .oc-group { font-family:'Montserrat',sans-serif; font-size:10.5px; font-weight:800; letter-spacing:0.13em; text-transform:uppercase; color:var(--blue); padding:16px 2px 9px; display:flex; align-items:center; gap:9px; }
   .oc-group::after { content:''; flex:1; height:1px; background:var(--border); }
 
-  .oc-prog { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:14px 15px; margin-bottom:12px; box-shadow:var(--shadow-sm); }
-  .oc-prog-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px; }
-  .oc-prog-n { font-family:'Montserrat',sans-serif; font-size:15px; font-weight:800; color:var(--text); }
-  .oc-prog-r { font-family:'Montserrat',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text3); }
-  .oc-bar { height:6px; border-radius:999px; background:var(--border); overflow:hidden; margin-bottom:11px; }
+  .oc-prog { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:10px 13px; margin-bottom:10px; box-shadow:var(--shadow-sm); }
+  .oc-prog-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:7px; }
+  .oc-prog-n { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:800; color:var(--text); }
+  .oc-prog-r { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text3); }
+  .oc-bar { height:4px; border-radius:999px; background:var(--border); overflow:hidden; margin-bottom:8px; }
   .oc-fill { height:100%; background:var(--gradient); border-radius:999px; transition:width 0.25s; }
   .oc-chips { display:flex; gap:6px; flex-wrap:wrap; }
   .oc-chip { font-family:'Montserrat',sans-serif; font-size:9.5px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; padding:4px 9px; border-radius:20px; border:1px solid; }
@@ -724,6 +737,8 @@
   <div class="oc-head-hero">
     <button class="oc-back" onclick="showPage('deliveries')"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Deliveries</button>
     <div class="oc-title" id="ocCheckTitle">—<span class="light" id="ocCheckSub">—</span></div>
+    <div class="oc-mini" id="ocMini">—</div>
+    <div class="oc-hero-bar"><div class="oc-hero-fill" id="ocHeroFill"></div></div>
   </div>
   <div class="section">
     <div class="oc-prog">
@@ -1437,7 +1452,10 @@ function renderOrderCheck(preserveFocus) {
   const p = ocCdfProgress(d);
   document.getElementById('ocProgN').textContent = p.done + ' of ' + p.total + ' lines checked';
   document.getElementById('ocProgR').textContent = p.remaining > 0 ? p.remaining + ' left' : 'All checked';
-  document.getElementById('ocProgFill').style.width = (p.total ? Math.round(p.done / p.total * 100) : 0) + '%';
+  const pct = (p.total ? Math.round(p.done / p.total * 100) : 0) + '%';
+  document.getElementById('ocProgFill').style.width = pct;
+  document.getElementById('ocHeroFill').style.width = pct;
+  document.getElementById('ocMini').textContent = p.done + '/' + p.total;
 
   // Chips: "complete" covers every fully-received line; exceptions listed separately so
   // the categories never overlap and the numbers always sum to lines checked.
@@ -1607,7 +1625,15 @@ function showPage(page) {
   else if (page === 'deliveries') { document.getElementById('pageDeliveries').classList.add('active'); document.getElementById('tabSettings').classList.add('active'); renderDeliveryList(); }
   else if (page === 'ordercheck') { document.getElementById('pageOrderCheck').classList.add('active'); document.getElementById('tabSettings').classList.add('active'); renderOrderCheck(); }
   ocUpdateJump();
+  ocSyncHero();
 }
+
+// Compact the pinned hero once the page has scrolled past it.
+function ocSyncHero() {
+  const on = window.scrollY > 40;
+  document.querySelectorAll('.oc-head-hero').forEach(h => h.classList.toggle('compact', on));
+}
+window.addEventListener('scroll', ocSyncHero, { passive: true });
 
 function onSearch() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
@@ -2371,7 +2397,8 @@ async function exportOrderCheck() {
     tApproved += it.approved; tGood += g; tDmg += dm;
     if (st.variance < 0) tShort += -st.variance;
     if (st.variance > 0) tOver  +=  st.variance;
-    ws.addRow([i + 1, numifyCode(it.code), it.desc, it.approved, g, dm, st.variance, st.label, e.note || '']);
+    const ocRow = ws.addRow([i + 1, numifyCode(it.code), it.desc, it.approved, g, dm, st.variance, st.label, e.note || '']);
+    ocRow.getCell(2).numFmt = '0';   // Product code as plain integer — never scientific notation
   });
 
   ws.addRow([]);
@@ -2395,7 +2422,10 @@ async function exportOrderCheck() {
   if (chk.extras.length === 0) {
     wsX.addRow(['', 'No extra items reported', '', '', '', '']);
   } else {
-    chk.extras.forEach((x, i) => wsX.addRow([i + 1, numifyCode(x.code), x.desc || '', Number(x.good) || 0, Number(x.dmg) || 0, x.note || '']));
+    chk.extras.forEach((x, i) => {
+      const xr = wsX.addRow([i + 1, numifyCode(x.code), x.desc || '', Number(x.good) || 0, Number(x.dmg) || 0, x.note || '']);
+      xr.getCell(2).numFmt = '0';   // Product code as plain integer
+    });
   }
   wsX.columns = [{width:6},{width:18},{width:46},{width:12},{width:12},{width:34}];
 
