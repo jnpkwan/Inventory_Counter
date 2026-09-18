@@ -108,9 +108,17 @@
   .hero-step-label { position: relative; margin-top: 12px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); }
 
   /* SESSION BANNER */
-  .session-banner { background: var(--gradient); border-radius: var(--radius); padding: 18px; margin-bottom: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; position: relative; overflow: hidden; box-shadow: var(--shadow); }
-  .session-banner::before { content: ''; position: absolute; left: -20px; bottom: -30px; width: 120px; height: 120px; background-image: var(--tree); background-size: contain; background-repeat: no-repeat; background-position: center; filter: brightness(0) invert(1); opacity: 0.08; pointer-events: none; }
-  .session-banner::after { content: ''; position: absolute; right: -30px; bottom: -40px; width: 130px; height: 130px; background: radial-gradient(circle, rgba(34,167,73,0.22), transparent 70%); border-radius: 50%; }
+  .session-banner { background: var(--gradient); padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; position: sticky; top: var(--hdr-h); z-index: 99; overflow: hidden; transition: padding 0.18s cubic-bezier(0.4,0,0.2,1); }
+  /* Compact on scroll — matches the Order Check header. Store and period stay; they are what you check against while counting. */
+  .session-banner.compact { padding: 9px 20px; gap: 0 14px; }
+  .session-banner.compact::before, .session-banner.compact::after { opacity: 0; }
+  .session-banner.compact > div { padding: 0; }
+  .session-banner.compact > div:nth-child(1), .session-banner.compact > div:nth-child(4) { display: none; }
+  .session-banner.compact > div:nth-child(3) { order: -1; }
+  .session-banner.compact .sb-label { display: none; }
+  .session-banner.compact .sb-value { font-size: 13px; }
+  .session-banner::before { content: ''; position: absolute; left: -18px; bottom: -34px; width: 118px; height: 118px; background-image: var(--tree); background-size: contain; background-repeat: no-repeat; background-position: center; filter: brightness(0) invert(1); opacity: 0.08; pointer-events: none; }
+  .session-banner::after { content: ''; position: absolute; right: -34px; bottom: -44px; width: 134px; height: 134px; background: radial-gradient(circle, rgba(34,167,73,0.22), transparent 70%); border-radius: 50%; }
   .sb-label { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.13em; margin-bottom: 4px; position: relative; }
   .sb-value { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; position: relative; }
   .sb-value.green { color: #6EE29A; }
@@ -530,8 +538,7 @@
 
 <!-- PAGE 2: COUNT -->
 <div class="page" id="pageCount">
-  <div class="section">
-    <div class="session-banner">
+  <div class="session-banner">
       <div>
         <div class="sb-label">Merchandiser</div>
         <div class="sb-value" id="siName">— not set —</div>
@@ -549,7 +556,7 @@
         <div class="sb-value" id="siDateTime">—</div>
       </div>
     </div>
-
+  <div class="section">
     <div class="add-panel">
       <div class="add-panel-title">
         <div class="add-icon">+</div>
@@ -609,8 +616,7 @@
 
 <!-- PAGE 3: DAMAGES -->
 <div class="page" id="pageDamages">
-  <div class="section">
-    <div class="session-banner">
+  <div class="session-banner">
       <div>
         <div class="sb-label">Merchandiser</div>
         <div class="sb-value" id="dmName">— not set —</div>
@@ -628,7 +634,7 @@
         <div class="sb-value" id="dmDateTime">—</div>
       </div>
     </div>
-
+  <div class="section">
     <div class="add-panel">
       <div class="add-panel-title">
         <div class="add-icon">⚠️</div>
@@ -738,7 +744,6 @@
 <!-- PAGE: DELIVERIES LIST (Order Check) -->
 <div class="page" id="pageDeliveries">
   <div class="oc-head-hero">
-    <button class="oc-back" onclick="ocBackToSettings()"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Store Info</button>
     <div class="oc-title">Incoming<span class="light" id="ocListSub">—</span></div>
   </div>
   <div class="section">
@@ -1435,7 +1440,6 @@ function renderDeliveryList() {
   body.innerHTML = html;
 }
 
-function ocBackToSettings() { showPage('hub'); }
 
 // ===== Order Check screen =====
 function openOrderCheck(cdf) {
@@ -1736,7 +1740,7 @@ function renderHub() {
 // Compact the pinned hero once the page has scrolled past it.
 function ocSyncHero() {
   const on = window.scrollY > 40;
-  document.querySelectorAll('.oc-head-hero').forEach(h => h.classList.toggle('compact', on));
+  document.querySelectorAll('.oc-head-hero, .session-banner').forEach(h => h.classList.toggle('compact', on));
 }
 window.addEventListener('scroll', ocSyncHero, { passive: true });
 
