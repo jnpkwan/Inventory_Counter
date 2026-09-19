@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17T14:48:42+08:00",
+  "updated": "2026-09-19T18:06:33+08:00",
   "deliveries": [
     {
       "cdf": "CDF4432-755",
@@ -5952,6 +5952,258 @@
         {
           "code": "2080101153377",
           "desc": "CASTER SWIVEL HAUSMANN 24040 FC RUBBER 1.5IN.",
+          "approved": 12
+        }
+      ]
+    },
+    {
+      "cdf": "CDF4532-56",
+      "store": "DAHICAN",
+      "date": "2026-09-18",
+      "items": [
+        {
+          "code": "2080100989489",
+          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
+          "approved": 40
+        },
+        {
+          "code": "2080100937794",
+          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
+          "approved": 800
+        },
+        {
+          "code": "2080101090160",
+          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
+          "approved": 10
+        },
+        {
+          "code": "2080101018997",
+          "desc": "PANIC EXIT BAR HAUSMANN PHO0122 1510P PUSH TYPE 17X9X105CM SILVER STEEL BAR 1050MM",
+          "approved": 6
+        },
+        {
+          "code": "2080100937640",
+          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 4MM METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080100937749",
+          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
+          "approved": 100
+        },
+        {
+          "code": "2080100937329",
+          "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
+          "approved": 100
+        },
+        {
+          "code": "2080101066219",
+          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 45
+        },
+        {
+          "code": "2080101066226",
+          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 45
+        },
+        {
+          "code": "2080101066233",
+          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 45
+        },
+        {
+          "code": "2080101066240",
+          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 45
+        },
+        {
+          "code": "2080100937428",
+          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
+          "approved": 50
+        },
+        {
+          "code": "2080101031255",
+          "desc": "DEMOLITION HAMMER 4139083 EINHELL TC-DH 1600/1",
+          "approved": 2
+        },
+        {
+          "code": "2080100909449",
+          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
+          "approved": 3
+        },
+        {
+          "code": "2080100909616",
+          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
+          "approved": 5
+        },
+        {
+          "code": "2080100937008",
+          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
+          "approved": 50
+        },
+        {
+          "code": "2080100937138",
+          "desc": "BIT FORSTNER HAUSMANN 22MM",
+          "approved": 50
+        },
+        {
+          "code": "2080100937237",
+          "desc": "BLADE DIAMOND HAUSMANN 105X1.2/1.7X5X20 CONTINUOUS",
+          "approved": 25
+        },
+        {
+          "code": "2080100937299",
+          "desc": "CUP BRUSH HAUSMANN CUP BRUSH-CRIMPED",
+          "approved": 20
+        },
+        {
+          "code": "2080100937466",
+          "desc": "DRILL BIT HAUSMANN LI 7MM MASONRY",
+          "approved": 25
+        },
+        {
+          "code": "2080100937817",
+          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
+          "approved": 50
+        },
+        {
+          "code": "2080101008349",
+          "desc": "DOOR CLOSER HAUSMANN OS #602 25-45KG SILVER",
+          "approved": 12
+        },
+        {
+          "code": "2080101008363",
+          "desc": "DOOR CLOSER HAUSMANN DHO0423-602 25-45KG 148X37X57.5MM BLACK ALUMINUM",
+          "approved": 8
+        },
+        {
+          "code": "2080101008394",
+          "desc": "DOOR CLOSER HAUSMANN GY WNS-02 25KG ALUMINUM",
+          "approved": 20
+        },
+        {
+          "code": "2080101018799",
+          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
+          "approved": 3
+        },
+        {
+          "code": "2080101066257",
+          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 27
+        },
+        {
+          "code": "2080101066264",
+          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 27
+        },
+        {
+          "code": "2080101114361",
+          "desc": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
+          "approved": 50
+        },
+        {
+          "code": "2080101114880",
+          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
+          "approved": 50
+        },
+        {
+          "code": "2080101115016",
+          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
+          "approved": 25
+        },
+        {
+          "code": "2080101115092",
+          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
+          "approved": 50
+        },
+        {
+          "code": "2080101153230",
+          "desc": "CASTER SWIVEL HAUSMANN 24025NY FC NYLON 2.5CM",
+          "approved": 12
+        },
+        {
+          "code": "2080101153254",
+          "desc": "CASTER SWIVEL HAUSMANN 24040NY FC NYLON 1.5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153261",
+          "desc": "CASTER SWIVEL HAUSMANN 24050NY FC NYLON 2IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153308",
+          "desc": "CASTER FIXED HAUSMANN 24040NYF FC NYLON 1.5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153339",
+          "desc": "CASTER SWIVEL HAUSMANN 24040NYB FC NYLON WITH BRAKE 1.5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153346",
+          "desc": "CASTER SWIVEL HAUSMANN 24050NYB FC NYLON WITH BRAKE 2IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153353",
+          "desc": "CASTER SWIVEL HAUSMANN 24065NYB FC NYLON WITH BRAKE 2.5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153360",
+          "desc": "CASTER SWIVEL HAUSMANN 24075NYB FC NYLON WITH BRAKE 3IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153377",
+          "desc": "CASTER SWIVEL HAUSMANN 24040 FC RUBBER 1.5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153414",
+          "desc": "CASTER SWIVEL HAUSMANN 24075 FC RUBBER 3IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153452",
+          "desc": "CASTER SWIVEL HAUSMANN 11125 FC INDUSTRIAL RUBBER 5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153513",
+          "desc": "CASTER SWIVEL HAUSMANN 11160B FC INDUSTRIAL RUBBER WITH BRAKE 6IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153551",
+          "desc": "CASTER SWIVEL HAUSMANN 19075C FC CAST IRON 3IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153704",
+          "desc": "WHEEL SWIVEL HAUSMANN TWT-40 FC TWIN SCREW TYPE NYLON 1.5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101154817",
+          "desc": "CASTER FIXED HAUSMANN 24065F FC RUBBER 2.5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101154909",
+          "desc": "CASTER FIXED HAUSMANN 11160F FC INDUSTRIAL RUBBER 6IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101154978",
+          "desc": "CASTER SWIVEL HAUSMANN 24030J FC TPR WITH SINGLE BALL BEARING 1.25IN.",
+          "approved": 8
+        },
+        {
+          "code": "2080101155005",
+          "desc": "CASTER SWIVEL HAUSMANN 24040JB FC TPR SINGLE BALL BEARING WITH BRAKE 1.5IN.",
           "approved": 12
         }
       ]
@@ -14564,6 +14816,23 @@
       ]
     },
     {
+      "cdf": "CDF4534-210",
+      "store": "NABUNTURAN",
+      "date": "2026-09-18",
+      "items": [
+        {
+          "code": "2080100909616",
+          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
+          "approved": 5
+        },
+        {
+          "code": "2080100909746",
+          "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
+          "approved": 5
+        }
+      ]
+    },
+    {
       "cdf": "CDF4525-324",
       "store": "NAGA",
       "date": "2026-09-17",
@@ -14732,38 +15001,6 @@
           "code": "2080101115054",
           "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
           "approved": 100
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4438-442",
-      "store": "NAVAL",
-      "date": "2026-08-29",
-      "items": [
-        {
-          "code": "2080101020532",
-          "desc": "SPARE PARTS HAUSMANN RH1806 CARBON BRUSH",
-          "approved": 10
-        },
-        {
-          "code": "2080100983418",
-          "desc": "+S.O SPARE PARTS EINHELL",
-          "approved": 10
-        },
-        {
-          "code": "2080101019376",
-          "desc": "ANGLE GRINDER HAUSMANN SK ACCS. CARBON BRUSH (38)",
-          "approved": 10
-        },
-        {
-          "code": "2080101019475",
-          "desc": "CHOP SAW HAUSMANN HCOS355 CARBON BRUSH",
-          "approved": 10
-        },
-        {
-          "code": "2080101019871",
-          "desc": "SPARE PARTS HAUSMANN CHOP SAW HCOS355 ROTOR/ARMATEUR",
-          "approved": 1
         }
       ]
     },
@@ -17892,6 +18129,28 @@
       ]
     },
     {
+      "cdf": "CDF4535-58",
+      "store": "SAN FRANCISCO",
+      "date": "2026-09-18",
+      "items": [
+        {
+          "code": "2080100909616",
+          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
+          "approved": 4
+        },
+        {
+          "code": "2080100909746",
+          "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
+          "approved": 4
+        },
+        {
+          "code": "2080100937008",
+          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
+          "approved": 50
+        }
+      ]
+    },
+    {
       "cdf": "CDF4322-780",
       "store": "SAN JOSE - MINDORO",
       "date": "2026-07-28",
@@ -20793,6 +21052,23 @@
           "code": "2080101018553",
           "desc": "PADLOCK SOTER BC9050 50MM BRASS",
           "approved": 72
+        }
+      ]
+    },
+    {
+      "cdf": "CDF4533-348",
+      "store": "TAGUM",
+      "date": "2026-09-18",
+      "items": [
+        {
+          "code": "2080100909746",
+          "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
+          "approved": 5
+        },
+        {
+          "code": "2080100909616",
+          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
+          "approved": 5
         }
       ]
     },
