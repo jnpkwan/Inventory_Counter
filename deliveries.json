@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T15:15:15+08:00",
+  "updated": "2026-09-28T22:13:59+08:00",
   "deliveries": [
     {
       "cdf": "CDF4432-755",
@@ -81,7 +81,9 @@
           "desc": "DOOR CLOSER HAUSMANN GY WNS-02 25KG ALUMINUM",
           "approved": 20
         }
-      ]
+      ],
+      "truck": "PSAU2635919",
+      "boxes": 29
     },
     {
       "cdf": "CDF4465-474",
@@ -160,7 +162,8 @@
           "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "CBR1212"
     },
     {
       "cdf": "CDF4462-971",
@@ -176,93 +179,6 @@
           "code": "2080101020549",
           "desc": "SPARE PARTS HAUSMANN RH1806 FIELD COIL",
           "approved": 1
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4542-277",
-      "store": "APOPONG",
-      "date": "2026-09-21",
-      "items": [
-        {
-          "code": "2080100909616",
-          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
-          "approved": 4
-        },
-        {
-          "code": "2080100909746",
-          "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
-          "approved": 2
-        },
-        {
-          "code": "2080100937534",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 2.5MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937565",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 3.5MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937305",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937794",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937756",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101019437",
-          "desc": "BLOWER HAUSMANN EBHS032021 CF302E",
-          "approved": 4
-        },
-        {
-          "code": "2080101018775",
-          "desc": "NFS-STORAGE KEY SOTER STEEL BLACK WALL MOUNTABLE",
-          "approved": 8
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 80
-        },
-        {
-          "code": "2080101114361",
-          "desc": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114880",
-          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114934",
-          "desc": "ACORN ENDS SLICK AE12 12MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 3
         }
       ]
     },
@@ -326,7 +242,9 @@
           "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
           "approved": 10
         }
-      ]
+      ],
+      "truck": "WFHU1369137",
+      "boxes": 5
     },
     {
       "cdf": "CDF3983-429",
@@ -383,7 +301,9 @@
           "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "INBU3734521",
+      "boxes": 5
     },
     {
       "cdf": "CDF4493-663",
@@ -857,7 +777,8 @@
           "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 12.7X0.5X3100M SS201 ROUND",
           "approved": 40
         }
-      ]
+      ],
+      "truck": "INBU 3698949"
     },
     {
       "cdf": "CDF4196-219",
@@ -869,7 +790,8 @@
           "desc": "VAULT FIRE RATED SOTER VSS0820 FP1802E 530X460X470MM",
           "approved": 4
         }
-      ]
+      ],
+      "truck": "PSAU 2538483"
     },
     {
       "cdf": "CDF4490-90",
@@ -1228,89 +1150,9 @@
           "desc": "VAULT ELECTRONIC SOTER VSS1019 E4501E 200X310X200",
           "approved": 3
         }
-      ]
-    },
-    {
-      "cdf": "CDF4545-430",
-      "store": "BAJADA",
-      "date": "2026-09-21",
-      "items": [
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 5
-        },
-        {
-          "code": "2080100937152",
-          "desc": "BIT FORSTNER HAUSMANN 35MM",
-          "approved": 40
-        },
-        {
-          "code": "2080100937138",
-          "desc": "BIT FORSTNER HAUSMANN 22MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100909746",
-          "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
-          "approved": 5
-        },
-        {
-          "code": "2080101153421",
-          "desc": "CASTER FIXED HAUSMANN 24050F FC RUBBER 2IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080101153483",
-          "desc": "CASTER FIXED HAUSMANN 11125F FC INDUSTRIAL RUBBER 5IN.",
-          "approved": 6
-        },
-        {
-          "code": "2080101154909",
-          "desc": "CASTER FIXED HAUSMANN 11160F FC INDUSTRIAL RUBBER 6IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153230",
-          "desc": "CASTER SWIVEL HAUSMANN 24025NY FC NYLON 2.5CM",
-          "approved": 48
-        },
-        {
-          "code": "2080101153605",
-          "desc": "CASTER SWIVEL HAUSMANN 19065CB FC CAST IRON WITH BRAKE 2.5IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080100937732",
-          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801106 102X3X16MM T-27 FOR METAL",
-          "approved": 100
-        },
-        {
-          "code": "2080101008882",
-          "desc": "DOOR STOPPER HAUSMANN C584 AB",
-          "approved": 15
-        },
-        {
-          "code": "2080101008165",
-          "desc": "DOOR CATCH HAUSMANN DHW1022-C758 MATTE BLACK ZINC ALLOY+STEEL",
-          "approved": 30
-        },
-        {
-          "code": "2080100937275",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61318009 40 180X25 FOR WOOD",
-          "approved": 20
-        },
-        {
-          "code": "2080100937398",
-          "desc": "DRILL BIT HAUSMANN 8MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080101008349",
-          "desc": "DOOR CLOSER HAUSMANN OS #602 25-45KG SILVER",
-          "approved": 16
-        }
-      ]
+      ],
+      "truck": "WFHU1019890",
+      "boxes": 10
     },
     {
       "cdf": "CDF4480-671",
@@ -2069,7 +1911,9 @@
           "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 2.5MM METAL 2S",
           "approved": 25
         }
-      ]
+      ],
+      "truck": "MAV7990",
+      "boxes": 5
     },
     {
       "cdf": "CDF4263-380",
@@ -2196,7 +2040,8 @@
           "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 10MM METAL",
           "approved": 25
         }
-      ]
+      ],
+      "truck": "INBU 3694305"
     },
     {
       "cdf": "CDF4519-452",
@@ -2582,408 +2427,6 @@
           "code": "2080101155005",
           "desc": "CASTER SWIVEL HAUSMANN 24040JB FC TPR SINGLE BALL BEARING WITH BRAKE 1.5IN.",
           "approved": 24
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4444-101",
-      "store": "BAUANG",
-      "date": "2026-08-31",
-      "items": [
-        {
-          "code": "2080100909449",
-          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
-          "approved": 10
-        },
-        {
-          "code": "2080101066196",
-          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM CHROME",
-          "approved": 50
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101115061",
-          "desc": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101115092",
-          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100909494",
-          "desc": "ANGLE GRINDER EINHELL 4430854 TE-AG 100",
-          "approved": 3
-        },
-        {
-          "code": "2080100909760",
-          "desc": "METAL CUTTING EINHELL 4503137 TC-MC 355",
-          "approved": 2
-        },
-        {
-          "code": "2080101145419",
-          "desc": "PLANER HAUSMANN HEP600 YELLOW 600W",
-          "approved": 4
-        },
-        {
-          "code": "2080101018522",
-          "desc": "PADLOCK SOTER BC9025 25MM BRASS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018539",
-          "desc": "PADLOCK SOTER BC9030 30MM BRASS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018553",
-          "desc": "PADLOCK SOTER BC9050 50MM BRASS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018560",
-          "desc": "PADLOCK SOTER BC9060 60MM BRASS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018577",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9020*2 20MM BRASS 2PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018584",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9025*2 25MM BRASS 2PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018591",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9030*2 30MM BRASS 2PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018607",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*2 40MM BRASS 2PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018614",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9020*4 20MM BRASS 4PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018638",
-          "desc": "PADLOCK SOTER PSB1119 BC9030L 30MM BRASS LONG SHACKLE",
-          "approved": 24
-        },
-        {
-          "code": "2080101018645",
-          "desc": "PADLOCK SOTER PSB1119 BC9040L 40MM BRASS LONG SHACKLE",
-          "approved": 24
-        },
-        {
-          "code": "2080101018652",
-          "desc": "PADLOCK SOTER PSB1119 BC9050L 50MM BRASS LONG SHACKLE",
-          "approved": 24
-        },
-        {
-          "code": "2080101018669",
-          "desc": "PADLOCK SOTER QC0230 LAMINATED 30MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018676",
-          "desc": "PADLOCK SOTER QC0240 LAMINATED 40MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018683",
-          "desc": "PADLOCK SOTER QC0250 LAMINATED 50MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018706",
-          "desc": "PADLOCK SOTER LS3250 DISC MECHANISM IRON 50MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018713",
-          "desc": "PADLOCK SOTER LS3260 DISC MECHANISM IRON 60MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018720",
-          "desc": "PADLOCK SOTER LS3240L LONG SHACKLE DISC MECHANISM IRON 40MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 3
-        },
-        {
-          "code": "2080101018782",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4501E 200X310X200",
-          "approved": 3
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 40
-        },
-        {
-          "code": "2080101115115",
-          "desc": "BRACKET SLICK WB005-25 25MM SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101115139",
-          "desc": "BRACKET SLICK WB005-25 25MM ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101114897",
-          "desc": "FLANGE SLICK HFR19 19MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114903",
-          "desc": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 30
-        },
-        {
-          "code": "2080100936995",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 2MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937565",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 3.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937022",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 5MM METAL",
-          "approved": 25
-        },
-        {
-          "code": "2080100937503",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS (2,3,4,5,6,8MM) 6S METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937480",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS (1-10MM) 10S METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937459",
-          "desc": "DRILL BIT HAUSMANN LI 4MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937411",
-          "desc": "DRILL BIT HAUSMANN LI 6MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937466",
-          "desc": "DRILL BIT HAUSMANN LI 7MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937473",
-          "desc": "DRILL BIT HAUSMANN LI 8MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 40
-        },
-        {
-          "code": "2080100937626",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 2MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937077",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 2.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937633",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 3.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937640",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 4MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937091",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 4.5MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937343",
-          "desc": "DRILL BIT HAUSMANN 4MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937350",
-          "desc": "DRILL BIT HAUSMANN 5MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937367",
-          "desc": "DRILL BIT HAUSMANN 6MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937398",
-          "desc": "DRILL BIT HAUSMANN 8MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937374",
-          "desc": "DRILL BIT HAUSMANN 10MM TRIANGLE SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937312",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937305",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937329",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
-          "approved": 25
-        },
-        {
-          "code": "2080100937794",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937817",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937725",
-          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801105 102X3X16MM T-27 FOR STONE",
-          "approved": 50
-        },
-        {
-          "code": "2080100937732",
-          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801106 102X3X16MM T-27 FOR METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937749",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937756",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937268",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61311002 30 110X20 FOR WOOD",
-          "approved": 20
-        },
-        {
-          "code": "2080100937275",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61318009 40 180X25 FOR WOOD",
-          "approved": 20
-        },
-        {
-          "code": "2080101008394",
-          "desc": "DOOR CLOSER HAUSMANN GY WNS-02 25KG ALUMINUM",
-          "approved": 10
-        },
-        {
-          "code": "2080101008332",
-          "desc": "DOOR CLOSER HAUSMANN OS #603 40-65KG SILVER",
-          "approved": 8
-        },
-        {
-          "code": "2080101018997",
-          "desc": "PANIC EXIT BAR HAUSMANN PHO0122 1510P PUSH TYPE 17X9X105CM SILVER STEEL BAR 1050MM",
-          "approved": 6
-        },
-        {
-          "code": "2080101066240",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 27
-        },
-        {
-          "code": "2080101066172",
-          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM WHITE",
-          "approved": 50
-        },
-        {
-          "code": "2080100909395",
-          "desc": "BATTERY EINHELL 4511396 18V 4.0AH PXC2",
-          "approved": 4
-        },
-        {
-          "code": "2080101007960",
-          "desc": "BARREL BOLT HAUSMANN C605-3 AB 33X87MM",
-          "approved": 28
-        },
-        {
-          "code": "2080101008004",
-          "desc": "BARREL BOLT HAUSMANN C605-3 BSN 33X87MM",
-          "approved": 28
-        },
-        {
-          "code": "2080101007991",
-          "desc": "BARREL BOLT HAUSMANN C605-4 AB 33X112MM",
-          "approved": 28
-        },
-        {
-          "code": "2080101008363",
-          "desc": "DOOR CLOSER HAUSMANN DHO0423-602 25-45KG 148X37X57.5MM BLACK ALUMINUM",
-          "approved": 8
         }
       ]
     },
@@ -3376,236 +2819,6 @@
           "code": "2080100909746",
           "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
           "approved": 4
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4355-968",
-      "store": "BOHOL",
-      "date": "2026-08-05",
-      "items": [
-        {
-          "code": "2080101090160",
-          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
-          "approved": 10
-        },
-        {
-          "code": "2080101090146",
-          "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
-          "approved": 10
-        },
-        {
-          "code": "2080101019635",
-          "desc": "HEAT GUN HAUSMANN HGHS032021 RF20001",
-          "approved": 5
-        },
-        {
-          "code": "2080101018782",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4501E 200X310X200",
-          "approved": 4
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 2
-        },
-        {
-          "code": "2080101018805",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 195-RE 195X437X380 HOTEL",
-          "approved": 4
-        },
-        {
-          "code": "2080100937237",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.2/1.7X5X20 CONTINUOUS",
-          "approved": 25
-        },
-        {
-          "code": "2080100937220",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
-          "approved": 25
-        },
-        {
-          "code": "2080100937794",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937251",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.2/2.2X7.5X20 DE LUXE",
-          "approved": 25
-        },
-        {
-          "code": "2080101145419",
-          "desc": "PLANER HAUSMANN HEP600 YELLOW 600W",
-          "approved": 4
-        },
-        {
-          "code": "2080101145426",
-          "desc": "DEMOLITION HAMMER HAUSMANN HCH25 YELLOW 12500W",
-          "approved": 2
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4547-145",
-      "store": "BUHANGIN",
-      "date": "2026-09-22",
-      "items": [
-        {
-          "code": "2080100909746",
-          "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
-          "approved": 5
-        },
-        {
-          "code": "2080100909616",
-          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
-          "approved": 4
-        },
-        {
-          "code": "2080101008394",
-          "desc": "DOOR CLOSER HAUSMANN GY WNS-02 25KG ALUMINUM",
-          "approved": 20
-        },
-        {
-          "code": "2080100937589",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 4MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937640",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 4MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937367",
-          "desc": "DRILL BIT HAUSMANN 6MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937268",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61311002 30 110X20 FOR WOOD",
-          "approved": 40
-        },
-        {
-          "code": "2080100937275",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61318009 40 180X25 FOR WOOD",
-          "approved": 20
-        },
-        {
-          "code": "2080101018850",
-          "desc": "VAULT FIRE RATED SOTER VSS0820 FP1803E 600X480X470MM",
-          "approved": 2
-        },
-        {
-          "code": "2080101114965",
-          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114897",
-          "desc": "FLANGE SLICK HFR19 19MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937220",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
-          "approved": 50
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4549-313",
-      "store": "BUHANGIN",
-      "date": "2026-09-22",
-      "items": [
-        {
-          "code": "2080101153605",
-          "desc": "CASTER SWIVEL HAUSMANN 19065CB FC CAST IRON WITH BRAKE 2.5IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080101153551",
-          "desc": "CASTER SWIVEL HAUSMANN 19075C FC CAST IRON 3IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080101154985",
-          "desc": "CASTER SWIVEL HAUSMANN 24040J FC TPR WITH SINGLE BALL BEARING 1.5IN.",
-          "approved": 18
-        },
-        {
-          "code": "2080101155005",
-          "desc": "CASTER SWIVEL HAUSMANN 24040JB FC TPR SINGLE BALL BEARING WITH BRAKE 1.5IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080101154824",
-          "desc": "CASTER SWIVEL HAUSMANN 24050B FC RUBBER WITH BRAKE 2IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080101154848",
-          "desc": "CASTER SWIVEL HAUSMANN 24075B FC RUBBER WITH BRAKE 3IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080100909616",
-          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
-          "approved": 1
-        },
-        {
-          "code": "2080100909746",
-          "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
-          "approved": 1
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4554-557",
-      "store": "BUHANGIN",
-      "date": "2026-09-22",
-      "items": [
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 50
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 2
-        },
-        {
-          "code": "2080101018560",
-          "desc": "PADLOCK SOTER BC9060 60MM BRASS",
-          "approved": 36
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4555-899",
-      "store": "BUHANGIN",
-      "date": "2026-09-22",
-      "items": [
-        {
-          "code": "2080101019376",
-          "desc": "ANGLE GRINDER HAUSMANN SK ACCS. CARBON BRUSH (38)",
-          "approved": 10
         }
       ]
     },
@@ -4246,7 +3459,9 @@
           "desc": "DRILL BIT HAUSMANN LI 8MM MASONRY",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "DRYU3143369",
+      "boxes": 23
     },
     {
       "cdf": "CDF4539-178",
@@ -4615,7 +3830,8 @@
           "desc": "BOX CASH SOTER CB-25 90X250X180MM MATT BLACK",
           "approved": 10
         }
-      ]
+      ],
+      "truck": "NAG4197"
     },
     {
       "cdf": "CDF4459-913",
@@ -4677,7 +3893,9 @@
           "desc": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "CCP3696",
+      "boxes": 15
     },
     {
       "cdf": "CDF4351-552",
@@ -4779,7 +3997,9 @@
           "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "CBR 9894",
+      "boxes": 12
     },
     {
       "cdf": "CDF4406-719",
@@ -5155,7 +4375,9 @@
           "desc": "DEMOLITION HAMMER HAUSMANN HCH25 YELLOW 12500W",
           "approved": 2
         }
-      ]
+      ],
+      "truck": "CCE 2722",
+      "boxes": 18
     },
     {
       "cdf": "CDF4427-540",
@@ -5181,288 +4403,6 @@
           "code": "2080101066158",
           "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
           "approved": 100
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4479-222",
-      "store": "CAPAS",
-      "date": "2026-09-08",
-      "items": [
-        {
-          "code": "2080100937008",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937077",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 2.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114965",
-          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066165",
-          "desc": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
-          "approved": 25
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115115",
-          "desc": "BRACKET SLICK WB005-25 25MM SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101114736",
-          "desc": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101066202",
-          "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
-          "approved": 25
-        },
-        {
-          "code": "2080101008257",
-          "desc": "DOOR CHAIN AND BOLT HAUSMANN C715 AB",
-          "approved": 20
-        },
-        {
-          "code": "2080101008394",
-          "desc": "DOOR CLOSER HAUSMANN GY WNS-02 25KG ALUMINUM",
-          "approved": 20
-        },
-        {
-          "code": "2080101018522",
-          "desc": "PADLOCK SOTER BC9025 25MM BRASS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018546",
-          "desc": "PADLOCK SOTER BC9040 40MM BRASS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018607",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*2 40MM BRASS 2PCS",
-          "approved": 18
-        },
-        {
-          "code": "2080101018621",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018638",
-          "desc": "PADLOCK SOTER PSB1119 BC9030L 30MM BRASS LONG SHACKLE",
-          "approved": 24
-        },
-        {
-          "code": "2080101018676",
-          "desc": "PADLOCK SOTER QC0240 LAMINATED 40MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018683",
-          "desc": "PADLOCK SOTER QC0250 LAMINATED 50MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018690",
-          "desc": "PADLOCK SOTER LS3240 DISC MECHANISM IRON 40MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018706",
-          "desc": "PADLOCK SOTER LS3250 DISC MECHANISM IRON 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018720",
-          "desc": "PADLOCK SOTER LS3240L LONG SHACKLE DISC MECHANISM IRON 40MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018737",
-          "desc": "PADLOCK SOTER LS3250L LONG SHACKLE DISC MECHANISM IRON 50MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018744",
-          "desc": "PADLOCK SOTER LS3260L LONG SHACKLE DISC MECHANISM IRON 60MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018768",
-          "desc": "BOX CASH SOTER CB-25 90X250X180MM MATT BLACK",
-          "approved": 10
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 2
-        },
-        {
-          "code": "2080101114859",
-          "desc": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080100937442",
-          "desc": "DRILL BIT HAUSMANN LI 3MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080101115092",
-          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080100909449",
-          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
-          "approved": 3
-        },
-        {
-          "code": "2080101145426",
-          "desc": "DEMOLITION HAMMER HAUSMANN HCH25 YELLOW 12500W",
-          "approved": 2
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937060",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 1.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937169",
-          "desc": "BIT FORSTNER HAUSMANN 54MM",
-          "approved": 20
-        },
-        {
-          "code": "2080100937367",
-          "desc": "DRILL BIT HAUSMANN 6MM HEX SHANK TIN COATED GLASS",
-          "approved": 25
-        },
-        {
-          "code": "2080100937374",
-          "desc": "DRILL BIT HAUSMANN 10MM TRIANGLE SHANK TIN COATED GLASS",
-          "approved": 25
-        },
-        {
-          "code": "2080100937770",
-          "desc": "NUT SETTER HAUSMANN M8X50MM",
-          "approved": 25
-        },
-        {
-          "code": "2080100937763",
-          "desc": "LOCK INSTALLATION KIT HAUSMANN CARBON STEEL 54MM",
-          "approved": 30
-        },
-        {
-          "code": "2080100937794",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937817",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937725",
-          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801105 102X3X16MM T-27 FOR STONE",
-          "approved": 25
-        },
-        {
-          "code": "2080100937732",
-          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801106 102X3X16MM T-27 FOR METAL",
-          "approved": 25
-        },
-        {
-          "code": "2080100937749",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937756",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937268",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61311002 30 110X20 FOR WOOD",
-          "approved": 40
-        },
-        {
-          "code": "2080100937275",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61318009 40 180X25 FOR WOOD",
-          "approved": 30
-        },
-        {
-          "code": "2080100937282",
-          "desc": "CUP BRUSH HAUSMANN BOWL CUP BRUSH-TWIST KNOT",
-          "approved": 20
-        },
-        {
-          "code": "2080100937299",
-          "desc": "CUP BRUSH HAUSMANN CUP BRUSH-CRIMPED",
-          "approved": 20
-        },
-        {
-          "code": "2080101008370",
-          "desc": "DOOR CLOSER HAUSMANN DHO0423-603 40-65KG 186X44.5X67MM BLACK ALUMINUM",
-          "approved": 16
-        },
-        {
-          "code": "2080101008387",
-          "desc": "DOOR CLOSER HAUSMANN DHO0423-604 60-85KG 223X44.5X72.5MM BLACK ALUMINUM",
-          "approved": 16
-        },
-        {
-          "code": "2080101029160",
-          "desc": "DOOR CHAIN HAUSMANN C1100 BSN",
-          "approved": 30
         }
       ]
     },
@@ -5750,98 +4690,6 @@
       ]
     },
     {
-      "cdf": "CDF4518-408",
-      "store": "CATBALOGAN",
-      "date": "2026-09-16",
-      "items": [
-        {
-          "code": "2080100909449",
-          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
-          "approved": 5
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937220",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
-          "approved": 50
-        },
-        {
-          "code": "2080100937237",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.2/1.7X5X20 CONTINUOUS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937312",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937305",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937329",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937817",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937749",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937756",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101007977",
-          "desc": "BARREL BOLT HAUSMANN C605-2.5 AB 33X74MM",
-          "approved": 52
-        },
-        {
-          "code": "2080101007960",
-          "desc": "BARREL BOLT HAUSMANN C605-3 AB 33X87MM",
-          "approved": 56
-        },
-        {
-          "code": "2080101008257",
-          "desc": "DOOR CHAIN AND BOLT HAUSMANN C715 AB",
-          "approved": 40
-        },
-        {
-          "code": "2080101008271",
-          "desc": "DOOR CHAIN AND BOLT HAUSMANN DHW1022-C715 MATTE BLACK ZINC ALLOY",
-          "approved": 40
-        },
-        {
-          "code": "2080101018638",
-          "desc": "PADLOCK SOTER PSB1119 BC9030L 30MM BRASS LONG SHACKLE",
-          "approved": 36
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 80
-        }
-      ]
-    },
-    {
       "cdf": "CDF4111-218",
       "store": "COTABATO",
       "date": "2026-06-15",
@@ -5926,7 +4774,8 @@
           "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 3.5MM METAL 2S",
           "approved": 25
         }
-      ]
+      ],
+      "truck": "CCI4073"
     },
     {
       "cdf": "CDF4516-679",
@@ -6236,258 +5085,6 @@
       ]
     },
     {
-      "cdf": "CDF4532-56",
-      "store": "DAHICAN",
-      "date": "2026-09-18",
-      "items": [
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 40
-        },
-        {
-          "code": "2080100937794",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
-          "approved": 800
-        },
-        {
-          "code": "2080101090160",
-          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
-          "approved": 10
-        },
-        {
-          "code": "2080101018997",
-          "desc": "PANIC EXIT BAR HAUSMANN PHO0122 1510P PUSH TYPE 17X9X105CM SILVER STEEL BAR 1050MM",
-          "approved": 6
-        },
-        {
-          "code": "2080100937640",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 4MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937749",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
-          "approved": 100
-        },
-        {
-          "code": "2080100937329",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
-          "approved": 100
-        },
-        {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 45
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 45
-        },
-        {
-          "code": "2080101066233",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 45
-        },
-        {
-          "code": "2080101066240",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 45
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080101031255",
-          "desc": "DEMOLITION HAMMER 4139083 EINHELL TC-DH 1600/1",
-          "approved": 2
-        },
-        {
-          "code": "2080100909449",
-          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
-          "approved": 3
-        },
-        {
-          "code": "2080100909616",
-          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
-          "approved": 5
-        },
-        {
-          "code": "2080100937008",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937138",
-          "desc": "BIT FORSTNER HAUSMANN 22MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937237",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.2/1.7X5X20 CONTINUOUS",
-          "approved": 25
-        },
-        {
-          "code": "2080100937299",
-          "desc": "CUP BRUSH HAUSMANN CUP BRUSH-CRIMPED",
-          "approved": 20
-        },
-        {
-          "code": "2080100937466",
-          "desc": "DRILL BIT HAUSMANN LI 7MM MASONRY",
-          "approved": 25
-        },
-        {
-          "code": "2080100937817",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-          "approved": 50
-        },
-        {
-          "code": "2080101008349",
-          "desc": "DOOR CLOSER HAUSMANN OS #602 25-45KG SILVER",
-          "approved": 12
-        },
-        {
-          "code": "2080101008363",
-          "desc": "DOOR CLOSER HAUSMANN DHO0423-602 25-45KG 148X37X57.5MM BLACK ALUMINUM",
-          "approved": 8
-        },
-        {
-          "code": "2080101008394",
-          "desc": "DOOR CLOSER HAUSMANN GY WNS-02 25KG ALUMINUM",
-          "approved": 20
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 3
-        },
-        {
-          "code": "2080101066257",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 27
-        },
-        {
-          "code": "2080101066264",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 27
-        },
-        {
-          "code": "2080101114361",
-          "desc": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114880",
-          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 25
-        },
-        {
-          "code": "2080101115092",
-          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101153230",
-          "desc": "CASTER SWIVEL HAUSMANN 24025NY FC NYLON 2.5CM",
-          "approved": 12
-        },
-        {
-          "code": "2080101153254",
-          "desc": "CASTER SWIVEL HAUSMANN 24040NY FC NYLON 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153261",
-          "desc": "CASTER SWIVEL HAUSMANN 24050NY FC NYLON 2IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153308",
-          "desc": "CASTER FIXED HAUSMANN 24040NYF FC NYLON 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153339",
-          "desc": "CASTER SWIVEL HAUSMANN 24040NYB FC NYLON WITH BRAKE 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153346",
-          "desc": "CASTER SWIVEL HAUSMANN 24050NYB FC NYLON WITH BRAKE 2IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153353",
-          "desc": "CASTER SWIVEL HAUSMANN 24065NYB FC NYLON WITH BRAKE 2.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153360",
-          "desc": "CASTER SWIVEL HAUSMANN 24075NYB FC NYLON WITH BRAKE 3IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153377",
-          "desc": "CASTER SWIVEL HAUSMANN 24040 FC RUBBER 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153414",
-          "desc": "CASTER SWIVEL HAUSMANN 24075 FC RUBBER 3IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153452",
-          "desc": "CASTER SWIVEL HAUSMANN 11125 FC INDUSTRIAL RUBBER 5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153513",
-          "desc": "CASTER SWIVEL HAUSMANN 11160B FC INDUSTRIAL RUBBER WITH BRAKE 6IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153551",
-          "desc": "CASTER SWIVEL HAUSMANN 19075C FC CAST IRON 3IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153704",
-          "desc": "WHEEL SWIVEL HAUSMANN TWT-40 FC TWIN SCREW TYPE NYLON 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154817",
-          "desc": "CASTER FIXED HAUSMANN 24065F FC RUBBER 2.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154909",
-          "desc": "CASTER FIXED HAUSMANN 11160F FC INDUSTRIAL RUBBER 6IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154978",
-          "desc": "CASTER SWIVEL HAUSMANN 24030J FC TPR WITH SINGLE BALL BEARING 1.25IN.",
-          "approved": 8
-        },
-        {
-          "code": "2080101155005",
-          "desc": "CASTER SWIVEL HAUSMANN 24040JB FC TPR SINGLE BALL BEARING WITH BRAKE 1.5IN.",
-          "approved": 12
-        }
-      ]
-    },
-    {
       "cdf": "CDF4183-320",
       "store": "DAO",
       "date": "2026-06-26",
@@ -6621,74 +5218,9 @@
           "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 2MM METAL 2S",
           "approved": 50
         }
-      ]
-    },
-    {
-      "cdf": "CDF4434-915",
-      "store": "DAO - CAPIZ",
-      "date": "2026-08-29",
-      "items": [
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 80
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101115115",
-          "desc": "BRACKET SLICK WB005-25 25MM SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101115139",
-          "desc": "BRACKET SLICK WB005-25 25MM ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937688",
-          "desc": "FLAP DISC HAUSMANN FDHLX721-80201001 #40D 100X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937695",
-          "desc": "FLAP DISC HAUSMANN FDHLX721-80201002 #60D 100X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937701",
-          "desc": "FLAP DISC HAUSMANN FDHLX721-80201003 #80D 100X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100909449",
-          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
-          "approved": 6
-        }
-      ]
+      ],
+      "truck": "PSAU 3176692",
+      "boxes": 23
     },
     {
       "cdf": "CDF4353-936",
@@ -6699,363 +5231,6 @@
           "code": "2080101008332",
           "desc": "DOOR CLOSER HAUSMANN OS #603 40-65KG SILVER",
           "approved": 104
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4526-437",
-      "store": "DIPOLOG",
-      "date": "2026-09-17",
-      "items": [
-        {
-          "code": "2080100909616",
-          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
-          "approved": 10
-        },
-        {
-          "code": "2080100909746",
-          "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
-          "approved": 5
-        },
-        {
-          "code": "2080100909449",
-          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
-          "approved": 15
-        },
-        {
-          "code": "2080100937008",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937565",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 3.5MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937589",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 4MM METAL",
-          "approved": 100
-        },
-        {
-          "code": "2080100937404",
-          "desc": "DRILL BIT HAUSMANN LI 5MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937633",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 3.5MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937640",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 4MM METAL",
-          "approved": 100
-        },
-        {
-          "code": "2080100937206",
-          "desc": "BIT WOOD FLAT HAUSMANN 25MM HEX SHANK",
-          "approved": 50
-        },
-        {
-          "code": "2080100936926",
-          "desc": "BIT SCREWDRIVER HAUSMANN DOUBLE ENDED PH2X50MM 10s",
-          "approved": 40
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066233",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
-        },
-        {
-          "code": "2080101066240",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066257",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
-        },
-        {
-          "code": "2080101066264",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066202",
-          "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
-          "approved": 25
-        },
-        {
-          "code": "2080101087702",
-          "desc": "TUBE STAINLESS SLICK SQ 15X30X.5X3000MM OVAL CHROME ANTIQUE",
-          "approved": 48
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101115061",
-          "desc": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101115092",
-          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066165",
-          "desc": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114361",
-          "desc": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114736",
-          "desc": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114859",
-          "desc": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114880",
-          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114897",
-          "desc": "FLANGE SLICK HFR19 19MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114903",
-          "desc": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114910",
-          "desc": "FLANGE SLICK HFO OVAL ALUMINUM 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114934",
-          "desc": "ACORN ENDS SLICK AE12 12MM SILVER 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114965",
-          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937220",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
-          "approved": 100
-        },
-        {
-          "code": "2080100937237",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.2/1.7X5X20 CONTINUOUS",
-          "approved": 100
-        },
-        {
-          "code": "2080100937312",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937305",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937329",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937794",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937732",
-          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801106 102X3X16MM T-27 FOR METAL",
-          "approved": 100
-        },
-        {
-          "code": "2080100937756",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
-          "approved": 100
-        },
-        {
-          "code": "2080100937275",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61318009 40 180X25 FOR WOOD",
-          "approved": 20
-        },
-        {
-          "code": "2080101018515",
-          "desc": "PADLOCK SOTER BC9020 20MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018553",
-          "desc": "PADLOCK SOTER BC9050 50MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018607",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*2 40MM BRASS 2PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018621",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018638",
-          "desc": "PADLOCK SOTER PSB1119 BC9030L 30MM BRASS LONG SHACKLE",
-          "approved": 36
-        },
-        {
-          "code": "2080101018645",
-          "desc": "PADLOCK SOTER PSB1119 BC9040L 40MM BRASS LONG SHACKLE",
-          "approved": 36
-        },
-        {
-          "code": "2080101018720",
-          "desc": "PADLOCK SOTER LS3240L LONG SHACKLE DISC MECHANISM IRON 40MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018737",
-          "desc": "PADLOCK SOTER LS3250L LONG SHACKLE DISC MECHANISM IRON 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101066172",
-          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM WHITE",
-          "approved": 50
-        },
-        {
-          "code": "2080101066196",
-          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM CHROME",
-          "approved": 50
-        },
-        {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 80
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101153230",
-          "desc": "CASTER SWIVEL HAUSMANN 24025NY FC NYLON 2.5CM",
-          "approved": 12
-        },
-        {
-          "code": "2080101153254",
-          "desc": "CASTER SWIVEL HAUSMANN 24040NY FC NYLON 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153292",
-          "desc": "CASTER FIXED HAUSMANN 24030NYF FC NYLON 1.25IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153308",
-          "desc": "CASTER FIXED HAUSMANN 24040NYF FC NYLON 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153339",
-          "desc": "CASTER SWIVEL HAUSMANN 24040NYB FC NYLON WITH BRAKE 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153353",
-          "desc": "CASTER SWIVEL HAUSMANN 24065NYB FC NYLON WITH BRAKE 2.5IN.",
-          "approved": 15
-        },
-        {
-          "code": "2080101153377",
-          "desc": "CASTER SWIVEL HAUSMANN 24040 FC RUBBER 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153384",
-          "desc": "CASTER SWIVEL HAUSMANN 24050 FC RUBBER 2IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153421",
-          "desc": "CASTER FIXED HAUSMANN 24050F FC RUBBER 2IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153452",
-          "desc": "CASTER SWIVEL HAUSMANN 11125 FC INDUSTRIAL RUBBER 5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153506",
-          "desc": "CASTER SWIVEL HAUSMANN 11125B FC INDUSTRIAL RUBBER WITH BRAKE 5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154831",
-          "desc": "CASTER SWIVEL HAUSMANN 24065B FC RUBBER WITH BRAKE 2.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153261",
-          "desc": "CASTER SWIVEL HAUSMANN 24050NY FC NYLON 2IN.",
-          "approved": 12
         }
       ]
     },
@@ -7149,194 +5324,9 @@
           "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
           "approved": 50
         }
-      ]
-    },
-    {
-      "cdf": "CDF4524-395",
-      "store": "GENSAN",
-      "date": "2026-09-17",
-      "items": [
-        {
-          "code": "2080100937565",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 3.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937633",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 3.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937152",
-          "desc": "BIT FORSTNER HAUSMANN 35MM",
-          "approved": 40
-        },
-        {
-          "code": "2080100937169",
-          "desc": "BIT FORSTNER HAUSMANN 54MM",
-          "approved": 40
-        },
-        {
-          "code": "2080100937312",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937817",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-          "approved": 50
-        },
-        {
-          "code": "2080101007960",
-          "desc": "BARREL BOLT HAUSMANN C605-3 AB 33X87MM",
-          "approved": 14
-        },
-        {
-          "code": "2080101008189",
-          "desc": "MAGNETIC DOOR CATCH HAUSMANN C5312 BSN 40X73MM",
-          "approved": 24
-        },
-        {
-          "code": "2080101018621",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018645",
-          "desc": "PADLOCK SOTER PSB1119 BC9040L 40MM BRASS LONG SHACKLE",
-          "approved": 36
-        },
-        {
-          "code": "2080101018720",
-          "desc": "PADLOCK SOTER LS3240L LONG SHACKLE DISC MECHANISM IRON 40MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018737",
-          "desc": "PADLOCK SOTER LS3250L LONG SHACKLE DISC MECHANISM IRON 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018744",
-          "desc": "PADLOCK SOTER LS3260L LONG SHACKLE DISC MECHANISM IRON 60MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 4
-        },
-        {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066240",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066264",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066202",
-          "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
-          "approved": 25
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 80
-        },
-        {
-          "code": "2080101087702",
-          "desc": "TUBE STAINLESS SLICK SQ 15X30X.5X3000MM OVAL CHROME ANTIQUE",
-          "approved": 48
-        },
-        {
-          "code": "2080101115061",
-          "desc": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101114880",
-          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101145419",
-          "desc": "PLANER HAUSMANN HEP600 YELLOW 600W",
-          "approved": 8
-        },
-        {
-          "code": "2080101019529",
-          "desc": "CIRCULAR SAW HAUSMANN HCS190 PROF. 190MM 1300W",
-          "approved": 4
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 50
-        },
-        {
-          "code": "2080101114736",
-          "desc": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101090146",
-          "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
-          "approved": 10
-        },
-        {
-          "code": "2080101090160",
-          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
-          "approved": 10
-        },
-        {
-          "code": "2080101114361",
-          "desc": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114903",
-          "desc": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        }
-      ]
+      ],
+      "truck": "GLDU 3007740",
+      "boxes": 10
     },
     {
       "cdf": "CDF4531-802",
@@ -7662,7 +5652,9 @@
           "desc": "PANIC EXIT BAR HAUSMANN PHO0122 1510P PUSH TYPE 17X9X105CM SILVER STEEL BAR 1050MM",
           "approved": 6
         }
-      ]
+      ],
+      "truck": "GAOU2668330",
+      "boxes": 27
     },
     {
       "cdf": "CDF4508-392",
@@ -7786,7 +5778,9 @@
           "desc": "PRESSURE WASHER EINHELL TC-HP 130",
           "approved": 3
         }
-      ]
+      ],
+      "truck": "CCE9499",
+      "boxes": 17
     },
     {
       "cdf": "CDF4381-723",
@@ -8193,7 +6187,9 @@
           "desc": "PANIC EXIT HANDLE HAUSMANN PHO0122 016F FOR 1510 SERIES 18X8X6.35CM SILVER ZINC",
           "approved": 6
         }
-      ]
+      ],
+      "truck": "WFHU 1100472",
+      "boxes": 34
     },
     {
       "cdf": "CDF4484-933",
@@ -8482,7 +6478,8 @@
           "desc": "BRACKET SLICK WB005-25 25MM ANTIQUE BRASS",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "YTLU2516271"
     },
     {
       "cdf": "CDF4363-225",
@@ -8634,7 +6631,9 @@
           "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
           "approved": 10
         }
-      ]
+      ],
+      "truck": "PSAU3161630",
+      "boxes": 3
     },
     {
       "cdf": "CDF4503-895",
@@ -9049,6 +7048,313 @@
         {
           "code": "2080100937329",
           "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
+          "approved": 50
+        }
+      ]
+    },
+    {
+      "cdf": "CDF4563-49",
+      "store": "KALIBO",
+      "date": "2026-09-25",
+      "items": [
+        {
+          "code": "2080101031255",
+          "desc": "DEMOLITION HAMMER 4139083 EINHELL TC-DH 1600/1",
+          "approved": 4
+        },
+        {
+          "code": "2080100909616",
+          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
+          "approved": 3
+        },
+        {
+          "code": "2080100909449",
+          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
+          "approved": 5
+        },
+        {
+          "code": "2080100937534",
+          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 2.5MM METAL 2S",
+          "approved": 50
+        },
+        {
+          "code": "2080100937039",
+          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 6MM METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080100937404",
+          "desc": "DRILL BIT HAUSMANN LI 5MM MASONRY",
+          "approved": 50
+        },
+        {
+          "code": "2080100937633",
+          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 3.5MM METAL 2S",
+          "approved": 50
+        },
+        {
+          "code": "2080100937091",
+          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 4.5MM METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080100937169",
+          "desc": "BIT FORSTNER HAUSMANN 54MM",
+          "approved": 40
+        },
+        {
+          "code": "2080100937183",
+          "desc": "BIT WOOD FLAT HAUSMANN 19MM HEX SHANK",
+          "approved": 50
+        },
+        {
+          "code": "2080100937206",
+          "desc": "BIT WOOD FLAT HAUSMANN 25MM HEX SHANK",
+          "approved": 50
+        },
+        {
+          "code": "2080100937343",
+          "desc": "DRILL BIT HAUSMANN 4MM HEX SHANK TIN COATED GLASS",
+          "approved": 50
+        },
+        {
+          "code": "2080100937367",
+          "desc": "DRILL BIT HAUSMANN 6MM HEX SHANK TIN COATED GLASS",
+          "approved": 50
+        },
+        {
+          "code": "2080100937398",
+          "desc": "DRILL BIT HAUSMANN 8MM HEX SHANK TIN COATED GLASS",
+          "approved": 50
+        },
+        {
+          "code": "2080100936933",
+          "desc": "BIT SCREWDRIVER HAUSMANN DOUBLE ENDED PH2X65MM 3s",
+          "approved": 50
+        },
+        {
+          "code": "2080100937220",
+          "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
+          "approved": 50
+        },
+        {
+          "code": "2080100937251",
+          "desc": "BLADE DIAMOND HAUSMANN 105X1.2/2.2X7.5X20 DE LUXE",
+          "approved": 50
+        },
+        {
+          "code": "2080100937312",
+          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
+          "approved": 50
+        },
+        {
+          "code": "2080100937305",
+          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
+          "approved": 50
+        },
+        {
+          "code": "2080100937329",
+          "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
+          "approved": 50
+        },
+        {
+          "code": "2080100937725",
+          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801105 102X3X16MM T-27 FOR STONE",
+          "approved": 50
+        },
+        {
+          "code": "2080100937732",
+          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801106 102X3X16MM T-27 FOR METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080100937749",
+          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080100937756",
+          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
+          "approved": 50
+        },
+        {
+          "code": "2080100937268",
+          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61311002 30 110X20 FOR WOOD",
+          "approved": 40
+        },
+        {
+          "code": "2080100937275",
+          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61318009 40 180X25 FOR WOOD",
+          "approved": 50
+        },
+        {
+          "code": "2080100937282",
+          "desc": "CUP BRUSH HAUSMANN BOWL CUP BRUSH-TWIST KNOT",
+          "approved": 10
+        },
+        {
+          "code": "2080100937299",
+          "desc": "CUP BRUSH HAUSMANN CUP BRUSH-CRIMPED",
+          "approved": 10
+        },
+        {
+          "code": "2080101021232",
+          "desc": "SPRAY GUN HAUSMANN ESGS032021 Q1P-CX31-380",
+          "approved": 6
+        },
+        {
+          "code": "2080101090153",
+          "desc": "ELECTRIC DRILL HAUSMANN DZ131/HED13 710W BUNDLE",
+          "approved": 5
+        },
+        {
+          "code": "2080101090160",
+          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
+          "approved": 10
+        },
+        {
+          "code": "2080101090146",
+          "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
+          "approved": 10
+        },
+        {
+          "code": "2080101018515",
+          "desc": "PADLOCK SOTER BC9020 20MM BRASS",
+          "approved": 36
+        },
+        {
+          "code": "2080101018522",
+          "desc": "PADLOCK SOTER BC9025 25MM BRASS",
+          "approved": 36
+        },
+        {
+          "code": "2080101018577",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9020*2 20MM BRASS 2PCS",
+          "approved": 36
+        },
+        {
+          "code": "2080101018584",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9025*2 25MM BRASS 2PCS",
+          "approved": 36
+        },
+        {
+          "code": "2080101018591",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9030*2 30MM BRASS 2PCS",
+          "approved": 36
+        },
+        {
+          "code": "2080101018607",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*2 40MM BRASS 2PCS",
+          "approved": 36
+        },
+        {
+          "code": "2080101018621",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
+          "approved": 24
+        },
+        {
+          "code": "2080101018638",
+          "desc": "PADLOCK SOTER PSB1119 BC9030L 30MM BRASS LONG SHACKLE",
+          "approved": 36
+        },
+        {
+          "code": "2080101018669",
+          "desc": "PADLOCK SOTER QC0230 LAMINATED 30MM",
+          "approved": 36
+        },
+        {
+          "code": "2080101018676",
+          "desc": "PADLOCK SOTER QC0240 LAMINATED 40MM",
+          "approved": 30
+        },
+        {
+          "code": "2080101018713",
+          "desc": "PADLOCK SOTER LS3260 DISC MECHANISM IRON 60MM",
+          "approved": 36
+        },
+        {
+          "code": "2080101018744",
+          "desc": "PADLOCK SOTER LS3260L LONG SHACKLE DISC MECHANISM IRON 60MM",
+          "approved": 36
+        },
+        {
+          "code": "2080101018744",
+          "desc": "PADLOCK SOTER LS3260L LONG SHACKLE DISC MECHANISM IRON 60MM",
+          "approved": 10
+        },
+        {
+          "code": "2080101018775",
+          "desc": "NFS-STORAGE KEY SOTER STEEL BLACK WALL MOUNTABLE",
+          "approved": 10
+        },
+        {
+          "code": "2080101066196",
+          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM CHROME",
+          "approved": 50
+        },
+        {
+          "code": "2080101066219",
+          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 36
+        },
+        {
+          "code": "2080101066226",
+          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 36
+        },
+        {
+          "code": "2080101066233",
+          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 36
+        },
+        {
+          "code": "2080101066240",
+          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 36
+        },
+        {
+          "code": "2080101066257",
+          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 36
+        },
+        {
+          "code": "2080101066264",
+          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 36
+        },
+        {
+          "code": "2080101145556",
+          "desc": "CURTAIN SLICK 55X85IN SHEER CLOUD WHISPE WHITE XL-13",
+          "approved": 12
+        },
+        {
+          "code": "2080101066202",
+          "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
+          "approved": 25
+        },
+        {
+          "code": "2080100989489",
+          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
+          "approved": 80
+        },
+        {
+          "code": "2080101087702",
+          "desc": "TUBE STAINLESS SLICK SQ 15X30X.5X3000MM OVAL CHROME ANTIQUE",
+          "approved": 48
+        },
+        {
+          "code": "2080101066165",
+          "desc": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
+          "approved": 50
+        },
+        {
+          "code": "2080101114996",
+          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
+          "approved": 50
+        },
+        {
+          "code": "2080101115054",
+          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
           "approved": 50
         }
       ]
@@ -10128,7 +8434,9 @@
           "desc": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
           "approved": 24
         }
-      ]
+      ],
+      "truck": "CAL 2008",
+      "boxes": 146
     },
     {
       "cdf": "CDF4519-547",
@@ -10379,178 +8687,6 @@
           "code": "2080101153513",
           "desc": "CASTER SWIVEL HAUSMANN 11160B FC INDUSTRIAL RUBBER WITH BRAKE 6IN.",
           "approved": 12
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4520-495",
-      "store": "LAGAO",
-      "date": "2026-09-16",
-      "items": [
-        {
-          "code": "2080100937565",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 3.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937459",
-          "desc": "DRILL BIT HAUSMANN LI 4MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937473",
-          "desc": "DRILL BIT HAUSMANN LI 8MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937633",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 3.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937152",
-          "desc": "BIT FORSTNER HAUSMANN 35MM",
-          "approved": 40
-        },
-        {
-          "code": "2080100937169",
-          "desc": "BIT FORSTNER HAUSMANN 54MM",
-          "approved": 40
-        },
-        {
-          "code": "2080100937312",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937817",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-          "approved": 50
-        },
-        {
-          "code": "2080101007960",
-          "desc": "BARREL BOLT HAUSMANN C605-3 AB 33X87MM",
-          "approved": 28
-        },
-        {
-          "code": "2080101008189",
-          "desc": "MAGNETIC DOOR CATCH HAUSMANN C5312 BSN 40X73MM",
-          "approved": 32
-        },
-        {
-          "code": "2080101090160",
-          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
-          "approved": 10
-        },
-        {
-          "code": "2080101090146",
-          "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
-          "approved": 10
-        },
-        {
-          "code": "2080101018621",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018645",
-          "desc": "PADLOCK SOTER PSB1119 BC9040L 40MM BRASS LONG SHACKLE",
-          "approved": 36
-        },
-        {
-          "code": "2080101018720",
-          "desc": "PADLOCK SOTER LS3240L LONG SHACKLE DISC MECHANISM IRON 40MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018737",
-          "desc": "PADLOCK SOTER LS3250L LONG SHACKLE DISC MECHANISM IRON 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018744",
-          "desc": "PADLOCK SOTER LS3260L LONG SHACKLE DISC MECHANISM IRON 60MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 4
-        },
-        {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066240",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066264",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066202",
-          "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
-          "approved": 25
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 80
-        },
-        {
-          "code": "2080101115061",
-          "desc": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101114361",
-          "desc": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114880",
-          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114903",
-          "desc": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101087702",
-          "desc": "TUBE STAINLESS SLICK SQ 15X30X.5X3000MM OVAL CHROME ANTIQUE",
-          "approved": 48
         }
       ]
     },
@@ -11611,7 +9747,9 @@
           "desc": "Soter Tent Card",
           "approved": 1
         }
-      ]
+      ],
+      "truck": "PSAU3159921",
+      "boxes": 147
     },
     {
       "cdf": "CDF4471-543",
@@ -11957,7 +10095,8 @@
           "desc": "DIAMOND DISC KWB 49725070 105MM CONTINUOUS",
           "approved": 100
         }
-      ]
+      ],
+      "truck": "INBU3701282"
     },
     {
       "cdf": "CDF4382-450",
@@ -12221,7 +10360,9 @@
           "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
           "approved": 10
         }
-      ]
+      ],
+      "truck": "OCLU3695602",
+      "boxes": 31
     },
     {
       "cdf": "CDF4421-297",
@@ -12273,7 +10414,9 @@
           "desc": "VAULT ELECTRONIC SOTER VS0120 E4502E 250X350X250",
           "approved": 3
         }
-      ]
+      ],
+      "truck": "INBU3776208",
+      "boxes": 17
     },
     {
       "cdf": "CDF4440-861",
@@ -13756,7 +11899,9 @@
           "desc": "Soter Tent Card",
           "approved": 2
         }
-      ]
+      ],
+      "truck": "PSAU2539807",
+      "boxes": 144
     },
     {
       "cdf": "CDF4094-522",
@@ -13848,7 +11993,8 @@
           "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
           "approved": 40
         }
-      ]
+      ],
+      "truck": "WFHU1356377"
     },
     {
       "cdf": "CDF4493-544",
@@ -14115,681 +12261,14 @@
       ]
     },
     {
-      "cdf": "CDF4540-871",
-      "store": "MARBEL",
-      "date": "2026-09-21",
+      "cdf": "CDF4564-9",
+      "store": "MATINA",
+      "date": "2026-09-28",
       "items": [
         {
-          "code": "2080100937565",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 3.5MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937480",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS (1-10MM) 10S METAL",
-          "approved": 10
-        },
-        {
-          "code": "2080100937404",
-          "desc": "DRILL BIT HAUSMANN LI 5MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937176",
-          "desc": "BIT WOOD FLAT HAUSMANN 16MM HEX SHANK",
-          "approved": 50
-        },
-        {
-          "code": "2080100937206",
-          "desc": "BIT WOOD FLAT HAUSMANN 25MM HEX SHANK",
-          "approved": 50
-        },
-        {
-          "code": "2080100937343",
-          "desc": "DRILL BIT HAUSMANN 4MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937367",
-          "desc": "DRILL BIT HAUSMANN 6MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937398",
-          "desc": "DRILL BIT HAUSMANN 8MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937312",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937329",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937794",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937817",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-          "approved": 100
-        },
-        {
-          "code": "2080101008349",
-          "desc": "DOOR CLOSER HAUSMANN OS #602 25-45KG SILVER",
-          "approved": 16
-        },
-        {
-          "code": "2080101008356",
-          "desc": "DOOR CLOSER HAUSMANN OS #604 60-85KG SILVER",
-          "approved": 16
-        },
-        {
-          "code": "2080101008387",
-          "desc": "DOOR CLOSER HAUSMANN DHO0423-604 60-85KG 223X44.5X72.5MM BLACK ALUMINUM",
-          "approved": 8
-        },
-        {
-          "code": "2080101008394",
-          "desc": "DOOR CLOSER HAUSMANN GY WNS-02 25KG ALUMINUM",
-          "approved": 20
-        },
-        {
-          "code": "2080101008028",
-          "desc": "BARREL BOLT HAUSMANN C605-4 BSN 33X112MM",
-          "approved": 56
-        },
-        {
-          "code": "2080101008271",
-          "desc": "DOOR CHAIN AND BOLT HAUSMANN DHW1022-C715 MATTE BLACK ZINC ALLOY",
-          "approved": 40
-        },
-        {
-          "code": "2080101008998",
-          "desc": "WINDOW LATCH HAUSMANN ZHC720D AB",
-          "approved": 40
-        },
-        {
-          "code": "2080101009049",
-          "desc": "WINDOW LOCK HAUSMANN C862 AB",
-          "approved": 32
-        },
-        {
-          "code": "2080101018997",
-          "desc": "PANIC EXIT BAR HAUSMANN PHO0122 1510P PUSH TYPE 17X9X105CM SILVER STEEL BAR 1050MM",
-          "approved": 6
-        },
-        {
-          "code": "2080101021232",
-          "desc": "SPRAY GUN HAUSMANN ESGS032021 Q1P-CX31-380",
-          "approved": 3
-        },
-        {
-          "code": "2080101019697",
-          "desc": "ROTARY HAMMER HAUSMANN SK RH1806 18MM 650W",
-          "approved": 3
-        },
-        {
-          "code": "2080101019635",
-          "desc": "HEAT GUN HAUSMANN HGHS032021 RF20001",
-          "approved": 5
-        },
-        {
-          "code": "2080101090160",
-          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
-          "approved": 10
-        },
-        {
-          "code": "2080101019437",
-          "desc": "BLOWER HAUSMANN EBHS032021 CF302E",
-          "approved": 4
-        },
-        {
-          "code": "2080101018553",
-          "desc": "PADLOCK SOTER BC9050 50MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018584",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9025*2 25MM BRASS 2PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018614",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9020*4 20MM BRASS 4PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018621",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018638",
-          "desc": "PADLOCK SOTER PSB1119 BC9030L 30MM BRASS LONG SHACKLE",
-          "approved": 36
-        },
-        {
-          "code": "2080101018652",
-          "desc": "PADLOCK SOTER PSB1119 BC9050L 50MM BRASS LONG SHACKLE",
-          "approved": 24
-        },
-        {
-          "code": "2080101018706",
-          "desc": "PADLOCK SOTER LS3250 DISC MECHANISM IRON 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018737",
-          "desc": "PADLOCK SOTER LS3250L LONG SHACKLE DISC MECHANISM IRON 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018744",
-          "desc": "PADLOCK SOTER LS3260L LONG SHACKLE DISC MECHANISM IRON 60MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018751",
-          "desc": "BOX CASH SOTER CB-15 80X150X120MM MATT BLACK",
-          "approved": 10
-        },
-        {
-          "code": "2080101018850",
-          "desc": "VAULT FIRE RATED SOTER VSS0820 FP1803E 600X480X470MM",
-          "approved": 1
-        },
-        {
-          "code": "2080101066172",
-          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM WHITE",
-          "approved": 50
-        },
-        {
-          "code": "2080101066189",
-          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM GOLD",
-          "approved": 50
-        },
-        {
-          "code": "2080101066196",
-          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM CHROME",
-          "approved": 100
-        },
-        {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066233",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
-        },
-        {
-          "code": "2080101066240",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066257",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
-        },
-        {
-          "code": "2080101066264",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066202",
-          "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
-          "approved": 50
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 80
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101115061",
-          "desc": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101115092",
-          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066165",
-          "desc": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114361",
-          "desc": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114736",
-          "desc": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114859",
-          "desc": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114880",
-          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114897",
-          "desc": "FLANGE SLICK HFR19 19MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114903",
-          "desc": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114965",
-          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101153230",
-          "desc": "CASTER SWIVEL HAUSMANN 24025NY FC NYLON 2.5CM",
-          "approved": 12
-        },
-        {
-          "code": "2080101153254",
-          "desc": "CASTER SWIVEL HAUSMANN 24040NY FC NYLON 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153292",
-          "desc": "CASTER FIXED HAUSMANN 24030NYF FC NYLON 1.25IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153315",
-          "desc": "CASTER FIXED HAUSMANN 24050NYF FC NYLON 2IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153421",
-          "desc": "CASTER FIXED HAUSMANN 24050F FC RUBBER 2IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153483",
-          "desc": "CASTER FIXED HAUSMANN 11125F FC INDUSTRIAL RUBBER 5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153506",
-          "desc": "CASTER SWIVEL HAUSMANN 11125B FC INDUSTRIAL RUBBER WITH BRAKE 5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154824",
-          "desc": "CASTER SWIVEL HAUSMANN 24050B FC RUBBER WITH BRAKE 2IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154848",
-          "desc": "CASTER SWIVEL HAUSMANN 24075B FC RUBBER WITH BRAKE 3IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154862",
-          "desc": "WHEEL SWIVEL HAUSMANN TWP-50 FC TWIN PLATE TYPE NYLON 2IN.",
-          "approved": 19
-        },
-        {
-          "code": "2080101154909",
-          "desc": "CASTER FIXED HAUSMANN 11160F FC INDUSTRIAL RUBBER 6IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154985",
-          "desc": "CASTER SWIVEL HAUSMANN 24040J FC TPR WITH SINGLE BALL BEARING 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080100909616",
-          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
-          "approved": 5
-        },
-        {
-          "code": "2080100937039",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 6MM METAL",
-          "approved": 100
-        },
-        {
-          "code": "2080100937220",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
-          "approved": 100
-        },
-        {
-          "code": "2080100937251",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.2/2.2X7.5X20 DE LUXE",
-          "approved": 100
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4504-171",
-      "store": "MIDSAYAP",
-      "date": "2026-09-10",
-      "items": [
-        {
-          "code": "2080100937480",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS (1-10MM) 10S METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937459",
-          "desc": "DRILL BIT HAUSMANN LI 4MM MASONRY",
-          "approved": 100
-        },
-        {
-          "code": "2080100937411",
-          "desc": "DRILL BIT HAUSMANN LI 6MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937152",
-          "desc": "BIT FORSTNER HAUSMANN 35MM",
-          "approved": 40
-        },
-        {
-          "code": "2080100937169",
-          "desc": "BIT FORSTNER HAUSMANN 54MM",
-          "approved": 20
-        },
-        {
-          "code": "2080100937343",
-          "desc": "DRILL BIT HAUSMANN 4MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937367",
-          "desc": "DRILL BIT HAUSMANN 6MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937305",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937329",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937688",
-          "desc": "FLAP DISC HAUSMANN FDHLX721-80201001 #40D 100X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080101007977",
-          "desc": "BARREL BOLT HAUSMANN C605-2.5 AB 33X74MM",
-          "approved": 52
-        },
-        {
-          "code": "2080101007960",
-          "desc": "BARREL BOLT HAUSMANN C605-3 AB 33X87MM",
-          "approved": 56
-        },
-        {
-          "code": "2080101008172",
-          "desc": "MAGNETIC DOOR CATCH HAUSMANN C5312 AB 40X73MM",
-          "approved": 32
-        },
-        {
-          "code": "2080101018997",
-          "desc": "PANIC EXIT BAR HAUSMANN PHO0122 1510P PUSH TYPE 17X9X105CM SILVER STEEL BAR 1050MM",
-          "approved": 6
-        },
-        {
-          "code": "2080101018546",
-          "desc": "PADLOCK SOTER BC9040 40MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018553",
-          "desc": "PADLOCK SOTER BC9050 50MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018560",
-          "desc": "PADLOCK SOTER BC9060 60MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018584",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9025*2 25MM BRASS 2PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018591",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9030*2 30MM BRASS 2PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018607",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*2 40MM BRASS 2PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018621",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
-          "approved": 24
-        },
-        {
-          "code": "2080101018652",
-          "desc": "PADLOCK SOTER PSB1119 BC9050L 50MM BRASS LONG SHACKLE",
-          "approved": 24
-        },
-        {
-          "code": "2080101018669",
-          "desc": "PADLOCK SOTER QC0230 LAMINATED 30MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018676",
-          "desc": "PADLOCK SOTER QC0240 LAMINATED 40MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018683",
-          "desc": "PADLOCK SOTER QC0250 LAMINATED 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018706",
-          "desc": "PADLOCK SOTER LS3250 DISC MECHANISM IRON 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101115061",
-          "desc": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101115092",
-          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066165",
-          "desc": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114736",
-          "desc": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114859",
-          "desc": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114880",
-          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114897",
-          "desc": "FLANGE SLICK HFR19 19MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114903",
-          "desc": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114965",
-          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101153384",
-          "desc": "CASTER SWIVEL HAUSMANN 24050 FC RUBBER 2IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101153414",
-          "desc": "CASTER SWIVEL HAUSMANN 24075 FC RUBBER 3IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101090160",
-          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
-          "approved": 20
-        },
-        {
-          "code": "2080101090146",
-          "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
-          "approved": 20
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 4
-        },
-        {
-          "code": "2080100909449",
-          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
-          "approved": 12
-        },
-        {
-          "code": "2080100937817",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937220",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
-          "approved": 100
-        },
-        {
-          "code": "2080101019529",
-          "desc": "CIRCULAR SAW HAUSMANN HCS190 PROF. 190MM 1300W",
-          "approved": 4
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 27
-        },
-        {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 27
-        },
-        {
-          "code": "2080101066257",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 27
-        },
-        {
-          "code": "2080101066202",
-          "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
-          "approved": 25
+          "code": "2080101027944",
+          "desc": "+S.O SPARE PARTS HAUSMANN",
+          "approved": 2
         }
       ]
     },
@@ -15007,7 +12486,8 @@
           "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "CICU8075342"
     },
     {
       "cdf": "CDF4525-324",
@@ -15571,7 +13051,9 @@
           "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
           "approved": 6
         }
-      ]
+      ],
+      "truck": "INBU3594630",
+      "boxes": 12
     },
     {
       "cdf": "CDF4551-610",
@@ -16015,7 +13497,8 @@
           "desc": "DRILL BIT HAUSMANN LI 5MM MASONRY",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "WFHU1391439"
     },
     {
       "cdf": "CDF4018-797",
@@ -16122,7 +13605,8 @@
           "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
           "approved": 10
         }
-      ]
+      ],
+      "truck": "INBU3596762"
     },
     {
       "cdf": "CDF4456-577",
@@ -16538,7 +14022,8 @@
           "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "DRYU2551664"
     },
     {
       "cdf": "CDF4393-124",
@@ -16914,7 +14399,8 @@
           "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
           "approved": 4
         }
-      ]
+      ],
+      "truck": "CBQ6983"
     },
     {
       "cdf": "CDF4495-243",
@@ -17040,6 +14526,18 @@
           "code": "2080101115054",
           "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
           "approved": 50
+        }
+      ]
+    },
+    {
+      "cdf": "CDF4561-435",
+      "store": "PARDO",
+      "date": "2026-09-25",
+      "items": [
+        {
+          "code": "2080101135670",
+          "desc": "S.O SPAREPARTS EINHELL",
+          "approved": 1
         }
       ]
     },
@@ -17320,139 +14818,59 @@
       ]
     },
     {
-      "cdf": "CDF4499-71",
+      "cdf": "CDF4559-506",
       "store": "POLOMOLOK",
-      "date": "2026-09-09",
+      "date": "2026-09-24",
       "items": [
         {
-          "code": "2080100909449",
-          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
-          "approved": 3
+          "code": "2080100909616",
+          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
+          "approved": 5
         },
         {
-          "code": "2080100937480",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS (1-10MM) 10S METAL",
-          "approved": 10
+          "code": "2080101018584",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9025*2 25MM BRASS 2PCS",
+          "approved": 36
         },
         {
-          "code": "2080100937404",
-          "desc": "DRILL BIT HAUSMANN LI 5MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937640",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 4MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937169",
-          "desc": "BIT FORSTNER HAUSMANN 54MM",
-          "approved": 20
-        },
-        {
-          "code": "2080100937770",
-          "desc": "NUT SETTER HAUSMANN M8X50MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937305",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937268",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61311002 30 110X20 FOR WOOD",
+          "code": "2080101066028",
+          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
           "approved": 100
         },
         {
-          "code": "2080100937275",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61318009 40 180X25 FOR WOOD",
-          "approved": 50
+          "code": "2080101066158",
+          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
+          "approved": 100
         },
         {
-          "code": "2080100937688",
-          "desc": "FLAP DISC HAUSMANN FDHLX721-80201001 #40D 100X16MM",
-          "approved": 50
+          "code": "2080101115092",
+          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
+          "approved": 100
         },
         {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
+          "code": "2080101115115",
+          "desc": "BRACKET SLICK WB005-25 25MM SATIN NICKEL",
+          "approved": 100
         },
         {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
+          "code": "2080101115139",
+          "desc": "BRACKET SLICK WB005-25 25MM ANTIQUE BRASS",
+          "approved": 100
         },
         {
-          "code": "2080101066233",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
+          "code": "2080101114361",
+          "desc": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
+          "approved": 100
         },
         {
-          "code": "2080101066257",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
+          "code": "2080101114880",
+          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
+          "approved": 100
         },
         {
-          "code": "2080101066264",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101066202",
-          "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
-          "approved": 25
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 80
-        },
-        {
-          "code": "2080101087702",
-          "desc": "TUBE STAINLESS SLICK SQ 15X30X.5X3000MM OVAL CHROME ANTIQUE",
-          "approved": 44
-        },
-        {
-          "code": "2080101114736",
-          "desc": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114859",
-          "desc": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114903",
-          "desc": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114965",
-          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 50
+          "code": "2080101114897",
+          "desc": "FLANGE SLICK HFR19 19MM OPEN STAINLESS STEEL 2S",
+          "approved": 1
         }
       ]
     },
@@ -17511,7 +14929,8 @@
           "desc": "DRILL BIT HAUSMANN LI DIN338 HSS (2,3,4,5,6,8MM) 6S METAL",
           "approved": 25
         }
-      ]
+      ],
+      "truck": "INBU3779830"
     },
     {
       "cdf": "CDF4415-55",
@@ -17633,7 +15052,9 @@
           "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
           "approved": 2
         }
-      ]
+      ],
+      "truck": "PSAU3115568",
+      "boxes": 40
     },
     {
       "cdf": "CDF4543-84",
@@ -17674,21 +15095,6 @@
           "code": "2080101019635",
           "desc": "HEAT GUN HAUSMANN HGHS032021 RF20001",
           "approved": 10
-        },
-        {
-          "code": "2080101019642",
-          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W",
-          "approved": 20
-        },
-        {
-          "code": "2080101019529",
-          "desc": "CIRCULAR SAW HAUSMANN HCS190 PROF. 190MM 1300W",
-          "approved": 4
-        },
-        {
-          "code": "2080101019420",
-          "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W",
-          "approved": 20
         },
         {
           "code": "2080101145419",
@@ -17759,6 +15165,93 @@
           "code": "2080101066158",
           "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
           "approved": 100
+        },
+        {
+          "code": "2080101019529",
+          "desc": "CIRCULAR SAW HAUSMANN HCS190 PROF. 190MM 1300W",
+          "approved": 4
+        }
+      ]
+    },
+    {
+      "cdf": "CDF4562-911",
+      "store": "POTOTAN",
+      "date": "2026-09-25",
+      "items": [
+        {
+          "code": "2080100909616",
+          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
+          "approved": 10
+        },
+        {
+          "code": "2080100909449",
+          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
+          "approved": 12
+        },
+        {
+          "code": "2080101019697",
+          "desc": "ROTARY HAMMER HAUSMANN SK RH1806 18MM 650W",
+          "approved": 9
+        },
+        {
+          "code": "2080101090153",
+          "desc": "ELECTRIC DRILL HAUSMANN DZ131/HED13 710W BUNDLE",
+          "approved": 5
+        },
+        {
+          "code": "2080101019635",
+          "desc": "HEAT GUN HAUSMANN HGHS032021 RF20001",
+          "approved": 10
+        },
+        {
+          "code": "2080101090160",
+          "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
+          "approved": 20
+        },
+        {
+          "code": "2080101090146",
+          "desc": "ANGLE GRINDER HAUSMANN SK JM1002 100MM 720W BUNDLE",
+          "approved": 20
+        },
+        {
+          "code": "2080101018751",
+          "desc": "BOX CASH SOTER CB-15 80X150X120MM MATT BLACK",
+          "approved": 10
+        },
+        {
+          "code": "2080101066219",
+          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 18
+        },
+        {
+          "code": "2080101066233",
+          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 18
+        },
+        {
+          "code": "2080101066240",
+          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 18
+        },
+        {
+          "code": "2080101066257",
+          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 18
+        },
+        {
+          "code": "2080101066264",
+          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 18
+        },
+        {
+          "code": "2080101145556",
+          "desc": "CURTAIN SLICK 55X85IN SHEER CLOUD WHISPE WHITE XL-13",
+          "approved": 24
+        },
+        {
+          "code": "2080100989489",
+          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
+          "approved": 80
         }
       ]
     },
@@ -17909,99 +15402,8 @@
           "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 25.4X0.5X3100M SS201 ROUND",
           "approved": 30
         }
-      ]
-    },
-    {
-      "cdf": "CDF4431-231",
-      "store": "ROXAS",
-      "date": "2026-08-29",
-      "items": [
-        {
-          "code": "2080101066165",
-          "desc": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115092",
-          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101115139",
-          "desc": "BRACKET SLICK WB005-25 25MM ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101115115",
-          "desc": "BRACKET SLICK WB005-25 25MM SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101114859",
-          "desc": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 25
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 25
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 50
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101066240",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 18
-        },
-        {
-          "code": "2080101066257",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 18
-        },
-        {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 18
-        },
-        {
-          "code": "2080101066233",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 18
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 18
-        },
-        {
-          "code": "2080101066264",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 18
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 2
-        }
-      ]
+      ],
+      "truck": "INBU3724101"
     },
     {
       "cdf": "CDF4365-438",
@@ -18121,59 +15523,34 @@
       ]
     },
     {
-      "cdf": "CDF4466-97",
-      "store": "SAN FELIPE - ILAGAN",
-      "date": "2026-09-01",
+      "cdf": "CDF4561-672",
+      "store": "SAMBAG",
+      "date": "2026-09-25",
       "items": [
         {
-          "code": "2080101019437",
-          "desc": "BLOWER HAUSMANN EBHS032021 CF302E",
-          "approved": 4
-        },
-        {
-          "code": "2080100937008",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080100937022",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 5MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937404",
-          "desc": "DRILL BIT HAUSMANN LI 5MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937411",
-          "desc": "DRILL BIT HAUSMANN LI 6MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937473",
-          "desc": "DRILL BIT HAUSMANN LI 8MM MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100936926",
-          "desc": "BIT SCREWDRIVER HAUSMANN DOUBLE ENDED PH2X50MM 10s",
-          "approved": 20
+          "code": "2080100937633",
+          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 3.5MM METAL 2S",
+          "approved": 200
         },
         {
           "code": "2080100936933",
           "desc": "BIT SCREWDRIVER HAUSMANN DOUBLE ENDED PH2X65MM 3s",
-          "approved": 25
+          "approved": 50
         },
         {
-          "code": "2080100937312",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
-          "approved": 50
+          "code": "2080100937213",
+          "desc": "BLADE DIAMOND HAUSMANN 105X1.2/2.2X7.5X20 TURBO",
+          "approved": 100
+        },
+        {
+          "code": "2080100937305",
+          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
+          "approved": 100
         },
         {
           "code": "2080100937329",
           "desc": "CUTTING DISC HAUSMANN CDHLX721-60802350 350X3.0X25MM",
-          "approved": 25
+          "approved": 50
         },
         {
           "code": "2080100937794",
@@ -18181,64 +15558,124 @@
           "approved": 100
         },
         {
+          "code": "2080100937749",
+          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080100937756",
+          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
+          "approved": 25
+        },
+        {
           "code": "2080100937268",
           "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61311002 30 110X20 FOR WOOD",
-          "approved": 20
+          "approved": 60
         },
         {
-          "code": "2080101008257",
-          "desc": "DOOR CHAIN AND BOLT HAUSMANN C715 AB",
-          "approved": 20
+          "code": "2080101019635",
+          "desc": "HEAT GUN HAUSMANN HGHS032021 RF20001",
+          "approved": 5
         },
         {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 3
+          "code": "2080101018515",
+          "desc": "PADLOCK SOTER BC9020 20MM BRASS",
+          "approved": 24
         },
         {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 18
+          "code": "2080101018522",
+          "desc": "PADLOCK SOTER BC9025 25MM BRASS",
+          "approved": 24
         },
         {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 40
+          "code": "2080101018584",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9025*2 25MM BRASS 2PCS",
+          "approved": 36
         },
         {
-          "code": "2080101115115",
-          "desc": "BRACKET SLICK WB005-25 25MM SATIN NICKEL",
-          "approved": 50
+          "code": "2080101018591",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9030*2 30MM BRASS 2PCS",
+          "approved": 36
+        },
+        {
+          "code": "2080101018607",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*2 40MM BRASS 2PCS",
+          "approved": 36
+        },
+        {
+          "code": "2080101018614",
+          "desc": "NFS PADLOCK SOTER PSB1119 BC9020*4 20MM BRASS 4PCS",
+          "approved": 24
+        },
+        {
+          "code": "2080101018638",
+          "desc": "PADLOCK SOTER PSB1119 BC9030L 30MM BRASS LONG SHACKLE",
+          "approved": 24
+        },
+        {
+          "code": "2080101018645",
+          "desc": "PADLOCK SOTER PSB1119 BC9040L 40MM BRASS LONG SHACKLE",
+          "approved": 36
+        },
+        {
+          "code": "2080101018683",
+          "desc": "PADLOCK SOTER QC0250 LAMINATED 50MM",
+          "approved": 30
+        },
+        {
+          "code": "2080101018768",
+          "desc": "BOX CASH SOTER CB-25 90X250X180MM MATT BLACK",
+          "approved": 10
+        },
+        {
+          "code": "2080101066226",
+          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 72
+        },
+        {
+          "code": "2080101066233",
+          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
+          "approved": 27
+        },
+        {
+          "code": "2080101066264",
+          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
+          "approved": 63
         },
         {
           "code": "2080101066028",
           "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101115061",
-          "desc": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-          "approved": 50
+          "approved": 100
         },
         {
           "code": "2080101066158",
           "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
+          "approved": 100
+        },
+        {
+          "code": "2080101115092",
+          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
+          "approved": 100
+        },
+        {
+          "code": "2080101066165",
+          "desc": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
           "approved": 50
         },
         {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 30
+          "code": "2080101114361",
+          "desc": "FLANGE SLICK RFC12 12MM CLOSE STAINLESS STEEL 2S",
+          "approved": 50
         },
         {
           "code": "2080101114736",
           "desc": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
+          "approved": 100
         },
         {
-          "code": "2080101114859",
-          "desc": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
+          "code": "2080101114880",
+          "desc": "FLANGE SLICK HFR12 12MM OPEN STAINLESS STEEL 2S",
+          "approved": 100
         },
         {
           "code": "2080101114897",
@@ -18248,7 +15685,54 @@
         {
           "code": "2080101114903",
           "desc": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
+          "approved": 100
+        },
+        {
+          "code": "2080101114965",
+          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
+          "approved": 100
+        },
+        {
+          "code": "2080101153254",
+          "desc": "CASTER SWIVEL HAUSMANN 24040NY FC NYLON 1.5IN.",
+          "approved": 24
+        },
+        {
+          "code": "2080101153339",
+          "desc": "CASTER SWIVEL HAUSMANN 24040NYB FC NYLON WITH BRAKE 1.5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153346",
+          "desc": "CASTER SWIVEL HAUSMANN 24050NYB FC NYLON WITH BRAKE 2IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101153421",
+          "desc": "CASTER FIXED HAUSMANN 24050F FC RUBBER 2IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080101155005",
+          "desc": "CASTER SWIVEL HAUSMANN 24040JB FC TPR SINGLE BALL BEARING WITH BRAKE 1.5IN.",
+          "approved": 12
+        },
+        {
+          "code": "2080100937275",
+          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61318009 40 180X25 FOR WOOD",
           "approved": 50
+        }
+      ]
+    },
+    {
+      "cdf": "CDF4558-764",
+      "store": "SAN CARLOS - PANGASINAN",
+      "date": "2026-09-24",
+      "items": [
+        {
+          "code": "2080101158754",
+          "desc": "S.O-SPARE PARTS SOTER FP1801E KEY ASSORTED",
+          "approved": 1
         }
       ]
     },
@@ -18481,28 +15965,6 @@
           "code": "2080101018799",
           "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
           "approved": 3
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4535-58",
-      "store": "SAN FRANCISCO",
-      "date": "2026-09-18",
-      "items": [
-        {
-          "code": "2080100909616",
-          "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
-          "approved": 4
-        },
-        {
-          "code": "2080100909746",
-          "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
-          "approved": 4
-        },
-        {
-          "code": "2080100937008",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
-          "approved": 50
         }
       ]
     },
@@ -18756,7 +16218,8 @@
           "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "INBU3578840"
     },
     {
       "cdf": "CDF4400-15",
@@ -19088,7 +16551,9 @@
           "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
           "approved": 6
         }
-      ]
+      ],
+      "truck": "INBU 3579810",
+      "boxes": 42
     },
     {
       "cdf": "CDF4546-422",
@@ -19372,7 +16837,9 @@
           "desc": "DEMOLITION HAMMER HAUSMANN HCH25 YELLOW 12500W",
           "approved": 2
         }
-      ]
+      ],
+      "truck": "OCLU3727460",
+      "boxes": 26
     },
     {
       "cdf": "CDF4502-898",
@@ -19576,7 +17043,8 @@
           "desc": "PADLOCK SOTER PSB1119 BC9050L 50MM BRASS LONG SHACKLE",
           "approved": 18
         }
-      ]
+      ],
+      "truck": "CICU8080061"
     },
     {
       "cdf": "CDF3897-572",
@@ -19653,7 +17121,9 @@
           "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM CHROME",
           "approved": 25
         }
-      ]
+      ],
+      "truck": "PSAU 3149892",
+      "boxes": 13
     },
     {
       "cdf": "CDF4492-985",
@@ -20127,7 +17597,9 @@
           "desc": "DOOR CHAIN AND BOLT HAUSMANN DHW1022-C715 MATTE BLACK ZINC ALLOY",
           "approved": 10
         }
-      ]
+      ],
+      "truck": "CDD2948",
+      "boxes": 35
     },
     {
       "cdf": "CDF4428-104",
@@ -20174,7 +17646,9 @@
           "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM ANTIQUE BRASS",
           "approved": 18
         }
-      ]
+      ],
+      "truck": "GAOU2208653",
+      "boxes": 12
     },
     {
       "cdf": "CDF4512-300",
@@ -20289,63 +17763,6 @@
       ]
     },
     {
-      "cdf": "CDF4445-28",
-      "store": "SUMACAB",
-      "date": "2026-08-31",
-      "items": [
-        {
-          "code": "2080101018782",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4501E 200X310X200",
-          "approved": 4
-        },
-        {
-          "code": "2080101154824",
-          "desc": "CASTER SWIVEL HAUSMANN 24050B FC RUBBER WITH BRAKE 2IN.",
-          "approved": 11
-        },
-        {
-          "code": "2080101153230",
-          "desc": "CASTER SWIVEL HAUSMANN 24025NY FC NYLON 2.5CM",
-          "approved": 30
-        },
-        {
-          "code": "2080101153414",
-          "desc": "CASTER SWIVEL HAUSMANN 24075 FC RUBBER 3IN.",
-          "approved": 30
-        },
-        {
-          "code": "2080101153278",
-          "desc": "CASTER SWIVEL HAUSMANN 24065NY FC NYLON 2.5IN.",
-          "approved": 27
-        },
-        {
-          "code": "2080101115115",
-          "desc": "BRACKET SLICK WB005-25 25MM SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101066240",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 18
-        },
-        {
-          "code": "2080101066233",
-          "desc": "CURTAIN ROD SLICK WF025 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 18
-        },
-        {
-          "code": "2080101018720",
-          "desc": "PADLOCK SOTER LS3240L LONG SHACKLE DISC MECHANISM IRON 40MM",
-          "approved": 18
-        },
-        {
-          "code": "2080101018560",
-          "desc": "PADLOCK SOTER BC9060 60MM BRASS",
-          "approved": 18
-        }
-      ]
-    },
-    {
       "cdf": "CDF4485-20",
       "store": "SUMACAB",
       "date": "2026-09-08",
@@ -20419,6 +17836,83 @@
           "code": "2080100937619",
           "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 10MM METAL",
           "approved": 25
+        },
+        {
+          "code": "2080100937312",
+          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
+          "approved": 50
+        },
+        {
+          "code": "2080100937305",
+          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
+          "approved": 50
+        },
+        {
+          "code": "2080100937817",
+          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
+          "approved": 100
+        },
+        {
+          "code": "2080100937725",
+          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801105 102X3X16MM T-27 FOR STONE",
+          "approved": 50
+        },
+        {
+          "code": "2080100937732",
+          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801106 102X3X16MM T-27 FOR METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080100937749",
+          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080100937756",
+          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
+          "approved": 50
+        }
+      ]
+    },
+    {
+      "cdf": "CDF4560-312",
+      "store": "SUMACAB",
+      "date": "2026-09-25",
+      "items": [
+        {
+          "code": "2080100937015",
+          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 4.5MM METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080101008165",
+          "desc": "DOOR CATCH HAUSMANN DHW1022-C758 MATTE BLACK ZINC ALLOY+STEEL",
+          "approved": 30
+        },
+        {
+          "code": "2080101008899",
+          "desc": "DOOR STOPPER HAUSMANN C584 BSN",
+          "approved": 30
+        },
+        {
+          "code": "2080101008141",
+          "desc": "DOOR CATCH HAUSMANN C758 AB",
+          "approved": 30
+        },
+        {
+          "code": "2080100937640",
+          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS-COBALT 4MM METAL",
+          "approved": 50
+        },
+        {
+          "code": "2080101007991",
+          "desc": "BARREL BOLT HAUSMANN C605-4 AB 33X112MM",
+          "approved": 56
+        },
+        {
+          "code": "2080101008028",
+          "desc": "BARREL BOLT HAUSMANN C605-4 BSN 33X112MM",
+          "approved": 56
         },
         {
           "code": "2080100937312",
@@ -20817,7 +18311,9 @@
           "desc": "VAULT FIRE RATED SOTER VSS0820 FP1803E 600X480X470MM",
           "approved": 2
         }
-      ]
+      ],
+      "truck": "CBN6307",
+      "boxes": 54
     },
     {
       "cdf": "CDF4414-851",
@@ -20849,7 +18345,8 @@
           "desc": "VAULT FIRE RATED SOTER VSS0820 FP1803E 600X480X470MM",
           "approved": 1
         }
-      ]
+      ],
+      "boxes": 23
     },
     {
       "cdf": "CDF4419-942",
@@ -20906,7 +18403,9 @@
           "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
           "approved": 100
         }
-      ]
+      ],
+      "truck": "CBS6529",
+      "boxes": 23
     },
     {
       "cdf": "CDF3882-185",
@@ -20982,390 +18481,6 @@
           "code": "2080101114965",
           "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
           "approved": 1
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4422-419",
-      "store": "TACURONG",
-      "date": "2026-08-26",
-      "items": [
-        {
-          "code": "2080100909449",
-          "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
-          "approved": 5
-        },
-        {
-          "code": "2080101018768",
-          "desc": "BOX CASH SOTER CB-25 90X250X180MM MATT BLACK",
-          "approved": 10
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 40
-        },
-        {
-          "code": "2080101114859",
-          "desc": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114965",
-          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 30
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101115061",
-          "desc": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101115092",
-          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-          "approved": 50
-        },
-        {
-          "code": "2080101115115",
-          "desc": "BRACKET SLICK WB005-25 25MM SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101115139",
-          "desc": "BRACKET SLICK WB005-25 25MM ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080100937008",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937442",
-          "desc": "DRILL BIT HAUSMANN LI 3MM MASONRY",
-          "approved": 100
-        },
-        {
-          "code": "2080100937084",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS-COBALT 3MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937480",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS (1-10MM) 10S METAL",
-          "approved": 10
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 25
-        },
-        {
-          "code": "2080100937220",
-          "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
-          "approved": 50
-        },
-        {
-          "code": "2080101008394",
-          "desc": "DOOR CLOSER HAUSMANN GY WNS-02 25KG ALUMINUM",
-          "approved": 8
-        },
-        {
-          "code": "2080101066226",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM ANTIQUE BRASS",
-          "approved": 18
-        },
-        {
-          "code": "2080101018812",
-          "desc": "VAULT ELECTRONIC SOTER VS0120 E4502E 250X350X250",
-          "approved": 2
-        },
-        {
-          "code": "2080101018799",
-          "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
-          "approved": 2
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4501-583",
-      "store": "TACURONG",
-      "date": "2026-09-09",
-      "items": [
-        {
-          "code": "2080100937008",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937565",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 3.5MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937589",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 4MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937015",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 4.5MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080100937428",
-          "desc": "DRILL BIT HAUSMANN LI (4,5,6,8,10MM) 5S MASONRY",
-          "approved": 50
-        },
-        {
-          "code": "2080100937145",
-          "desc": "BIT FORSTNER HAUSMANN 25MM",
-          "approved": 25
-        },
-        {
-          "code": "2080100937183",
-          "desc": "BIT WOOD FLAT HAUSMANN 19MM HEX SHANK",
-          "approved": 50
-        },
-        {
-          "code": "2080100937190",
-          "desc": "BIT WOOD FLAT HAUSMANN 22MM HEX SHANK",
-          "approved": 50
-        },
-        {
-          "code": "2080100937206",
-          "desc": "BIT WOOD FLAT HAUSMANN 25MM HEX SHANK",
-          "approved": 50
-        },
-        {
-          "code": "2080100937343",
-          "desc": "DRILL BIT HAUSMANN 4MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937367",
-          "desc": "DRILL BIT HAUSMANN 6MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937305",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937794",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801100 105X1.2X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937817",
-          "desc": "SUPER THIN CUTTING DISC HAUSMANN CDHLX721-60801125 125X1.0X22MM",
-          "approved": 50
-        },
-        {
-          "code": "2080100937725",
-          "desc": "FLEXIBLE GRINDING DISC HAUSMANN GDHLX721-60801105 102X3X16MM T-27 FOR STONE",
-          "approved": 50
-        },
-        {
-          "code": "2080100937749",
-          "desc": "GRINDING DISC HAUSMANN GDHLX721-60801104 100X6.0X16MM METAL",
-          "approved": 50
-        },
-        {
-          "code": "2080101008011",
-          "desc": "BARREL BOLT HAUSMANN C605-2 BSN 32X62MM",
-          "approved": 26
-        },
-        {
-          "code": "2080101066509",
-          "desc": "DOOR VIEWER HAUSMANN 180DEG 35-60MM 14MM MB",
-          "approved": 60
-        },
-        {
-          "code": "2080101018997",
-          "desc": "PANIC EXIT BAR HAUSMANN PHO0122 1510P PUSH TYPE 17X9X105CM SILVER STEEL BAR 1050MM",
-          "approved": 6
-        },
-        {
-          "code": "2080101019628",
-          "desc": "ELECTRIC DRILL HAUSMANN DZ131/HED13 710W",
-          "approved": 5
-        },
-        {
-          "code": "2080101090153",
-          "desc": "ELECTRIC DRILL HAUSMANN DZ131/HED13 710W BUNDLE",
-          "approved": 5
-        },
-        {
-          "code": "2080101018522",
-          "desc": "PADLOCK SOTER BC9025 25MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018539",
-          "desc": "PADLOCK SOTER BC9030 30MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018546",
-          "desc": "PADLOCK SOTER BC9040 40MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018553",
-          "desc": "PADLOCK SOTER BC9050 50MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018560",
-          "desc": "PADLOCK SOTER BC9060 60MM BRASS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018577",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9020*2 20MM BRASS 2PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018591",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9030*2 30MM BRASS 2PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018607",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*2 40MM BRASS 2PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018621",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9040*4 40MM BRASS 4PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018638",
-          "desc": "PADLOCK SOTER PSB1119 BC9030L 30MM BRASS LONG SHACKLE",
-          "approved": 36
-        },
-        {
-          "code": "2080101018645",
-          "desc": "PADLOCK SOTER PSB1119 BC9040L 40MM BRASS LONG SHACKLE",
-          "approved": 36
-        },
-        {
-          "code": "2080101018683",
-          "desc": "PADLOCK SOTER QC0250 LAMINATED 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018690",
-          "desc": "PADLOCK SOTER LS3240 DISC MECHANISM IRON 40MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101018737",
-          "desc": "PADLOCK SOTER LS3250L LONG SHACKLE DISC MECHANISM IRON 50MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101066196",
-          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM CHROME",
-          "approved": 50
-        },
-        {
-          "code": "2080101066219",
-          "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 45
-        },
-        {
-          "code": "2080101066257",
-          "desc": "CURTAIN ROD SLICK WF027 16/19MM 120-210CM SATIN NICKEL",
-          "approved": 36
-        },
-        {
-          "code": "2080101066202",
-          "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
-          "approved": 25
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 80
-        },
-        {
-          "code": "2080101066028",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066158",
-          "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
-          "approved": 100
-        },
-        {
-          "code": "2080101115016",
-          "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101115092",
-          "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101066165",
-          "desc": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114736",
-          "desc": "FLANGE SLICK RFC19 19MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114859",
-          "desc": "FLANGE SLICK RFC25 25MM CLOSE STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114903",
-          "desc": "FLANGE SLICK HFR25 25MM OPEN STAINLESS STEEL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101114965",
-          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080101115061",
-          "desc": "BRACKET SLICK WBD008-19 19MM DOUBLE SATIN NICKEL",
-          "approved": 100
-        },
-        {
-          "code": "2080101115047",
-          "desc": "CENTER POST SLICK CP19 19MM STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101115054",
-          "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
-          "approved": 50
         }
       ]
     },
@@ -21801,73 +18916,6 @@
       ]
     },
     {
-      "cdf": "CDF4553-704",
-      "store": "TAGUM",
-      "date": "2026-09-22",
-      "items": [
-        {
-          "code": "2080101153605",
-          "desc": "CASTER SWIVEL HAUSMANN 19065CB FC CAST IRON WITH BRAKE 2.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154985",
-          "desc": "CASTER SWIVEL HAUSMANN 24040J FC TPR WITH SINGLE BALL BEARING 1.5IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080101153254",
-          "desc": "CASTER SWIVEL HAUSMANN 24040NY FC NYLON 1.5IN.",
-          "approved": 12
-        },
-        {
-          "code": "2080101154824",
-          "desc": "CASTER SWIVEL HAUSMANN 24050B FC RUBBER WITH BRAKE 2IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080101154848",
-          "desc": "CASTER SWIVEL HAUSMANN 24075B FC RUBBER WITH BRAKE 3IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080101153414",
-          "desc": "CASTER SWIVEL HAUSMANN 24075 FC RUBBER 3IN.",
-          "approved": 50
-        },
-        {
-          "code": "2080101153391",
-          "desc": "CASTER SWIVEL HAUSMANN 24065 FC RUBBER 2.5IN.",
-          "approved": 24
-        },
-        {
-          "code": "2080101153384",
-          "desc": "CASTER SWIVEL HAUSMANN 24050 FC RUBBER 2IN.",
-          "approved": 29
-        },
-        {
-          "code": "2080101153506",
-          "desc": "CASTER SWIVEL HAUSMANN 11125B FC INDUSTRIAL RUBBER WITH BRAKE 5IN.",
-          "approved": 14
-        },
-        {
-          "code": "2080101153513",
-          "desc": "CASTER SWIVEL HAUSMANN 11160B FC INDUSTRIAL RUBBER WITH BRAKE 6IN.",
-          "approved": 20
-        },
-        {
-          "code": "2080101153452",
-          "desc": "CASTER SWIVEL HAUSMANN 11125 FC INDUSTRIAL RUBBER 5IN.",
-          "approved": 20
-        },
-        {
-          "code": "2080101153476",
-          "desc": "CASTER FIXED HAUSMANN 11100F FC INDUSTRIAL RUBBER 4IN.",
-          "approved": 8
-        }
-      ]
-    },
-    {
       "cdf": "CDF4331-183",
       "store": "TALISAY DAET",
       "date": "2026-07-29",
@@ -21922,7 +18970,8 @@
           "desc": "CENTER POST SLICK CP12 12MM STAINLESS STEEL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "CCE6996"
     },
     {
       "cdf": "CDF4517-639",
@@ -21983,118 +19032,6 @@
           "code": "2080100937220",
           "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
           "approved": 100
-        }
-      ]
-    },
-    {
-      "cdf": "CDF4530-852",
-      "store": "TALISAY DAET",
-      "date": "2026-09-17",
-      "items": [
-        {
-          "code": "2080100937008",
-          "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
-          "approved": 100
-        },
-        {
-          "code": "2080100937480",
-          "desc": "DRILL BIT HAUSMANN LI DIN338 HSS (1-10MM) 10S METAL",
-          "approved": 40
-        },
-        {
-          "code": "2080100937336",
-          "desc": "DRILL BIT HAUSMANN 3MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937398",
-          "desc": "DRILL BIT HAUSMANN 8MM HEX SHANK TIN COATED GLASS",
-          "approved": 50
-        },
-        {
-          "code": "2080100937312",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801103 100X2.0X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937305",
-          "desc": "CUTTING DISC HAUSMANN CDHLX721-60801102 100X2.5X16MM",
-          "approved": 100
-        },
-        {
-          "code": "2080100937268",
-          "desc": "CIRCULAR BLADE HAUSMANN ABHLX721-61311002 30 110X20 FOR WOOD",
-          "approved": 40
-        },
-        {
-          "code": "2080101018591",
-          "desc": "NFS PADLOCK SOTER PSB1119 BC9030*2 30MM BRASS 2PCS",
-          "approved": 36
-        },
-        {
-          "code": "2080101018720",
-          "desc": "PADLOCK SOTER LS3240L LONG SHACKLE DISC MECHANISM IRON 40MM",
-          "approved": 36
-        },
-        {
-          "code": "2080101066196",
-          "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM CHROME",
-          "approved": 50
-        },
-        {
-          "code": "2080100989489",
-          "desc": "NFS-TUBE STAINLESS SLICK GS1119 GS 19.1X0.5X3100M SS201 ROUND",
-          "approved": 80
-        },
-        {
-          "code": "2080101114897",
-          "desc": "FLANGE SLICK HFR19 19MM OPEN STAINLESS STEEL 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114965",
-          "desc": "ACORN ENDS SLICK AE19 19MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101114996",
-          "desc": "ACORN ENDS SLICK AE25 25MM SILVER 2S",
-          "approved": 50
-        },
-        {
-          "code": "2080101153315",
-          "desc": "CASTER FIXED HAUSMANN 24050NYF FC NYLON 2IN.",
-          "approved": 15
-        },
-        {
-          "code": "2080101153384",
-          "desc": "CASTER SWIVEL HAUSMANN 24050 FC RUBBER 2IN.",
-          "approved": 15
-        },
-        {
-          "code": "2080101153414",
-          "desc": "CASTER SWIVEL HAUSMANN 24075 FC RUBBER 3IN.",
-          "approved": 15
-        },
-        {
-          "code": "2080101153421",
-          "desc": "CASTER FIXED HAUSMANN 24050F FC RUBBER 2IN.",
-          "approved": 15
-        },
-        {
-          "code": "2080101154831",
-          "desc": "CASTER SWIVEL HAUSMANN 24065B FC RUBBER WITH BRAKE 2.5IN.",
-          "approved": 15
-        },
-        {
-          "code": "2080101154848",
-          "desc": "CASTER SWIVEL HAUSMANN 24075B FC RUBBER WITH BRAKE 3IN.",
-          "approved": 15
-        },
-        {
-          "code": "2080101154909",
-          "desc": "CASTER FIXED HAUSMANN 11160F FC INDUSTRIAL RUBBER 6IN.",
-          "approved": 14
         }
       ]
     },
@@ -22274,7 +19211,9 @@
           "desc": "DOOR CLOSER HAUSMANN OS #603 40-65KG SILVER",
           "approved": 32
         }
-      ]
+      ],
+      "truck": "INBU3731559",
+      "boxes": 16
     },
     {
       "cdf": "CDF4287-996",
@@ -22411,7 +19350,8 @@
           "desc": "CURTAIN RING SLICK WR006 16/19MM PLATED WITH CLIP 10S",
           "approved": 25
         }
-      ]
+      ],
+      "truck": "INBU3730418"
     },
     {
       "cdf": "CDF4447-220",
@@ -22518,7 +19458,9 @@
           "desc": "CORDLESS DRILL EINHELL 4513914 TC-CD 18/35 LI (1X1.5 AH) + 49109115 HSS BUNDLE",
           "approved": 1
         }
-      ]
+      ],
+      "truck": "PSAU2963590",
+      "boxes": 19
     },
     {
       "cdf": "CDF4448-251",
@@ -22807,7 +19749,9 @@
           "desc": "CURTAIN SLICK 55X85IN SEMI-BLACKOUT DEEP OCEAN DARK BLUE XL-269",
           "approved": 18
         }
-      ]
+      ],
+      "truck": "-",
+      "boxes": 5
     },
     {
       "cdf": "CDF4521-448",
@@ -22996,7 +19940,8 @@
           "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
           "approved": 25
         }
-      ]
+      ],
+      "truck": "CCK7093"
     },
     {
       "cdf": "CDF4411-663",
@@ -24068,7 +21013,9 @@
           "desc": "VAULT FIRE RATED SOTER VSS0820 FP1803E 600X480X470MM",
           "approved": 2
         }
-      ]
+      ],
+      "truck": "GAOU2680464",
+      "boxes": 148
     },
     {
       "cdf": "CDF4441-710",
@@ -24300,7 +21247,8 @@
           "desc": "CASTER FIXED HAUSMANN 24050JF FC TPR WITH SINGLE BALL BEARING 2IN.",
           "approved": 10
         }
-      ]
+      ],
+      "boxes": 148
     },
     {
       "cdf": "CDF4498-403",
