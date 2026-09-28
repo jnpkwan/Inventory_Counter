@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T22:13:59+08:00",
+  "updated": "2026-09-28T23:09:29+08:00",
   "deliveries": [
     {
       "cdf": "CDF4432-755",
@@ -83,7 +83,8 @@
         }
       ],
       "truck": "PSAU2635919",
-      "boxes": 29
+      "boxes": 29,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4465-474",
@@ -95,7 +96,8 @@
           "desc": "ANGLE GRINDER HAUSMANN SK ACCS. JM1002 CARBON BRUSH",
           "approved": 10
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF3849-750",
@@ -163,7 +165,8 @@
           "approved": 50
         }
       ],
-      "truck": "CBR1212"
+      "truck": "CBR1212",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4462-971",
@@ -180,7 +183,8 @@
           "desc": "SPARE PARTS HAUSMANN RH1806 FIELD COIL",
           "approved": 1
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF3728-976",
@@ -670,7 +674,9 @@
           "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 2.5MM METAL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "boxes": 49,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4112-166",
@@ -778,7 +784,8 @@
           "approved": 40
         }
       ],
-      "truck": "INBU 3698949"
+      "truck": "INBU 3698949",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4196-219",
@@ -791,7 +798,8 @@
           "approved": 4
         }
       ],
-      "truck": "PSAU 2538483"
+      "truck": "PSAU 2538483",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4490-90",
@@ -993,7 +1001,10 @@
           "desc": "TENSION ROD SLICK WC009 10/13MM 120-200CM ALUMINUM PVC WHITE",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "PSAU3134634",
+      "boxes": 43,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4443-15",
@@ -1152,7 +1163,8 @@
         }
       ],
       "truck": "WFHU1019890",
-      "boxes": 10
+      "boxes": 10,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4480-671",
@@ -1634,7 +1646,8 @@
           "desc": "BATTERY KIT EINHELL 4511395 18V 2.0AH PXC2",
           "approved": 6
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4425-741",
@@ -2041,7 +2054,8 @@
           "approved": 25
         }
       ],
-      "truck": "INBU 3694305"
+      "truck": "INBU 3694305",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4519-452",
@@ -2428,7 +2442,9 @@
           "desc": "CASTER SWIVEL HAUSMANN 24040JB FC TPR SINGLE BALL BEARING WITH BRAKE 1.5IN.",
           "approved": 24
         }
-      ]
+      ],
+      "boxes": 67,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4460-931",
@@ -2440,7 +2456,8 @@
           "desc": "BARREL BOLT HAUSMANN C605-3 AB 33X87MM",
           "approved": 0
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4481-962",
@@ -2452,7 +2469,8 @@
           "desc": "SPARE PARTS EINHELL 4330918 TC-CS 1400/1 CIRCULAR SAW 433091801073 SWITCH",
           "approved": 1
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4556-778",
@@ -2671,7 +2689,9 @@
           "desc": "BRACKET SLICK WBD008-25 25MM DOUBLE SATIN NICKEL",
           "approved": 100
         }
-      ]
+      ],
+      "boxes": 18,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4548-367",
@@ -2820,7 +2840,9 @@
           "desc": "+VACUUM CLEANER EINHELL 2342204 TC-VC 1930 S 30L",
           "approved": 4
         }
-      ]
+      ],
+      "boxes": 19,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4523-20",
@@ -3172,7 +3194,9 @@
           "desc": "CASTER SWIVEL HAUSMANN 24050NYB FC NYLON WITH BRAKE 2IN.",
           "approved": 60
         }
-      ]
+      ],
+      "boxes": 22,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4457-527",
@@ -3461,7 +3485,8 @@
         }
       ],
       "truck": "DRYU3143369",
-      "boxes": 23
+      "boxes": 23,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4539-178",
@@ -3748,7 +3773,8 @@
           "desc": "CASTER SWIVEL HAUSMANN 24040NY FC NYLON 1.5IN.",
           "approved": 96
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4372-817",
@@ -3831,7 +3857,8 @@
           "approved": 10
         }
       ],
-      "truck": "NAG4197"
+      "truck": "NAG4197",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4459-913",
@@ -3895,7 +3922,8 @@
         }
       ],
       "truck": "CCP3696",
-      "boxes": 15
+      "boxes": 15,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4351-552",
@@ -3999,7 +4027,8 @@
         }
       ],
       "truck": "CBR 9894",
-      "boxes": 12
+      "boxes": 12,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4406-719",
@@ -4278,7 +4307,10 @@
           "desc": "BARREL BOLT HAUSMANN C646-1.5 AB 33X58MM",
           "approved": 30
         }
-      ]
+      ],
+      "truck": "INBU3590363",
+      "boxes": 30,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4412-899",
@@ -4377,7 +4409,8 @@
         }
       ],
       "truck": "CCE 2722",
-      "boxes": 18
+      "boxes": 18,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4427-540",
@@ -4416,7 +4449,8 @@
           "desc": "SPARE PARTS EINHELL 4340493 TC-TS 2025/2 U 434049001065 ARMATURE ASSEMBLY",
           "approved": 1
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4405-317",
@@ -4687,7 +4721,8 @@
           "desc": "SPARE PARTS EINHELL 443111003905 COMP MOTR ASSY",
           "approved": 1
         }
-      ]
+      ],
+      "status": "WHS Prepare Order"
     },
     {
       "cdf": "CDF4111-218",
@@ -4775,7 +4810,8 @@
           "approved": 25
         }
       ],
-      "truck": "CCI4073"
+      "truck": "CCI4073",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4516-679",
@@ -5082,7 +5118,10 @@
           "desc": "CASTER SWIVEL HAUSMANN 24040 FC RUBBER 1.5IN.",
           "approved": 12
         }
-      ]
+      ],
+      "truck": "CBR6892",
+      "boxes": 64,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4183-320",
@@ -5220,7 +5259,8 @@
         }
       ],
       "truck": "PSAU 3176692",
-      "boxes": 23
+      "boxes": 23,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4353-936",
@@ -5326,7 +5366,8 @@
         }
       ],
       "truck": "GLDU 3007740",
-      "boxes": 10
+      "boxes": 10,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4531-802",
@@ -5348,7 +5389,8 @@
           "desc": "CURTAIN ROD SLICK WC001 9/11MM 70-120CM CHROME",
           "approved": 50
         }
-      ]
+      ],
+      "status": "WHS Prepare Order"
     },
     {
       "cdf": "CDF4408-565",
@@ -5654,7 +5696,8 @@
         }
       ],
       "truck": "GAOU2668330",
-      "boxes": 27
+      "boxes": 27,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4508-392",
@@ -5666,7 +5709,9 @@
           "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
           "approved": 2
         }
-      ]
+      ],
+      "truck": "MAV7989",
+      "boxes": 2
     },
     {
       "cdf": "CDF3654-676",
@@ -6266,7 +6311,9 @@
           "desc": "VAULT FIRE RATED SOTER VSS0820 FP1803E 600X480X470MM",
           "approved": 2
         }
-      ]
+      ],
+      "boxes": 15,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF3783-298",
@@ -6479,7 +6526,8 @@
           "approved": 50
         }
       ],
-      "truck": "YTLU2516271"
+      "truck": "YTLU2516271",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4363-225",
@@ -6633,7 +6681,8 @@
         }
       ],
       "truck": "PSAU3161630",
-      "boxes": 3
+      "boxes": 3,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4503-895",
@@ -8436,7 +8485,8 @@
         }
       ],
       "truck": "CAL 2008",
-      "boxes": 146
+      "boxes": 146,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4519-547",
@@ -8688,7 +8738,8 @@
           "desc": "CASTER SWIVEL HAUSMANN 11160B FC INDUSTRIAL RUBBER WITH BRAKE 6IN.",
           "approved": 12
         }
-      ]
+      ],
+      "status": "WHS Prepare Order"
     },
     {
       "cdf": "CDF4544-139",
@@ -8725,7 +8776,8 @@
           "desc": "BRACKET SLICK WB005 16/19MM PLATED 2S ANTIQUE BRASS",
           "approved": 50
         }
-      ]
+      ],
+      "status": "WHS Prepare Order"
     },
     {
       "cdf": "CDF4423-870",
@@ -9749,7 +9801,8 @@
         }
       ],
       "truck": "PSAU3159921",
-      "boxes": 147
+      "boxes": 147,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4471-543",
@@ -9941,7 +9994,8 @@
           "desc": "CASTER FIXED HAUSMANN 24065F FC RUBBER 2.5IN.",
           "approved": 12
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4496-874",
@@ -10053,7 +10107,10 @@
           "desc": "IMPACT DRILL HAUSMANN SK CZ132 13MM 710W BUNDLE",
           "approved": 10
         }
-      ]
+      ],
+      "truck": "CCS4377",
+      "boxes": 25,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4000-100",
@@ -10096,7 +10153,8 @@
           "approved": 100
         }
       ],
-      "truck": "INBU3701282"
+      "truck": "INBU3701282",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4382-450",
@@ -10118,7 +10176,8 @@
           "desc": "CHOP SAW HAUSMANN HCOS355 CARBON BRUSH",
           "approved": 10
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4383-931",
@@ -10362,7 +10421,8 @@
         }
       ],
       "truck": "OCLU3695602",
-      "boxes": 31
+      "boxes": 31,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4421-297",
@@ -10416,7 +10476,8 @@
         }
       ],
       "truck": "INBU3776208",
-      "boxes": 17
+      "boxes": 17,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4440-861",
@@ -10438,7 +10499,8 @@
           "desc": "SPARE PARTS EINHELL 4321137 TC-JS 60 E JIGSAW 432110001901 ROTOR",
           "approved": 2
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4552-295",
@@ -10795,7 +10857,10 @@
           "desc": "WHEEL SWIVEL HAUSMANN TWG-50 FC PIN TYPE WHEEL NYLON 2IN.",
           "approved": 24
         }
-      ]
+      ],
+      "truck": "MAV7989",
+      "boxes": 59,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4505-700",
@@ -10812,7 +10877,9 @@
           "desc": "S.O SPAREPARTS EINHELL",
           "approved": 1
         }
-      ]
+      ],
+      "truck": "LBC",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4347-532",
@@ -11994,7 +12061,8 @@
           "approved": 40
         }
       ],
-      "truck": "WFHU1356377"
+      "truck": "WFHU1356377",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4493-544",
@@ -12246,7 +12314,9 @@
           "desc": "CASTER SWIVEL HAUSMANN 24040NY FC NYLON 1.5IN.",
           "approved": 48
         }
-      ]
+      ],
+      "boxes": 49,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4361-376",
@@ -12270,7 +12340,8 @@
           "desc": "+S.O SPARE PARTS HAUSMANN",
           "approved": 2
         }
-      ]
+      ],
+      "status": "WHS Prepare Order"
     },
     {
       "cdf": "CDF4509-319",
@@ -12487,7 +12558,8 @@
           "approved": 50
         }
       ],
-      "truck": "CICU8075342"
+      "truck": "CICU8075342",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4525-324",
@@ -12659,7 +12731,10 @@
           "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
           "approved": 100
         }
-      ]
+      ],
+      "truck": "CCP4054",
+      "boxes": 32,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4399-787",
@@ -13053,7 +13128,8 @@
         }
       ],
       "truck": "INBU3594630",
-      "boxes": 12
+      "boxes": 12,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4551-610",
@@ -13498,7 +13574,8 @@
           "approved": 50
         }
       ],
-      "truck": "WFHU1391439"
+      "truck": "WFHU1391439",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4018-797",
@@ -13606,7 +13683,8 @@
           "approved": 10
         }
       ],
-      "truck": "INBU3596762"
+      "truck": "INBU3596762",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4456-577",
@@ -13618,7 +13696,8 @@
           "desc": "SPARE PARTS EINHELL 4513916/4513935 TE-CD 18/48 CORDLESS IMPACT DRILL 451391701903 SWITCH",
           "approved": 1
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4541-74",
@@ -13715,7 +13794,8 @@
           "desc": "CASTER FIXED HAUSMANN 11160F FC INDUSTRIAL RUBBER 6IN.",
           "approved": 12
         }
-      ]
+      ],
+      "status": "WHS Prepare Order"
     },
     {
       "cdf": "CDF4331-438",
@@ -14023,7 +14103,8 @@
           "approved": 50
         }
       ],
-      "truck": "DRYU2551664"
+      "truck": "DRYU2551664",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4393-124",
@@ -14035,7 +14116,8 @@
           "desc": "SPARE PARTS EINHELL 4430668/4430671 TC-AG 115/TC-AG 100 ANGLE GRINDER 443058002040 CARBON BRUSH (PAIR)",
           "approved": 20
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4398-45",
@@ -14147,7 +14229,8 @@
           "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
           "approved": 6
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF3868-666",
@@ -14400,7 +14483,8 @@
           "approved": 4
         }
       ],
-      "truck": "CBQ6983"
+      "truck": "CBQ6983",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4495-243",
@@ -14527,7 +14611,10 @@
           "desc": "CENTER POST SLICK CP25 25MM STAINLESS STEEL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "truck": "PSAU3151380",
+      "boxes": 21,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4561-435",
@@ -14539,7 +14626,8 @@
           "desc": "S.O SPAREPARTS EINHELL",
           "approved": 1
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4507-408",
@@ -14736,7 +14824,10 @@
           "desc": "WHEEL SWIVEL HAUSMANN TWTB-40 FC TWIN SCREW TYPE NYLON WITH BRAKE 1.5IN.",
           "approved": 9
         }
-      ]
+      ],
+      "truck": "MAV7989",
+      "boxes": 44,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4511-815",
@@ -14748,7 +14839,10 @@
           "desc": "CORDLESS MULTIFUNCTION TOOL EINHELL 4465160 VARRITO",
           "approved": 3
         }
-      ]
+      ],
+      "truck": "MAV7989",
+      "boxes": 3,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4014-202",
@@ -14815,7 +14909,8 @@
           "desc": "BIT DRILL HAUSMANN LI DIN338 HSS 3MM METAL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4559-506",
@@ -14872,7 +14967,9 @@
           "desc": "FLANGE SLICK HFR19 19MM OPEN STAINLESS STEEL 2S",
           "approved": 1
         }
-      ]
+      ],
+      "boxes": 30,
+      "status": "WHS Prepare Order"
     },
     {
       "cdf": "CDF4098-205",
@@ -14930,7 +15027,8 @@
           "approved": 25
         }
       ],
-      "truck": "INBU3779830"
+      "truck": "INBU3779830",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4415-55",
@@ -15054,7 +15152,8 @@
         }
       ],
       "truck": "PSAU3115568",
-      "boxes": 40
+      "boxes": 40,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4543-84",
@@ -15171,7 +15270,8 @@
           "desc": "CIRCULAR SAW HAUSMANN HCS190 PROF. 190MM 1300W",
           "approved": 4
         }
-      ]
+      ],
+      "status": "WHS Prepare Order"
     },
     {
       "cdf": "CDF4562-911",
@@ -15340,7 +15440,9 @@
           "desc": "DOOR CLOSER HAUSMANN DHO0423-604 60-85KG 223X44.5X72.5MM BLACK ALUMINUM",
           "approved": 8
         }
-      ]
+      ],
+      "boxes": 9,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4119-599",
@@ -15403,7 +15505,8 @@
           "approved": 30
         }
       ],
-      "truck": "INBU3724101"
+      "truck": "INBU3724101",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4365-438",
@@ -15520,7 +15623,8 @@
           "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
           "approved": 6
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4561-672",
@@ -15734,7 +15838,8 @@
           "desc": "S.O-SPARE PARTS SOTER FP1801E KEY ASSORTED",
           "approved": 1
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4510-326",
@@ -15966,7 +16071,9 @@
           "desc": "VAULT ELECTRONIC SOTER VSS1019 E4505E 500X350X310",
           "approved": 3
         }
-      ]
+      ],
+      "boxes": 29,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4322-780",
@@ -16219,7 +16326,8 @@
           "approved": 50
         }
       ],
-      "truck": "INBU3578840"
+      "truck": "INBU3578840",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4400-15",
@@ -16553,7 +16661,8 @@
         }
       ],
       "truck": "INBU 3579810",
-      "boxes": 42
+      "boxes": 42,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4546-422",
@@ -16705,7 +16814,8 @@
           "desc": "DEMOLITION HAMMER HAUSMANN HCH25 YELLOW 12500W",
           "approved": 2
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4388-659",
@@ -16839,7 +16949,8 @@
         }
       ],
       "truck": "OCLU3727460",
-      "boxes": 26
+      "boxes": 26,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4502-898",
@@ -16941,7 +17052,10 @@
           "desc": "CASTER SWIVEL HAUSMANN 24050NYB FC NYLON WITH BRAKE 2IN.",
           "approved": 60
         }
-      ]
+      ],
+      "truck": "OCLU3188592",
+      "boxes": 13,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4168-15",
@@ -17044,7 +17158,8 @@
           "approved": 18
         }
       ],
-      "truck": "CICU8080061"
+      "truck": "CICU8080061",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF3897-572",
@@ -17123,7 +17238,8 @@
         }
       ],
       "truck": "PSAU 3149892",
-      "boxes": 13
+      "boxes": 13,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4492-985",
@@ -17370,7 +17486,10 @@
           "desc": "PADLOCK SOTER LS3260 DISC MECHANISM IRON 60MM",
           "approved": 36
         }
-      ]
+      ],
+      "truck": "PSAU2964067",
+      "boxes": 60,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4386-728",
@@ -17648,7 +17767,8 @@
         }
       ],
       "truck": "GAOU2208653",
-      "boxes": 12
+      "boxes": 12,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4512-300",
@@ -17760,7 +17880,8 @@
           "desc": "DRILL BIT HAUSMANN LI DIN338 HSS 3.5MM METAL 2S",
           "approved": 50
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4485-20",
@@ -17872,7 +17993,8 @@
           "desc": "GRINDING DISC HAUSMANN GDHLX721-60801115 100X4X16MM FOR STAINLESS STEEL",
           "approved": 50
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4560-312",
@@ -18313,7 +18435,8 @@
         }
       ],
       "truck": "CBN6307",
-      "boxes": 54
+      "boxes": 54,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4414-851",
@@ -18346,7 +18469,8 @@
           "approved": 1
         }
       ],
-      "boxes": 23
+      "boxes": 23,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4419-942",
@@ -18405,7 +18529,8 @@
         }
       ],
       "truck": "CBS6529",
-      "boxes": 23
+      "boxes": 23,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF3882-185",
@@ -18884,7 +19009,10 @@
           "desc": "CASTER FIXED HAUSMANN 24050JF FC TPR WITH SINGLE BALL BEARING 2IN.",
           "approved": 24
         }
-      ]
+      ],
+      "truck": "MAV7989",
+      "boxes": 71,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4404-501",
@@ -19033,7 +19161,10 @@
           "desc": "BLADE DIAMOND HAUSMANN 105X1.0/1.4X7.5X20 SUPER THIN",
           "approved": 100
         }
-      ]
+      ],
+      "truck": "MAV7989",
+      "boxes": 20,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4513-258",
@@ -19045,7 +19176,8 @@
           "desc": "S.O- SPARE PARTS VAULT FIRE RATED SOTER KEYS FOR ALL MODEL",
           "approved": 1
         }
-      ]
+      ],
+      "status": "WHS Prepare Order"
     },
     {
       "cdf": "CDF4184-149",
@@ -19134,7 +19266,8 @@
           "desc": "DOOR CLOSER HAUSMANN OS #603 40-65KG SILVER",
           "approved": 32
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4450-432",
@@ -19213,7 +19346,8 @@
         }
       ],
       "truck": "INBU3731559",
-      "boxes": 16
+      "boxes": 16,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4287-996",
@@ -19351,7 +19485,8 @@
           "approved": 25
         }
       ],
-      "truck": "INBU3730418"
+      "truck": "INBU3730418",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4447-220",
@@ -19460,7 +19595,8 @@
         }
       ],
       "truck": "PSAU2963590",
-      "boxes": 19
+      "boxes": 19,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4448-251",
@@ -19472,7 +19608,8 @@
           "desc": "ANGLE GRINDER HAUSMANN SK ACCS. CARBON BRUSH (38)",
           "approved": 10
         }
-      ]
+      ],
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4472-412",
@@ -19750,7 +19887,6 @@
           "approved": 18
         }
       ],
-      "truck": "-",
       "boxes": 5
     },
     {
@@ -19823,7 +19959,10 @@
           "desc": "+VACUUM CLEANER EINHELL 2342384 TC-VC 1812 S 12L",
           "approved": 10
         }
-      ]
+      ],
+      "truck": "INBU3717170",
+      "boxes": 20,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4278-134",
@@ -19941,7 +20080,8 @@
           "approved": 25
         }
       ],
-      "truck": "CCK7093"
+      "truck": "CCK7093",
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4411-663",
@@ -21015,7 +21155,8 @@
         }
       ],
       "truck": "GAOU2680464",
-      "boxes": 148
+      "boxes": 148,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4441-710",
@@ -21248,7 +21389,8 @@
           "approved": 10
         }
       ],
-      "boxes": 148
+      "boxes": 148,
+      "status": "Pending Dispatch"
     },
     {
       "cdf": "CDF4498-403",
@@ -21605,7 +21747,10 @@
           "desc": "CURTAIN ROD SLICK WF009 16/19MM 120-210CM SATIN NICKEL",
           "approved": 54
         }
-      ]
+      ],
+      "truck": "GAOU2208648",
+      "boxes": 62,
+      "status": "In Transit"
     },
     {
       "cdf": "CDF4529-858",
@@ -21667,7 +21812,9 @@
           "desc": "+VACUUM CLEANER EINHELL 2342183 TC-VC 1820 S 20L",
           "approved": 5
         }
-      ]
+      ],
+      "truck": "PSAU2170494",
+      "status": "Pending Dispatch"
     }
   ]
 }
