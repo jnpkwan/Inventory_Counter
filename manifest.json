@@ -1,7 +1,7 @@
 {
-  "name": "AcaciaHBC Inventory System",
-  "short_name": "ACACIA",
-  "description": "AcaciaHBC Inventory Counter",
+  "name": "Inventory Count · Acacia",
+  "short_name": "Inventory",
+  "description": "Acacia inventory count and incoming order check",
   "start_url": "./inventory-count.html",
   "display": "standalone",
   "background_color": "#f4f6f9",
